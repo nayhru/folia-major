@@ -75,6 +75,16 @@ const SAFE_START_LOCALE = {
         stuckWait: 'Keep waiting',
         stuckReopen: 'Reopen without mods',
     },
+    es: {
+        startMessage: 'Folia no terminó de iniciar la última vez.',
+        startDetail: 'Puede que lo haya causado un mod. ¿Iniciar sin mods esta vez? Es solo por esta vez: no cambia ningún ajuste, y los mods se inician como siempre la próxima vez que abras Folia.',
+        startWithout: 'Iniciar sin mods',
+        startAsUsual: 'Iniciar como siempre',
+        stuckMessage: 'La ventana de Folia dejó de responder.',
+        stuckDetail: 'Puede que un mod esté trabado. Puedes seguir esperando o volver a abrir la ventana sin mods. Reabrirla es solo por esta vez: no cambia ningún ajuste, y los mods se inician como siempre la próxima vez que abras Folia.',
+        stuckWait: 'Seguir esperando',
+        stuckReopen: 'Reabrir sin mods',
+    },
     in: {
         startMessage: 'Folia tidak selesai dimulai terakhir kali.',
         startDetail: 'Mungkin penyebabnya sebuah mod. Mulai tanpa mod kali ini? Hanya untuk kali ini: tidak ada pengaturan yang berubah, dan mod berjalan seperti biasa saat Folia dibuka berikutnya.',

@@ -1,5 +1,3 @@
-
-
 export default {
   "libraryBravais": {
     "suiteName": "Muro Bravais",
@@ -30,7 +28,6 @@ export default {
     "crumbSearch": "Buscar",
     "crumbPlayer": "Reproduciendo ahora",
     "tools": "Herramientas del muro",
-    "toolsLocate": "Ubicar la canción en reproducción",
     "toolsLattice": "Ir a Lattice",
     "toolsAppearance": "Apariencia del muro",
     "helpMove": "Mover el foco (muro o franja de información)",
@@ -47,7 +44,14 @@ export default {
     "helpFilter": "Escribe para filtrar esta página",
     "helpSearch": "Buscar en plataformas en línea (inicio)",
     "filterPlaceholder": "Filtrar esta página",
-    "kind": {"track": "Canción", "playlist": "Lista de reproducción", "album": "Álbum", "artist": "Artista", "folder": "Carpeta", "feed": "Radio"}
+    "kind": {
+      "track": "Canción",
+      "playlist": "Lista de reproducción",
+      "album": "Álbum",
+      "artist": "Artista",
+      "folder": "Carpeta",
+      "feed": "Radio"
+    }
   },
   "wallTools": {
     "shuffle": "Mezclar la cola",
@@ -76,6 +80,7 @@ export default {
     "queueMoved": "Movida a la posición {{position}}",
     "openPlayer": "Abrir el reproductor",
     "openPlayerUnavailable": "Aún no se está reproduciendo nada",
+    "openSettings": "Abrir ajustes",
     "goHome": "Ir al inicio",
     "wallSection": "Muro"
   },
@@ -103,7 +108,25 @@ export default {
     "connect": "Conectar un servicio de streaming",
     "noMatch": "Nada en esta página coincide",
     "shortcuts": "Ir a",
-    "special": {"liked": "Canciones que te gustan", "cloud": "Nube", "personal-fm": "FM personal", "daily": "Recomendaciones diarias", "all-songs": "Todas las canciones", "local-favorites": "Favoritos", "navidrome-random": "Aleatorio", "navidrome-favorites": "Destacadas"}
+    "wallHint": {
+      "guestTitle": "Aún no hay un servicio de streaming conectado",
+      "guestBody": "Elige “{{connect}}” en la franja de información para iniciar sesión, y tus playlists, radios y álbumes guardados llenarán este muro.",
+      "guestBodyWithLocal": "Elige “{{connect}}” en la franja de información para iniciar sesión, y tus playlists, radios y álbumes guardados llenarán este muro. O importa una carpeta de música en la pestaña {{local}}.",
+      "reloginTitle": "Tu sesión de {{provider}} expiró",
+      "reloginBody": "Elige “{{connect}}” en la franja de información para volver a iniciar sesión, y tus playlists volverán a llenar este muro.",
+      "localTitle": "Aún no hay música local importada",
+      "localBody": "Elige “{{action}}” en “⋯” de la franja de información, y tus carpetas, álbumes y artistas llenarán este muro."
+    },
+    "special": {
+      "liked": "Canciones que te gustan",
+      "cloud": "Nube",
+      "personal-fm": "FM personal",
+      "daily": "Recomendaciones diarias",
+      "all-songs": "Todas las canciones",
+      "local-favorites": "Favoritos",
+      "navidrome-random": "Aleatorio",
+      "navidrome-favorites": "Destacadas"
+    }
   },
   "libraryTui": {
     "back": "Atrás",
@@ -140,7 +163,16 @@ export default {
     "columnType": "Tipo",
     "columnTracks": "Canciones",
     "columnDescription": "Descripción",
-    "itemType": {"playlist": "lista", "album": "álbum", "artist": "artista", "folder": "carpeta", "cloud": "nube", "radio": "radio", "daily_recommendations": "diarias", "personal_fm": "fm"},
+    "itemType": {
+      "playlist": "lista",
+      "album": "álbum",
+      "artist": "artista",
+      "folder": "carpeta",
+      "cloud": "nube",
+      "radio": "radio",
+      "daily_recommendations": "diarias",
+      "personal_fm": "fm"
+    },
     "homeHints": "↑↓ mover · PgUp/PgDn página · Tab sección · F6 fuente · Enter abrir · Esc borrar filtro y luego cerrar",
     "homeTreeHints": "←→ plegar",
     "homeBatchHints": "Ins seleccionar · Ctrl+A todo · Ctrl+Enter reproducir · Ctrl+Shift+Enter a la cola",
@@ -203,12 +235,8 @@ export default {
     "actionUnsupported": "Esta colección no admite esa acción"
   },
   "libraryBravaisAccount": {
-    "confirmSwitch": "Cambiar",
-    "cancel": "Cancelar",
-    "cooldown": "· {{seconds}} s",
     "notSignedIn": "Sin sesión iniciada",
-    "notConfigured": "Sin configurar",
-    "loggingOut": "Cerrando sesión…"
+    "notConfigured": "Sin configurar"
   },
   "notifications": {
     "coverColorAdded": "Color de la portada agregado",
@@ -248,6 +276,7 @@ export default {
     "wallpaperModeOn": "Modo fondo de pantalla activado",
     "wallpaperModeOff": "Modo fondo de pantalla desactivado",
     "macWallpaperInputMonitoringNeeded": "El modo fondo de pantalla necesita Monitoreo de entrada: permite Folia en Ajustes del Sistema → Privacidad y seguridad → Monitoreo de entrada y luego vuelve a activar el modo fondo de pantalla",
+    "macWallpaperAccessibilitySuggested": "Con Stage Manager activo, un clic en el fondo de pantalla también cuenta como clic en el escritorio y aparta tus ventanas. Para evitarlo, permite Folia en Ajustes del Sistema → Privacidad y seguridad → Accesibilidad y reinicia Folia; los íconos del escritorio siguen funcionando",
     "macWallpaperAutohideDockOn": "Ocultar el Dock automáticamente activado",
     "macWallpaperAutohideDockOff": "Ocultar el Dock automáticamente desactivado",
     "voiceInputPauseOn": "Pausa con entrada de voz activada",
@@ -263,6 +292,9 @@ export default {
     "autoPlayOnLaunchOn": "La reproducción se reanudará sola al iniciar",
     "autoPlayOnLaunchOff": "Al iniciar, se restaurará la última sesión en pausa",
     "openHomeOnLaunch": "Al iniciar, se abrirá el inicio por defecto",
+    "gpuPreferenceChanged": "Cambió la GPU de render; reinicia Folia para aplicarlo",
+    "backgroundThrottlingOn": "Ahorro en segundo plano activado",
+    "backgroundThrottlingOff": "Ahorro en segundo plano desactivado",
     "visualizerSwitched": "Cambiado al visualizador {{mode}}",
     "classicReset": "Ajuste de Classic restablecido",
     "cadenzaReset": "Ajuste de Mindscape restablecido",
@@ -280,6 +312,7 @@ export default {
     "dioramaReset": "Ajuste de Diorama restablecido",
     "temperaReset": "Ajuste de Tempera restablecido",
     "lumiereReset": "Ajuste de Lumiere restablecido",
+    "hanabiReset": "Ajustes de Hanabi restablecidos",
     "uploadEmojiFirst": "Primero sube un paquete de emojis personalizado",
     "monetBgUpdated": "Imagen de fondo de Monet actualizada",
     "monetBgCleared": "Imagen de fondo de Monet eliminada",
@@ -306,10 +339,14 @@ export default {
     "mainWindowTitlebarAutoHidden": "Los botones de control de la ventana principal aparecerán al pasar el cursor",
     "cursorAutoHideOn": "El cursor se ocultará junto con los controles del reproductor",
     "cursorAutoHideOff": "El cursor seguirá visible cuando se oculten los controles del reproductor",
+    "cursorIdleHideOn": "El cursor se ocultará solo cuando no lo muevas",
+    "cursorIdleHideOff": "El cursor quedará siempre visible",
     "stageModeOn": "Modo Stage activado",
     "stageModeOff": "Modo Stage desactivado",
     "queueInsertNext": "Las canciones se insertarán a continuación en la cola",
     "queueAppend": "Las canciones se agregarán al final de la cola",
+    "equalizerModCurve": "\"{{mod}}\" puso su propia curva de ecualizador",
+    "equalizerModMode": "\"{{mod}}\" cambió el sonido a {{mode}}",
     "homeLayoutGrid": "Diseño del inicio cambiado a Escritorio amplio",
     "homeLayoutCarousel": "Diseño del inicio cambiado a Clásico",
     "cardStyleImage": "Estilo de tarjeta cambiado a solo portada",
@@ -328,22 +365,13 @@ export default {
     "themeSourceAi": "La generación de temas ahora usa inferencia con IA",
     "themeSourceCover": "La generación de temas ahora usa los colores de la portada",
     "aiThemeUpdatedCustomPreferred": "Tema de IA actualizado; el tema personalizado sigue teniendo prioridad",
-    "aiThemeGeneratedCustomPreferred": "Tema de IA generado, pero el tema personalizado sigue teniendo prioridad",
+    "aiThemeGeneratedCustomPreferred": "Tema de IA generado, pero el tema personalizado sigue teniendo prioridad"
   },
   "status": {
     "playerChromeAlwaysHidden": "La interfaz permanecerá oculta",
     "playerChromeAlwaysVisible": "La interfaz permanecerá visible",
     "playerChromeAutoHide": "La interfaz se ocultará automáticamente",
-    "sessionRestored": "Sesión restaurada",
-    "loadedDefaultDemo": "Demo predeterminada cargada",
-    "loadedFile": "Cargado: {{fileName}}",
-    "searching": "Buscando «{{query}}»...",
-    "noSongsFound": "No se encontraron canciones.",
-    "multipleMatches": "Se encontraron varias coincidencias.",
     "matched": "Coincidencia: {{songName}}",
-    "downloadingLyrics": "Descargando letra...",
-    "lyricsLoaded": "¡Letra cargada!",
-    "lyricsFailed": "Error en la letra: {{error}}",
     "matchingBestLyrics": "Buscando la mejor letra...",
     "bestLyricsMatched": "Mejor letra encontrada",
     "matchSuccessful": "Coincidencia exitosa",
@@ -353,43 +381,37 @@ export default {
     "unmarkedPureMusic": "Marca de instrumental quitada; se buscará letra automáticamente la próxima vez que suene",
     "bestLyricsMatchFailed": "No se pudo encontrar la mejor letra",
     "noSongPlaying": "No se está reproduciendo ninguna canción",
-    "enterSongId": "Ingresa el ID de la canción o importa un archivo",
-    "apiNotConfigured": "La URL base de la API no está configurada.",
     "neteaseApiStartupFailed": "La API de NetEase no pudo iniciarse. Algunas funciones en línea no están disponibles.",
     "neteaseApiStartupFailedDetail": "La API de NetEase no pudo iniciarse, así que algunas funciones en línea no están disponibles: {{reason}}",
-    "searchError": "Error de búsqueda.",
     "generatingTheme": "La IA está imaginando un tema...",
     "themeApplied": "Tema aplicado: {{themeName}}",
     "aiThemeUpdated": "Tema de IA actualizado: {{themeName}}",
     "themeGenerationFailed": "No se pudo generar el tema.",
-    "missingApiKey": "Configura tu clave de API de IA en Ajustes",
     "coverThemeApplied": "Se aplicó un tema basado en la portada: {{themeName}}",
     "aiFallbackThemeUsed": "La IA no está configurada; se usará un tema integrado",
     "playbackError": "Error de reproducción",
     "loadingSong": "Cargando la URL de la canción...",
-    "cacheCleared": "Caché borrada",
     "dataSynced": "Datos sincronizados correctamente",
     "syncFailed": "Error de sincronización",
     "loginExpired": "La sesión expiró. Vuelve a iniciar sesión",
-    "songPreviewOnly": "Solo hay una vista previa disponible. Inicia sesión con una cuenta que pueda reproducir la canción completa.",
-    "songRegionRestricted": "La reproducción está limitada a China continental. Revisa tu conexión de red.",
-    "songTemporarilyUnavailable": "No se puede reproducir esta canción en este momento",
-    "songTemporarilyUnavailableSignInHint": "No se puede reproducir esta canción en este momento. Iniciar sesión podría ayudar.",
-    "songNetworkFailed": "No se pudo conectar para cargar esta canción. Revisa tu red e inténtalo de nuevo.",
-    "songRequestTimedOut": "Se agotó el tiempo al cargar esta canción. Inténtalo de nuevo.",
+    "songPreviewOnly": "Esta cuenta solo puede reproducir una vista previa",
+    "songSubscriptionRequired": "Se necesita una cuenta de pago de {{provider}}",
+    "songRegionRestricted": "Solo se reproduce en redes de China continental",
     "songRetrying": "Falló la conexión. Reintentando…",
-    "songServiceUnavailable": "El servicio de música no está disponible en este momento. Inténtalo más tarde.",
     "songServiceNotConfigured": "Esta fuente de música no está disponible aquí (no está configurada o requiere la app de escritorio).",
     "songRateLimited": "Demasiadas solicitudes. Inténtalo de nuevo en {{seconds}} s.",
-    "songRateLimitedNoWait": "Demasiadas solicitudes. Inténtalo más tarde.",
     "songLoginRequired": "Inicia sesión para reproducir esta canción.",
-    "songMembershipRequired": "Esta canción requiere una membresía para reproducirse.",
     "songPurchaseRequired": "Debes comprar esta canción antes de poder reproducirla.",
     "songEntitlementRequired": "Tu cuenta no puede reproducir esta canción (puede requerir membresía o compra).",
     "loggedOut": "Sesión cerrada",
     "clickToPlay": "Haz clic en reproducir para empezar",
     "liked": "Agregada a Canciones que te gustan",
     "likeFailed": "No se pudo marcar la canción como favorita",
+    "collectionSaveFailed": "No se pudo guardar",
+    "collectionUnsaveFailed": "No se pudo quitar de la biblioteca",
+    "playingSongNotHere": "La canción que suena no está en esta lista",
+    "playingSongListUnread": "Esta lista aún no termina de cargar, así que no se puede ubicar la canción",
+    "playingSongNoSource": "La cola actual no es la de un álbum o una playlist",
     "unliked": "Quitada de Canciones que te gustan",
     "playlistUpdated": "Lista actualizada",
     "providerLikeUnavailable": "{{provider}} no permite marcar canciones como favoritas.",
@@ -398,13 +420,10 @@ export default {
     "providerUserAlbumsUnavailable": "{{provider}} no ofrece la biblioteca de álbumes del usuario.",
     "providerLibraryUnavailable": "{{provider}} no ofrece una biblioteca de listas.",
     "songUnavailable": "La canción fue retirada",
-    "songUnavailableSkipping": "La canción fue retirada; saltando",
-    "songUnavailablePrompt": "La canción fue retirada. Se saltará automáticamente en {{seconds}} s",
     "songUnavailableAlternativeTitle": "Hay una versión alternativa disponible",
     "songUnavailableAlternativeDescription": "«{{song}}» no está disponible. {{typeDesc}}. ¿Reproducir una versión alternativa?",
     "songUnavailableAlternativeDefaultType": "Se puede reproducir otra versión",
     "playAlternativeVersion": "Reproducir alternativa",
-    "playbackErrorPrompt": "Falló la reproducción. Se saltará automáticamente en {{seconds}} s",
     "skipUnavailableAction": "Saltar",
     "cancel": "Cancelar",
     "confirm": "Confirmar",
@@ -457,25 +476,25 @@ export default {
     "connecting": "Conectando",
     "disconnected": "Desconectado",
     "randomVisualizerModePerSongOn": "Animación de letra aleatoria para cada canción activada",
-    "randomVisualizerModePerSongOff": "Animación de letra aleatoria para cada canción desactivada",
+    "randomVisualizerModePerSongOff": "Animación de letra aleatoria para cada canción desactivada"
   },
   "commandPalette": {
     "placeholder": "Escribe un comando o busca...",
     "showAllCommands": "Mostrar todos los comandos",
     "allCommands": "Todos los comandos",
     "backToSearch": "Volver a la búsqueda",
-    "idlePlaceholders": [
-      "Escribe lo que quieras: hay muchos comandos para probar",
-      "Prueba buscar una canción, un ajuste o una acción",
-      "¿No sabes por dónde empezar? Escribe lo que quieres",
-      "Explora con libertad: comandos, navegación y reproducción están todos aquí",
-      "Haz la prueba: escribe una función o un comando"
-    ],
+    "idlePlaceholders": {
+      "0": "Escribe lo que quieras: hay muchos comandos para probar",
+      "1": "Prueba buscar una canción, un ajuste o una acción",
+      "2": "¿No sabes por dónde empezar? Escribe lo que quieres",
+      "3": "Explora con libertad: comandos, navegación y reproducción están todos aquí",
+      "4": "Haz la prueba: escribe una función o un comando"
+    },
     "destination": "Comando",
     "close": "Cerrar la paleta de comandos",
     "runPinnedCommand": "Ejecutar comando fijado: {{command}}",
     "empty": "Ningún comando coincide",
-    "syncNotConfigured": "La sincronización no está activada. Primero configúrala y actívala en los ajustes de Almacenamiento.",
+    "syncNotConfigured": "La sincronización no está activada. Primero configúrala y actívala en los ajustes de Conexiones.",
     "obsCssNoAsset": "No hay recursos de OBS subidos en uso. Primero sube un fondo, retrato, emoji o avatar personalizado.",
     "run": "Ejecutar",
     "recognized": "Reconocido",
@@ -484,8 +503,19 @@ export default {
     "previewQueueSearchEmpty": "Escribe un nombre de canción, artista, álbum o posición en la cola",
     "pickerFilterPlaceholder": "Escribe para filtrar y luego haz clic o presiona Enter",
     "pickerCurrent": "Actual: {{mode}}",
-    "librarySuitePicker": { "active": "En uso", "switch": "Cambiar la biblioteca a esta interfaz" },
-    "libraryWallPicker": { "active": "En uso", "windows": "Ventanas por bloque: {{count}}", "windowsShare": "El {{percent}}% de cada bloque se abre hacia el visualizador", "seamStyle": "Franja de información: {{style}}", "seamTheme": "Sigue los colores de tu tema", "seamPrint": "Papel y tinta fijos, alto contraste", "seamPattern": "Un patrón sutil con los colores de tu tema" },
+    "librarySuitePicker": {
+      "active": "En uso",
+      "switch": "Cambiar la biblioteca a esta interfaz"
+    },
+    "libraryWallPicker": {
+      "active": "En uso",
+      "windows": "Ventanas por bloque: {{count}}",
+      "windowsShare": "El {{percent}}% de cada bloque se abre hacia el visualizador",
+      "seamStyle": "Franja de información: {{style}}",
+      "seamTheme": "Sigue los colores de tu tema",
+      "seamPrint": "Papel y tinta fijos, alto contraste",
+      "seamPattern": "Un patrón sutil con los colores de tu tema"
+    },
     "pickerDescription": {
       "visualizer": {
         "still": "Una línea quieta: sin animación, sin fondo, la menor carga",
@@ -602,257 +632,1096 @@ export default {
       }
     },
     "commands": {
-      "settings-ponder-hints": { "title": "Sugerencias del tutorial Ponder", "description": "Elige cuándo aparece la sugerencia del tutorial de mantener G" },
-      "ponder-hints-always": { "title": "Sugerencias de Ponder: mostrar siempre", "description": "Muestra la sugerencia de mantener G en cada control con tutorial" },
-      "ponder-hints-unseen": { "title": "Sugerencias de Ponder: solo donde no he mirado", "description": "Deja de sugerir un control una vez que se haya visto su tutorial" },
-      "ponder-hints-off": { "title": "Sugerencias de Ponder: desactivadas", "description": "Nunca mostrar la sugerencia de mantener G" },
-      "ponder-touch-button-toggle": { "title": "Botón de Ponder en pantallas táctiles", "description": "Muestra u oculta el ícono de bombilla de la esquina superior derecha en dispositivos táctiles" },
-      "search-current": { "title": "Buscar canciones", "description": "Buscar canciones en la fuente actual" },
-      "search-local": { "title": "Buscar canciones locales", "description": "Buscar en la biblioteca local" },
-      "search-navidrome": { "title": "Buscar canciones en Navidrome", "description": "Buscar en la biblioteca de Navidrome" },
-      "search-netease": { "title": "Buscar canciones en NetEase", "description": "Buscar en NetEase Cloud Music" },
-      "queue": { "title": "Cola", "description": "Busca en la cola; usa @ para metadatos y -- para acciones en lote" },
-      "playback-volume": { "title": "Volumen", "description": "Ajustar el volumen de reproducción" },
-      "playback-fm-mode": { "title": "Modo de FM personal", "description": "Cambiar el modo o la escena de FM personal" },
-      "settings-help": { "title": "Abrir ayuda", "description": "Abrir la ayuda y los atajos" },
-      "ponder-current-page": { "title": "Ponder en esta página", "description": "Abrir la guía interactiva de la página actual" },
-      "settings-options": { "title": "Abrir opciones", "description": "Abrir el centro de opciones" },
-      "settings-appearance": { "title": "Ajustes de apariencia", "description": "Abrir los ajustes visuales y de apariencia" },
-      "settings-general": { "title": "Ajustes generales", "description": "Abrir las preferencias generales de la app" },
-      "settings-playback": { "title": "Ajustes de reproducción", "description": "Abrir los ajustes del comportamiento de reproducción" },
-      "playback-replaygain-off": { "title": "Desactivar ReplayGain", "description": "Reproducir el audio sin ajuste de ReplayGain" },
-      "playback-replaygain-track": { "title": "ReplayGain: modo canción", "description": "Aplicar el ajuste de ReplayGain por canción" },
-      "playback-replaygain-album": { "title": "ReplayGain: modo álbum", "description": "Aplicar el ajuste de ReplayGain por álbum" },
-      "playback-equalizer": { "title": "Efectos de audio", "description": "Abrir el ecualizador y la cadena de efectos" },
-      "playback-sound-preset-flat": { "title": "Sonido: plano", "description": "Restablecer el ecualizador y quitar todos los efectos" },
-      "playback-sound-preset-lofi": { "title": "Sonido: Lo-Fi", "description": "Filtrado, comprimido y ondulante, con ruido de vinilo" },
-      "playback-sound-preset-radio": { "title": "Sonido: radio", "description": "Banda estrecha, tono de transmisión casi mono" },
-      "playback-sound-preset-hall": { "title": "Sonido: sala", "description": "Imagen estéreo amplia con espacio de reverberación" },
-      "playback-sound-preset-vocal": { "title": "Sonido: voz", "description": "Realza el rango vocal y ajusta la dinámica" },
-      "playback-sound-preset-bass": { "title": "Sonido: refuerzo de graves", "description": "Graves más pesados y con más pegada" },
-      "playback-sound-preset-custom1": { "title": "Sonido: personalizado 1", "description": "Aplicar el primer sonido personalizado guardado" },
-      "playback-sound-preset-custom2": { "title": "Sonido: Personalizado 2", "description": "Aplicar el segundo sonido personalizado guardado" },
-      "settings-local-lyrics-priority": { "title": "Prioridad de letras de canciones locales", "description": "Elige si las canciones locales prefieren letras locales o en línea" },
-      "settings-local-lyric-format-order": { "title": "Prioridad de formato de archivo de letra local", "description": "Elige qué formato gana cuando una canción tiene varios archivos de letra" },
-      "settings-integration": { "title": "Ajustes de integración", "description": "Abrir los ajustes de Stage, Reproduciendo ahora y Navidrome" },
-      "automix-toggle": { "title": "Transición inteligente", "description": "Activar o desactivar las transiciones inteligentes de FOLIA" },
-      "transition-mode-crossfade": { "title": "Modo de transición: Folia Crossfade", "description": "Usar el fundido cruzado simple, una sale y otra entra" },
-      "transition-mode-automix": { "title": "Modo de transición: Folia Automix", "description": "Analizar ambas canciones y mezclarlas automáticamente" },
-      "transition-performance-toggle": { "title": "Modo de transición intensa", "description": "Activar o desactivar la transición más agresiva (requiere el modelo de stems)" },
-      "settings-discord-presence": { "title": "Estado de reproducción en Discord", "description": "Abrir los ajustes de Discord Rich Presence" },
-      "lyric-staff-policy-cycle": { "title": "Manejo de créditos iniciales", "description": "Alternar cómo se maneja el bloque de créditos al inicio de la letra" },
-      "lyric-staff-absorb-cycle": { "title": "Modo de absorción de créditos iniciales", "description": "Alternar si las líneas vecinas se incorporan al bloque de créditos" },
-      "settings-obs-browser-source": { "title": "Fuente de navegador de OBS", "description": "Abrir los ajustes de la fuente de navegador de OBS" },
-      "obs-toggle-keep-main-window-animation": { "title": "OBS: mantener la animación de la ventana principal", "description": "Activar o desactivar que la ventana principal mantenga su animación mientras OBS está conectado" },
-      "desktop-toggle-lyric-api": { "title": "API de letras", "description": "Activar o desactivar el endpoint local de letras sin autenticación" },
-      "settings-obs-copy-css": { "title": "Copiar CSS de OBS", "description": "Copiar el CSS personalizado de la fuente de navegador de OBS con los recursos subidos" },
-      "settings-storage": { "title": "Ajustes de almacenamiento", "description": "Abrir los ajustes de caché y almacenamiento" },
-      "settings-r2-sync": { "title": "Ajustes del servidor de sincronización", "description": "Abrir los ajustes del servidor de sincronización" },
-      "sync-now": { "title": "Sincronizar ahora", "description": "Sincronizar los temas de IA" },
-      "export-lyric-cache": { "title": "Exportar letras en caché", "description": "Guardar todas las letras de este dispositivo como .fia y LRC mejorado en un solo zip" },
-      "export-current-lyrics-fia": { "title": "Exportar la letra actual como .fia", "description": "Guardar la letra de esta canción en el formato sin pérdida de Folia, con la segmentación de palabras guardada incluida" },
-      "export-current-lyrics-lrc": { "title": "Exportar la letra actual como LRC", "description": "Guardar la letra de esta canción como un LRC mejorado que otros reproductores pueden leer" },
-      "settings-local-library-watch": { "title": "Ajustes de monitoreo de carpetas locales", "description": "Abrir los ajustes de escaneo automático de las carpetas locales importadas" },
-      "local-library-auto-scan-toggle": { "title": "Escanear carpetas locales automáticamente", "description": "Activar o desactivar el reescaneo automático de las carpetas locales importadas" },
-      "settings-desktop": { "title": "Ajustes de escritorio", "description": "Abrir los ajustes de la app de escritorio" },
-      "settings-update-channel": { "title": "Canal de actualizaciones", "description": "Elige el canal de versiones de la app de escritorio" },
-      "desktop-toggle-voice-input-pause": { "title": "Pausa con entrada de voz", "description": "Activar o desactivar la pausa de la reproducción durante la entrada de voz" },
-      "desktop-toggle-prevent-display-sleep": { "title": "Evitar que la pantalla se suspenda durante la reproducción", "description": "Mantener la pantalla encendida mientras suena música" },
-      "settings-graphics": { "title": "Ajustes de gráficos", "description": "Abrir el modo estático, el límite de fotogramas, la corrección de brillo en Linux y el movimiento reducido" },
-      "settings-mods": { "title": "Ajustes de mods", "description": "Abrir el interruptor del sistema de mods y los mods instalados" },
-      "settings-lab": { "title": "Ajustes del laboratorio", "description": "Abrir los ajustes experimentales" },
-      "settings-player-bottom-bar-position": { "title": "Reubicar la barra inferior", "description": "Arrastrar la barra inferior del reproductor, la tarjeta de la canción y el botón del panel a una nueva altura" },
-      "settings-player-control-slots": { "title": "Espacios de botones del reproductor", "description": "Elige qué acciones ejecutan los dos botones junto a la barra de progreso" },
-      "video-layer-toggle": { "title": "Capa de video detrás de la letra", "description": "Mostrar u ocultar la capa de video silenciada detrás de la letra" },
-      "video-layer-pick": { "title": "Capa de video: elegir un video local", "description": "Elige un video local para reproducir detrás de la letra" },
-      "visualizer-toggle-random-per-song": { "title": "Visualizador aleatorio para cada canción", "description": "Activar o desactivar un modo de animación de letra aleatorio cada vez que cambia la canción" },
-      "visualizer-toggle-glow-blur-quantize": { "title": "Corregir congelamiento de animación de letra en Linux", "description": "Cambiar cómo algunas animaciones de letra dibujan su brillo, lo que corrige congelamientos ocasionales tras mucho tiempo de reproducción en Linux" },
-      "settings-visualizer": { "title": "Ajustes del visualizador", "description": "Abrir el taller de animación de letras" },
-      "settings-theme-park": { "title": "Color", "description": "Abrir el editor de temas" },
-      "settings-global-lyric-offset": { "title": "Desfase global de tiempo", "description": "Calibrar el tiempo de la letra según la latencia de audio Bluetooth o del dispositivo" },
-      "settings-lyric-filter": { "title": "Filtro de letras", "description": "Abrir los ajustes del filtro de letras" },
-      "settings-wallpaper-mode": { "title": "Ajustes del modo fondo de pantalla", "description": "Abrir los ajustes del modo fondo de pantalla" },
-      "desktop-toggle-wallpaper-mode": { "title": "Activar o desactivar el modo fondo de pantalla", "description": "Convertir la app en un fondo de pantalla con letras en el escritorio" },
-      "desktop-toggle-wallpaper-dock-autohide": { "title": "Ocultar el Dock automáticamente en modo fondo de pantalla", "description": "Ocultar automáticamente el Dock mientras el modo fondo de pantalla de Mac está activo (solo Dock inferior)" },
-      "desktop-toggle-close-to-tray": { "title": "Cerrar la ventana a la bandeja", "description": "Mantener la app funcionando en la bandeja cuando se cierra la ventana principal" },
-      "desktop-toggle-remote-control-hide-titlebar": { "title": "Control remoto: ocultar la barra flotante superior", "description": "Mostrar u ocultar la barra flotante superior de controles de la ventana de control remoto" },
-      "desktop-unlock-remote-control": { "title": "Desbloquear la ventana de control remoto", "description": "Desactivar el clic a través del control remoto para que la ventana se pueda usar y mover otra vez" },
-      "sleep-timer": { "title": "Temporizador de apagado", "description": "Pausar la reproducción después del tiempo elegido, o cerrar la app de escritorio" },
-      "navigate-home": { "title": "Ir al inicio", "description": "Volver a la vista de inicio" },
-      "navigate-player": { "title": "Ir al reproductor", "description": "Volver a la vista del reproductor" },
-      "lattice-focus-current": { "title": "Lattice: enfocar la canción actual", "description": "Centrar la canción en reproducción en el collage de la cola" },
-      "bravais-list": { "title": "Abrir la lista de canciones", "description": "Ensanchar la franja del muro de la biblioteca hasta la lista de canciones de esta colección" },
-      "bravais-directory": { "title": "Abrir el directorio", "description": "Ensanchar la franja del inicio de la biblioteca hasta el árbol de carpetas locales y seleccionar por lotes" },
-      "bravais-seam-full": { "title": "Expandir la franja de información", "description": "Abrir la franja del muro de la biblioteca hasta su franja de información completa" },
-      "bravais-seam-spine": { "title": "Contraer la franja de información", "description": "Estrechar la franja del muro de la biblioteca hasta el ancho de un lomo de libro" },
-      "bravais-seam-hide": { "title": "Plegar la franja de información", "description": "Cerrar la franja y dejar solo una pestaña en el borde de la pantalla" },
-      "bravais-seam-here": { "title": "Dividir el muro aquí", "description": "Abrir una nueva franja en la vista actual después de que la anterior salió de la pantalla" },
-      "bravais-locate-playing": { "title": "Ubicar la canción en reproducción", "description": "Mover el foco del muro a la canción que está sonando ahora" },
-      "bravais-wall-look": { "title": "Alternar la transparencia del muro", "description": "Cambiar el muro de la biblioteca entre sólido, semitransparente y transparente" },
-      "bravais-more-windows": { "title": "Abrir más ventanas en el muro", "description": "Agregar una ventana transparente a cada bloque del muro de la biblioteca" },
-      "bravais-fewer-windows": { "title": "Abrir menos ventanas en el muro", "description": "Cerrar una ventana transparente en cada bloque del muro de la biblioteca" },
-      "navigate-lattice": { "title": "Abrir Lattice", "description": "Mostrar la cola de reproducción como un collage" },
-      "browser-fullscreen": { "title": "Pantalla completa", "description": "Activar o desactivar la pantalla completa del navegador" },
-      "home-playlist": { "title": "Abrir listas de reproducción", "description": "Abrir la pestaña de listas de reproducción del inicio" },
-      "home-local": { "title": "Abrir música local", "description": "Abrir la pestaña de música local" },
-      "home-albums": { "title": "Abrir álbumes", "description": "Abrir la pestaña de álbumes" },
-      "home-navidrome": { "title": "Abrir Navidrome", "description": "Abrir la pestaña de Navidrome" },
-      "home-radio": { "title": "Abrir radio", "description": "Abrir la pestaña de radio" },
-      "grid-sort-file-name": { "title": "Ordenar por nombre de archivo", "description": "Ordenar las canciones locales por nombre de archivo" },
-      "grid-sort-modified-date": { "title": "Ordenar por fecha de modificación", "description": "Ordenar las canciones locales según cuándo se modificó el archivo por última vez" },
-      "grid-sort-album-track": { "title": "Ordenar por número de pista del álbum", "description": "Ordenar las canciones locales por disco y número de pista" },
-      "grid-sort-direction": { "title": "Invertir el orden", "description": "Cambiar la lista de canciones locales entre orden ascendente y descendente" },
-      "grid-toggle-info-panel": { "title": "Mostrar u ocultar el panel de la colección", "description": "Mostrar u ocultar el panel de información y acciones de la colección" },
-      "grid-toggle-track-list": { "title": "Mostrar u ocultar la lista de canciones", "description": "Mostrar u ocultar la lista de canciones junto a la cuadrícula" },
-      "grid-resync-folder": { "title": "Reimportar esta carpeta", "description": "Escanear de nuevo esta carpeta local y actualizar sus canciones" },
-      "grid-resync-all-folders": { "title": "Reimportar todas las carpetas", "description": "Escanear de nuevo todas las carpetas locales y actualizar la biblioteca" },
-      "grid-organize-song-info": { "title": "Organizar la información de las canciones", "description": "Ordenar los títulos, artistas y álbumes de esta carpeta" },
-      "grid-export-playlist": { "title": "Exportar esta lista de reproducción", "description": "Guardar esta lista de reproducción local como archivo m3u8" },
-      "grid-edit-entity": { "title": "Editar este álbum o artista", "description": "Abrir el editor de entidades de la biblioteca local para esta colección" },
-      "grid-toggle-edit-mode": { "title": "Activar o desactivar el modo de edición", "description": "Entrar o salir del modo que te permite quitar canciones de esta colección" },
-      "grid-reload-online-collection": { "title": "Recargar esta colección", "description": "Omitir la caché y volver a cargar todas las canciones de esta colección en línea" },
-      "grid-toggle-subscribe": { "title": "Suscribirse o cancelar la suscripción", "description": "Guardar esta lista de reproducción o álbum en línea en tu biblioteca, o quitarlo si ya está ahí" },
-      "directory-play-selection": { "title": "Reproducir las tarjetas seleccionadas", "description": "Reproducir las canciones de las tarjetas seleccionadas en el mapa, en el orden de las tarjetas" },
-      "directory-enqueue-selection": { "title": "Agregar las tarjetas seleccionadas a la cola", "description": "Agregar a la cola las canciones de las tarjetas seleccionadas en el mapa" },
-      "directory-create-playlist": { "title": "Nueva lista de reproducción desde la selección", "description": "Crear una lista de reproducción local con las canciones de las tarjetas seleccionadas" },
-      "directory-remove-selection": { "title": "Quitar lo seleccionado de la biblioteca", "description": "Pedir confirmación para quitar las carpetas seleccionadas y sus canciones de la biblioteca local" },
-      "directory-select-all": { "title": "Seleccionar todas las tarjetas filtradas", "description": "Abrir el panel de lotes y seleccionar todas las tarjetas que muestra el filtro" },
-      "directory-clear-selection": { "title": "Borrar la selección", "description": "Deseleccionar todas las tarjetas del mapa" },
-      "directory-manage-hidden": { "title": "Administrar listas de reproducción ocultas", "description": "Mostrar en el mapa las listas de reproducción ocultas para que puedas ocultarlas o mostrarlas, o salir de esa vista" },
-      "directory-toggle-hidden": { "title": "Ocultar o mostrar la lista de reproducción enfocada", "description": "Ocultar la lista de reproducción enfocada del directorio de inicio, o traerla de vuelta" },
-      "directory-rescan-root": { "title": "Reescanear la carpeta importada enfocada", "description": "Escanear de nuevo la carpeta raíz importada enfocada" },
-      "directory-remove-root": { "title": "Quitar la carpeta importada enfocada", "description": "Pedir confirmación para quitar la carpeta raíz importada enfocada y sus canciones de la biblioteca local" },
-      "directory-clear-ignore": { "title": "Restaurar la carpeta ignorada enfocada", "description": "Dejar de ignorar la carpeta enfocada y escanearla de nuevo" },
-      "artist-play-top-songs": { "title": "Reproducir canciones populares", "description": "Reproducir desde la primera las canciones populares disponibles del artista" },
-      "artist-enqueue-top-songs": { "title": "Agregar canciones populares a la cola", "description": "Agregar las canciones populares del artista a la cola de reproducción" },
-      "artist-reload": { "title": "Recargar artista", "description": "Volver a cargar la página del artista desde la fuente" },
-      "artist-retry-albums": { "title": "Reanudar la carga de álbumes", "description": "Reintentar la página de álbumes que falló y seguir cargando el resto" },
-      "artist-edit-entity": { "title": "Editar información del artista", "description": "Abrir el editor de la biblioteca local para este artista" },
-      "settings-interaction": { "title": "Ajustes de interacción", "description": "Abrir los ajustes de teclado, atajos e interacción con la cuadrícula" },
-      "settings-custom-shortcut": { "title": "Atajos personalizados", "description": "Ir a las asignaciones de atajos de teclado personalizados" },
-      "settings-grid-action-button": { "title": "Botón de acción de la cuadrícula", "description": "Ir a la opción de hacia dónde se desliza el botón de acción de la cuadrícula" },
-      "settings-pinned-commands": { "title": "Espacios de comandos fijados", "description": "Elige los tres comandos fijados en la paleta" },
-      "settings-home-tabs": { "title": "Visibilidad de pestañas del inicio", "description": "Elige qué pestañas muestra la pantalla de inicio" },
-      "home-card-position-toggle": { "title": "Recordar la posición de las tarjetas del inicio", "description": "Activar o desactivar que cada sección del inicio vuelva a su última tarjeta" },
-      "settings-playback-entry-view": { "title": "Al reproducir se abre", "description": "Ir a la opción de qué vista se abre al presionar reproducir" },
-      "playback-entry-view-player": { "title": "Al reproducir se abre: Visualizador", "description": "Al presionar reproducir se abre el reproductor y su visualizador" },
-      "playback-entry-view-lattice": { "title": "Al reproducir se abre: Lattice", "description": "Al presionar reproducir se abre el collage de la cola" },
-      "playback-entry-view-stay": { "title": "Al reproducir se abre: Quedarse aquí", "description": "Al presionar reproducir solo empieza la canción y te quedas donde estás" },
-      "settings-library-suite": { "title": "Interfaz de la biblioteca", "description": "Ir a la opción de qué interfaz usa la biblioteca" },
-      "library-suite-picker": { "title": "Elegir una interfaz de biblioteca", "description": "Cambiar la interfaz con la que se navega la biblioteca" },
-      "library-wall-look-picker": { "title": "Elegir la transparencia del muro", "description": "Elige cuánto del visualizador se ve a través del muro de la biblioteca" },
-      "library-wall-windows-picker": { "title": "Elegir ventanas por bloque", "description": "Elige cuántos mosaicos de cada bloque del muro son ventanas" },
-      "settings-bravais": { "title": "Ajustes del muro Bravais", "description": "Ir a los ajustes que solo se aplican al muro Bravais" },
-      "library-wall-stack-edges-toggle": { "title": "Bordes de pila de las colecciones", "description": "Mostrar u ocultar los bordes de página en los mosaicos de álbumes, listas de reproducción y carpetas" },
-      "library-wall-seam-clear-toggle": { "title": "Franja de información transparente", "description": "Permitir que la franja de información muestre el visualizador detrás del muro" },
-      "library-wall-seam-style-picker": { "title": "Elegir el estilo de la franja de información", "description": "Elige el aspecto de la franja de información sólida" },
-      "library-wall-backdrop-lyrics-toggle": { "title": "Letra detrás del muro", "description": "Dibujar la letra en el visualizador que se ve a través del muro" },
-      "library-wall-backdrop-blur-toggle": { "title": "Desenfoque detrás del muro", "description": "Desenfocar el visualizador que se ve a través del muro" },
-      "settings-theme-presets": { "title": "Temas predefinidos", "description": "Ir a los temas predefinidos incluidos y guardados" },
-      "settings-lyrics-renderer": { "title": "Renderizador de letras", "description": "Ir a la opción de cómo se dibuja la letra en el reproductor" },
-      "settings-grid-card-style": { "title": "Estilo de tarjetas de la cuadrícula", "description": "Ir a la opción de cómo la cuadrícula del inicio dibuja sus tarjetas" },
-      "settings-queue-behavior": { "title": "Comportamiento de la cola", "description": "Ir a la opción de cómo se arma y se conserva la cola de reproducción" },
-      "settings-netease-scrobble": { "title": "Reporte de escucha de NetEase", "description": "Ir a la opción de si las reproducciones terminadas se reportan a NetEase Cloud Music" },
-      "netease-scrobble-toggle": { "title": "Reporte de escucha de NetEase", "description": "Activar o desactivar el reporte de reproducciones terminadas de NetEase" },
-      "settings-audio-output": { "title": "Salida de audio", "description": "Ir a los ajustes de dispositivo y formato de salida de audio" },
-      "settings-transition": { "title": "Transición inteligente", "description": "Ir a los ajustes de transición de FOLIA" },
-      "settings-navidrome": { "title": "Servidor Navidrome", "description": "Ir a la conexión con el servidor Navidrome" },
-      "settings-stage-mode": { "title": "Modo Stage", "description": "Ir a los ajustes del reproductor externo Stage" },
-      "settings-media-cache": { "title": "Caché multimedia", "description": "Ir a la caché de audio descargado" },
-      "filter-view": { "title": "Filtrar esta vista", "description": "Filtrar por nombre las tarjetas en pantalla" },
-      "panel-cover": { "title": "Panel: portada", "description": "Abrir la pestaña de portada del panel" },
-      "panel-controls": { "title": "Panel: controles", "description": "Abrir la pestaña de controles del panel" },
-      "panel-queue": { "title": "Panel: cola", "description": "Abrir la pestaña de cola del panel" },
-      "panel-account": { "title": "Panel: cuenta", "description": "Abrir la pestaña de cuenta del panel" },
-      "panel-local": { "title": "Panel: local", "description": "Abrir la pestaña local del panel" },
-      "panel-navi": { "title": "Panel: Navidrome", "description": "Abrir la pestaña de Navidrome del panel" },
-      "panel-onlineLyrics": { "title": "Panel: letras", "description": "Abrir la pestaña de letras en línea del panel" },
-      "lyric-segmentation": { "title": "Ajustar la segmentación de palabras de la letra", "description": "Corregir cómo se divide en palabras la letra de esta canción, con IA o a mano" },
-      "mods": { "title": "Mods (experimental)", "description": "Experimental: administrar mods y exportar videos de letras con fondo transparente" },
-      "playback-play": { "title": "Reproducir", "description": "Iniciar la reproducción cuando está en pausa" },
-      "playback-pause": { "title": "Pausar", "description": "Pausar la reproducción actual" },
-      "playback-next": { "title": "Siguiente canción", "description": "Reproducir la siguiente canción" },
-      "queue-keep-open": { "title": "Mantener abierta la paleta de la cola", "description": "Activar o desactivar que la paleta de comandos siga abierta después de elegir una canción de la cola" },
-      "playback-prev": { "title": "Canción anterior", "description": "Reproducir la canción anterior" },
-      "playback-loop": { "title": "Cambiar bucle", "description": "Cambiar el modo de bucle" },
-      "playback-like": { "title": "Me gusta la canción actual", "description": "Agregar la canción actual a tus favoritos, o quitarla" },
-      "playback-add-to-playlist": { "title": "Agregar a una lista de reproducción", "description": "Poner la canción actual en una de tus listas de reproducción" },
-      "playback-mute": { "title": "Silenciar", "description": "Silenciar la reproducción, o recuperar el sonido" },
-      "playback-shuffle": { "title": "Cola aleatoria", "description": "Reordenar al azar la cola de reproducción actual" },
-      "playback-clear-queue": { "title": "Vaciar la cola", "description": "Quitar todas las canciones de la cola de reproducción actual" },
-      "theme-generate-current": { "title": "Generar tema con IA", "description": "Generar un tema con IA para la canción actual" },
-      "lyric-sync-local": { "title": "Sincronizar letra marcando el ritmo", "description": "Pega la letra de esta canción local y marca cada línea o palabra mientras suena" },
-      "stage-lyrics-match": { "title": "Elegir otra letra para esta canción", "description": "Buscar en línea la letra de lo que suena en Spotify o YouTube y recordar la elección" },
-      "stage-lyrics-import": { "title": "Importar letra para esta canción", "description": "Cargar un archivo de letra (.lrc, .ttml…) para lo que suena en Spotify o YouTube y recordarlo" },
-      "stage-lyrics-reset": { "title": "Volver a la letra automática", "description": "Olvidar la letra elegida a mano para esta canción y buscarla de nuevo" },
-      "stage-lyrics-later": { "title": "Retrasar la letra 0,5 s", "description": "Mostrar la letra más tarde cuando va adelantada; se recuerda para este video o canción" },
-      "stage-lyrics-earlier": { "title": "Adelantar la letra 0,5 s", "description": "Mostrar la letra antes cuando va atrasada; se recuerda para este video o canción" },
-      "stage-lyrics-offset-reset": { "title": "Quitar el desfase de esta canción", "description": "Devolver la letra a su tiempo original para este video o canción" },
-      "theme-quick-editor": { "title": "Editor rápido de temas", "description": "Editar rápidamente el tema de IA de la canción actual" },
-      "theme-source-ai": { "title": "Fuente del tema: inferencia con IA", "description": "Generar temas de canciones haciendo que la IA lea la letra" },
-      "theme-source-cover": { "title": "Fuente del tema: colores de la portada", "description": "Generar temas de canciones a partir de la paleta de la portada" },
-      "playback-auto-match-best-lyric": { "title": "Buscar la mejor letra", "description": "Ejecutar la búsqueda automática de la mejor letra para la canción actual" },
-      "playback-toggle-pure-music": { "title": "Marcar o desmarcar como instrumental", "description": "Marcar la canción local actual como instrumental para que ya no se le busque letra automáticamente; ejecútalo de nuevo para desmarcarla" },
-      "visualizer-picker": { "title": "Elegir un visualizador", "description": "Explorar los modos de animación de letras y hacer clic en uno para cambiar" },
-      "background-picker": { "title": "Elegir un fondo", "description": "Explorar los diseños de fondo y hacer clic en uno para cambiar" },
-      "visualizer-still": { "title": "Visualizador: Still", "description": "Cambiar al visualizador estático de bajo consumo" },
-      "visualizer-classic": { "title": "Visualizador: Luminous", "description": "Cambiar al visualizador clásico" },
-      "visualizer-cadenza": { "title": "Visualizador: Mindscape", "description": "Cambiar al visualizador Cadenza" },
-      "visualizer-partita": { "title": "Visualizador: Partita", "description": "Cambiar al visualizador Partita" },
-      "visualizer-fume": { "title": "Visualizador: Fume", "description": "Cambiar al visualizador Fume" },
-      "visualizer-cappella": { "title": "Visualizador: Cappella", "description": "Cambiar al visualizador Cappella" },
-      "visualizer-tilt": { "title": "Visualizador: Tilt", "description": "Cambiar al visualizador Tilt" },
-      "visualizer-claddagh": { "title": "Visualizador: Claddagh", "description": "Cambiar al visualizador Claddagh" },
-      "visualizer-monet": { "title": "Visualizador: Monet", "description": "Cambiar al visualizador Monet" },
-      "visualizer-diorama": { "title": "Visualizador: Diorama", "description": "Cambiar al visualizador Diorama" },
-      "visualizer-pendolo": { "title": "Visualizador: Pendolo", "description": "Cambiar al visualizador Pendolo" },
-      "visualizer-sonnet": { "title": "Visualizador: Sonnet", "description": "Cambiar al PV de letras japonés Sonnet" },
-      "visualizer-tempera": { "title": "Visualizador: Tempera", "description": "Cambiar al PV de letras con bloques de color Tempera" },
-      "visualizer-lumiere": { "title": "Visualizador: Lumiere", "description": "Cambiar al PV de letras con luces de escenario Lumiere" },
-      "desktop-toggle-remote-control": { "title": "Mostrar u ocultar la ventana de control remoto", "description": "Abrir o cerrar la ventana de control remoto" },
-      "desktop-toggle-main-window-always-on-top": { "title": "Ventana principal siempre visible", "description": "Fijar o soltar la ventana principal por encima de las demás ventanas" },
-      "background-monet-full-overlay": { "title": "Fondo: Monet superposición en pantalla completa", "description": "Cambiar el fondo al diseño Monet de superposición en pantalla completa" },
-      "background-monet-half-gradient": { "title": "Fondo: Monet degradado en media pantalla", "description": "Cambiar el fondo al diseño Monet de degradado en media pantalla" },
-      "background-common": { "title": "Fondo: Común", "description": "Cambiar el fondo al diseño general" },
-      "background-nomand": { "title": "Fondo: Nomand", "description": "Cambiar el fondo a los efectos de imagen de Paper" },
-      "background-latent": { "title": "Fondo: Latent", "description": "Cambiar el fondo a shaders reactivos al audio con los colores de la portada" },
-      "background-latent-dithering": { "title": "Latent: Píxel", "description": "Mostrar solo la capa Dithering" },
-      "background-latent-mesh": { "title": "Latent: Fluido", "description": "Mostrar solo la capa MeshGradient" },
-      "background-latent-both": { "title": "Latent: Mixto", "description": "Mostrar ambas capas de shaders" },
-      "background-url": { "title": "Fondo: Fondo incrustado", "description": "Cambiar el fondo al modo de página web incrustada" },
-      "background-sora": { "title": "Fondo: Sora", "description": "Cambiar el fondo al campo de estrellas Sora" },
-      "settings-toggle-transparent": { "title": "Activar o desactivar la transparencia", "description": "Activar o desactivar el fondo transparente del reproductor" },
-      "settings-toggle-daylight": { "title": "Cambiar claro/oscuro", "description": "Cambiar el tema entre modo día y modo noche" },
-      "settings-toggle-player-back-button": { "title": "Mostrar siempre el botón de volver del reproductor", "description": "Activar o desactivar que el botón de volver de la página del reproductor siga visible" },
-      "settings-gridview-cards": { "title": "Aspecto de las tarjetas de la cuadrícula", "description": "Ajustar las portadas a sangre completa y cuánto se encogen y desvanecen las tarjetas de la cuadrícula con la distancia" },
-      "settings-toggle-gridview-full-bleed-cover": { "title": "Portadas a sangre completa en la cuadrícula", "description": "Activar o desactivar que la portada llene toda la tarjeta de la cuadrícula" },
-      "settings-toggle-gridview-square-cards": { "title": "Tarjetas cuadradas en la cuadrícula", "description": "Activar o desactivar que las tarjetas a sangre completa sean cuadradas en vez de tipo póster" },
-      "settings-toggle-lattice-vignette": { "title": "Viñeta del muro de pósters", "description": "Activar o desactivar la viñeta de los bordes en el collage de la cola (Lattice) y en el muro de la biblioteca" },
-      "settings-toggle-lattice-auto-focus": { "title": "Enfoque automático de Lattice", "description": "Activar o desactivar que el collage de la cola siga a la canción en reproducción cuando cambian las canciones" },
-      "lattice-poster-tint": { "title": "Tinte del muro de pósters", "description": "Ajustar la capa que atenúa los pósters fuera de foco en el collage de la cola (Lattice) y en el muro de la biblioteca" },
-      "settings-reduce-motion": { "title": "Reducir movimiento", "description": "Reducir la animación en cada superficie que la tenga, o seguir el ajuste del sistema" },
-      "settings-toggle-reduce-lattice-motion": { "title": "Reducir el movimiento del collage de la cola", "description": "Hacer instantáneas la expansión, el vuelo de cámara y la ola de entrada del collage de la cola" },
-      "settings-toggle-follow-system-reduced-motion": { "title": "Seguir el movimiento reducido del sistema", "description": "Activar o desactivar que el ajuste de animación del sistema pueda reducir el movimiento en la app" },
-      "settings-toggle-track-switch-buttons": { "title": "Mostrar siempre las flechas para cambiar de canción", "description": "Activar o desactivar que las flechas para cambiar de canción de la barra de progreso sigan visibles junto al título" },
-      "settings-toggle-main-window-titlebar": { "title": "Mostrar siempre los botones de control de la ventana", "description": "Activar o desactivar que los botones de control de la ventana principal sigan visibles" },
-      "settings-toggle-fullscreen-titlebar-button": { "title": "Visibilidad del botón de pantalla completa", "description": "Mostrar u ocultar el botón de pantalla completa en los controles de la ventana de escritorio" },
-      "settings-toggle-native-mac-fullscreen-button": { "title": "Botón nativo de pantalla completa de macOS", "description": "Activar o desactivar que el control de ventana de macOS entre en pantalla completa nativa en vez de maximizar" },
-      "settings-toggle-cursor-auto-hide": { "title": "Ocultar el cursor con los controles del reproductor", "description": "Activar o desactivar que el puntero del mouse desaparezca junto con los controles del reproductor que se ocultan automáticamente" },
-      "settings-toggle-auto-play-on-launch": { "title": "Reproducir automáticamente al iniciar", "description": "Activar o desactivar que al abrir la app se reanude sola la última sesión" },
-      "settings-toggle-transcode-fallback": { "title": "Transcodificar audio no compatible", "description": "Activar o desactivar la recuperación de Electron para el audio local y de Navidrome que Chromium no puede decodificar" },
-      "settings-toggle-playback-fade": { "title": "Fundido al pausar y reanudar", "description": "Activar o desactivar el fundido breve al pausar y reanudar la reproducción" },
-      "settings-toggle-bottom-subtitle-overlay": { "title": "Mostrar u ocultar los subtítulos inferiores", "description": "Mostrar u ocultar toda la capa de subtítulos inferior" },
-      "settings-cycle-subtitle-content-mode": { "title": "Alternar el contenido de los subtítulos", "description": "Alternar el contenido de los subtítulos entre traducción, romanización y romanización más traducción" },
-      "settings-toggle-subtitle-background": { "title": "Mostrar u ocultar el fondo de los subtítulos", "description": "Mostrar u ocultar el fondo de legibilidad detrás de los subtítulos del visualizador" },
-      "settings-language-system": { "title": "Seguir el idioma del sistema", "description": "Usar el idioma del navegador o del sistema" },
-      "settings-language-zh-CN": { "title": "Cambiar el idioma a chino", "description": "Usar chino simplificado en la interfaz" },
-      "settings-language-en": { "title": "Cambiar el idioma a inglés", "description": "Usar inglés en la interfaz" },
-      "settings-language-in": { "title": "Cambiar el idioma a indonesio", "description": "Usar indonesio (Bahasa Indonesia) en la interfaz" },
-      "settings-language-es": { "title": "Cambiar el idioma a español", "description": "Usar español en la interfaz" }
+      "settings-ponder-hints": {
+        "title": "Sugerencias del tutorial Ponder",
+        "description": "Elige cuándo aparece la sugerencia del tutorial de mantener G"
+      },
+      "ponder-hints-always": {
+        "title": "Sugerencias de Ponder: mostrar siempre",
+        "description": "Muestra la sugerencia de mantener G en cada control con tutorial"
+      },
+      "ponder-hints-unseen": {
+        "title": "Sugerencias de Ponder: solo donde no he mirado",
+        "description": "Deja de sugerir un control una vez que se haya visto su tutorial"
+      },
+      "ponder-hints-off": {
+        "title": "Sugerencias de Ponder: desactivadas",
+        "description": "Nunca mostrar la sugerencia de mantener G"
+      },
+      "ponder-touch-button-toggle": {
+        "title": "Botón de Ponder en pantallas táctiles",
+        "description": "Muestra u oculta el ícono de bombilla de la esquina superior derecha en dispositivos táctiles"
+      },
+      "search-current": {
+        "title": "Buscar canciones",
+        "description": "Buscar canciones en la fuente actual"
+      },
+      "search-local": {
+        "title": "Buscar canciones locales",
+        "description": "Buscar en la biblioteca local"
+      },
+      "search-navidrome": {
+        "title": "Buscar canciones en Navidrome",
+        "description": "Buscar en la biblioteca de Navidrome"
+      },
+      "search-netease": {
+        "title": "Buscar canciones en NetEase",
+        "description": "Buscar en NetEase Cloud Music"
+      },
+      "queue": {
+        "title": "Cola",
+        "description": "Busca en la cola; usa @ para metadatos y -- para acciones en lote"
+      },
+      "playback-volume": {
+        "title": "Volumen",
+        "description": "Ajustar el volumen de reproducción"
+      },
+      "playback-fm-mode": {
+        "title": "Modo de FM personal",
+        "description": "Cambiar el modo o la escena de FM personal"
+      },
+      "settings-help": {
+        "title": "Abrir ayuda",
+        "description": "Abrir la ayuda y los atajos"
+      },
+      "ponder-current-page": {
+        "title": "Ponder en esta página",
+        "description": "Abrir la guía interactiva de la página actual"
+      },
+      "settings-options": {
+        "title": "Abrir opciones",
+        "description": "Abrir el centro de opciones"
+      },
+      "settings-ai-provider": {
+        "title": "Ajustes del proveedor de IA",
+        "description": "Elige un proveedor y un modelo de IA"
+      },
+      "settings-appearance": {
+        "title": "Ajustes de apariencia",
+        "description": "Abrir los ajustes visuales y de apariencia"
+      },
+      "settings-general": {
+        "title": "Ajustes generales",
+        "description": "Abrir las preferencias generales de la app"
+      },
+      "settings-playback": {
+        "title": "Ajustes de reproducción",
+        "description": "Abrir los ajustes del comportamiento de reproducción"
+      },
+      "playback-replaygain-off": {
+        "title": "Desactivar ReplayGain",
+        "description": "Reproducir el audio sin ajuste de ReplayGain"
+      },
+      "playback-replaygain-track": {
+        "title": "ReplayGain: modo canción",
+        "description": "Aplicar el ajuste de ReplayGain por canción"
+      },
+      "playback-replaygain-album": {
+        "title": "ReplayGain: modo álbum",
+        "description": "Aplicar el ajuste de ReplayGain por álbum"
+      },
+      "playback-equalizer": {
+        "title": "Efectos de audio",
+        "description": "Abrir el ecualizador y la cadena de efectos"
+      },
+      "playback-sound-preset-flat": {
+        "title": "Sonido: plano",
+        "description": "Restablecer el ecualizador y quitar todos los efectos"
+      },
+      "playback-sound-preset-lofi": {
+        "title": "Sonido: Lo-Fi",
+        "description": "Filtrado, comprimido y ondulante, con ruido de vinilo"
+      },
+      "playback-sound-preset-radio": {
+        "title": "Sonido: radio",
+        "description": "Banda estrecha, tono de transmisión casi mono"
+      },
+      "playback-sound-preset-hall": {
+        "title": "Sonido: sala",
+        "description": "Imagen estéreo amplia con espacio de reverberación"
+      },
+      "playback-sound-preset-vocal": {
+        "title": "Sonido: voz",
+        "description": "Realza el rango vocal y ajusta la dinámica"
+      },
+      "playback-sound-preset-bass": {
+        "title": "Sonido: refuerzo de graves",
+        "description": "Graves más pesados y con más pegada"
+      },
+      "playback-sound-preset-custom1": {
+        "title": "Sonido: personalizado 1",
+        "description": "Aplicar el primer sonido personalizado guardado"
+      },
+      "playback-sound-preset-custom2": {
+        "title": "Sonido: Personalizado 2",
+        "description": "Aplicar el segundo sonido personalizado guardado"
+      },
+      "playback-sound-mod-curve-release": {
+        "title": "Sonido: volver al mío",
+        "description": "Quita la curva de ecualizador que puso un mod"
+      },
+      "settings-local-lyrics-priority": {
+        "title": "Prioridad de letras de canciones locales",
+        "description": "Elige si las canciones locales prefieren letras locales o en línea"
+      },
+      "settings-local-lyric-format-order": {
+        "title": "Prioridad de formato de archivo de letra local",
+        "description": "Elige qué formato gana cuando una canción tiene varios archivos de letra"
+      },
+      "settings-integration": {
+        "title": "Ajustes de integración",
+        "description": "Abrir los ajustes de Stage, Reproduciendo ahora y Navidrome"
+      },
+      "automix-toggle": {
+        "title": "Transición inteligente",
+        "description": "Activar o desactivar las transiciones inteligentes de FOLIA"
+      },
+      "transition-mode-crossfade": {
+        "title": "Modo de transición: Folia Crossfade",
+        "description": "Usar el fundido cruzado simple, una sale y otra entra"
+      },
+      "transition-mode-automix": {
+        "title": "Modo de transición: Folia Automix",
+        "description": "Analizar ambas canciones y mezclarlas automáticamente"
+      },
+      "transition-performance-toggle": {
+        "title": "Modo de transición intensa",
+        "description": "Activar o desactivar la transición más agresiva (requiere el modelo de stems)"
+      },
+      "settings-discord-presence": {
+        "title": "Estado de reproducción en Discord",
+        "description": "Abrir los ajustes de Discord Rich Presence"
+      },
+      "lyric-staff-policy-cycle": {
+        "title": "Manejo de créditos iniciales",
+        "description": "Alternar cómo se maneja el bloque de créditos al inicio de la letra"
+      },
+      "lyric-staff-absorb-cycle": {
+        "title": "Modo de absorción de créditos iniciales",
+        "description": "Alternar si las líneas vecinas se incorporan al bloque de créditos"
+      },
+      "settings-obs-browser-source": {
+        "title": "Fuente de navegador de OBS",
+        "description": "Abrir los ajustes de la fuente de navegador de OBS"
+      },
+      "obs-toggle-keep-main-window-animation": {
+        "title": "OBS: mantener la animación de la ventana principal",
+        "description": "Activar o desactivar que la ventana principal mantenga su animación mientras OBS está conectado"
+      },
+      "desktop-toggle-lyric-api": {
+        "title": "API de letras",
+        "description": "Activar o desactivar el endpoint local de letras sin autenticación"
+      },
+      "settings-obs-copy-css": {
+        "title": "Copiar CSS de OBS",
+        "description": "Copiar el CSS personalizado de la fuente de navegador de OBS con los recursos subidos"
+      },
+      "settings-storage": {
+        "title": "Ajustes de almacenamiento",
+        "description": "Abrir los ajustes de caché y almacenamiento"
+      },
+      "settings-r2-sync": {
+        "title": "Ajustes del servidor de sincronización",
+        "description": "Abrir los ajustes del servidor de sincronización"
+      },
+      "sync-now": {
+        "title": "Sincronizar ahora",
+        "description": "Sincronizar los temas de IA"
+      },
+      "export-lyric-cache": {
+        "title": "Exportar letras en caché",
+        "description": "Guardar todas las letras de este dispositivo como .fia y LRC mejorado en un solo zip"
+      },
+      "export-current-lyrics-fia": {
+        "title": "Exportar la letra actual como .fia",
+        "description": "Guardar la letra de esta canción en el formato sin pérdida de Folia, con la segmentación de palabras guardada incluida"
+      },
+      "export-current-lyrics-lrc": {
+        "title": "Exportar la letra actual como LRC",
+        "description": "Guardar la letra de esta canción como un LRC mejorado que otros reproductores pueden leer"
+      },
+      "settings-local-library-watch": {
+        "title": "Ajustes de monitoreo de carpetas locales",
+        "description": "Abrir los ajustes de escaneo automático de las carpetas locales importadas"
+      },
+      "local-library-auto-scan-toggle": {
+        "title": "Escanear carpetas locales automáticamente",
+        "description": "Activar o desactivar el reescaneo automático de las carpetas locales importadas"
+      },
+      "settings-desktop": {
+        "title": "Ajustes de escritorio",
+        "description": "Abrir los ajustes de la app de escritorio"
+      },
+      "settings-update-channel": {
+        "title": "Canal de actualizaciones",
+        "description": "Elige el canal de versiones de la app de escritorio"
+      },
+      "desktop-toggle-voice-input-pause": {
+        "title": "Pausa con entrada de voz",
+        "description": "Activar o desactivar la pausa de la reproducción durante la entrada de voz"
+      },
+      "desktop-toggle-prevent-display-sleep": {
+        "title": "Evitar que la pantalla se suspenda durante la reproducción",
+        "description": "Mantener la pantalla encendida mientras suena música"
+      },
+      "desktop-toggle-background-throttling": {
+        "title": "Ahorro en segundo plano",
+        "description": "Activa o desactiva reducir el render y pausar la animación de la letra mientras Folia está minimizado u oculto"
+      },
+      "settings-graphics": {
+        "title": "Ajustes de gráficos",
+        "description": "Abrir el modo estático, el límite de fotogramas, la corrección de brillo en Linux y el movimiento reducido"
+      },
+      "settings-gpu-preference": {
+        "title": "Ajustes de GPU de render",
+        "description": "Ir a la elección de la tarjeta gráfica con que dibuja la app"
+      },
+      "gpu-preference-auto": {
+        "title": "GPU de render: automática",
+        "description": "Deja que Windows elija la tarjeta gráfica; se aplica al reiniciar"
+      },
+      "gpu-preference-high-performance": {
+        "title": "GPU de render: alto rendimiento",
+        "description": "Dibuja con la GPU dedicada; se aplica al reiniciar"
+      },
+      "gpu-preference-low-power": {
+        "title": "GPU de render: ahorro de energía",
+        "description": "Dibuja con la GPU integrada; se aplica al reiniciar"
+      },
+      "settings-mods": {
+        "title": "Ajustes de mods",
+        "description": "Abrir el interruptor del sistema de mods y los mods instalados"
+      },
+      "settings-lab": {
+        "title": "Interfaz de la página del reproductor",
+        "description": "Ir a los interruptores que ocultan o fijan partes de la página del reproductor"
+      },
+      "settings-player-bottom-bar-position": {
+        "title": "Reubicar la barra inferior",
+        "description": "Arrastrar la barra inferior del reproductor, la tarjeta de la canción y el botón del panel a una nueva altura"
+      },
+      "settings-player-control-slots": {
+        "title": "Espacios de botones del reproductor",
+        "description": "Elige qué acciones ejecutan los dos botones junto a la barra de progreso"
+      },
+      "video-layer-toggle": {
+        "title": "Capa de video detrás de la letra",
+        "description": "Mostrar u ocultar la capa de video silenciada detrás de la letra"
+      },
+      "video-layer-pick": {
+        "title": "Capa de video: elegir un video local",
+        "description": "Elige un video local para reproducir detrás de la letra"
+      },
+      "visualizer-toggle-random-per-song": {
+        "title": "Visualizador aleatorio para cada canción",
+        "description": "Activar o desactivar un modo de animación de letra aleatorio cada vez que cambia la canción"
+      },
+      "visualizer-toggle-glow-blur-quantize": {
+        "title": "Corregir congelamiento de animación de letra en Linux",
+        "description": "Cambiar cómo algunas animaciones de letra dibujan su brillo, lo que corrige congelamientos ocasionales tras mucho tiempo de reproducción en Linux"
+      },
+      "settings-visualizer": {
+        "title": "Ajustes del visualizador",
+        "description": "Abrir el taller de animación de letras"
+      },
+      "settings-theme-park": {
+        "title": "Color",
+        "description": "Abrir el editor de temas"
+      },
+      "settings-global-lyric-offset": {
+        "title": "Desfase global de tiempo",
+        "description": "Calibrar el tiempo de la letra según la latencia de audio Bluetooth o del dispositivo"
+      },
+      "settings-lyric-filter": {
+        "title": "Filtro de letras",
+        "description": "Abrir los ajustes del filtro de letras"
+      },
+      "settings-wallpaper-mode": {
+        "title": "Ajustes del modo fondo de pantalla",
+        "description": "Abrir los ajustes del modo fondo de pantalla"
+      },
+      "desktop-toggle-wallpaper-mode": {
+        "title": "Activar o desactivar el modo fondo de pantalla",
+        "description": "Convertir la app en un fondo de pantalla con letras en el escritorio"
+      },
+      "desktop-toggle-wallpaper-dock-autohide": {
+        "title": "Ocultar el Dock automáticamente en modo fondo de pantalla",
+        "description": "Ocultar automáticamente el Dock mientras el modo fondo de pantalla de Mac está activo (solo Dock inferior)"
+      },
+      "desktop-toggle-close-to-tray": {
+        "title": "Cerrar la ventana a la bandeja",
+        "description": "Mantener la app funcionando en la bandeja cuando se cierra la ventana principal"
+      },
+      "desktop-toggle-remote-control-hide-titlebar": {
+        "title": "Control remoto: ocultar la barra flotante superior",
+        "description": "Mostrar u ocultar la barra flotante superior de controles de la ventana de control remoto"
+      },
+      "desktop-toggle-remote-control-expand-cover": {
+        "title": "Control remoto: agrandar portada",
+        "description": "Activa o desactiva que la ventana de control remoto muestre la portada en grande cuando está inactiva"
+      },
+      "desktop-unlock-remote-control": {
+        "title": "Desbloquear la ventana de control remoto",
+        "description": "Desactivar el clic a través del control remoto para que la ventana se pueda usar y mover otra vez"
+      },
+      "sleep-timer": {
+        "title": "Temporizador de apagado",
+        "description": "Pausar la reproducción después del tiempo elegido, o cerrar la app de escritorio"
+      },
+      "navigate-home": {
+        "title": "Ir al inicio",
+        "description": "Volver a la vista de inicio"
+      },
+      "navigate-player": {
+        "title": "Ir al reproductor",
+        "description": "Volver a la vista del reproductor"
+      },
+      "lattice-focus-current": {
+        "title": "Lattice: ubicar la canción que suena",
+        "description": "Centra en el collage el póster de la canción que suena"
+      },
+      "locate-playing-song": {
+        "title": "Ubicar la canción que suena",
+        "description": "Abre el álbum o la playlist donde está y centra su tarjeta"
+      },
+      "bravais-list": {
+        "title": "Abrir la lista de canciones",
+        "description": "Ensanchar la franja del muro de la biblioteca hasta la lista de canciones de esta colección"
+      },
+      "bravais-directory": {
+        "title": "Abrir el directorio",
+        "description": "Ensanchar la franja del inicio de la biblioteca hasta el árbol de carpetas locales y seleccionar por lotes"
+      },
+      "bravais-seam-full": {
+        "title": "Expandir la franja de información",
+        "description": "Abrir la franja del muro de la biblioteca hasta su franja de información completa"
+      },
+      "bravais-seam-spine": {
+        "title": "Contraer la franja de información",
+        "description": "Estrechar la franja del muro de la biblioteca hasta el ancho de un lomo de libro"
+      },
+      "bravais-seam-hide": {
+        "title": "Plegar la franja de información",
+        "description": "Cerrar la franja y dejar solo una pestaña en el borde de la pantalla"
+      },
+      "bravais-seam-here": {
+        "title": "Dividir el muro aquí",
+        "description": "Abrir una nueva franja en la vista actual después de que la anterior salió de la pantalla"
+      },
+      "bravais-locate-playing": {
+        "title": "Ubicar la canción en reproducción",
+        "description": "Mover el foco del muro a la canción que está sonando ahora"
+      },
+      "bravais-wall-look": {
+        "title": "Alternar la transparencia del muro",
+        "description": "Cambiar el muro de la biblioteca entre sólido, semitransparente y transparente"
+      },
+      "bravais-more-windows": {
+        "title": "Abrir más ventanas en el muro",
+        "description": "Agregar una ventana transparente a cada bloque del muro de la biblioteca"
+      },
+      "bravais-fewer-windows": {
+        "title": "Abrir menos ventanas en el muro",
+        "description": "Cerrar una ventana transparente en cada bloque del muro de la biblioteca"
+      },
+      "navigate-lattice": {
+        "title": "Abrir Lattice",
+        "description": "Mostrar la cola de reproducción como un collage"
+      },
+      "browser-fullscreen": {
+        "title": "Pantalla completa",
+        "description": "Activar o desactivar la pantalla completa del navegador"
+      },
+      "home-playlist": {
+        "title": "Abrir listas de reproducción",
+        "description": "Abrir la pestaña de listas de reproducción del inicio"
+      },
+      "home-local": {
+        "title": "Abrir música local",
+        "description": "Abrir la pestaña de música local"
+      },
+      "home-albums": {
+        "title": "Abrir álbumes",
+        "description": "Abrir la pestaña de álbumes"
+      },
+      "home-navidrome": {
+        "title": "Abrir Navidrome",
+        "description": "Abrir la pestaña de Navidrome"
+      },
+      "home-radio": {
+        "title": "Abrir radio",
+        "description": "Abrir la pestaña de radio"
+      },
+      "home-explore": {
+        "title": "Abrir Explorar",
+        "description": "Abre la pestaña Explorar"
+      },
+      "grid-sort-file-name": {
+        "title": "Ordenar por nombre de archivo",
+        "description": "Ordenar las canciones locales por nombre de archivo"
+      },
+      "grid-sort-modified-date": {
+        "title": "Ordenar por fecha de modificación",
+        "description": "Ordenar las canciones locales según cuándo se modificó el archivo por última vez"
+      },
+      "grid-sort-album-track": {
+        "title": "Ordenar por número de pista del álbum",
+        "description": "Ordenar las canciones locales por disco y número de pista"
+      },
+      "grid-sort-direction": {
+        "title": "Invertir el orden",
+        "description": "Cambiar la lista de canciones locales entre orden ascendente y descendente"
+      },
+      "grid-toggle-info-panel": {
+        "title": "Mostrar u ocultar el panel de la colección",
+        "description": "Mostrar u ocultar el panel de información y acciones de la colección"
+      },
+      "grid-toggle-track-list": {
+        "title": "Mostrar u ocultar la lista de canciones",
+        "description": "Mostrar u ocultar la lista de canciones junto a la cuadrícula"
+      },
+      "grid-resync-folder": {
+        "title": "Reimportar esta carpeta",
+        "description": "Escanear de nuevo esta carpeta local y actualizar sus canciones"
+      },
+      "grid-resync-all-folders": {
+        "title": "Reimportar todas las carpetas",
+        "description": "Escanear de nuevo todas las carpetas locales y actualizar la biblioteca"
+      },
+      "grid-organize-song-info": {
+        "title": "Organizar la información de las canciones",
+        "description": "Ordenar los títulos, artistas y álbumes de esta carpeta"
+      },
+      "grid-export-playlist": {
+        "title": "Exportar esta lista de reproducción",
+        "description": "Guardar esta lista de reproducción local como archivo m3u8"
+      },
+      "grid-edit-entity": {
+        "title": "Editar este álbum o artista",
+        "description": "Abrir el editor de entidades de la biblioteca local para esta colección"
+      },
+      "grid-toggle-edit-mode": {
+        "title": "Activar o desactivar el modo de edición",
+        "description": "Entrar o salir del modo que te permite quitar canciones de esta colección"
+      },
+      "grid-reload-online-collection": {
+        "title": "Recargar esta colección",
+        "description": "Omitir la caché y volver a cargar todas las canciones de esta colección en línea"
+      },
+      "grid-toggle-subscribe": {
+        "title": "Suscribirse o cancelar la suscripción",
+        "description": "Guardar esta lista de reproducción o álbum en línea en tu biblioteca, o quitarlo si ya está ahí"
+      },
+      "directory-play-selection": {
+        "title": "Reproducir las tarjetas seleccionadas",
+        "description": "Reproducir las canciones de las tarjetas seleccionadas en el mapa, en el orden de las tarjetas"
+      },
+      "directory-enqueue-selection": {
+        "title": "Agregar las tarjetas seleccionadas a la cola",
+        "description": "Agregar a la cola las canciones de las tarjetas seleccionadas en el mapa"
+      },
+      "directory-create-playlist": {
+        "title": "Nueva lista de reproducción desde la selección",
+        "description": "Crear una lista de reproducción local con las canciones de las tarjetas seleccionadas"
+      },
+      "directory-remove-selection": {
+        "title": "Quitar lo seleccionado de la biblioteca",
+        "description": "Pedir confirmación para quitar las carpetas seleccionadas y sus canciones de la biblioteca local"
+      },
+      "directory-select-all": {
+        "title": "Seleccionar todas las tarjetas filtradas",
+        "description": "Abrir el panel de lotes y seleccionar todas las tarjetas que muestra el filtro"
+      },
+      "directory-clear-selection": {
+        "title": "Borrar la selección",
+        "description": "Deseleccionar todas las tarjetas del mapa"
+      },
+      "directory-manage-hidden": {
+        "title": "Administrar listas de reproducción ocultas",
+        "description": "Mostrar en el mapa las listas de reproducción ocultas para que puedas ocultarlas o mostrarlas, o salir de esa vista"
+      },
+      "directory-toggle-hidden": {
+        "title": "Ocultar o mostrar la lista de reproducción enfocada",
+        "description": "Ocultar la lista de reproducción enfocada del directorio de inicio, o traerla de vuelta"
+      },
+      "directory-rescan-root": {
+        "title": "Reescanear la carpeta importada enfocada",
+        "description": "Escanear de nuevo la carpeta raíz importada enfocada"
+      },
+      "directory-remove-root": {
+        "title": "Quitar la carpeta importada enfocada",
+        "description": "Pedir confirmación para quitar la carpeta raíz importada enfocada y sus canciones de la biblioteca local"
+      },
+      "directory-clear-ignore": {
+        "title": "Restaurar la carpeta ignorada enfocada",
+        "description": "Dejar de ignorar la carpeta enfocada y escanearla de nuevo"
+      },
+      "artist-play-top-songs": {
+        "title": "Reproducir canciones populares",
+        "description": "Reproducir desde la primera las canciones populares disponibles del artista"
+      },
+      "artist-enqueue-top-songs": {
+        "title": "Agregar canciones populares a la cola",
+        "description": "Agregar las canciones populares del artista a la cola de reproducción"
+      },
+      "artist-reload": {
+        "title": "Recargar artista",
+        "description": "Volver a cargar la página del artista desde la fuente"
+      },
+      "artist-retry-albums": {
+        "title": "Reanudar la carga de álbumes",
+        "description": "Reintentar la página de álbumes que falló y seguir cargando el resto"
+      },
+      "artist-edit-entity": {
+        "title": "Editar información del artista",
+        "description": "Abrir el editor de la biblioteca local para este artista"
+      },
+      "settings-interaction": {
+        "title": "Ajustes de interacción",
+        "description": "Abrir los ajustes de teclado, atajos e interacción con la cuadrícula"
+      },
+      "settings-global-shortcuts": {
+        "title": "Atajos globales",
+        "description": "Ir a los atajos de todo el sistema para la reproducción y los comandos de mods"
+      },
+      "settings-custom-shortcut": {
+        "title": "Atajos personalizados",
+        "description": "Ir a las asignaciones de atajos de teclado personalizados"
+      },
+      "settings-grid-action-button": {
+        "title": "Botón de acción de la cuadrícula",
+        "description": "Ir a la opción de hacia dónde se desliza el botón de acción de la cuadrícula"
+      },
+      "settings-pinned-commands": {
+        "title": "Espacios de comandos fijados",
+        "description": "Elige los tres comandos fijados en la paleta"
+      },
+      "settings-home-tabs": {
+        "title": "Visibilidad de pestañas del inicio",
+        "description": "Elige qué pestañas muestra la pantalla de inicio"
+      },
+      "home-card-position-toggle": {
+        "title": "Recordar la posición de las tarjetas del inicio",
+        "description": "Activar o desactivar que cada sección del inicio vuelva a su última tarjeta"
+      },
+      "settings-playback-entry-view": {
+        "title": "Al reproducir se abre",
+        "description": "Ir a la opción de qué vista se abre al presionar reproducir"
+      },
+      "playback-entry-view-player": {
+        "title": "Al reproducir se abre: Visualizador",
+        "description": "Al presionar reproducir se abre el reproductor y su visualizador"
+      },
+      "playback-entry-view-lattice": {
+        "title": "Al reproducir se abre: Lattice",
+        "description": "Al presionar reproducir se abre el collage de la cola"
+      },
+      "playback-entry-view-stay": {
+        "title": "Al reproducir se abre: Quedarse aquí",
+        "description": "Al presionar reproducir solo empieza la canción y te quedas donde estás"
+      },
+      "settings-library-suite": {
+        "title": "Interfaz de la biblioteca",
+        "description": "Ir a la opción de qué interfaz usa la biblioteca"
+      },
+      "library-suite-picker": {
+        "title": "Elegir una interfaz de biblioteca",
+        "description": "Cambiar la interfaz con la que se navega la biblioteca"
+      },
+      "library-wall-look-picker": {
+        "title": "Elegir la transparencia del muro",
+        "description": "Elige cuánto del visualizador se ve a través del muro de la biblioteca"
+      },
+      "library-wall-windows-picker": {
+        "title": "Elegir ventanas por bloque",
+        "description": "Elige cuántos mosaicos de cada bloque del muro son ventanas"
+      },
+      "settings-bravais": {
+        "title": "Ajustes del muro Bravais",
+        "description": "Ir a los ajustes que solo se aplican al muro Bravais"
+      },
+      "library-wall-stack-edges-toggle": {
+        "title": "Bordes de pila de las colecciones",
+        "description": "Mostrar u ocultar los bordes de página en los mosaicos de álbumes, listas de reproducción y carpetas"
+      },
+      "library-wall-seam-clear-toggle": {
+        "title": "Franja de información transparente",
+        "description": "Permitir que la franja de información muestre el visualizador detrás del muro"
+      },
+      "library-wall-seam-style-picker": {
+        "title": "Elegir el estilo de la franja de información",
+        "description": "Elige el aspecto de la franja de información sólida"
+      },
+      "library-wall-backdrop-lyrics-toggle": {
+        "title": "Letra detrás del muro",
+        "description": "Dibujar la letra en el visualizador que se ve a través del muro"
+      },
+      "library-wall-backdrop-blur-toggle": {
+        "title": "Desenfoque detrás del muro",
+        "description": "Desenfocar el visualizador que se ve a través del muro"
+      },
+      "library-wall-seam-direction-picker": {
+        "title": "Elegir dirección de la franja de información",
+        "description": "Abre la franja de información como columna, como fila a lo ancho del muro o según la forma de la pantalla"
+      },
+      "settings-theme-presets": {
+        "title": "Temas predefinidos",
+        "description": "Ir a los temas predefinidos incluidos y guardados"
+      },
+      "settings-lyrics-renderer": {
+        "title": "Renderizador de letras",
+        "description": "Ir a la opción de cómo se dibuja la letra en el reproductor"
+      },
+      "settings-grid-card-style": {
+        "title": "Estilo de tarjetas de la cuadrícula",
+        "description": "Ir a la opción de cómo la cuadrícula del inicio dibuja sus tarjetas"
+      },
+      "settings-queue-behavior": {
+        "title": "Comportamiento de la cola",
+        "description": "Ir a la opción de cómo se arma y se conserva la cola de reproducción"
+      },
+      "settings-netease-scrobble": {
+        "title": "Reporte de escucha de NetEase",
+        "description": "Ir a la opción de si las reproducciones terminadas se reportan a NetEase Cloud Music"
+      },
+      "netease-scrobble-toggle": {
+        "title": "Reporte de escucha de NetEase",
+        "description": "Activar o desactivar el reporte de reproducciones terminadas de NetEase"
+      },
+      "settings-audio-output": {
+        "title": "Salida de audio",
+        "description": "Ir a los ajustes de dispositivo y formato de salida de audio"
+      },
+      "settings-transition": {
+        "title": "Transición inteligente",
+        "description": "Ir a los ajustes de transición de FOLIA"
+      },
+      "settings-navidrome": {
+        "title": "Servidor Navidrome",
+        "description": "Ir a la conexión con el servidor Navidrome"
+      },
+      "settings-stage-mode": {
+        "title": "Modo Stage",
+        "description": "Ir a los ajustes del reproductor externo Stage"
+      },
+      "settings-media-cache": {
+        "title": "Caché multimedia",
+        "description": "Ir a la caché de audio descargado"
+      },
+      "filter-view": {
+        "title": "Filtrar esta vista",
+        "description": "Filtrar por nombre las tarjetas en pantalla"
+      },
+      "panel-cover": {
+        "title": "Panel: portada",
+        "description": "Abrir la pestaña de portada del panel"
+      },
+      "panel-controls": {
+        "title": "Panel: controles",
+        "description": "Abrir la pestaña de controles del panel"
+      },
+      "panel-queue": {
+        "title": "Panel: cola",
+        "description": "Abrir la pestaña de cola del panel"
+      },
+      "panel-account": {
+        "title": "Panel: calidad",
+        "description": "Abre la pestaña de calidad del panel (cuenta, calidad predeterminada, sincronización)"
+      },
+      "panel-local": {
+        "title": "Panel: local",
+        "description": "Abrir la pestaña local del panel"
+      },
+      "panel-navi": {
+        "title": "Panel: Navidrome",
+        "description": "Abrir la pestaña de Navidrome del panel"
+      },
+      "panel-onlineLyrics": {
+        "title": "Panel: letras",
+        "description": "Abrir la pestaña de letras en línea del panel"
+      },
+      "lyric-segmentation": {
+        "title": "Ajustar la segmentación de palabras de la letra",
+        "description": "Corregir cómo se divide en palabras la letra de esta canción, con IA o a mano"
+      },
+      "mods": {
+        "title": "Mods (experimental)",
+        "description": "Experimental: administrar mods y exportar videos de letras con fondo transparente"
+      },
+      "playback-play": {
+        "title": "Reproducir",
+        "description": "Iniciar la reproducción cuando está en pausa"
+      },
+      "playback-pause": {
+        "title": "Pausar",
+        "description": "Pausar la reproducción actual"
+      },
+      "playback-toggle": {
+        "title": "Reproducir / Pausar",
+        "description": "Pausa si está sonando y reproduce si está en pausa"
+      },
+      "playback-next": {
+        "title": "Siguiente canción",
+        "description": "Reproducir la siguiente canción"
+      },
+      "queue-keep-open": {
+        "title": "Mantener abierta la paleta de la cola",
+        "description": "Activar o desactivar que la paleta de comandos siga abierta después de elegir una canción de la cola"
+      },
+      "playback-prev": {
+        "title": "Canción anterior",
+        "description": "Reproducir la canción anterior"
+      },
+      "playback-loop": {
+        "title": "Cambiar bucle",
+        "description": "Cambiar el modo de bucle"
+      },
+      "playback-like": {
+        "title": "Me gusta la canción actual",
+        "description": "Agregar la canción actual a tus favoritos, o quitarla"
+      },
+      "playback-add-to-playlist": {
+        "title": "Agregar a una lista de reproducción",
+        "description": "Poner la canción actual en una de tus listas de reproducción"
+      },
+      "playback-mute": {
+        "title": "Silenciar",
+        "description": "Silenciar la reproducción, o recuperar el sonido"
+      },
+      "playback-volume-up": {
+        "title": "Subir volumen",
+        "description": "Sube el volumen un 5 %"
+      },
+      "playback-volume-down": {
+        "title": "Bajar volumen",
+        "description": "Baja el volumen un 5 %"
+      },
+      "playback-shuffle": {
+        "title": "Cola aleatoria",
+        "description": "Reordenar al azar la cola de reproducción actual"
+      },
+      "playback-clear-queue": {
+        "title": "Vaciar la cola",
+        "description": "Quitar todas las canciones de la cola de reproducción actual"
+      },
+      "playback-undo-queue-replace": {
+        "title": "Deshacer el reemplazo de la cola por un mod",
+        "description": "Recupera la cola de reproducción de antes de que un mod la reemplazara"
+      },
+      "theme-generate-current": {
+        "title": "Generar tema con IA",
+        "description": "Generar un tema con IA para la canción actual"
+      },
+      "lyric-sync-local": {
+        "title": "Sincronizar letra marcando el ritmo",
+        "description": "Pega la letra de esta canción local y marca cada línea o palabra mientras suena"
+      },
+      "stage-lyrics-match": {
+        "title": "Elegir otra letra para esta canción",
+        "description": "Buscar en línea la letra de lo que suena en Spotify o YouTube y recordar la elección"
+      },
+      "stage-lyrics-import": {
+        "title": "Importar letra para esta canción",
+        "description": "Cargar un archivo de letra (.lrc, .ttml…) para lo que suena en Spotify o YouTube y recordarlo"
+      },
+      "stage-lyrics-reset": {
+        "title": "Volver a la letra automática",
+        "description": "Olvidar la letra elegida a mano para esta canción y buscarla de nuevo"
+      },
+      "stage-lyrics-later": {
+        "title": "Retrasar la letra 0,5 s",
+        "description": "Mostrar la letra más tarde cuando va adelantada; se recuerda para este video o canción"
+      },
+      "stage-lyrics-earlier": {
+        "title": "Adelantar la letra 0,5 s",
+        "description": "Mostrar la letra antes cuando va atrasada; se recuerda para este video o canción"
+      },
+      "stage-lyrics-offset-reset": {
+        "title": "Quitar el desfase de esta canción",
+        "description": "Devolver la letra a su tiempo original para este video o canción"
+      },
+      "theme-quick-editor": {
+        "title": "Editor rápido de temas",
+        "description": "Editar rápidamente el tema de IA de la canción actual"
+      },
+      "theme-source-ai": {
+        "title": "Fuente del tema: inferencia con IA",
+        "description": "Generar temas de canciones haciendo que la IA lea la letra"
+      },
+      "theme-source-cover": {
+        "title": "Fuente del tema: colores de la portada",
+        "description": "Generar temas de canciones a partir de la paleta de la portada"
+      },
+      "playback-auto-match-best-lyric": {
+        "title": "Buscar la mejor letra",
+        "description": "Ejecutar la búsqueda automática de la mejor letra para la canción actual"
+      },
+      "playback-toggle-pure-music": {
+        "title": "Marcar o desmarcar como instrumental",
+        "description": "Marcar la canción local actual como instrumental para que ya no se le busque letra automáticamente; ejecútalo de nuevo para desmarcarla"
+      },
+      "visualizer-picker": {
+        "title": "Elegir un visualizador",
+        "description": "Explorar los modos de animación de letras y hacer clic en uno para cambiar"
+      },
+      "background-picker": {
+        "title": "Elegir un fondo",
+        "description": "Explorar los diseños de fondo y hacer clic en uno para cambiar"
+      },
+      "visualizer-still": {
+        "title": "Visualizador: Still",
+        "description": "Cambiar al visualizador estático de bajo consumo"
+      },
+      "visualizer-classic": {
+        "title": "Visualizador: Luminous",
+        "description": "Cambiar al visualizador clásico"
+      },
+      "visualizer-cadenza": {
+        "title": "Visualizador: Mindscape",
+        "description": "Cambiar al visualizador Cadenza"
+      },
+      "visualizer-partita": {
+        "title": "Visualizador: Partita",
+        "description": "Cambiar al visualizador Partita"
+      },
+      "visualizer-fume": {
+        "title": "Visualizador: Fume",
+        "description": "Cambiar al visualizador Fume"
+      },
+      "visualizer-cappella": {
+        "title": "Visualizador: Cappella",
+        "description": "Cambiar al visualizador Cappella"
+      },
+      "visualizer-tilt": {
+        "title": "Visualizador: Tilt",
+        "description": "Cambiar al visualizador Tilt"
+      },
+      "visualizer-claddagh": {
+        "title": "Visualizador: Claddagh",
+        "description": "Cambiar al visualizador Claddagh"
+      },
+      "visualizer-monet": {
+        "title": "Visualizador: Monet",
+        "description": "Cambiar al visualizador Monet"
+      },
+      "visualizer-diorama": {
+        "title": "Visualizador: Diorama",
+        "description": "Cambiar al visualizador Diorama"
+      },
+      "visualizer-pendolo": {
+        "title": "Visualizador: Pendolo",
+        "description": "Cambiar al visualizador Pendolo"
+      },
+      "visualizer-sonnet": {
+        "title": "Visualizador: Sonnet",
+        "description": "Cambiar al PV de letras japonés Sonnet"
+      },
+      "smart-beat-toggle": {
+        "title": "Modo de pulso inteligente: activar / desactivar",
+        "description": "Activa o desactiva los efectos al pulso (Sonnet y Diorama con los pulsos, Pendolo con la batería)"
+      },
+      "smart-beat-off": {
+        "title": "Modo de pulso inteligente: desactivado",
+        "description": "Apaga los efectos al pulso; todo se ve como antes"
+      },
+      "smart-beat-cached": {
+        "title": "Modo de pulso inteligente: solo lo analizado",
+        "description": "Usa los efectos al pulso solo en canciones ya analizadas; el pulso inteligente no analiza nada nuevo ni ocupa la GPU (la transición inteligente no cambia)"
+      },
+      "smart-beat-on": {
+        "title": "Modo de pulso inteligente: activado",
+        "description": "Activa los efectos al pulso (Sonnet y Diorama con los pulsos, Pendolo con la batería) y analiza las canciones que aún no lo están"
+      },
+      "visualizer-tempera": {
+        "title": "Visualizador: Tempera",
+        "description": "Cambiar al PV de letras con bloques de color Tempera"
+      },
+      "visualizer-lumiere": {
+        "title": "Visualizador: Lumiere",
+        "description": "Cambiar al PV de letras con luces de escenario Lumiere"
+      },
+      "visualizer-hanabi": {
+        "title": "Visualizador: Hanabi",
+        "description": "Cambia al PV de letras con fuegos artificiales Hanabi"
+      },
+      "desktop-toggle-remote-control": {
+        "title": "Mostrar u ocultar la ventana de control remoto",
+        "description": "Abrir o cerrar la ventana de control remoto"
+      },
+      "desktop-toggle-main-window-always-on-top": {
+        "title": "Ventana principal siempre visible",
+        "description": "Fijar o soltar la ventana principal por encima de las demás ventanas"
+      },
+      "background-monet-full-overlay": {
+        "title": "Fondo: Monet superposición en pantalla completa",
+        "description": "Cambiar el fondo al diseño Monet de superposición en pantalla completa"
+      },
+      "background-monet-half-gradient": {
+        "title": "Fondo: Monet degradado en media pantalla",
+        "description": "Cambiar el fondo al diseño Monet de degradado en media pantalla"
+      },
+      "background-common": {
+        "title": "Fondo: Común",
+        "description": "Cambiar el fondo al diseño general"
+      },
+      "background-nomand": {
+        "title": "Fondo: Nomand",
+        "description": "Cambiar el fondo a los efectos de imagen de Paper"
+      },
+      "background-latent": {
+        "title": "Fondo: Latent",
+        "description": "Cambiar el fondo a shaders reactivos al audio con los colores de la portada"
+      },
+      "background-latent-dithering": {
+        "title": "Latent: Píxel",
+        "description": "Mostrar solo la capa Dithering"
+      },
+      "background-latent-mesh": {
+        "title": "Latent: Fluido",
+        "description": "Mostrar solo la capa MeshGradient"
+      },
+      "background-latent-both": {
+        "title": "Latent: Mixto",
+        "description": "Mostrar ambas capas de shaders"
+      },
+      "background-url": {
+        "title": "Fondo: Fondo incrustado",
+        "description": "Cambiar el fondo al modo de página web incrustada"
+      },
+      "background-sora": {
+        "title": "Fondo: Sora",
+        "description": "Cambiar el fondo al campo de estrellas Sora"
+      },
+      "settings-toggle-transparent": {
+        "title": "Activar o desactivar la transparencia",
+        "description": "Activar o desactivar el fondo transparente del reproductor"
+      },
+      "settings-toggle-daylight": {
+        "title": "Cambiar claro/oscuro",
+        "description": "Cambiar el tema entre modo día y modo noche"
+      },
+      "settings-toggle-player-back-button": {
+        "title": "Mostrar siempre el botón de volver del reproductor",
+        "description": "Activar o desactivar que el botón de volver de la página del reproductor siga visible"
+      },
+      "settings-gridview-cards": {
+        "title": "Aspecto de las tarjetas de la cuadrícula",
+        "description": "Ajustar las portadas a sangre completa y cuánto se encogen y desvanecen las tarjetas de la cuadrícula con la distancia"
+      },
+      "settings-toggle-gridview-full-bleed-cover": {
+        "title": "Portadas a sangre completa en la cuadrícula",
+        "description": "Activar o desactivar que la portada llene toda la tarjeta de la cuadrícula"
+      },
+      "settings-toggle-gridview-square-cards": {
+        "title": "Tarjetas cuadradas en la cuadrícula",
+        "description": "Activar o desactivar que las tarjetas a sangre completa sean cuadradas en vez de tipo póster"
+      },
+      "settings-toggle-lattice-vignette": {
+        "title": "Viñeta del muro de pósters",
+        "description": "Activar o desactivar la viñeta de los bordes en el collage de la cola (Lattice) y en el muro de la biblioteca"
+      },
+      "settings-toggle-lattice-auto-focus": {
+        "title": "Enfoque automático de Lattice",
+        "description": "Activar o desactivar que el collage de la cola siga a la canción en reproducción cuando cambian las canciones"
+      },
+      "lattice-poster-tint": {
+        "title": "Tinte del muro de pósters",
+        "description": "Ajustar la capa que atenúa los pósters fuera de foco en el collage de la cola (Lattice) y en el muro de la biblioteca"
+      },
+      "settings-reduce-motion": {
+        "title": "Reducir movimiento",
+        "description": "Reducir la animación en cada superficie que la tenga, o seguir el ajuste del sistema"
+      },
+      "settings-toggle-reduce-lattice-motion": {
+        "title": "Reducir el movimiento del collage de la cola",
+        "description": "Hacer instantáneas la expansión, el vuelo de cámara y la ola de entrada del collage de la cola"
+      },
+      "settings-toggle-follow-system-reduced-motion": {
+        "title": "Seguir el movimiento reducido del sistema",
+        "description": "Activar o desactivar que el ajuste de animación del sistema pueda reducir el movimiento en la app"
+      },
+      "settings-toggle-track-switch-buttons": {
+        "title": "Mostrar siempre las flechas para cambiar de canción",
+        "description": "Activar o desactivar que las flechas para cambiar de canción de la barra de progreso sigan visibles junto al título"
+      },
+      "settings-toggle-main-window-titlebar": {
+        "title": "Mostrar siempre los botones de control de la ventana",
+        "description": "Activar o desactivar que los botones de control de la ventana principal sigan visibles"
+      },
+      "settings-toggle-fullscreen-titlebar-button": {
+        "title": "Visibilidad del botón de pantalla completa",
+        "description": "Mostrar u ocultar el botón de pantalla completa en los controles de la ventana de escritorio"
+      },
+      "settings-toggle-native-mac-fullscreen-button": {
+        "title": "Botón nativo de pantalla completa de macOS",
+        "description": "Activar o desactivar que el control de ventana de macOS entre en pantalla completa nativa en vez de maximizar"
+      },
+      "settings-toggle-cursor-auto-hide": {
+        "title": "Ocultar el cursor con los controles del reproductor",
+        "description": "Activar o desactivar que el puntero del mouse desaparezca junto con los controles del reproductor que se ocultan automáticamente"
+      },
+      "settings-toggle-cursor-idle-hide": {
+        "title": "Ocultar el cursor sin movimiento",
+        "description": "Activa o desactiva que el puntero se oculte solo tras una pausa mientras los controles siguen visibles"
+      },
+      "settings-toggle-auto-play-on-launch": {
+        "title": "Reproducir automáticamente al iniciar",
+        "description": "Activar o desactivar que al abrir la app se reanude sola la última sesión"
+      },
+      "settings-toggle-transcode-fallback": {
+        "title": "Transcodificar audio no compatible",
+        "description": "Activar o desactivar la recuperación de Electron para el audio local y de Navidrome que Chromium no puede decodificar"
+      },
+      "settings-toggle-playback-fade": {
+        "title": "Fundido al pausar y reanudar",
+        "description": "Activar o desactivar el fundido breve al pausar y reanudar la reproducción"
+      },
+      "settings-toggle-auto-skip-unplayable": {
+        "title": "Saltar canciones que no se pueden reproducir",
+        "description": "Activa o desactiva la cuenta regresiva para saltar cuando una canción está restringida o falla por un motivo desconocido"
+      },
+      "settings-toggle-bottom-subtitle-overlay": {
+        "title": "Mostrar u ocultar los subtítulos inferiores",
+        "description": "Mostrar u ocultar toda la capa de subtítulos inferior"
+      },
+      "settings-cycle-subtitle-content-mode": {
+        "title": "Alternar el contenido de los subtítulos",
+        "description": "Alternar el contenido de los subtítulos entre traducción, romanización y romanización más traducción"
+      },
+      "settings-toggle-subtitle-background": {
+        "title": "Mostrar u ocultar el fondo de los subtítulos",
+        "description": "Mostrar u ocultar el fondo de legibilidad detrás de los subtítulos del visualizador"
+      },
+      "settings-language-system": {
+        "title": "Seguir el idioma del sistema",
+        "description": "Usar el idioma del navegador o del sistema"
+      },
+      "settings-language-zh-CN": {
+        "title": "Cambiar idioma a chino simplificado",
+        "description": "Usar chino simplificado en la interfaz"
+      },
+      "settings-language-zh-TW": {
+        "title": "Cambiar idioma a chino tradicional",
+        "description": "Usa chino tradicional en la interfaz"
+      },
+      "settings-language-en": {
+        "title": "Cambiar el idioma a inglés",
+        "description": "Usar inglés en la interfaz"
+      },
+      "settings-language-in": {
+        "title": "Cambiar el idioma a indonesio",
+        "description": "Usar indonesio (Bahasa Indonesia) en la interfaz"
+      },
+      "settings-language-es": {
+        "title": "Cambiar el idioma a español",
+        "description": "Usar español en la interfaz"
+      }
     }
   },
   "ui": {
+    "visualizerRandom": "Aleatorio",
     "noTrack": "Sin canción",
+    "selectPlaceholder": "Seleccionar...",
     "previousTrack": "Canción anterior",
     "nextTrack": "Siguiente canción",
     "stageTrackPillNext": "A continuación",
@@ -877,6 +1746,7 @@ export default {
     "openVisualizerSettings": "Abrir ajustes del visualizador",
     "moreSettings": "Más ajustes",
     "animationMode": "Estilo de letra",
+    "back": "Volver",
     "visualizer": "Animación de letras",
     "visualizerWorkbench": "Laboratorio de animación de letras",
     "visualizerTemporary": "Taller temporal",
@@ -895,9 +1765,9 @@ export default {
     "visualizerSonnet": "Sonnet",
     "visualizerTempera": "Tempera",
     "visualizerLumiere": "Lumiere",
+    "visualizerHanabi": "Hanabi",
     "cadenzeTuning": "Ajuste de Mindscape",
     "resetVisualizerTuning": "Restablecer el ajuste de la animación de letras",
-    "livePreview": "Vista previa en vivo",
     "cadenzeOnly": "Solo Mindscape",
     "background": "Fondo",
     "default": "Predeterminado",
@@ -917,7 +1787,6 @@ export default {
     "pause": "Pausar",
     "close": "Cerrar",
     "volume": "Volumen",
-    "openEqualizer": "Abrir el ecualizador de audio",
     "automix": "Transición inteligente",
     "equalizerTitle": "Efectos de audio",
     "equalizerDescription": "Ecualización por bandas y efectos de audio",
@@ -940,6 +1809,12 @@ export default {
       "space": "Espacio",
       "punch": "Pegada"
     },
+    "equalizerModCurve": "Esta curva viene del mod \"{{name}}\"",
+    "equalizerModCurveHint": "Tus preajustes y espacios personalizados no cambian. Para ajustar esta curva, primero guárdala en un espacio personalizado.",
+    "equalizerModCurveRelease": "Volver a mi sonido",
+    "equalizerModCurveSave": "Guardar en {{slot}} (lo reemplaza)",
+    "equalizerModCurveDormant": "La curva del mod \"{{name}}\" está en espera: el mod está desactivado o se quitó, y la curva vuelve cuando se active otra vez. Si cambias tu sonido aquí, se descarta.",
+    "equalizerModCurveDiscard": "Descartar esta curva",
     "equalizerPreset": {
       "flat": "Plano",
       "lofi": "Lo-Fi",
@@ -957,6 +1832,7 @@ export default {
       "glowIntensity": "Brillo"
     },
     "backToHome": "Volver al inicio",
+    "playingFrom": "Sonando desde {{name}}",
     "cancel": "Cancelar",
     "apply": "Aplicar",
     "retry": "Reintentar",
@@ -993,7 +1869,7 @@ export default {
     "controls": "Controles",
     "visualizer": "Animación de letras",
     "playlist": "Lista de reproducción",
-    "account": "Cuenta"
+    "account": "Calidad"
   },
   "lyricExport": {
     "exported": "Letras exportadas",
@@ -1072,18 +1948,30 @@ export default {
     }
   },
   "mods": {
+    "homeBackToLibrary": "Volver a la biblioteca",
+    "homePageNavigation": "Páginas de inicio",
     "title": "Administrador de mods",
     "experimental": "Experimental",
     "warning": "Los mods son compatibles con Folium v{{version}}. Los mods marcados como Verificado fueron revisados y firmados por Folium; todos los demás son de terceros y no están revisados. Verificado o no, una vez activado un mod se ejecuta con todos los privilegios de la app (incluido el entorno de Node.js y cualquier ajuste, como la URL y la clave del servicio de IA). Activa solo mods de fuentes confiables.",
     "market": "Tienda de mods",
     "trustRevoked": "Los archivos de este mod cambiaron desde la última vez que lo confirmaste, así que se desactivó automáticamente. Revisa el origen y vuelve a activarlo.",
     "devSourceHint": "Mod de código fuente en desarrollo: una vez confirmado, editar sus archivos mantiene la aprobación (solo en versiones de desarrollo).",
+    "platformReadHint": "Puede leer datos de {{platforms}} con la cuenta con que iniciaste sesión en Folia, como tu historial de escucha (platform.raw experimental).",
+    "platformWriteHint": "También puede cambiar lo que tiene tu cuenta de {{platforms}}, como los me gusta, las playlists y los seguidos.",
+    "queueReplaced": "“{{name}}” reemplazó la cola de reproducción",
+    "queueReplaceUndo": "Deshacer",
+    "queueReplaceUndone": "Volvió la cola de reproducción de antes del reemplazo",
+    "queueReplaceUndoGone": "La cola cambió desde que se reemplazó, así que no hay nada que deshacer",
+    "queueReplaceHint": "Puede reemplazar toda la cola de reproducción de una vez y terminar el FM personal; Folia avisa qué mod lo hizo, y puedes deshacerlo hasta que la cola vuelva a cambiar.",
+    "equalizerControlHint": "Cambia tus ajustes de sonido: puede cambiar tu preajuste de sonido o poner su propia curva de ecualizador.",
     "signatureVerified": "Verificado",
     "signatureVerifiedDetail": "Tiene una firma oficial válida de Folium ({{key}}): Folium revisó su origen y contenido, y no han cambiado desde la firma. Una vez activado, igual se ejecuta con todos los privilegios de la app.",
+    "signatureBeta": "Vista previa",
+    "signatureBetaDetail": "Firmado con la clave de vista previa de Folium ({{key}}): solo pasó la revisión de seguridad. Su implementación puede estar a medio pulir y sus funciones pueden no andar. Está pensado para que la comunidad de desarrollo experimente; la mayoría no debería activarlo. Una vez activado, igual corre con todos los permisos de la app.",
     "signatureUnsigned": "No verificado",
     "signatureUnsignedDetail": "Sin firma oficial: es un mod de terceros que Folium no revisó. Activa solo mods de fuentes en las que confíes.",
     "signatureInvalid": "La firma no coincide",
-    "signatureInvalidDetail": "Este mod está firmado, pero la firma no es válida ({{reason}}), así que ya no está verificado oficialmente. Por lo general, sus archivos se modificaron después de firmarlo; si no los cambiaste tú, no lo actives.",
+    "signatureInvalidDetail": "Este mod está firmado, pero la firma no coincide ({{reason}}), así que ya no lo respalda. Por lo general sus archivos se cambiaron después de firmarlo; si no los cambiaste tú, no lo actives.",
     "signatureReasons": {
       "malformed": "archivo de firma con formato incorrecto",
       "unknown-key": "clave de firma no confiable",
@@ -1118,8 +2006,47 @@ export default {
     "exporting": "Exportando",
     "running": "En ejecución",
     "clientIssues": "Problemas en el código de interfaz",
+    "oldNames": "Usa nombres antiguos que dejan de funcionar en Folium 2",
+    "issueTimes_one": "falló {{count}} vez, a las {{time}}",
+    "issueTimes_other": "falló {{count}} veces, la última a las {{time}}",
+    "faultNotice": {
+      "homeTab": "Falló la pestaña de inicio del mod \"{{name}}\".",
+      "visualizer": "Falló el estilo de letra del mod \"{{name}}\".",
+      "background": "Falló el fondo del mod \"{{name}}\".",
+      "stageLayer": "Falló una capa de la página del reproductor del mod \"{{name}}\".",
+      "panelTab": "Falló el panel del mod \"{{name}}\".",
+      "progressButton": "Falló un botón de la barra de progreso del mod \"{{name}}\".",
+      "progressLayer": "Falló una capa de la barra de progreso del mod \"{{name}}\".",
+      "settings": "Falló el panel de ajustes del mod \"{{name}}\".",
+      "start": "El mod \"{{name}}\" no pudo iniciar.",
+      "slowStart": "El mod \"{{name}}\" no termina de iniciar después de {{seconds}} segundos.",
+      "other": "El mod \"{{name}}\" tuvo un error."
+    },
+    "faultNoticeOpen": "Ver",
+    "faultNoticeMute": "No mostrar fallas ni inicios lentos",
+    "faultNoticeSwitch": "Avisarme cuando este mod falle o tarde en iniciar",
+    "skippedThisRun": "No se inició esta vez. Se inicia como siempre la próxima vez que abras Folia.",
+    "startSkippedBanner": "Esta vez no hay mods en ejecución. Se inician como siempre la próxima vez que abras Folia.",
+    "cost": {
+      "title": "Tiempo que toma",
+      "start": "Inició en {{seconds}} s",
+      "startQuick": "Inició en menos de 0,01 s",
+      "startPending": "Todavía está iniciando",
+      "startLate": "No termina de iniciar después de {{seconds}} segundos",
+      "startFailed": "Falló al iniciar",
+      "running": "Unos {{ms}} ms de cada segundo mientras funciona",
+      "runningQuick": "Menos de 0,1 ms de cada segundo mientras funciona",
+      "runningNone": "Tiempo usado cada segundo mientras funciona: aún no hay datos",
+      "failures_one": "Falló {{count}} vez, en: {{places}}",
+      "failures_other": "Falló {{count}} veces, en: {{places}}",
+      "noFailures": "Sin fallas",
+      "main": "Parte en segundo plano: {{total}} ms en total, la llamada más larga {{longest}} ms",
+      "slow": "Lento",
+      "slowHint": "Este mod inicia lento o toma mucho tiempo mientras funciona. Folia no lo desactiva por eso."
+    },
     "commandUnavailable": "Este comando del mod ya no está disponible.",
     "cancelExport": "Cancelar",
+    "exportWaitingForMod": "Esperando a que el mod \"{{name}}\" termine de iniciar.",
     "commandDone": "Listo:",
     "commandFailed": "Falló el comando",
     "openDirectory": "Abrir la carpeta de mods",
@@ -1127,6 +2054,13 @@ export default {
     "dropZipHint": "Suelta aquí un .zip de mod para instalarlo",
     "installing": "Instalando mod…",
     "installSuccess": "Mod instalado: {{id}} (puedes desactivarlo o actualizarlo desde la lista)",
+    "storageData": "Datos {{size}}",
+    "storageCache": "Caché {{size}}",
+    "storageCacheBroken": "La carpeta de caché está dañada (un archivo o un enlace roto); vacíala para recuperarla",
+    "clearCache": "Vaciar caché",
+    "clearingCache": "Vaciando…",
+    "cacheCleared": "Se vació la caché de \"{{name}}\" y se liberaron {{size}}",
+    "cacheClearedUncounted": "Se vació la caché de \"{{name}}\"",
     "errors": {
       "no-electron-bridge": "El sistema de mods no está disponible en este entorno",
       "open-directory-failed": "No se pudo abrir la carpeta de mods: {{value}}",
@@ -1154,7 +2088,11 @@ export default {
       "export-duration-too-long": "El rango de exportación es demasiado largo (máximo 15 minutos)",
       "export-unsupported-platform": "La exportación no es compatible con esta plataforma",
       "export-capture-empty": "Falló la captura de fotogramas; la ventana de renderizado devolvió un fotograma vacío",
-      "export-cancelled": "Se canceló la exportación"
+      "export-cancelled": "Se canceló la exportación",
+      "storage-usage-failed": "No se pudo medir cuánto espacio usa este mod",
+      "cache-clear-failed": "No se pudo vaciar la caché",
+      "cache-clear-partial": "Una parte de la caché no se pudo vaciar porque el mod está usando esos archivos. Desactiva el mod y vuelve a intentarlo.",
+      "export-mod-style-not-started": "El mod que aporta este estilo de letra no inició, así que no se exportó nada"
     },
     "warnings": {
       "export-alpha-unavailable": "Esta plataforma no conservó el canal alfa; el video tiene un fondo opaco. Usa un modo solo de texto con el fondo del tema, o haz la exportación en Windows.",
@@ -1162,16 +2100,17 @@ export default {
     }
   },
   "account": {
-    "storage": "Almacenamiento",
-    "clearCache": "Borrar caché",
     "syncData": "Sincronizar datos",
     "syncing": "Sincronizando...",
     "logout": "Cerrar sesión",
+    "logoutConfirmTitle": "¿Cerrar sesión en {{provider}}?",
+    "logoutClearsQueue": "Se vaciará la cola.",
     "guestMode": "Modo invitado",
     "loginOnHome": "Iniciar sesión en el inicio",
     "audioQuality": "Calidad predeterminada",
     "qualityStandard": "Estándar",
     "qualityExhigh": "Muy alta",
+    "qualityUltra": "Ultra alta",
     "qualityLossless": "Sin pérdida",
     "qualityHires": "Hi-Res",
     "vipOnly": "Solo VIP"
@@ -1179,6 +2118,7 @@ export default {
   "playlist": {
     "play": "Reproducir",
     "viewTracks": "Ver canciones",
+    "locatePlaying": "Ubicar en esta página la canción que suena",
     "viewCollections": "Ver colecciones",
     "tracks": "Canciones",
     "plays": "Reproducciones",
@@ -1190,7 +2130,8 @@ export default {
     "headerTime": "Duración",
     "loading": "Cargando",
     "loadFailed": "No se pudo cargar: {{error}}",
-    "loadNotPublic": "Esta lista de reproducción no es pública, así que la fuente de música actual no puede leer su contenido",
+    "loadFailedPlain": "No se pudo cargar",
+    "loadNotPublic": "Esta playlist no es pública",
     "reload": "Recargar",
     "syncProgress": "Cargadas {{loaded}} / {{total}}",
     "syncInterrupted": "Carga interrumpida",
@@ -1272,14 +2213,91 @@ export default {
     "statusEmpty": "Este modo de FM personal no devolvió nada",
     "statusFailed": "No se pudo cambiar el modo de FM personal"
   },
+  "login": {
+    "title": "Iniciar sesión",
+    "choosePlatform": "Elige una plataforma",
+    "searchPlatforms": "Buscar plataformas",
+    "noPlatformMatch": "Ninguna plataforma coincide",
+    "rowSignedIn": "Sesión iniciada",
+    "rowRanOut": "La sesión expiró",
+    "rowSignedOut": "Sin sesión",
+    "signInRanOut": "La sesión expiró",
+    "readingAccount": "Leyendo tu cuenta…",
+    "openBrowser": "Abrir el navegador",
+    "details": "Detalles",
+    "retryIn": "Reintentar en {{seconds}} s",
+    "factPlatform": "Plataforma",
+    "factStep": "Paso",
+    "factKind": "Tipo",
+    "factRaw": "Original",
+    "factTime": "Hora",
+    "stepStartCode": "Creando el código QR",
+    "stepStartBrowser": "Iniciando el inicio de sesión en el navegador",
+    "stepOpen": "Abriendo el navegador",
+    "stepWaitPhone": "Esperando al teléfono",
+    "stepWaitBrowser": "Esperando al navegador",
+    "stepCheck": "Revisando el resultado",
+    "stepAccount": "Leyendo la cuenta",
+    "kindUnfinished": "Sin terminar",
+    "kindUnreachable": "No se puede conectar",
+    "kindRefused": "Rechazado por la plataforma",
+    "kindLocalService": "Servicio local",
+    "kindBrowser": "Navegador",
+    "kindAccount": "No se leyó la cuenta",
+    "kindUnknown": "Error desconocido",
+    "caseCodeExpired": "El código QR expiró",
+    "caseNotConfirmed": "No se confirmó en el teléfono",
+    "caseUnfinished": "No se completó el inicio de sesión",
+    "caseNotAuthorized": "No autorizado",
+    "caseUnreachable": "No se puede conectar con {{provider}}",
+    "caseNoAnswer": "{{provider}} no responde",
+    "caseRefused": "{{provider}} rechazó el inicio de sesión",
+    "caseRetryLater": "{{provider}}: vuelve a intentarlo más tarde",
+    "caseDeviceLimit": "{{provider}}: hay demasiados dispositivos con sesión iniciada",
+    "caseWrongScanApp": "El código se escaneó con la app equivocada",
+    "caseLocalService": "El servicio local de {{provider}} no está funcionando",
+    "caseCannotListen": "No se puede recibir el resultado del inicio de sesión de {{provider}}",
+    "caseNoBrowser": "No se encontró un navegador compatible",
+    "caseBrowserStillOpen": "Sigue abierto el navegador del inicio de sesión anterior",
+    "caseBrowserClosedEarly": "El navegador se cerró antes de tiempo",
+    "caseBrowserUnread": "No se puede leer el inicio de sesión desde el navegador",
+    "caseBrowserNotOpened": "No se puede abrir el navegador",
+    "caseAccountNotRead": "No se pudo leer la cuenta",
+    "caseUnknown": "No se pudo iniciar sesión",
+    "noteCheckNetwork": "Revisa tu conexión y vuelve a intentarlo",
+    "noteRetryLater": "Vuelve a intentarlo más tarde",
+    "noteDeviceLimit": "Cierra la sesión en el teléfono de un dispositivo que ya no uses y vuelve a intentarlo",
+    "noteWrongScanApp": "Escanea con la app que corresponde a este método, o elige otro método",
+    "noteCloseBrowser": "Cierra ese navegador y vuelve a intentarlo",
+    "noteUnknown": "Error desconocido"
+  },
+  "failure": {
+    "unreachable": "No se puede conectar con {{provider}}",
+    "localServiceStopped": "El servicio local de {{provider}} no está funcionando",
+    "retryLater": "{{provider}}: vuelve a intentarlo más tarde",
+    "signInNeeded": "La sesión de {{provider}} expiró",
+    "noAudio": "{{provider}} no entregó audio",
+    "audioUnplayable": "No se puede reproducir el audio",
+    "refused": "{{provider}} rechazó la solicitud",
+    "noteCheckNetwork": "Revisa tu conexión",
+    "noteRestartApp": "Reinicia Folia",
+    "noteRetryLater": "Vuelve a intentarlo más tarde",
+    "noteSignIn": "Vuelve a iniciar sesión",
+    "noteUnknown": "Error desconocido",
+    "noteMaybeSignIn": "Iniciar sesión podría permitir reproducirla",
+    "noteMaybeSubscription": "Puede que necesite una suscripción para reproducirse",
+    "noteMaybeRegion": "Puede estar restringida en tu región",
+    "skipCountdown": "Pasando a la siguiente canción en {{seconds}} s",
+    "signIn": "Iniciar sesión"
+  },
   "home": {
     "welcome": "Te damos la bienvenida a Folia",
     "lattice": "Collage de la cola",
     "latticeLabel": "Collage de la cola",
+    "latticeExplore": "Collage de Explorar",
+    "latticeSections": "Secciones",
     "latticeBack": "El botón de arriba a la izquierda vuelve atrás. {{mod}} + B también cierra Lattice; Escape primero contrae un póster o quita el foco del teclado, y vuelve atrás al presionarlo de nuevo.",
     "latticePlay": "REPRODUCIR",
-    "latticeFocusCurrent": "Enfocar la canción actual",
-    "latticeAutoFocusOnSongChange": "Enfocar automáticamente al cambiar de canción",
     "latticeLights": "Iluminación de pósteres",
     "latticeLightsOn": "Luces encendidas",
     "latticeLightsOff": "Luces apagadas",
@@ -1292,6 +2310,7 @@ export default {
     "latticeHelpOpen": "Salir de Lattice",
     "latticePlaybackControls": "Controles de reproducción",
     "latticeOpenPlayer": "ABRIR REPRODUCTOR",
+    "latticeOpenCollection": "ABRIR",
     "latticeClose": "Cerrar póster",
     "latticeEmptyTitle": "LA COLA ESTÁ VACÍA",
     "latticeEmptyText": "Reproduce cualquier cosa y la cola se desplegará aquí.",
@@ -1306,32 +2325,49 @@ export default {
     "loginTitleKugou": "Escanea con KuGou Music",
     "loginNoteKugou": "Abre KuGou Music y escanea este código QR",
     "loginTitleQq": "Escanea para iniciar sesión en QQ Music",
+    "loginTitleQishui": "Iniciar sesión en Qishui Music con Douyin",
+    "loginNoteQishui": "Escanea con la app de Douyin y confirma la autorización",
     "loginTitleBodian": "Escanea con Bodian Music",
     "loginNoteBodian": "Escanea este código con la app de Bodian Music y confirma el inicio de sesión",
+    "loginTitleYtm": "Iniciar sesión en YouTube Music",
+    "loginNoteYtmBrowser": "Se abre una ventana de navegador aparte. Inicia sesión en Google ahí y cierra esa ventana cuando YouTube Music muestre tu cuenta.",
+    "loginNoteYtmBrowserMac": "Se abre una ventana de navegador aparte. Inicia sesión en Google ahí y cierra ese navegador (⌘Q) cuando YouTube Music muestre tu cuenta.",
+    "loginNoBrowserYtm": "Para iniciar sesión en YouTube Music necesitas tener instalado Chrome (también sirven Beta, Dev o Canary), Edge, Chromium, Brave o Helium.",
+    "loginCodeWaiting": "Esperando la confirmación en tu navegador",
+    "loginTitleSpotify": "Iniciar sesión en Spotify",
+    "loginNoteSpotify": "Elige Aceptar en la página de Spotify que se abre en tu navegador",
+    "loginCaseSpotifyUnfinished": "No se confirmó en 10 minutos",
+    "loginCaseSpotifyDenied": "Elige Aceptar en la página de Spotify",
+    "loginCaseSpotifyPort": "El puerto 5588 ya está en uso",
+    "loginCaseYtmUnfinished": "Inicia sesión antes de cerrar el navegador",
+    "loginCaseQqRestart": "Reinicia Folia y vuelve a intentarlo",
+    "loginCaseQqWrongScanApp": "Para escanear con la app de QQ Music, elige “Escanear con la app de QQ Music”, o escanea este código con QQ móvil",
+    "loginCaseQqWrongScanAppMobileOnly": "El escaneo con QQ aquí solo funciona con QQ móvil: escanea este código con QQ móvil",
+    "loginCaseQqDeviceLimit": "Abre la app de QQ Music, ve a Ajustes, baja hasta el final, toca Administración de dispositivos y quita los que ya no uses; después vuelve a escanear",
+    "loginCaseQqAccountBanned": "Esta cuenta fue bloqueada y no puede iniciar sesión",
+    "loginCaseQqAccountRestricted": "Esta cuenta tiene restringido el inicio de sesión por ahora",
+    "loginCaseQqAccountBinding": "La vinculación de esta cuenta tiene un problema: revísala en la app de QQ Music",
+    "loginBrowserOpen": "Abrir el navegador otra vez",
+    "loginBrowserLoading": "Abriendo tu navegador...",
+    "loginBrowserRetry": "Volver a iniciar sesión",
+    "spotifyLikedSongs": "Canciones que te gustan",
+    "spotifyNewReleases": "Novedades de artistas que sigues",
     "loginNoteQq": "Elige el método de inicio de sesión que corresponda a tu cuenta: escaneo con QQ o con WeChat",
-    "qqLoginMethodTitle": "Elige el método de inicio de sesión",
-    "qqLoginMethodHint": "Usa el escaneo con QQ para una cuenta de QQ, o el escaneo con WeChat para una cuenta de WeChat",
-    "qqLoginMethodPending": "Elige un método de inicio de sesión para generar el código QR",
-    "qqLoginMethodCurrent": "Método actual: {{method}}",
+    "loginTitleQqAppScan": "Escanea con QQ, WeChat o QQ Music",
+    "loginNoteQqAppScan": "Admite 3 formas de escanear: QQ, WeChat y QQ Music",
+    "loginNoteQqWithApp": "Elige el método que corresponde a tu cuenta: escanear con QQ o con WeChat, o con la app de QQ Music",
+    "loginMethodTitle": "Elige el método de inicio de sesión",
+    "loginMethodPending": "Elige un método de inicio de sesión para generar el código QR",
     "qqLoginMethodMobile": "Escaneo con QQ",
     "qqLoginMethodWechat": "Escaneo con WeChat",
+    "qqLoginMethodQqMusic": "Escanear con la app de QQ Music",
     "switchOnlineProvider": "Cambiar proveedor de música en línea",
     "confirmOnlineProviderSwitch": "¿Cambiar a {{provider}}? Se borrarán la reproducción en línea actual y la cola.",
     "onlineProvider": "Proveedor de música en línea",
-    "providerNotLoggedIn": "Sin sesión iniciada · haz clic para escanear",
     "providerNotConfigured": "La API no está configurada para la versión web",
     "providerNoAccount": "No requiere iniciar sesión",
-    "loadingQr": "Cargando QR...",
-    "scanQr": "Escanea el código QR",
-    "qrExpired": "El código QR expiró. Actualízalo para intentarlo de nuevo.",
-    "qrCanceledOnDevice": "Se canceló el inicio de sesión en tu teléfono. Puedes obtener un nuevo código QR.",
-    "qrCanceledOnDeviceCooldown": "Se canceló el inicio de sesión en tu teléfono. Podrás obtener un nuevo código QR en {{seconds}} s.",
-    "qrConnectionReset": "NetEase cortó la conexión. Inténtalo de nuevo; si sigue fallando, cambia de red o reinicia Folia.",
-    "qrRetryCooldown": "Demasiados intentos. Vuelve a intentarlo en {{seconds}} s.",
     "qrScanned": "¡Escaneado! Confirma en tu teléfono.",
     "loginSuccess": "¡Sesión iniciada!",
-    "loginError": "Error al iniciar sesión",
-    "loginBackendDown": "El servicio local de NetEase no está en ejecución",
     "restartBackend": "Reiniciar backend",
     "restartingBackend": "Reiniciando…",
     "retryQr": "Actualizar código QR",
@@ -1349,8 +2385,6 @@ export default {
     "qrDiagnosticsPromptScanned": "Si confirmaste en tu teléfono pero aun así no se inició la sesión, copia el diagnóstico y envíanoslo para que podamos encontrar la causa.",
     "qrDiagnosticsDisclosure": "El diagnóstico incluye las versiones de la app y del sistema, los adaptadores de red y las direcciones IP, la configuración del proxy, el registro de solicitudes de inicio de sesión con el texto de error original y los resultados de la comprobación de red. No contiene contraseñas, cookies ni tokens.",
     "qrDiagnosticsCopy": "Copiar diagnóstico",
-    "qrDiagnosticsCopied": "Copiado",
-    "qrDiagnosticsCopyFailed": "No se pudo copiar",
     "qrDiagnosticsReport": "Reportar en GitHub",
     "qrDiagnosticsPasteHint": "Pega aquí el diagnóstico que copió Folia y describe brevemente qué pasó (red, si había un proxy activo, etc.).",
     "qrReportWebDeployment": "Este es un problema de esta implementación web: el sitio no tiene configurada una API de plataforma musical o no puede acceder a ella. Entrega el diagnóstico a quien implementó este sitio; si fuiste tú, revisa VITE_*_API_BASE según la documentación de implementación y vuelve a compilar. Si solo quieres usar Folia, descarga la app oficial de escritorio.",
@@ -1429,11 +2463,9 @@ export default {
     "accountlessSearch": "Buscar canciones",
     "multiPlatformLoginTitle": "Prueba primero a buscar algunas canciones",
     "multiPlatformLoginPrompt": "Inicia sesión para acceder a tus listas de reproducción, álbumes guardados y radio.",
-    "loginProvider": "Conectar cuenta de {{provider}}",
     "switchToProvider": "Cambiar a {{provider}}",
     "pleaseLogin": "Inicia sesión para acceder a tu biblioteca",
     "connectAccount": "Conectar cuenta de NetEase",
-    "connectPlatformAccounts": "Conectar cuentas de plataformas",
     "loginToProvider": "Iniciar sesión en {{provider}}",
     "connectProviderAccount": "Conectar cuenta de {{provider}}",
     "loadingLibrary": "Sin contenido",
@@ -1445,6 +2477,34 @@ export default {
     "allAlbums": "Todos",
     "popular": "Populares",
     "radio": "Radio",
+    "explore": "Explorar",
+    "exploreRefresh": "Actualizar",
+    "exploreMore": "Más",
+    "exploreEmpty": "Aún no hay nada que recomendar",
+    "exploreFailed": "No se pudieron leer las recomendaciones",
+    "exploreRetry": "Reintentar",
+    "exploreScrollLeft": "Desplazar a la izquierda",
+    "exploreScrollRight": "Desplazar a la derecha",
+    "exploreArtist": "Artista",
+    "exploreAlbum": "Álbum",
+    "exploreSong": "Canción",
+    "exploreSingle": "Sencillo",
+    "exploreEp": "EP",
+    "exploreCompilation": "Recopilación",
+    "explorePlaylist": "Playlist",
+    "exploreMix": "Mix",
+    "exploreRecent": "Escuchado recientemente",
+    "exploreAgain": "Volver a escuchar",
+    "exploreSimilar": "Parecido a {{name}}",
+    "neteaseDailyPlaylists": "Playlists diarias para ti",
+    "neteaseCharts": "Rankings",
+    "neteaseNewSongs": "Canciones nuevas",
+    "neteaseNewAlbums": "Álbumes nuevos",
+    "neteaseHotPlaylists": "Playlists populares",
+    "qqRadar": "Radar de canciones",
+    "qqNewSongs": "Canciones nuevas",
+    "qqNewAlbums": "Álbumes nuevos",
+    "qqCharts": "Rankings",
     "personalFm": "FM personal",
     "dailyRecommendations": "Recomendaciones diarias",
     "dailyRecommendationsDescription": "Una mezcla diaria hecha para ti",
@@ -1462,6 +2522,7 @@ export default {
     "refreshRecommendations": "Actualizar las recomendaciones de hoy",
     "noMoreDailyRecommendations": "No hay más recomendaciones disponibles hoy",
     "dislikeRecommendationFailed": "No se pudo reemplazar esta recomendación. Inténtalo de nuevo más tarde.",
+    "removeTrackFailed": "No se pudo quitar la canción",
     "stage": "Escenario"
   },
   "animation": {
@@ -1497,6 +2558,7 @@ export default {
     "joinCommunity": "Únete a la comunidad",
     "communityDiscord": "Servidor de Discord",
     "communityDiscordHint": "Abrir el enlace de invitación",
+    "joinDiscord": "Únete a la comunidad de Discord",
     "communityQq": "Grupo de autoayuda en QQ",
     "communityQqHint": "{{number}} · haz clic para copiar",
     "qqGroupNumberCopied": "Número del grupo copiado",
@@ -1505,13 +2567,19 @@ export default {
     "majorUpdateLabel": "Actualización {{codename}} · Actualización mayor",
     "ponder": "Ayuda de Ponder",
     "ponderDescription": "Aprende los controles básicos y el modo de uso de Folia",
-    "version": "versión"
+    "version": "Versión"
+  },
+  "qishui": {
+    "recentPlayed": "Escuchado recientemente en Qishui",
+    "recommended": "Recomendado para ti"
   },
   "lyricProvider": {
+    "qishui": "Qishui Music",
     "netease": "NetEase Cloud Music",
     "qq": "QQ Music",
     "kugou": "KuGou Music",
-    "amll": "AMLLDB",
+    "spotify": "Spotify",
+    "amll": "AMLLDB"
   },
   "globalLyricOffset": {
     "title": "Desfase global de sincronización",
@@ -1524,7 +2592,7 @@ export default {
     "description": "Se aplica a todas las canciones en este dispositivo y no se sincroniza. Los desfases por canción del panel del reproductor se suman a este.",
     "pendingApply": "Solo vista previa. Aplicado actualmente: {{applied}} ms; presiona Aplicar para guardar.",
     "noLyrics": "Reproduce una canción con letra para previsualizar el desfase",
-    "waitingForLine": "Esperando la siguiente línea",
+    "waitingForLine": "Esperando la siguiente línea"
   },
   "lyricFilter": {
     "title": "Filtrado de letras",
@@ -1533,9 +2601,9 @@ export default {
     "clear": "Borrar",
     "save": "Guardar",
     "saving": "Guardando...",
-    "preview": "Vista previa",
     "filteredCount": "Filtradas {{removed}} de {{total}} en total",
-    "noLyricsToPreview": "No hay letra disponible para la vista previa",
+    "tagLine": "Filtro de líneas",
+    "tagStaff": "Créditos",
     "emptyContent": "No hay contenido de letra para previsualizar",
     "enableFilter": "Activar filtro de líneas",
     "regexPattern": "Expresión regular",
@@ -1543,11 +2611,10 @@ export default {
     "inputPlaceholder": "Escribe una expresión regular",
     "example": "Ejemplo:",
     "invalidRegex": "Expresión regular no válida: {{error}}",
-    "ruleSectionTitle": "Reglas del filtro de líneas",
+    "ruleSectionTitle": "Reglas del filtro de líneas"
   },
   "lyricStaff": {
     "title": "Créditos iniciales",
-    "description": "Detecta y gestiona el bloque de créditos al inicio de la letra",
     "policy": "Tratamiento",
     "policyKeep": "Mostrar siempre",
     "policySmart": "Ajustar a la intro",
@@ -1568,48 +2635,126 @@ export default {
     "customPattern": "Patrón de detección personalizado",
     "customPatternDesc": "Déjalo vacío para usar el diccionario de créditos integrado. Un patrón personalizado lo reemplaza y aun así solo se aplica al bloque inicial.",
     "customPatternPlaceholder": "Déjalo vacío para usar el diccionario integrado",
-    "verdict": "Resultado para esta canción",
+    "verdict": "Resultado para esta canción: {{verdict}}",
     "verdictNone": "No se detectó ningún bloque de créditos",
     "verdictKeep": "Se muestra tal cual",
     "verdictRetime": "Se muestra, repartido a lo largo de la intro",
     "verdictHide": "Oculto",
     "verdictSummary": "{{lines}} línea(s) de créditos, {{window}} s de intro, {{required}} s necesarios para mostrarlas todas",
-    "verdictSummaryAbsorbed": "{{lines}} línea(s) de créditos + {{absorbed}} absorbida(s), {{window}} s de intro, {{required}} s necesarios para mostrarlas todas",
+    "verdictSummaryAbsorbed": "{{lines}} línea(s) de créditos + {{absorbed}} absorbida(s), {{window}} s de intro, {{required}} s necesarios para mostrarlas todas"
   },
   "replayGain": {
     "off": "ReplayGain desactivado",
     "track": "ReplayGain: modo canción",
-    "album": "ReplayGain: modo álbum",
+    "album": "ReplayGain: modo álbum"
   },
   "settings": {
     "lyricMatchPriority": "Prioridad de coincidencia de letras",
     "lyricMatchPriorityDesc": "Cuando varias fuentes de letras tienen coincidencias de alta confianza, se prefiere primero esta fuente."
   },
   "options": {
+    "aiProvider_gemini": "Google Gemini",
+    "aiProvider_deepseek": "DeepSeek",
+    "aiProvider_mimo": "Xiaomi MiMo",
+    "aiProvider_qwen": "Alibaba Cloud Qwen",
+    "aiProvider_tencentcloud": "Tencent Cloud TokenHub",
+    "aiProvider_openai": "OpenAI",
+    "aiProvider_anthropic": "Anthropic",
+    "aiProvider_kimi": "Kimi",
+    "aiProvider_glm": "Zhipu GLM",
+    "aiProvider_custom": "Endpoint compatible personalizado",
+    "aiApiKey": "Clave de API",
+    "aiModel": "Modelo",
+    "aiApiUrl": "URL de la API",
+    "aiModelsFetch": "Obtener modelos",
+    "aiModelsLoading": "Obteniendo…",
+    "aiModelChoose": "Elige un modelo",
+    "aiModelManual": "Escribir a mano",
+    "aiModelPlaceholder": "ID del modelo",
+    "aiModelsAuthError": "La clave no es válida o no tiene permiso para listar modelos",
+    "aiModelsTimeout": "La solicitud de modelos tardó demasiado. Vuelve a intentarlo.",
+    "aiModelsEmpty": "No se encontraron modelos. Puedes escribir uno a mano.",
+    "aiModelsError": "No se pudieron obtener los modelos. Revisa la URL de la API y la clave.",
+    "aiModelDefault": "Predeterminado: {{model}}",
+    "aiModelRetired": "{{model}} ya no está disponible. Cambia a {{replacement}}.",
+    "aiModelAlwaysThinks": "Este modelo no puede desactivar el razonamiento, así que la segmentación de letras será más lenta.",
+    "aiEndpoint": "Sitio",
+    "aiApiUrlUnlistedDesc": "No es uno de los sitios de este proveedor. Elige un sitio para reemplazarlo, o cambia a Endpoint compatible personalizado para editarlo.",
+    "aiEndpoint_cn": "China",
+    "aiEndpoint_global": "Internacional",
+    "aiEndpoint_singapore": "Singapur",
+    "aiEndpoint_us": "Estados Unidos",
+    "aiEndpoint_hongkong": "Hong Kong",
+    "aiTemperatureRangeDesc": "Rango: {{min}}–{{max}}. Si lo dejas vacío, se usa 0,7.",
+    "aiTemperaturePerModelDesc": "Rango: {{min}}–{{max}}; algunos modelos lo ignoran. Si lo dejas vacío, se usa 0,7.",
+    "randomVisualizerModes": "Estilos para el aleatorio",
+    "randomVisualizerSelectAll": "Seleccionar todos",
+    "randomVisualizerCurrentStyle": "Estilo actual",
+    "randomVisualizerAtLeastOne": "Elige al menos un estilo",
+    "randomVisualizerReroll": "Sacar otro estilo del grupo",
+    "previewGlobalSettings": "Global",
+    "randomPool": "Grupo aleatorio",
+    "randomPoolCount": "{{selected}} de {{total}}",
+    "randomPoolDesc": "Cada canción cambia a uno de los estilos elegidos, con los ajustes que guardaste para ese estilo.",
+    "randomPoolChoose": "Elegir el grupo aleatorio",
     "ponderHints": "Sugerencias del tutorial Ponder",
-    "ponderHintsDesc": "Al pasar el cursor sobre un control que tiene tutorial, aparece una sugerencia para mantener presionada G, que abre una demostración animada de ese gesto.",
+    "ponderHintsDesc": "Al pasar el cursor sobre un control con tutorial aparece una sugerencia para mantener presionada G.",
     "ponderHintsAlways": "Mostrar siempre",
     "ponderHintsUnseen": "Solo donde aún no he mirado",
     "ponderHintsOff": "Desactivado",
     "ponderTouchButton": "Botón de Ponder en pantallas táctiles",
-    "ponderTouchButtonDesc": "La bombilla de la esquina superior derecha en dispositivos táctiles: aparece unos segundos al entrar en una página, y un toque en esa esquina la vuelve a mostrar. Si está desactivada, en pantallas táctiles solo se puede llegar a Ponder desde la ventana de comandos.",
+    "ponderTouchButtonDesc": "La bombilla de la esquina superior derecha en dispositivos táctiles.",
     "refresh": "Actualizar",
     "cacheDetails": "Detalles de la caché",
-    "settingsGroupAppearance": "Apariencia",
-    "settingsGroupControls": "Controles",
-    "settingsGroupConnections": "Conexiones y datos",
-    "settingsGroupSystem": "Sistema",
-    "generalSettings": "Ajustes generales",
-    "generalSettingsDesc": "Idioma de la interfaz y otras preferencias de toda la app.",
+    "settingsGroupInterface": "Interfaz",
+    "settingsGroupMusic": "Música",
+    "settingsGroupApp": "App",
+    "settingsGroupAdvanced": "Avanzado",
+    "settingsPageAppearance": "Apariencia",
+    "settingsPagePlayer": "Página del reproductor",
+    "settingsPageHome": "Inicio y playlists",
+    "settingsPagePlayback": "Reproducción",
+    "settingsPageLyrics": "Letras",
+    "settingsPageGeneral": "General",
+    "settingsPageInteraction": "Atajos",
+    "settingsPageIntegration": "Conexiones",
+    "settingsPageStorage": "Almacenamiento y respaldo",
+    "settingsPageDesktop": "Escritorio",
+    "settingsPageGraphics": "Rendimiento y movimiento",
+    "settingsPageMods": "Mods",
+    "settingsPageDeveloper": "Desarrollo",
+    "settingsHeadingTheme": "Tema",
+    "settingsHeadingSongTheme": "Temas por canción",
+    "settingsHeadingView": "Vista",
+    "settingsHeadingControlBar": "Barra de controles",
+    "settingsHeadingHome": "Inicio",
+    "settingsHeadingServices": "Servicios",
+    "settingsHeadingStreaming": "Streaming y Stage",
+    "settingsHeadingCommandPalette": "Paleta de comandos",
+    "settingsHeadingGrids": "Cuadrículas",
+    "settingsHeadingGlobalShortcuts": "Atajos globales",
+    "settingsSearchTitle": "Buscar",
+    "settingsWindowName": "Ajustes",
+    "settingsSearchCount": "{{n}} encontrados",
+    "settingsRowDetails": "Detalles",
+    "settingsCopy": "Copiar",
+    "settingsColorArea": "Saturación y brillo",
+    "settingsColorAreaValue": "Saturación {{saturation}} %, brillo {{brightness}} %",
+    "settingsColorHue": "Tono",
+    "settingsDesktopOnly": "Solo en la app de escritorio",
+    "settingsKeyCaptureListening": "Presiona una tecla…",
+    "settingsKeyCaptureEmpty": "Sin asignar",
+    "settingsKeyCaptureClear": "Borrar",
+    "settingsOrderItem": "{{name}}, {{position}} de {{count}}. Las flechas izquierda y derecha lo mueven",
+    "settingsSaved": "Guardado",
+    "settingsSaving": "Guardando...",
+    "daylightModeLight": "Claro",
+    "daylightModeDark": "Oscuro",
+    "daylightModeSystem": "Sistema",
+    "stageTrackPillMode": "Cuándo mostrar",
     "visualSettingsCardDesc": "Temas, modos de renderizado de letra, accesos a estilos y opacidad del fondo.",
-    "visualSettingsPanelDesc": "Temas, renderizado de letra y apariencia del fondo.",
-    "playbackSettings": "Ajustes de reproducción",
     "playbackSettingsDesc": "Comportamiento de reproducción, fuentes de letras y audio.",
-    "playbackSettingsPanelDesc": "Comportamiento de reproducción, fuentes de letras, salida de audio y ajustes relacionados.",
-    "interactionSettings": "Interacción",
     "interactionSettingsDesc": "Paleta de comandos y atajos de teclado.",
-    "interactionSettingsPanelDesc": "Paleta de comandos y atajos de teclado.",
-    "gridActionButton": "Botón de acción de la cuadrícula",
     "gridSlideTarget": "Deslizar a la izquierda para abrir",
     "gridSlideTargetDesc": "El gesto de deslizar en el botón inferior derecho de la cuadrícula. Tocarlo sigue abriendo la lista.",
     "gridSlideTargetFilter": "Búsqueda con filtro",
@@ -1617,18 +2762,31 @@ export default {
     "gridSlideTargetCommandPalette": "Paleta de comandos",
     "gridSlideTargetCommandPaletteDesc": "Abre la lista de comandos, igual que {{modifier}}+K.",
     "gridPaletteHotkey": "Abrir la paleta de comandos con S en una cuadrícula",
-    "gridPaletteHotkeyDesc": "Desactivado por defecto: en una cuadrícula, cada tecla imprimible se usa para el filtro, incluida la S. Actívalo y la S abrirá la paleta de comandos, mientras las demás teclas siguen yendo al filtro.",
+    "gridPaletteHotkeyDesc": "Si está desactivado, la S va al filtro como cualquier otro carácter.",
     "customShortcut": "Atajo personalizado",
-    "customShortcutDesc": "Alt es fijo y tú eliges la otra mitad: haz clic en el campo de tecla y presiona la letra que quieras. Si otra función ya usa esa tecla, se rechaza, y solo aparecen los comandos que funcionan en cualquier pantalla.",
-    "customShortcutKey": "Tecla",
+    "customShortcutDesc": "Alt más una letra ejecuta un comando que funciona en cualquier pantalla.",
     "customShortcutCommand": "Ejecuta",
-    "customShortcutNoKey": "Sin asignar",
     "customShortcutNoCommand": "Ninguno seleccionado",
-    "customShortcutListening": "Presiona una tecla…",
-    "customShortcutClear": "Borrar",
     "customShortcutTaken": "Esa tecla ya la usa otro atajo",
     "customShortcutLettersOnly": "Solo letras de la A a la Z",
-    "replayGainSettings": "Ganancia de audio",
+    "globalShortcuts": "Atajos globales",
+    "globalShortcutsDesc": "Teclas que funcionan mientras Folia está en segundo plano: los controles de reproducción y los comandos que aportan los mods.",
+    "globalShortcutsNote": "Los modificadores son fijos, Ctrl+Alt+Shift (Control+Option+Shift en macOS); tú eliges la última tecla. Si otro programa ya usa una combinación, se marca en su fila.",
+    "globalShortcutsPortalDesc": "En Wayland, tu escritorio asigna las teclas.",
+    "globalShortcutsPortalNote": "Después de registrarlos, asigna una tecla a cada entrada como lo indica la documentación de tu escritorio. La tecla que sugiere cada entrada:",
+    "globalShortcutPortalRegister": "Registrar en el escritorio",
+    "globalShortcutPortalUnregister": "Quitar el registro",
+    "globalShortcutPortalRegistered": "Registrados. Asigna las teclas en los ajustes de tu escritorio.",
+    "globalShortcutSlot": "Atajo {{index}}",
+    "globalShortcutCommand": "Comando del atajo {{index}}",
+    "globalShortcutNoCommand": "Ninguno elegido",
+    "globalShortcutLettersAndDigits": "Solo letras A–Z y dígitos 0–9",
+    "globalShortcutReserved": "GNOME graba la pantalla con Ctrl+Alt+Shift+R; elige otra tecla",
+    "globalShortcutDuplicate": "Otro atajo global ya usa esa tecla",
+    "globalShortcutTakenBySystem": "Otro programa ya usa esta combinación",
+    "globalShortcutModCommand": "{{command}} · {{mod}}",
+    "globalShortcutModInactive": "El mod no está activado. La tecla vuelve cuando lo esté",
+    "globalShortcutModCommandMissing": "El mod no ofrece este comando por ahora",
     "replayGainMode": "Modo ReplayGain (equilibrio de volumen)",
     "replayGainModeDesc": "Normaliza el volumen de reproducción con los metadatos ReplayGain de la canción o del álbum, si están disponibles.",
     "transitionSettings": "Transiciones de Folia",
@@ -1638,92 +2796,51 @@ export default {
     "transitionCrossfadeDesc": "Un desvanecimiento de salida seguido de uno de entrada.",
     "transitionAutomix": "Automix de Folia",
     "transitionAutomixDesc": "Analiza ambas canciones y las mezcla automáticamente.",
-    "transitionActive": "Activo",
     "transitionFellBack": "Usando fundido cruzado",
     "crossfadeMaxSeconds": "Duración máxima de la transición",
     "crossfadeSecondsValue": "{{seconds}} s",
     "transitionAutomixUnavailable": "Automix no está disponible en este entorno: el audio no se puede decodificar para analizarlo, así que los cambios de canción usan el fundido cruzado estable.",
     "transitionEngineFull": "Completo",
-    "transitionEngineFullDesc": "Alineación de ritmo más precisa, y las canciones se separan en stems.",
     "transitionEngineLite": "Compatible",
-    "transitionEngineLiteDesc": "Por las limitaciones del navegador, la mezcla puede quedar con la mitad de calidad que en la versión de escritorio.",
-    "transitionEngineNeedsModels": "Los modelos de análisis aún no se han descargado. Descárgalos para usar el motor completo.",
+    "transitionEngineLiteDesc": "En el navegador la mezcla queda más o menos con la mitad de calidad que en la app de escritorio.",
+    "transitionEngineNeedsModels": "A esta instalación le faltan los modelos de análisis. Reinstala Folia para usar el motor completo.",
+    "legacyModelsTitle": "Limpiar los modelos antiguos de la transición inteligente",
+    "legacyModelsDesc": "Los modelos de análisis de la transición inteligente ahora vienen con Folia, así que los modelos y el runtime que descargaban las versiones anteriores ya no se usan. La carpeta de modelos que elegiste todavía tiene {{files}} de ellos, {{size}} en total: {{dir}}. Borrar quita solo esos archivos antiguos, nada más de la carpeta.",
+    "legacyModelsDelete": "Borrar",
+    "legacyModelsOpen": "Abrir carpeta",
+    "legacyModelsKeep": "Conservarlos y no volver a preguntar",
+    "legacyModelsFailed": "Algunos archivos no se pudieron borrar (puede que estén en uso). Abre la carpeta para borrarlos tú, o vuelve a intentarlo la próxima vez que abras Folia.",
     "transitionPerformance": "Modo actuación",
     "transitionPerformanceDesc": "Una transición más agresiva.",
     "transitionPerformanceNeedsStems": "No está disponible en la versión para navegador.",
-    "transitionPerformanceNeedsModel": "Primero hay que descargar el modelo de separación de stems.",
-    "modelsTitle": "Modelos de análisis",
-    "modelsDesc": "El motor completo necesita sus modelos de red neuronal y un entorno de ejecución, unos {{size}} en total.",
-    "modelEnablesBeatGrid": "Beat This!",
-    "modelEnablesStems": "HTDemucs",
-    "modelEnablesRuntime": "Componente necesario",
-    "modelScopeAutomix": "Automix",
-    "modelScopePerformance": "Modo actuación",
-    "modelInstalled": "Instalado",
-    "modelMissing": "No instalado",
-    "modelUnsupported": "No compatible",
-    "modelUnsupportedWhy": "La separación de voces no funciona con el procesador de este dispositivo",
-    "modelDownload": "Descargar",
-    "modelCancel": "Cancelar",
-    "modelScan": "Buscar en este equipo",
-    "modelScanning": "Buscando...",
-    "modelScanNone": "No se encontró ningún archivo de modelo utilizable",
-    "modelScanFound": "Se instalaron {{count}} modelo(s)",
-    "modelManualHint": "Fallaron todas las vías de descarga. Descarga los archivos desde un servicio de almacenamiento en la nube a este equipo y luego presiona Buscar en este equipo para instalarlos.",
-    "modelManualLink": "Obtener desde la nube",
-    "modelManualTitle": "Descargar los modelos desde la nube",
-    "modelManualDialogDesc": "Cuando los archivos estén en este equipo, vuelve y presiona Buscar en este equipo: se verificarán e instalarán automáticamente.",
-    "modelManualOpen": "Abrir el enlace",
-    "modelLocation": "Ubicación de los modelos",
-    "modelLocationChange": "Cambiar ubicación",
-    "modelLocationReset": "Restablecer a la predeterminada",
-    "modelRemoveAll": "Eliminar todos los modelos",
-    "modelRemoveConfirm": "Esto elimina los {{size}} de archivos de modelos instalados y cambia Automix al modo compatible. Puedes volver a descargarlos cuando quieras.",
-    "modelRemoveDone": "Eliminados; se liberaron {{size}}",
-    "modelRemoveFailed": "No se pudo eliminar: {{what}}",
-    "modelManualCode": "Código",
-    "modelManualCodeCopied": "Copiado",
-    "modelReminderTitle": "Los modelos de análisis no están descargados",
-    "modelReminderDesc": "El motor de transiciones completo de Folia necesita sus modelos de red neuronal, unos 249MB en total.",
-    "modelReminderDownload": "Descargar",
-    "modelReminderLater": "Entendido",
-    "modelReminderNever": "No volver a recordarme",
+    "transitionPerformanceNeedsModel": "A esta instalación le falta el modelo de separación de pistas. Reinstala Folia para usarlo.",
     "transitionAnimation": "Animación de transición",
     "transitionAnimationDesc": "Dibuja la mezcla mientras ocurre. No se muestra en transiciones de menos de 5 segundos.",
-    "transitionAnimationOff": "Desactivada",
     "transitionAnimationRing": "Anillo en pantalla",
     "transitionAnimationRingDesc": "Se dibuja en el centro de la pantalla. Cualquier tecla lo cierra.",
     "transitionAnimationCard": "Borde de la tarjeta",
     "transitionAnimationCardDesc": "Se dibuja en el borde de la tarjeta de la canción, en las páginas donde aparece esa tarjeta.",
     "transitionAutomixNeedsCache": "La caché de canciones está desactivada, así que las canciones en línea nunca se analizan. Automix termina siendo cerca de un 50 % menos eficaz.",
     "transitionAutomixEnableCache": "Activar la caché de canciones",
-    "integrationSettings": "Ajustes de integración",
-    "integrationSettingsDesc": "Conexiones con apps y servicios externos.",
     "lyricApi": "API de letras",
-    "enableLyricApi": "Activar API de letras",
-    "lyricApiDesc": "Expone un endpoint local de puerto fijo sin autenticación para que programas externos puedan leer la letra depurada de la canción actual. Solo escucha en 127.0.0.1.",
+    "lyricApiDesc": "Otros programas pueden leer la letra actual. Solo escucha en 127.0.0.1.",
     "lyricApiAddress": "Endpoint",
-    "copyLyricApiAddress": "Copiar endpoint",
     "lyricApiRunning": "En ejecución",
     "lyricApiUnavailable": "No disponible",
     "lyricApiEnabledStatus": "API de letras activada en http://127.0.0.1:32109/v1/lyric",
     "lyricApiDisabledStatus": "API de letras desactivada",
     "lyricApiEnableFailed": "No se pudo iniciar la API de letras",
-    "storageSettings": "Ajustes de almacenamiento",
     "storageSettingsDesc": "Uso de caché, limpieza, caché multimedia y carpeta de caché.",
-    "storageSettingsPanelDesc": "Uso de caché, limpieza y comportamiento de la caché multimedia.",
-    "desktopSettings": "Ajustes de escritorio",
     "desktopSettingsDesc": "Búsqueda de actualizaciones, actualización automática y configuración de IA de escritorio.",
-    "desktopSettingsPanelDesc": "Comportamiento de la ventana de escritorio, búsqueda de actualizaciones, actualización automática y configuración de IA.",
     "languageSettings": "Idioma",
     "appLanguage": "Idioma de la interfaz",
-    "appLanguageDesc": "Elige manualmente el idioma de la interfaz de Folia o vuelve a seguir el del sistema.",
     "appLanguageSystem": "Seguir al sistema",
     "appLanguageZhCN": "Chino simplificado",
+    "appLanguageZhTW": "Chino tradicional",
     "appLanguageEnUS": "Inglés",
     "appLanguageInID": "Indonesio",
     "appLanguageEs": "Español",
-    "appLanguageSystemHint": "Sigue el idioma del navegador o del sistema. Actual: {{language}}",
+    "appLanguageSystemHint": "Actual: {{language}}",
     "playbackEntryView": "Vista que abre Reproducir",
     "playbackEntryViewDesc": "Qué vista se abre por defecto después de presionar reproducir.",
     "librarySuite": "Interfaz de la biblioteca",
@@ -1761,17 +2878,25 @@ export default {
     "bravaisBackdropLyricsDesc": "Dibuja la letra en el visualizador que se ve a través de las ventanas y de una franja de información transparente. Desactivado, la página de inicio se mantiene tranquila; la página del reproductor siempre la muestra.",
     "bravaisBackdropBlur": "Desenfoque detrás del muro",
     "bravaisBackdropBlurDesc": "Desenfoca el visualizador donde se vea a través del muro o de la franja de información. Es un único desenfoque de pantalla completa sobre la capa del visualizador y puede costar fotogramas en equipos más lentos con tasas de refresco altas. Solo se aplica mientras algo sea transparente.",
+    "bravaisSeamDirection": "Dirección de la franja de información",
+    "bravaisSeamDirectionDesc": "En vertical, la franja de información se abre entre dos columnas de bloques y separa el muro a izquierda y derecha. En horizontal, se abre entre dos filas de bloques y separa el muro arriba y abajo, con la franja a lo ancho de la pantalla. Los paneles de listas, los formularios y los pósteres de artista y álbum siempre quedan en vertical.",
+    "bravaisSeamDirectionAuto": "Automática",
+    "bravaisSeamDirectionAutoDesc": "Fila en pantallas altas (un teléfono en vertical, una ventana alta) y columna en las anchas; cambia cuando gira la pantalla.",
+    "bravaisSeamDirectionVertical": "Vertical",
+    "bravaisSeamDirectionVerticalDesc": "Se abre entre dos columnas de bloques; el muro se separa a izquierda y derecha.",
+    "bravaisSeamDirectionHorizontal": "Horizontal",
+    "bravaisSeamDirectionHorizontalDesc": "Se abre entre dos filas de bloques; el muro se separa arriba y abajo.",
     "homeTabsVisibility": "Accesos de cápsula superiores",
     "rememberHomeCardPosition": "Recordar la posición de las tarjetas de inicio",
     "rememberHomeCardPositionDesc": "Vuelve a la última tarjeta de cada sección al cambiar de pestaña o salir del reproductor. Las posiciones se guardan hasta que cierres o recargues la app.",
     "homeTabsVisibilityDesc": "Personaliza los accesos de cápsula que se muestran arriba en la página de inicio",
-    "bottomUiSettings": "Controles inferiores",
     "showHomeTabPlaylist": "Mostrar listas de reproducción",
     "showHomeTabRadio": "Mostrar radio",
+    "showHomeTabExplore": "Mostrar Explorar",
     "showHomeTabAlbums": "Mostrar álbumes",
     "showHomeTabLocal": "Mostrar local",
     "pinnedCommands": "Comandos fijados",
-    "pinnedCommandsDesc": "Elige hasta tres comandos para mostrar debajo de la paleta de comandos.",
+    "pinnedCommandsDesc": "Se muestran debajo de la paleta de comandos, hasta tres.",
     "pinnedCommandSlot": "Espacio {{index}}",
     "pinnedCommandNone": "Sin comando fijado",
     "playlistData": "Datos de listas de reproducción",
@@ -1781,13 +2906,12 @@ export default {
     "mediaFiles": "Archivos multimedia",
     "mediaCache": "Caché multimedia",
     "enableMediaCache": "Guardar canciones en caché",
-    "enableMediaCacheDesc": "Guarda el audio en caché para escucharlo sin conexión. También permite que los cambios de canción mezclados analicen la siguiente canción antes de reproducirla por primera vez.",
+    "enableMediaCacheDesc": "Guarda el audio en caché para escucharlo sin conexión; las transiciones pueden leer antes la siguiente canción.",
     "mediaCacheLimit": "Límite de caché",
     "mediaCacheLimitDesc": "Al superarlo, se eliminan primero las canciones que llevas más tiempo sin reproducir.",
     "mediaCacheLimitNone": "Sin límite",
     "cachedSongsCount": "Canciones en caché",
     "cacheDirectory": "Carpeta de caché",
-    "cacheDirectoryDesc": "Elige dónde guardar los archivos grandes de caché de escritorio.",
     "cacheDirectoryDefaultHint": "Usando la ubicación de caché predeterminada.",
     "cacheDirectoryCustomHint": "Usando una ubicación de caché personalizada.",
     "chooseCacheDirectory": "Elegir carpeta",
@@ -1795,7 +2919,7 @@ export default {
     "cacheDirectoryPendingDesc": "Electron ahora guarda los archivos de caché de audio en esta carpeta. Las letras, las portadas y otras cachés del navegador siguen usando la carpeta de datos de la app.",
     "localLibraryWatch": "Supervisión de carpetas locales",
     "localLibraryAutoScan": "Escanear automáticamente las carpetas importadas",
-    "localLibraryAutoScanDesc": "Supervisa las carpetas que importaste y ejecuta un escaneo incremental cada vez que cambien sus archivos.",
+    "localLibraryAutoScanDesc": "Hace un escaneo incremental cada vez que cambian las carpetas importadas.",
     "localLibraryWatchAttaching": "Conectando con las carpetas importadas...",
     "localLibraryWatchNoFolders": "Aún no hay carpetas importadas. Importa una desde la página de biblioteca local.",
     "localLibraryWatchNoPermission": "El acceso expiró. Vuelve a importar esta carpeta para supervisarla.",
@@ -1808,18 +2932,21 @@ export default {
     "localLibraryWatchNeverScanned": "Aún no se ha hecho ningún escaneo automático.",
     "localLibraryWatchRecheck": "Volver a revisar carpetas",
     "r2Sync": "Servidor de sincronización",
-    "r2SyncEnable": "Activar servidor de sincronización",
-    "r2SyncEnableDesc": "Sincroniza los ajustes de apariencia y los temas de IA mediante tu propio Worker de Cloudflare D1 o un servicio de sincronización autoalojado.",
+    "r2SyncEnableDesc": "Sincroniza los ajustes de apariencia y los temas de IA a través de tu propio servidor.",
     "r2SyncDeployDocs": "Guía de implementación",
     "r2SyncWorkerUrl": "URL del servidor de sincronización",
     "r2SyncToken": "Token Bearer",
     "r2SyncTokenPlaceholder": "SYNC_TOKEN del Worker",
     "r2SyncSave": "Guardar",
     "r2SyncTest": "Probar",
+    "r2SyncTesting": "Probando...",
     "r2SyncNow": "Sincronizar temas de IA",
     "syncVisualSettings": "Sincronizar ajustes visuales",
+    "r2SyncSyncing": "Sincronizando...",
     "r2SyncExportLibrary": "Exportar zip",
+    "r2SyncExporting": "Exportando...",
     "r2SyncImportLibrary": "Importar zip",
+    "r2SyncImporting": "Importando...",
     "r2SyncImportConfirm": "¿Importar esta biblioteca de sincronización y sobrescribir la caché de sincronización local? Si la sincronización está activada, la biblioteca importada también se enviará a tu servidor de sincronización.",
     "r2SyncLastSync": "Última sincronización",
     "r2SyncStatusIdle": "Aún no se ha sincronizado",
@@ -1832,13 +2959,11 @@ export default {
     "updateCheckFailed": "Falló la búsqueda",
     "updateUnsupported": "No disponible",
     "enableUpdateCheck": "Activar búsqueda de actualizaciones",
-    "enableUpdateCheckDesc": "Revisa las versiones publicadas en GitHub a través del proxy del sistema al iniciar la app de escritorio.",
+    "enableUpdateCheckDesc": "Busca una versión nueva al abrir la app.",
     "enableAutoUpdate": "Activar actualización automática",
     "enableAutoUpdateDesc": "Descarga las actualizaciones automáticamente cuando se encuentra una nueva versión.",
-    "autoUpdateUnavailable": "Actualizaciones automáticas no disponibles",
-    "manualUpdateOnlyDesc": "Las nuevas versiones se siguen detectando, pero para actualizar se necesita un instalador completo o un gestor de paquetes compatible.",
+    "manualUpdateOnlyDesc": "Las versiones nuevas se siguen detectando, pero para actualizar se necesita un instalador completo.",
     "updateChannel": "Canal de actualizaciones",
-    "updateChannelDesc": "Elige qué canal de versiones sigue esta app de escritorio.",
     "updateChannelRealeco": "Realeco · Estable",
     "updateChannelLimo": "Limo · Nightly",
     "updateChannelCielo": "Cielo · Canary",
@@ -1859,28 +2984,20 @@ export default {
     "restartToInstallUpdate": "Reiniciar para instalar",
     "staticMode": "Modo estático",
     "enableStaticMode": "Modo estático",
-    "enableStaticModeDesc": "Solo desactiva los fondos geométricos.",
-    "enableStaticModeDescSub": "No afecta los efectos ni el renderizado del texto de la letra.",
-    "graphicsSettings": "Gráficos",
-    "graphicsSettingsDesc": "Modo estático, fondos dinámicos, desenfoque nativo, límite de fotogramas, corrección del brillo en Linux y movimiento reducido.",
-    "modSettings": "Mods",
-    "modSettingsDesc": "El interruptor general del sistema de mods, además de activar, instalar y ejecutar los mods instalados.",
+    "enableStaticModeDesc": "Desactiva los fondos geométricos para ahorrar recursos",
     "settingsSearchPlaceholder": "Buscar ajustes",
     "settingsSearchClear": "Borrar búsqueda",
     "settingsSearchEmpty": "No hay ajustes que coincidan",
-    "labSettings": "Ajustes del laboratorio",
-    "labSettingsDesc": "Abre una página aparte con ajustes experimentales de reproducción y del comportamiento de los paneles.",
-    "developerSettings": "Desarrollador",
-    "developerSettingsDesc": "Lo que la app registró mientras se ejecutaba.",
     "consoleLogCapture": "Registro de la sesión",
-    "consoleLogCaptureDesc": "Lo que la app registra mientras se ejecuta.",
+    "consoleLogCaptureDesc": "Lo que la app registra mientras funciona",
     "consoleLogConvention": "Las líneas se agrupan según el prefijo [Módulo] con que empiezan, para poder filtrar cada una por separado. Revisa docs/client-logging.md.",
+    "developerTools": "Registro de sesión y monitor de memoria",
     "debugLogsToFile": "Guardar en archivo",
+    "debugLogsOpenFolder": "Abrir la carpeta de registros",
     "debugLogModeAppend": "Agregar al final",
     "debugLogModeOverwrite": "Sobrescribir",
-    "debugLogsUnavailable": "Solo en la app de escritorio",
     "memoryMonitor": "Monitor de memoria",
-    "memoryMonitorDesc": "Mide cada proceso y registra la curva.",
+    "memoryMonitorDesc": "Mide cada proceso y registra la curva",
     "memoryMonitorInterval": "Intervalo",
     "memoryCurrent": "Actual",
     "memoryPeak": "Máximo",
@@ -1889,33 +3006,35 @@ export default {
     "memoryByProcess": "Por proceso",
     "memorySeriesUnavailable": "No se informa en esta plataforma",
     "reduceMotionSection": "Reducir movimiento",
-    "reduceMotionSectionDesc": "Folia reproduce sus animaciones completas por defecto y ya no sigue por sí sola la configuración de animación del sistema. Reduce las que quieras más tranquilas.",
+    "reduceMotionSectionDesc": "Folia reproduce todas sus animaciones por defecto. Activa un elemento para reducir el movimiento ahí.",
     "reduceMotionFollowSystem": "Seguir el ajuste del sistema",
-    "reduceMotionFollowSystemDesc": "Deja que el ajuste de animaciones del sistema operativo reduzca el movimiento en todas partes, como lo hacían siempre las versiones anteriores.",
+    "reduceMotionFollowSystemDesc": "El ajuste de animaciones del sistema decide todo el movimiento",
     "reduceMotionForcedBySystem": "Actualmente reducido por el ajuste del sistema de arriba.",
+    "reduceMotionForcedNotice": "El sistema pide reducir el movimiento: todo lo de abajo queda reducido",
     "reduceMotionLattice": "Collage de la cola",
-    "reduceMotionLatticeDesc": "Expansión de pósteres, vuelo de cámara, la ola de apertura, inercia al arrastrar y desvanecimientos de la letra en el collage de la cola.",
+    "reduceMotionLatticeDesc": "Expansión de pósteres, vuelo de cámara, la ola de apertura, inercia al arrastrar",
     "reduceMotionTransitionOverlay": "Transición de mezcla",
-    "reduceMotionTransitionOverlayDesc": "El anillo de progreso de la mezcla automática y el borde de progreso dibujado alrededor de la tarjeta de reproduciendo ahora.",
+    "reduceMotionTransitionOverlayDesc": "El anillo de progreso de la transición inteligente y el borde de progreso de la tarjeta",
     "reduceMotionCollectionMorph": "Transición al abrir colecciones",
-    "reduceMotionCollectionMorphDesc": "La transformación de elemento compartido que abre una colección desde una tarjeta de inicio: el vuelo de la tarjeta, su portada y título deformándose hacia la cabecera del detalle, y la dispersión y el vuelo de regreso al salir.",
+    "reduceMotionCollectionMorphDesc": "Una tarjeta del inicio que se abre en su colección",
     "reduceMotionMonetBackground": "Deriva del fondo Monet",
-    "reduceMotionMonetBackgroundDesc": "La deriva lenta de la imagen de fondo generada a partir de la portada.",
+    "reduceMotionMonetBackgroundDesc": "La deriva lenta del fondo generado desde la portada",
     "reduceMotionUiMicroMotion": "Microanimaciones de la interfaz",
-    "reduceMotionUiMicroMotionDesc": "Pequeñas animaciones de respuesta: el selector de modo, el brillo del progreso remoto y la sugerencia del panel de cuadrícula.",
+    "reduceMotionUiMicroMotionDesc": "Pequeñas animaciones de respuesta",
     "reduceMotionSettingsScroll": "Desplazamiento suave en ajustes",
-    "reduceMotionSettingsScrollDesc": "Si al saltar a una sección de ajustes se desliza hasta ella o llega al instante.",
+    "reduceMotionSettingsScrollDesc": "Deslizarse hasta una sección de ajustes en vez de saltar",
     "labPerformanceSection": "Rendimiento y fondo",
     "labPlayerUiSection": "Interfaz de la página del reproductor",
-    "labWindowAndToolsSection": "Ventana y herramientas",
     "autoPlayOnLaunch": "Reproducir automáticamente al abrir la app",
-    "autoPlayOnLaunchDesc": "Inicia la última sesión restaurada apenas se abre la app, en lugar de esperar a que presiones reproducir.",
+    "settingsHeadingLaunch": "Inicio y ventana",
+    "autoPlayOnLaunchDesc": "Retoma la última canción apenas se abre la app.",
     "autoPlayOnLaunchDescSub": "Funciona en escritorio y en una PWA instalada. En una pestaña normal del navegador, la política de reproducción automática puede retener la reproducción hasta que hagas clic.",
     "disableHomeDynamicBackground": "Desactivar fondo dinámico de inicio",
-    "disableHomeDynamicBackgroundDesc": "Si está activado, la página de inicio detiene la animación del fondo para reducir el uso de GPU.",
-    "disableHomeDynamicBackgroundWarning": "Desactivado por defecto, así que el fondo dinámico sigue activado a menos que actives esta opción.",
+    "disableHomeDynamicBackgroundDesc": "La página de inicio detiene la animación del fondo para usar menos GPU",
     "autoUseBestLyric": "Usar automáticamente la mejor letra",
+    "settingsHeadingLyricSource": "Fuentes de letras",
     "autoUseBestLyricDesc": "Busca automáticamente letras en NetEase, AMLLDB, QQ y KuGou, priorizando las letras palabra por palabra con tiempos que coincidan perfectamente.",
+    "autoUseBestLyricDescSpotify": "Busca automáticamente letras en NetEase, AMLLDB, QQ, Kugou y Spotify, y prefiere las letras palabra por palabra con tiempos que coinciden perfectamente.",
     "lyricMatchPriority": "Prioridad de coincidencia de letras",
     "lyricMatchPriorityDesc": "Cuando varias fuentes de letras tienen coincidencias de alta confianza, se prefiere primero esta fuente.",
     "localLyricsPriority": "Prioridad de letras de canciones locales",
@@ -1925,27 +3044,27 @@ export default {
     "localLyricsPriorityOnline": "Primero en línea",
     "localLyricsPriorityOnlineDesc": "Usa primero las letras en línea encontradas, y si no hay, recurre a las letras locales.",
     "localLyricFormatOrder": "Prioridad de formatos de archivos de letras locales",
-    "localLyricFormatOrderDesc": "Cuando una canción tiene varios archivos de letras con el mismo nombre, se usa el primer formato de esta lista. .fia siempre va primero. Las letras subidas no se ven afectadas.",
+    "localLyricFormatOrderList": "Orden de formatos",
+    "localLyricFormatOrderFirst": "{{format}} primero",
+    "localLyricFormatOrderDesc": "Los archivos de letra con el mismo nombre se eligen en este orden. .fia siempre va primero.",
     "localLyricFormatOrderReset": "Restablecer",
-    "localLyricFormatDragHandle": "Arrastra para reordenar {{format}}",
     "localLyricFormatResyncHint": "El nuevo orden se aplica la próxima vez que se resincronicen tus carpetas locales.",
     "localLyricFormatResync": "Resincronizar ahora",
     "localLyricFormatResyncing": "Resincronizando…",
     "localLyricFormatResyncDone": "Carpetas locales resincronizadas",
     "localLyricFormatResyncNoFolders": "Todavía no se ha importado ninguna carpeta local",
     "localLyricFormatResyncFailed": "No se pudieron resincronizar las carpetas locales",
-    "labHidePlayerUi": "Ocultar interfaz del reproductor",
     "labHidePlayerUiDesc": "Solo se aplica en la página del reproductor. Puedes ocultar por separado la barra de controles inferior, el subtítulo inferior y el botón del lado derecho. Después de ocultar el botón del lado derecho, puedes seguir usando P para abrir o cerrar el panel derecho.",
     "alwaysShowPlayerBackButton": "Mostrar siempre el botón de volver del reproductor",
     "alwaysShowPlayerBackButtonDesc": "Mantiene visible el botón de volver en la esquina superior izquierda de la página del reproductor.",
     "alwaysShowTrackSwitchButtons": "Mostrar siempre las flechas para cambiar de canción",
     "alwaysShowTrackSwitchButtonsDesc": "Mantiene visibles las flechas de anterior/siguiente a ambos lados del título de la barra de progreso, en lugar de mostrarlas al pasar el cursor.",
     "alwaysShowMainWindowTitlebar": "Mostrar siempre los botones de control de la ventana",
-    "alwaysShowMainWindowTitlebarDesc": "Mantiene visibles los botones de minimizar, maximizar y cerrar sin mostrar la franja de la barra de título.",
+    "alwaysShowMainWindowTitlebarDesc": "Mantiene a la vista los botones de minimizar, maximizar y cerrar.",
     "hideFullscreenButton": "Ocultar botón de pantalla completa",
-    "hideFullscreenButtonDesc": "Activa esta opción para ocultar el botón de pantalla completa en los controles de la ventana de escritorio.",
+    "hideFullscreenButtonDesc": "Oculta el botón de pantalla completa en los controles de la ventana",
     "useNativeMacFullscreenButton": "Usar el botón de pantalla completa nativo de macOS",
-    "useNativeMacFullscreenButtonDesc": "Hace que el control de la ventana entre en la pantalla completa nativa de macOS en lugar de maximizar la ventana. Desactivado por defecto.",
+    "useNativeMacFullscreenButtonDesc": "El botón de pantalla completa usa la pantalla completa nativa de macOS en vez de maximizar",
     "hidePlayerProgressBar": "Ocultar la barra de controles inferior del reproductor",
     "playerBottomBarOffset": "Altura de los controles inferiores",
     "playerBottomBarOffsetDesc": "Ajusta los controles inferiores, las tarjetas de canciones, los botones de acción y los paneles laterales en todas las páginas; los subtítulos del reproductor también lo siguen. Limitado a la mitad de la pantalla.",
@@ -1967,13 +3086,15 @@ export default {
     "playerControlSlotAction_queue": "Cola de reproducción",
     "playerControlSlotAction_songWall": "Cola de reproducción (pósteres)",
     "playerControlSlotAction_sleepTimer": "Temporizador de apagado",
+    "playerControlSlotAction_locate": "Ubicar la canción que suena",
     "hidePlayerTranslationSubtitle": "Ocultar la superposición de subtítulo inferior",
     "hidePlayerTranslationSubtitleDesc": "No afecta a los modos del visualizador que muestran sus propios subtítulos.",
     "hidePlayerRightPanelButton": "Ocultar el botón derecho del reproductor",
     "transparentPlayerBackground": "Fondo del reproductor transparente",
-    "transparentPlayerBackgroundDesc": "Solo se aplica en la página del reproductor. Si está activado, Folia cambia al modo de ventana transparente para fuentes de navegador de OBS o superposiciones con croma.",
+    "transparentPlayerBackgroundDesc": "Ventana transparente para fuentes de navegador de OBS o superposiciones con croma.",
     "enablePlayerPageNativeBlur": "Activar desenfoque nativo en la página del reproductor",
-    "enablePlayerPageNativeBlurDesc": "Si está activado, los fondos de tema, imagen, Monet y otros del reproductor se ocultan y se reemplazan por el desenfoque nativo del sistema. Solo se aplica en modo no transparente en escritorio; el efecto nativo usa más recursos y puede ir lento al mover la ventana.",
+    "enablePlayerPageNativeBlurHint": "El desenfoque del sistema reemplaza los fondos del reproductor; usa más recursos",
+    "enablePlayerPageNativeBlurDesc": "Solo se aplica en la app de escritorio en modo no transparente; mover la ventana puede ir lento.",
     "nativeBlurConfirmTitle": "Efecto de vidrio del sistema",
     "nativeBlurConfirmDesc": "Esto cambia la ventana a un fondo translúcido con el efecto de vidrio del sistema. Los fondos de Folia no se mostrarán.",
     "nativeBlurConfirmAction": "Entendido",
@@ -1982,6 +3103,8 @@ export default {
     "autoHidePlayerChromeDesc": "Si está activado, la barra de progreso y los botones del lado derecho del reproductor se ocultan automáticamente cuando el mouse sale de la ventana por más de 3 segundos.",
     "autoHideCursorWithPlayerChrome": "Ocultar también el cursor",
     "autoHideCursorWithPlayerChromeDesc": "Cuando los controles se ocultan, el puntero del mouse desaparece con ellos y vuelve con el siguiente movimiento del mouse. Desactívalo para ocultar automáticamente los controles pero conservar el puntero.",
+    "hideCursorWhenIdle": "Ocultar el cursor sin movimiento",
+    "hideCursorWhenIdleDesc": "El puntero se oculta solo tras una pausa mientras los controles siguen visibles; al mover el mouse vuelve a aparecer.",
     "stageTrackPill": "Tarjeta de reproduciendo ahora",
     "stageTrackPillDesc": "La tarjeta de reproduciendo ahora de la esquina inferior izquierda en el reproductor y la cola de reproducción: se oculta automáticamente después de un rato, o se mantiene siempre visible u oculta.",
     "stageTrackPillMode_auto": "Temporizado",
@@ -1991,6 +3114,7 @@ export default {
     "stageTrackPillOnHomeDesc": "Desactivado, la tarjeta se queda en el reproductor y la cola de reproducción. Activado, también se muestra en inicio, incluso después de abrir la app o de un cambio de canción ahí. Con la biblioteca Bravais siempre está en el muro.",
     "stageTrackPillTimeout": "Duración visible",
     "disableVisualizerVignette": "Desactivar viñeta",
+    "visualizerVignette": "Viñeta",
     "disableVisualizerVignetteDesc": "Solo quita la viñeta del borde del fondo geométrico. El fondo transparente y las formas geométricas se mantienen aparte.",
     "latticeSettings": "Apariencia del muro de mosaicos",
     "latticeVignette": "Viñeta de bordes",
@@ -2003,83 +3127,94 @@ export default {
     "latticePosterTintIntensity": "Intensidad de superposición",
     "gridViewCardSettings": "Tarjetas de cuadrícula",
     "gridViewFullBleedCover": "Portada a sangre",
+    "gridViewFullBleedCoverHint": "La portada llena toda la tarjeta; el título y el artista van sobre la portada",
     "gridViewFullBleedCoverDesc": "Deja que la portada llene toda la tarjeta de la cuadrícula. El título y el artista pasan a un degradado sobre la portada, como lo hace el collage de la cola.",
     "gridViewSquareCard": "Tarjetas cuadradas",
+    "gridViewSquareCardHint": "Tan alta como ancha, para que una portada cuadrada se vea entera",
     "gridViewSquareCardDesc": "Hace que la tarjeta sea tan alta como ancha, para que una portada cuadrada se vea completa en lugar de recortada arriba y abajo. La tarjeta conserva su área, se ensancha a medida que pierde altura, y el espaciado de la cuadrícula se ajusta.",
     "gridViewMinCardScale": "Tamaño mínimo de tarjeta",
+    "gridViewMinCardScaleHint": "Qué tan pequeñas pueden quedar las tarjetas lejos del centro",
     "gridViewMinCardScaleDesc": "Cuánto pueden encogerse las tarjetas alejadas del centro. Un valor más alto mantiene legible el borde de la cuadrícula; uno más bajo acentúa la sensación de profundidad.",
     "gridViewMinCardOpacity": "Opacidad mínima de tarjeta",
+    "gridViewMinCardOpacityHint": "Qué tan tenues pueden quedar las tarjetas lejos del centro",
     "gridViewMinCardOpacityDesc": "Cuánto pueden desvanecerse las tarjetas alejadas del centro. Un valor más alto mantiene visible el borde de la cuadrícula; uno más bajo pone más foco en el centro.",
     "gridViewCardFalloffReset": "Restaurar la atenuación por defecto",
     "disableVisualizerGeometricBackground": "Ocultar el fondo geométrico común",
     "disableVisualizerGeometricBackgroundDesc": "Oculta las formas geométricas de fondo compartidas en la página del reproductor.",
     "desktopTrayBehavior": "Comportamiento de la ventana de escritorio",
-    "desktopTrayBehaviorDesc": "Solo escritorio. Configura el botón de pantalla completa, el comportamiento de la bandeja y la barra de tareas, y qué página se abre al iniciar.",
     "minimizeToTray": "Minimizar a la bandeja",
     "closeToTray": "Cerrar la ventana a la bandeja",
-    "closeToTrayDesc": "El botón de cerrar oculta la ventana en la bandeja del sistema en lugar de salir, así la reproducción continúa. Usa Salir en el menú de la bandeja para cerrar la app.",
+    "closeToTrayDesc": "El botón de cerrar oculta la ventana en la bandeja en lugar de salir",
     "hideTaskbarIcon": "Ocultar el ícono de la barra de tareas",
     "hideTaskbarIconDesc": "Oculta la app de la barra de tareas aunque la ventana principal siga abierta. El ícono de la bandeja sigue siendo la forma principal de volver a ella.",
+    "hideTaskbarIconNotice": "La ventana solo se puede volver a abrir desde el ícono de Folia en la bandeja del sistema",
+    "remoteControlGroup": "Control remoto",
+    "remoteControlGroupDefault": "Predeterminado",
+    "remoteControlGroupOn": "{{count}} cambiados",
     "hideRemoteControlTaskbarIcon": "Ocultar el ícono del control remoto en la barra de tareas",
-    "hideRemoteControlTaskbarIconDesc": "Oculta la ventana del control remoto de la barra de tareas mientras está abierta.",
     "hideRemoteControlTitlebar": "Ocultar la barra flotante superior del control remoto",
-    "hideRemoteControlTitlebarDesc": "Deja de mostrar la barra de control de la ventana (fondo, fijar, cerrar) cuando el cursor se acerca a la parte superior. Igual puedes arrastrar el área superior transparente para mover la ventana. Para cerrarla, usa «Ventana remota» en el menú de la bandeja, o «Mostrar u ocultar la ventana de control remoto» en la paleta de comandos.",
+    "hideRemoteControlTitlebarHint": "Sin barra de control de ventana cuando el cursor se acerca arriba",
+    "hideRemoteControlTitlebarDesc": "El área superior transparente igual sirve para arrastrar la ventana. Para cerrarla, usa \"Ventana remota\" en el menú de la bandeja o \"Mostrar u ocultar la ventana de control remoto\" en la paleta de comandos.",
     "remoteControlClickThrough": "Clics a través del control remoto",
-    "remoteControlClickThroughDesc": "Si está activado, la ventana del control remoto ignora el mouse y los clics pasan al escritorio y a las ventanas de abajo; la ventana en sí no se puede usar ni arrastrar. Para usarla o moverla, elige primero «Desbloquear ventana remota» en el menú de la bandeja o «Desbloquear la ventana de control remoto» en la paleta de comandos, o desactiva este interruptor aquí.",
+    "remoteControlClickThroughHint": "La ventana ignora el mouse; los clics pasan a lo que hay debajo",
+    "remoteControlClickThroughDesc": "Para desbloquear: \"Desbloquear ventana remota\" en el menú de la bandeja, \"Desbloquear la ventana de control remoto\" en la paleta de comandos, o desactiva este interruptor.",
+    "remoteControlExpandCover": "Agrandar portada",
+    "remoteControlExpandCoverHint": "Cuando está inactiva, la portada se agranda a una imagen grande",
     "openPlayerOnLaunch": "Abrir la vista de reproducción al iniciar",
     "openPlayerOnLaunchDesc": "Abre la vista de reproducción cuando se inicia la app. Sigue a «Vista que abre Reproducir»: con Lattice seleccionado, al iniciar se abre el collage de la cola.",
     "wallpaperMode": "Modo fondo de pantalla",
-    "wallpaperModeDesc": "Hunde la ventana de la app al fondo del escritorio y la mantiene siempre visible como fondo de pantalla con letras. No se puede usar el teclado.",
+    "wallpaperModeDesc": "Hunde la ventana bajo el escritorio como fondo de pantalla con letras. Sin teclado",
     "wallpaperModeMacPermissionHint": "El modo fondo de pantalla en Mac necesita Monitoreo de entrada: activa Folia en Configuración del Sistema → Privacidad y seguridad → Monitoreo de entrada, y luego reinicia la app.",
     "wallpaperEnterConfirmTitle": "¿Entrar al modo fondo de pantalla?",
     "wallpaperEnterConfirmDesc": "La ventana se hundirá al fondo del escritorio y se quedará ahí como fondo de pantalla con letras. Ya no se podrá cerrar, minimizar ni mover, y el teclado no podrá llegar a la app.\n\nPara salir, abre el menú de Folia en la bandeja del sistema (la barra de menús en macOS) y haz clic de nuevo en «Modo fondo de pantalla».",
     "wallpaperEnterConfirmAction": "Entrar al modo fondo de pantalla",
+    "wallpaperDisplay": "Pantalla del fondo animado",
+    "wallpaperDisplayDesc": "La pantalla que usa el modo fondo de pantalla",
+    "wallpaperDisplayAuto": "Automática",
+    "wallpaperDisplayPrimary": "Principal",
     "wallpaperMacAutohideDock": "Ocultar automáticamente el Dock",
-    "wallpaperMacAutohideDockDesc": "El Dock se oculta automáticamente durante el modo fondo de pantalla",
     "voiceInputSettings": "Entrada de voz",
     "voiceInputPause": "Pausar la reproducción durante la entrada de voz",
-    "voiceInputPauseDesc": "Pausa automáticamente la reproducción mientras la entrada de voz del sistema (dictado con Win+H, voz a texto del IME) u otra app usa el micrófono, y la reanuda después. Solo en Windows de escritorio.",
+    "voiceInputPauseDesc": "Pausa mientras la entrada de voz u otra app usa el micrófono, y después reanuda.",
     "preventDisplaySleepDuringPlayback": "Evitar que la pantalla se suspenda durante la reproducción",
-    "preventDisplaySleepDuringPlaybackDesc": "Solo escritorio. Mantiene la pantalla encendida mientras suena música; la suspensión normal se reanuda cuando la reproducción se pausa o se detiene.",
+    "preventDisplaySleepDuringPlaybackDesc": "Mantiene la pantalla encendida mientras suena música.",
     "enableModSystem": "Sistema de mods",
-    "enableModSystemDesc": "Solo escritorio. Activa el comando Mods y el administrador de mods, y permite que el cargador descubra y cargue mods; mientras está desactivado no se carga ningún código de mods.",
-    "enableModSystemDescSub": "Los mods se ejecutan con todos los privilegios de la app, y cada uno se debe confirmar por separado antes de ejecutarse. La API no es definitiva y puede cambiar en versiones futuras.",
+    "enableModSystemDesc": "Carga los mods y agrega el comando Mods; mientras está desactivado no se carga código de mods",
+    "enableModSystemDescSub": "Los mods corren con todos los permisos de la app, y cada uno se confirma por separado antes de ejecutarse. La API no es definitiva y puede cambiar.",
     "showOpenPanelCloseButton": "Mostrar el botón de cerrar del panel",
     "showOpenPanelCloseButtonDesc": "Mantiene visible el botón flotante de cerrar después de abrir la tarjeta de información de la canción.",
     "showOpenPanelCloseButtonDescSub": "Desactívalo para grabaciones de pantalla más limpias. En dispositivos móviles quizás prefieras dejarlo activado.",
     "stageMode": "Modo Stage",
-    "enableStageMode": "Activar modo Stage",
+    "stageSource": "Fuente de Stage",
     "enableStageModeDesc": "Expone una API Stage local en el escritorio para que programas externos envíen letras, contenido multimedia o pedidos de canciones.",
     "enableStageModeDescEnabled": "La API Stage local está lista para letras, contenido multimedia y pedidos de canciones.",
     "enableStageModeDescDisabled": "Activa la API Stage local para que herramientas externas puedan enviar letras, contenido multimedia y pedidos de canciones.",
-    "enableStageModeDescElectron": "Expone un endpoint HTTP local para que los clientes de Stage puedan leer el estado actual de reproducción y de la letra.",
+    "enableStageModeDescElectron": "Abre un endpoint HTTP local para que los clientes de Stage lean la reproducción y la letra.",
     "enableNowPlaying": "Activar Reproduciendo ahora",
     "enableNowPlayingDesc": "Si está activado, la página de inicio muestra un acceso a Stage y se conecta por localhost al servicio now-playing.",
-    "nowPlayingFixedConnectionDesc": "Se conecta a ws://localhost:9863/api/ws/lyric. Primero inicia el servicio now-playing en tu equipo.",
-    "enableStageModeDescWeb": "Si está activado, aparece un acceso a Stage en la página de inicio; elige una fuente de letras para conectarte al servicio local.",
+    "nowPlayingFixedConnectionDesc": "Primero inicia now-playing en este equipo (ws://localhost:9863).",
+    "enableStageModeDescWeb": "Agrega un acceso a Stage en la página de inicio, alimentado por un servicio local.",
     "playerCapAddress": "Dirección de Nexus PlayerCap",
-    "playerCapAddressHint": "Déjalo en blanco para usar la dirección local por defecto localhost:8765; se guarda y se reconecta al salir del campo.",
+    "playerCapAddressHint": "Déjalo vacío para usar localhost:8765.",
     "playerCapPlayer": "Reproductor",
     "playerCapPlayerDefault": "Seguir el predeterminado",
     "playerCapTimeline": "Línea de tiempo",
-    "playerCapBasisPlayTime": "play_time: muestra la letra adelantada según el tiempo de anticipación ajustado por reproductor en Nexus PlayerCap, conservando el adelanto.",
-    "playerCapBasisTimestamp": "timestamp: línea de tiempo original al compás, ignora el adelanto; ajústala manualmente con el desfase de la letra.",
+    "playerCapBasisPlayTime": "Muestra la letra adelantada según el tiempo de anticipación ajustado por reproductor.",
+    "playerCapBasisTimestamp": "Línea de tiempo original sin el adelanto; ajústala con el desfase de la letra.",
     "playerCapIgnoreClear": "Ignorar el borrado del reproductor",
-    "playerCapIgnoreClearHint": "Conserva la letra al pausar, en reposo o al cerrar la ventana; solo se actualiza cuando realmente se cambia de reproductor.",
+    "playerCapIgnoreClearHint": "Conserva la letra al pausar, en reposo o al cerrar la ventana; se actualiza al cambiar de reproductor.",
     "playerCapWaitingLyrics": "Conectado, esperando la letra",
     "playerCapConnecting": "Conectando a Nexus PlayerCap…",
     "smtcSourceTitle": "Seguir Spotify o YouTube en este equipo",
     "smtcSourceDesc": "Lee lo que Windows reporta como en reproducción (Spotify de escritorio, YouTube en Chrome, Edge, Brave o Firefox) y busca la letra por su cuenta. Solo en Windows.",
     "smtcWaiting": "Reproduce algo en Spotify o YouTube y la letra aparecerá aquí.",
     "smtcUnavailable": "No se pudieron leer las sesiones multimedia de Windows. Esta fuente solo funciona en la app de escritorio para Windows.",
-
     "stageAddress": "Dirección de Stage",
     "stageSession": "Sesión actual",
     "stageSessionReady": "Sesión lista",
     "stageSessionEmpty": "Esperando entrada externa",
     "stageToken": "Token Bearer",
     "stageTokenMissing": "No generado",
-    "copyStageToken": "Copiar token",
     "regenerateStageToken": "Regenerar token",
     "stageTokenRegenerating": "Regenerando...",
     "clearStageSession": "Borrar entrada de Stage",
@@ -2087,16 +3222,14 @@ export default {
     "stageConnectionError": "No se pudo conectar a ws://localhost:9863/api/ws/lyric. Asegúrate de que el servicio now-playing esté en ejecución.",
     "stageNotRunning": "Inicia el servicio now-playing en este equipo y asegúrate de que el reproductor esté reproduciendo.",
     "discordRichPresence": "Discord Rich Presence",
-    "enableDiscordRichPresence": "Activar el estado de reproducción en Discord",
-    "discordRichPresenceDesc": "Muestra la canción actual de Folia en Discord de escritorio. Folia se conecta con su identidad de aplicación integrada.",
+    "discordRichPresenceDesc": "Muestra en Discord de escritorio la canción actual de Folia.",
     "discordPresenceDisabled": "Desactivado",
     "discordPresenceConnected": "Conectado",
     "discordPresenceDisconnected": "Desconectado",
     "obsBrowserSource": "Fuente de navegador de OBS",
-    "enableObsBrowserSource": "Activar la fuente de navegador de OBS",
-    "obsBrowserSourceDesc": "Muestra la animación completa de la letra en OBS sin audio. Por defecto, la ventana principal deja de renderizar el visualizador pesado mientras OBS está conectado.",
+    "obsBrowserSourceDesc": "Muestra la animación completa de la letra en OBS, sin audio.",
     "obsKeepMainWindowAnimation": "Mantener la animación de la ventana principal mientras OBS está conectado",
-    "obsKeepMainWindowAnimationDesc": "Si está activado, la ventana principal sigue renderizando la animación de la letra mientras OBS está conectado. La ventana principal y OBS renderizan ambos la animación pesada, lo que usa más GPU / CPU.",
+    "obsKeepMainWindowAnimationDesc": "La ventana principal y OBS dibujan a la vez, lo que usa más GPU / CPU.",
     "obsBrowserSourceGuideTitle": "Cómo usarlo",
     "obsBrowserSourceGuideStep1": "En OBS, agrega una fuente de Navegador en Fuentes.",
     "obsBrowserSourceGuideStep2": "Pega la URL de OBS de arriba en el campo URL.",
@@ -2105,10 +3238,8 @@ export default {
     "obsBrowserSourceGuideStep5": "Los ajustes visuales como el tema, las fuentes tipográficas y la animación se sincronizan con OBS. El fondo de OBS es transparente cuando la ventana principal usa un fondo de reproductor transparente o el fondo de reproductor con desenfoque nativo.",
     "obsBrowserSourceGuideStep6": "Un conteo de clientes mayor que 0 significa que OBS está conectado. Regenerar el token invalida la URL anterior, así que actualízala en OBS.",
     "obsBrowserSourceAddress": "URL de OBS",
-    "copyObsBrowserSourceAddress": "Copiar URL de OBS",
     "regenerateObsBrowserSourceToken": "Regenerar token",
     "obsBrowserSourceClients": "Clientes",
-    "visualSettings": "Ajustes visuales",
     "daylightMode": "Modo claro / oscuro",
     "followSystemTheme": "Seguir el tema del sistema",
     "followSystemThemeDesc": "Cambia automáticamente entre los temas claro y oscuro según el sistema. Cambiar el tema manualmente desactiva esta opción.",
@@ -2118,15 +3249,25 @@ export default {
     "modVisualizerSettingsReset": "Restablecer valores por defecto",
     "modVisualizerSettingsOn": "Activado",
     "modVisualizerSettingsOff": "Desactivado",
+    "modSecretSet": "Configurada",
+    "modSecretUnset": "Sin configurar",
+    "modSecretPlaceholder": "Escríbela y guárdala; no se vuelve a mostrar",
+    "modSecretReplacePlaceholder": "Escribe un valor nuevo para reemplazar el guardado",
+    "modSecretSave": "Guardar",
+    "modSecretClear": "Borrar",
+    "modSecretSessionOnly": "Este sistema no tiene almacenamiento cifrado: la clave dura solo esta sesión y hay que volver a escribirla al reiniciar.",
+    "modSecretSaveFailed": "No se pudo guardar; revisa el registro de desarrollo.",
     "foliumTuningDesc": "Agregado por un mod. Se aplica en vivo y se guarda automáticamente.",
     "foliumMissingSelection": "Tu elección guardada viene del mod «{{modId}}», que no se está ejecutando. Se muestra el valor por defecto hasta que se vuelva a activar.",
     "lyricsAnimationAdjust": "Ajuste de la animación de la letra",
     "lyricsStyleSettings": "Estilo de la letra",
+    "lyricStyles": "Estilos",
+    "lyricStyleNoOptions": "Este estilo no tiene opciones",
     "lyricsStyleSettingsDesc": "Tipografía y ajustes específicos de cada renderizador.",
     "openLyricsStyleSettings": "Abrir los ajustes de estilo de la letra",
     "previewBackgroundSettings": "Fondo",
+    "previewBackgroundGroup": "Fondo",
     "previewBackgroundHotspot": "Ajustes del fondo",
-    "previewBackgroundSettingsDesc": "Ajusta las capas de fondo del reproductor, el color de la portada y la geometría ambiental.",
     "visualizerBackgroundMode": "Tipo de fondo",
     "visualizerBackgroundModeCommon": "Común",
     "visualizerBackgroundModeMonet": "Monet",
@@ -2138,16 +3279,17 @@ export default {
     "urlBackgroundSettingsDesc": "Muestra una página web como fondo del reproductor. Nota: algunos sitios web bloquean que se incrusten en un iframe y puede que no se muestren.",
     "urlBackgroundNotePlaceholder": "Nota (para identificarla fácilmente)",
     "urlBackgroundAdd": "Agregar URL",
-    "urlBackgroundEmpty": "Todavía no hay URLs, haz clic en el botón de arriba para agregar una",
+    "urlBackgroundEdit": "Editar",
+    "urlBackgroundDelete": "Borrar",
+    "urlBackgroundEmpty": "Todavía no hay URLs",
     "previewCoverBackgroundSettings": "Fondo de portada",
-    "previewCoverBackgroundSettingsDesc": "Mezcla los colores de la portada de la canción actual con el fondo.",
     "previewCoverBackgroundOpacity": "Opacidad de la superposición",
     "coverColorBackgroundDesc": "Usa la portada de la canción actual para generar el color de fondo de la animación de la letra.",
-    "previewVisualizerSettings": "Animación de la letra",
+    "previewVisualizerSettings": "Letra",
+    "previewVisualizerGroup": "Animación de letras",
     "previewVisualizerHotspot": "Ajustes de la animación de la letra",
     "previewSubtitleSettings": "Subtítulo",
     "previewSubtitleHotspot": "Ajustes de subtítulos",
-    "previewSubtitleSettingsDesc": "Ajusta la capa de subtítulo inferior, el texto de la traducción y la superposición de la línea siguiente.",
     "previewText": "Texto de vista previa",
     "previewTextDefault": "Shinbun no Shi",
     "previewTextReserved": "Wild Sesame",
@@ -2162,7 +3304,6 @@ export default {
     "harmonySubtitleBackground": "Fondo de subtítulos de armonía",
     "harmonySubtitleBackgroundDesc": "Agrega un halo suave y difuso detrás de los subtítulos de armonía.",
     "harmonySubtitleSettings": "Subtítulos de armonía",
-    "harmonySubtitleSettingsDesc": "Controles de la superposición superior con la letra de armonía.",
     "showSubtitleTranslation": "Mostrar traducción",
     "showSubtitleTranslationDesc": "Controla el texto de la traducción en Monet y en la superposición de subtítulo inferior.",
     "subtitleContentMode": "Contenido del subtítulo",
@@ -2171,27 +3312,18 @@ export default {
     "subtitleContentBoth": "Romanización + traducción",
     "subtitleContentNone": "Ninguno",
     "classicSettings": "Ajuste de Classic",
-    "classicSettingsDesc": "Controla la rotación por palabra y el rango de flotación de respiración de toda la línea.",
     "classicWordRotation": "Rotación por palabra",
-    "classicWordRotationOn": "Activar",
-    "classicWordRotationOff": "Desactivar",
     "classicBreathingFloatMultiplier": "Rango de flotación de respiración",
     "classicLegacyLayout": "Modo de diseño",
     "classicLegacyLayoutOn": "Clásico",
     "classicLegacyLayoutOff": "Adaptable",
     "classicWordSpacing": "Espaciado entre palabras",
     "partitaSettings": "Ajuste de Partita",
-    "partitaSettingsDesc": "Controla la visibilidad de las líneas guía y el rango de escalonado horizontal de los bloques.",
     "partitaGuideLines": "Líneas guía",
-    "partitaGuideLinesOn": "Mostrar",
-    "partitaGuideLinesOff": "Ocultar",
     "partitaSemanticLayout": "Diseño semántico CJK",
-    "partitaSemanticLayoutOn": "Activar",
-    "partitaSemanticLayoutOff": "Desactivar",
     "partitaStaggerMin": "Escalonado mínimo",
     "partitaStaggerMax": "Escalonado máximo",
     "fumeSettings": "Ajuste de Fume",
-    "fumeSettingsDesc": "Ajusta la visibilidad del sello de impresión, el ritmo de la cámara, el estilo de seguimiento, el brillo y la escala principal.",
     "fumeHidePrintSymbols": "Ocultar sello de impresión",
     "fumeGeometricBackground": "Formas geométricas",
     "fumeBackgroundObjectOpacity": "Opacidad de los objetos de fondo del mundo",
@@ -2203,7 +3335,6 @@ export default {
     "fumeGlowIntensity": "Brillo activo",
     "fumeHeroScale": "Escala principal",
     "cappellaSettings": "Ajuste de Chorus",
-    "cappellaSettingsDesc": "Controla la fuente del avatar, la visibilidad de los emojis, su fuente y las ranuras de vista previa personalizadas.",
     "cappellaAvatarSource": "Fuente del avatar",
     "cappellaAvatarSourceCover": "Portada",
     "cappellaAvatarSourceBuiltin": "Avatar integrado",
@@ -2232,7 +3363,6 @@ export default {
     "cappellaEmojiImportFailed": "No se pudo importar.",
     "cappellaEmojiCleared": "Paquete de emojis personalizado borrado.",
     "tiltSettings": "Ajustes de Tilt",
-    "tiltSettingsDesc": "Controla la probabilidad de división de líneas y la frecuencia del estilo de énfasis en cursiva.",
     "tiltSplitProbability": "Probabilidad de división",
     "tiltStyleProbability": "Probabilidad de énfasis en cursiva",
     "tiltColorScheme": "Esquema de colores",
@@ -2241,7 +3371,6 @@ export default {
     "tiltColorSchemeAccentAll": "Único 1",
     "tiltColorSchemePrimaryAll": "Único 2",
     "claddaghSettings": "Ajustes de Claddagh",
-    "claddaghSettingsDesc": "Controla la proporción de escala de la línea activa, el radio de la elipse y el grado de inclinación de la órbita.",
     "claddaghFocusScaleRatio": "Proporción de escala de la línea activa",
     "claddaghRadiusScale": "Escala del radio de la órbita",
     "claddaghEllipseTiltDeg": "Grado de inclinación de la órbita",
@@ -2256,16 +3385,8 @@ export default {
     "pendoloActiveScale": "Escala de la línea activa",
     "pendoloShowGearDecor": "Marcas de relojería",
     "pendoloShowCenterGradient": "Degradado oscuro en el centro del engranaje",
-    "pendoloCenterGradientOn": "Activado",
-    "pendoloCenterGradientOff": "Desactivado",
     "pendoloShowCoverOnWatchFace": "Mostrar portada en la esfera del reloj",
-    "pendoloCoverOnWatchFaceOn": "Mostrar",
-    "pendoloCoverOnWatchFaceOff": "Ocultar",
     "pendoloEnableLineGlow": "Brillo de línea",
-    "pendoloLineGlowOn": "Activado",
-    "pendoloLineGlowOff": "Desactivado",
-    "sonnetSettings": "Ajustes de Sonnet",
-    "sonnetSettingsDesc": "Ajusta el movimiento, la resolución de texturas y qué capas de la escena de Sonnet se dibujan.",
     "sonnetMotionSection": "Movimiento y composición",
     "sonnetDisplaySection": "Elementos visibles",
     "sonnetQualitySection": "Calidad de renderizado",
@@ -2295,10 +3416,38 @@ export default {
     "sonnetPostProcessLensDispersion": "Dispersión de lente",
     "sonnetPostProcessHalftone": "Trama de semitonos",
     "sonnetPostProcessVignette": "Viñeta",
-    "sonnetToggleOn": "Activado",
-    "sonnetToggleOff": "Desactivado",
-    "temperaSettings": "Ajustes de Tempera",
-    "temperaSettingsDesc": "Ajusta las composiciones de bloques, el movimiento de cámara y la calidad de renderizado de Tempera. Combina bien con el fondo vacío / Sora.",
+    "smartBeat": "Modo de pulso inteligente",
+    "smartBeatMode": "Modo",
+    "smartBeatOn": "Activado",
+    "smartBeatCached": "Solo lo analizado",
+    "smartBeatOff": "Desactivado",
+    "smartBeatModeOn": "Activado",
+    "smartBeatModeCached": "Solo lo analizado",
+    "smartBeatModeOff": "Desactivado",
+    "smartBeatDesc_on": "Los efectos al pulso que aparecen en los ajustes de cada estilo de letra mueven la imagen según la música, cada uno con su interruptor y su intensidad. Los efectos de pulso siguen los pulsos que detecta beat_this, y los de batería, la batería que separa HTDemucs; cada análisis corre solo mientras un efecto en pantalla lo usa. Una canción local se analiza unos segundos la primera vez que suena; una en línea, desde su stream la primera vez. Las canciones analizadas se recuerdan.",
+    "smartBeatDesc_cached": "Los efectos al pulso funcionan, pero solo con lo que este equipo ya analizó: el pulso inteligente no analiza canciones nuevas ni ocupa la GPU; una canción nunca analizada mantiene su imagen original. Este ajuste no afecta a la transición inteligente, y también se usan los pulsos que ella analiza.",
+    "smartBeatDesc_off": "Todas las imágenes mantienen su reacción original al espectro; el pulso inteligente no lee ni corre ningún análisis. Este ajuste no afecta a la transición inteligente.",
+    "beatFxUnavailable_noGpu": "Este dispositivo no tiene WebGPU utilizable, así que los efectos al pulso no hacen nada.",
+    "beatFxUnavailable_desktopOnly": "Los efectos al pulso solo están disponibles en la app de escritorio.",
+    "beatEffects": "Efectos al pulso",
+    "beatEffectsNeedSmartBeat": "Activa el modo de pulso inteligente en la pestaña Global para que funcionen estos efectos.",
+    "beatEffectsOpenSmartBeat": "Ir a Global",
+    "beatEffectStrength": "Intensidad",
+    "beatEffectNeedsDrums": "A esta instalación le falta el modelo HTDemucs; reinstala Folia. En una canción sin batería tampoco hay efecto.",
+    "beatEffect_sonnetLensTear": "Rasgado de lente",
+    "beatEffect_sonnetLensTearDesc": "Con los pulsos que detecta beat_this: cada pulso acerca la cámara de golpe, y el primer pulso de cada compás rasga y destella.",
+    "beatEffect_dioramaRipple": "Ondas espejo",
+    "beatEffect_dioramaRippleDesc": "Con los pulsos que detecta beat_this: las partículas ondulan en cada pulso, con una onda grande en el primer pulso de cada compás, y la palabra que se canta da un salto.",
+    "beatEffect_pendoloDrumhead": "Parche de tambor",
+    "beatEffect_pendoloDrumheadDesc": "Con la batería que separa HTDemucs: el bombo infla el dial y uno fuerte sacude la pantalla; la caja golpea fuera del centro y la inclina hacia ese lado; los platillos encienden las marcas y el anillo interior.",
+    "beatEffect_pendoloGearBeats": "Engranajes al pulso",
+    "beatEffect_pendoloGearBeatsDesc": "Los engranajes avanzan con los pulsos que detecta beat_this. (Retirado)",
+    "beatEffect_latentPulse": "Pulso de marea",
+    "beatEffect_latentPulseDesc": "El flujo del fondo Latent late con los pulsos que detecta beat_this. (Retirado)",
+    "beatEffect_hanabiBeatBursts": "Flores al pulso",
+    "beatEffect_hanabiBeatBurstsDesc": "Con los pulsos que detecta beat_this: un fuego artificial pequeño se abre en el cielo en cada pulso, y una carga sube antes del primer pulso de cada compás para estallar justo en él. Los pulsos más fuertes se abren más grandes.",
+    "beatEffect_hanabiBeatPulse": "Empuje al pulso",
+    "beatEffect_hanabiBeatPulseDesc": "Con los pulsos que detecta beat_this: toda la escena se acerca y se balancea un poco en cada pulso, más en el primer pulso de cada compás.",
     "temperaMotionSection": "Movimiento y color",
     "temperaDisplaySection": "Visibilidad",
     "temperaLyricSection": "Planos de la letra",
@@ -2378,10 +3527,6 @@ export default {
     "temperaPostProcessRgbShift": "Desplazamiento RGB",
     "temperaPostProcessVignette": "Viñeta",
     "temperaPostProcessLensDistortion": "Distorsión de lente",
-    "temperaToggleOn": "Activado",
-    "temperaToggleOff": "Desactivado",
-    "lumiereSettings": "Ajustes de Lumiere",
-    "lumiereSettingsDesc": "Ajusta la luz volumétrica, la neblina, el dibujo lineal de Lumiere y cómo se ilumina la letra.",
     "lumiereLightSection": "Luz",
     "lumiereAtmosphereSection": "Atmósfera",
     "lumiereTextSection": "Letra",
@@ -2423,8 +3568,46 @@ export default {
     "lumiereRenderQualityBalanced": "Equilibrada",
     "lumiereRenderQualityLow": "Baja",
     "lumiereRenderQualityHint": "Equilibrada y Baja renderizan el campo de luz y el brillo a menor resolución y limitan el detalle de la neblina, ahorrando energía a costa de algo de nitidez.",
-    "lumiereToggleOn": "Activado",
-    "lumiereToggleOff": "Desactivado",
+    "hanabiFontSizeAutoNotice": "Hanabi ajusta el tamaño de la letra según la ventana y la zona de texto de cada toma; el ajuste general de tamaño de fuente solo afecta a los subtítulos en este modo.",
+    "hanabiFireworksSection": "Fuegos artificiales",
+    "hanabiStageSection": "Escena",
+    "hanabiTextSection": "Texto",
+    "hanabiDecorSection": "Decoración",
+    "hanabiColorSection": "Colores",
+    "hanabiSparkAmount": "Chispas",
+    "hanabiGlow": "Brillo de los fuegos",
+    "hanabiChorusBloom": "Brillo del coro",
+    "hanabiChorusBloomHint": "Toda la imagen brilla durante el coro: crece al empezar y se calma al terminar. Los coros salen de la letra: los marca la fuente o se detectan por las líneas que se repiten.",
+    "hanabiBloom": "Brillo general",
+    "hanabiBloomHint": "Un brillo de pantalla completa durante toda la canción, debajo del brillo del coro. Con 0 queda solo el brillo del coro.",
+    "hanabiLaunches": "Estelas de lanzamiento",
+    "hanabiLaunchesHint": "Cada carga sube desde el borde inferior antes de estallar y une una toma con la siguiente.",
+    "hanabiSky": "Cielo nocturno",
+    "hanabiSkyHint": "Un degradado nocturno debajo de los fuegos. Bájalo para que se vea el fondo compartido; bajo la mitad, los colores siguen el fondo de tu tema.",
+    "hanabiRiseSpeed": "Subida",
+    "hanabiRiseSpeedHint": "Cuánto sube la cámara entre tomas. Con 0 cada toma queda en su lugar.",
+    "hanabiSpin": "Giro",
+    "hanabiSpinHint": "Entre tomas toda la escena gira un ángulo grande mientras sube, y los cambios de sección también giran. Con 0 se desactiva.",
+    "hanabiAmbient": "Chispas de ambiente",
+    "hanabiOverlayFrame": "Marco",
+    "hanabiTextOnly": "Solo la letra",
+    "hanabiTextOnlyHint": "Dibuja solo la letra con sus bloques de color y el movimiento de las letras. Se ocultan los fuegos, los stickers, el cielo nocturno y el marco.",
+    "hanabiTextMotion": "Movimiento de las letras",
+    "hanabiBlockOpacity": "Bloques de color",
+    "hanabiCollage": "Collage de PV",
+    "hanabiCollageHint": "Tiras de película, líneas de corte, encajes, palabras repetidas, stickers, cinta e íconos del tema alrededor de la letra.",
+    "hanabiOrnamentAmount": "Adornos de motion graphics",
+    "hanabiColorMode": "Paleta",
+    "hanabiColorModeHint": "Mezclada lleva la paleta viva de cada toma hacia el acento de tu tema.",
+    "hanabiColorModeMixed": "Mezclada",
+    "hanabiColorModeVivid": "Viva",
+    "hanabiColorModeTheme": "Tema",
+    "hanabiPerformanceSection": "Rendimiento",
+    "hanabiRenderQuality": "Calidad de render",
+    "hanabiRenderQualityFull": "Completa",
+    "hanabiRenderQualityBalanced": "Equilibrada",
+    "hanabiRenderQualityLow": "Baja",
+    "hanabiRenderQualityHint": "Equilibrada y Baja dibujan el brillo de los fuegos a menor resolución, y Baja además dibuja menos brasas de ambiente; la letra y el brillo de pantalla completa siguen a resolución completa. Vale la pena probarlo si la reproducción se traba con gráficos integrados.",
     "decorNone": "Ninguna",
     "decorSubtle": "Sutil",
     "decorFull": "Completa",
@@ -2443,8 +3626,6 @@ export default {
     "dioramaStrengthLow": "Baja",
     "dioramaStrengthMid": "Media",
     "dioramaStrengthHigh": "Alta",
-    "dioramaStrengthCustom": "Personalizada",
-    "dioramaCustomStrength": "Intensidad personalizada",
     "dioramaGeometry": "Geometría de partículas",
     "dioramaGeometryMode": "Estilo de geometría",
     "dioramaGeometryModeClouds": "Nubes de puntos",
@@ -2504,17 +3685,28 @@ export default {
     "subtitlePrimaryFontPlaceholder": "Microsoft YaHei",
     "subtitleFontFallbackFamilies": "Fuentes tipográficas de respaldo del subtítulo",
     "subtitleFontFallbackFamiliesPlaceholder": "PingFang SC, sans-serif",
-    "previewCommonSettings": "Común",
-    "previewCommonSettingsDesc": "Ajusta la fuente tipográfica, el tamaño y la opacidad compartidos de toda la capa de animación de la letra.",
+    "previewCommonSettings": "Fuente",
     "previewOriginal": "El viento recuerda cada verso que cantaste.",
     "previewTranslation": "Las traducciones prueban primero la fuente tipográfica actual y luego usan una lista de respaldo más segura y compatible con CJK.",
     "backgroundOpacity": "Opacidad del fondo",
     "visualizerOpacity": "Opacidad de la animación de la letra",
     "visualizerFrameRate": "Límite experimental de FPS de la animación",
-    "visualizerFrameRateDesc": "Ajuste experimental. Si está activado, limita la animación basada en requestAnimationFrame y puede causar problemas inesperados en la animación, las mediciones o el código de movimiento de terceros.",
+    "visualizerFrameRateDesc": "Limita los cuadros por segundo de la animación; puede causar problemas inesperados",
     "glowBlurQuantize": "Corregir el congelamiento de la animación de la letra en Linux",
-    "glowBlurQuantizeDesc": "Cambia cómo algunas animaciones de la letra dibujan su brillo, corrigiendo congelamientos ocasionales tras una reproducción larga en Linux. Activado por defecto en Linux, desactivado en los demás. Consulta",
-    "glowBlurQuantizeDocs": "Agotamiento de FD en Chromium",
+    "glowBlurQuantizeDesc": "Cambia cómo algunas animaciones de letra dibujan su brillo.",
+    "glowBlurQuantizeDocs": "Documentación",
+    "backgroundThrottling": "Ahorro en segundo plano",
+    "backgroundThrottlingHint": "Reduce el render y pausa la animación de la letra mientras Folia está minimizado u oculto",
+    "backgroundThrottlingDesc": "Mientras la ventana está minimizada u oculta en la bandeja, Chromium puede reducir su ritmo y la animación de la letra se detiene; al volver, sigue desde la posición actual. Una ventana que solo perdió el foco pero sigue en pantalla se sigue moviendo. La música sigue sonando. Viene desactivado porque quienes transmiten capturando la ventana de Folia en OBS necesitan que se dibuje en segundo plano. No hace nada en modo fondo de pantalla, durante una exportación de video ni mientras haya una fuente de navegador de OBS conectada.",
+    "gpuPreference": "GPU de render",
+    "gpuPreferenceHint": "Elige qué tarjeta gráfica dibuja la app en un PC con dos GPU; se aplica al reiniciar",
+    "gpuPreferenceDesc": "Automática: decide Windows, que en un notebook suele ser la GPU integrada que maneja la pantalla y gasta menos energía. Alto rendimiento: la GPU dedicada, con animaciones más fluidas pero más consumo, también mientras la música suena en segundo plano. Ahorro de energía: la GPU integrada. Si en la Configuración de gráficos de Windows elegiste una GPU para Folia, esa tiene prioridad.",
+    "gpuPreferenceAuto": "Automática",
+    "gpuPreferenceHighPerformance": "Alto rendimiento",
+    "gpuPreferenceLowPower": "Ahorro de energía",
+    "gpuPreferenceRestartNotice": "Se aplica cuando Folia se reinicia",
+    "gpuPreferenceCommandLineNotice": "Este inicio recibió una opción de GPU por línea de comandos, que tiene prioridad",
+    "gpuPreferenceActive": "En uso",
     "visualizerFrameRateValue": "Límite",
     "themePresets": "Temas predefinidos",
     "themePresetsDefault": "Por defecto",
@@ -2523,33 +3715,28 @@ export default {
     "themeName": "Nombre del tema",
     "manualImportAiTheme": "Importar tema de IA manualmente",
     "aiThemeQuickEditTitle": "Edición rápida del tema de IA",
-    "aiThemeQuickEditDesc": "Ajusta los colores del tema de IA de la canción actual.",
+    "themeQuickEditUnavailable": "El tema predeterminado no se puede editar",
     "customThemeQuickEditTitle": "Edición rápida del tema personalizado",
-    "customThemeQuickEditDesc": "Ajusta los colores de tu tema personalizado.",
-    "aiThemeQuickEditBackground": "Fondo",
-    "aiThemeQuickEditPrimary": "Principal",
-    "aiThemeQuickEditAccent": "Acento",
-    "aiThemeQuickEditSecondary": "Secundario",
     "aiThemeQuickEditRecommendedColors": "Colores recomendados",
     "aiThemeQuickEditSave": "Guardar tema de IA",
     "customThemeQuickEditSave": "Guardar tema personalizado",
     "copyThemeJson": "Copiar JSON",
     "invalidJsonFormat": "Formato JSON no válido",
     "pasteJsonHere": "Pega el JSON aquí...",
-    "audioOutputSettings": "Dispositivo de reproducción",
+    "settingsHeadingSound": "Sonido y dispositivos",
     "transcodeFallback": "Convertir automáticamente el audio no compatible",
-    "transcodeFallbackDesc": "En la app de Electron, usa FFmpeg para recuperar canciones locales y de Navidrome que Chromium no puede decodificar. El archivo original no se modifica.",
+    "transcodeFallbackDesc": "Convierte con FFmpeg las canciones que no se pueden decodificar. El archivo no se modifica.",
     "playbackFade": "Fundido al pausar y reanudar",
-    "playbackFadeDesc": "Baja el sonido suavemente antes de pausar y lo vuelve a subir al reanudar, en lugar de cortarlo. Se omite el fundido cuando el audio no pasa por el motor de audio.",
+    "playbackFadeDesc": "Baja el sonido antes de pausar y lo vuelve a subir al reanudar.",
+    "autoSkipUnplayable": "Saltar canciones que no se pueden reproducir",
+    "autoSkipUnplayableDesc": "Cuando una canción necesita suscripción o compra, es solo una vista previa, está bloqueada en tu región o falla por un motivo desconocido, hace una cuenta regresiva y pasa a la siguiente, igual que con una canción retirada. Nunca se saltan las canciones que piden iniciar sesión ni los problemas de red.",
     "audioOutputDevice": "Dispositivo de salida actual",
-    "audioOutputDeviceDesc": "Cambia la salida de audio que usa el reproductor actual. Está pensado principalmente para Electron de escritorio, pero también funciona en navegadores cuando setSinkId está disponible.",
     "audioOutputRefresh": "Actualizar",
     "audioOutputUnsupported": "Este entorno no permite cambiar el dispositivo de salida de audio.",
     "audioOutputLoadFailed": "No se pudieron cargar los dispositivos de salida de audio.",
     "audioOutputSelectFailed": "No se pudo cambiar el dispositivo de salida de audio.",
     "audioOutputUnnamed": "Dispositivo de salida",
     "audioOutputDefault": "Predeterminado del sistema",
-    "audioOutputDefaultDesc": "Usa el dispositivo de salida predeterminado actual del sistema operativo.",
     "audioOutputLoading": "Cargando dispositivos de salida...",
     "audioOutputSelecting": "Cambiando dispositivo de salida...",
     "audioOutputEmpty": "No se detectaron dispositivos de salida disponibles.",
@@ -2577,23 +3764,18 @@ export default {
     "customThemeUnavailable": "Todavía no hay un tema personalizado",
     "clearAll": "Borrar todo",
     "confirmClearAll": "¿Seguro que quieres borrar toda la caché?",
+    "cacheClearing": "Vaciando...",
     "electronSettings": "Ajustes del tema de IA",
     "aiProvider": "Proveedor de IA",
-    "aiProviderDesc": "Elige el servicio de IA que genera los temas inteligentes para la letra.",
-    "otherCompatibleApi": "Otra API compatible",
     "useSystemProxyAI": "Usar el proxy del sistema para la IA",
     "useSystemProxyAIDesc": "Envía solo las solicitudes de IA a través del proxy del sistema.",
     "geminiApiKey": "Clave de API de Gemini",
-    "openaiApiKey": "Clave de API de OpenAI",
     "aiApiKeySavedPlaceholder": "Guardada (déjalo en blanco para conservarla)",
     "aiApiKeySavedDesc": "La clave se guarda cifrada en este dispositivo y no se vuelve a mostrar. Escribe una clave nueva y guarda para reemplazarla.",
-    "aiApiKeyEndpointMismatchDesc": "La clave guardada solo se envía a {{endpoint}}. Vuelve a escribir la clave para usar otra dirección.",
+    "aiApiKeyEndpointMismatchDesc": "La clave guardada era de {{endpoint}} y no sirve en otra dirección. Escribe una clave nueva y guárdala.",
+    "aiApiKeyOtherProviderDesc": "La clave guardada era de {{provider}} y no sirve después de cambiar de proveedor. Escribe una clave nueva y guárdala.",
     "aiApiKeyClear": "Borrar",
-    "openaiApiUrl": "URL de la API de OpenAI",
-    "openaiApiModel": "Modelo de OpenAI",
-    "openaiApiModelDesc": "Lo exigen muchos proveedores compatibles con OpenAI. Ejemplos: gpt-5.6-luna, gpt-4.1-mini, deepseek-v4-flash.",
     "openaiApiTemperature": "Temperatura",
-    "openaiApiTemperatureDesc": "Rango: 0–2. Si lo dejas en blanco, se usa 0.7.",
     "openaiApiStream": "Streaming",
     "openaiApiStreamDesc": "Actívalo solo si tu proveedor exige streaming; el resultado igual se procesa cuando se recibe completo.",
     "aiTestConnection": "Probar conexión",
@@ -2605,24 +3787,17 @@ export default {
     "aiTestModel": "Modelo",
     "aiTestEmptyReasoning": "Conectado, pero el modelo no devolvió texto: el razonamiento agotó el presupuesto de tokens.",
     "aiTestEmpty": "Conectado, pero el modelo no devolvió texto.",
-    "geminiApiKeyDesc": "El backend de la API de NetEase se ejecuta localmente.",
-    "openaiApiUrlDesc": "Una API compatible con OpenAI no es necesariamente la API oficial de OpenAI. Puedes usar proveedores y modelos compatibles, como DeepSeek.",
     "save": "Guardar",
     "grid3dCardStyle": "Estilo de tarjetas de la cuadrícula 3D",
     "grid3dCardStyleDesc": "Elige cómo se ve cada tarjeta en la cuadrícula 3D: solo la portada o tarjetas clásicas tipo Polaroid con texto.",
     "grid3dCardStyleImage": "Solo portada",
     "grid3dCardStyleCard": "Tarjeta Polaroid",
-    "monetSettings": "Ajustes de Monet",
-    "monetSettingsDesc": "Controla el coloreado de palabras clave, el retrato de la derecha y la barra de audio inferior de Monet.",
-    "monetBackgroundSettings": "Fondo de Monet",
-    "monetBackgroundSettingsDesc": "Ajusta la fuente, el diseño y el tratamiento de la imagen de fondo de Monet.",
     "monetBackgroundSource": "Fuente del fondo",
     "monetBackgroundSourceCover": "Derivado de la portada",
     "monetBackgroundSourceUploaded": "Imagen subida",
     "monetUploadBackground": "Subir fondo",
     "monetClearBackground": "Quitar fondo",
     "nomandBackgroundSettings": "Fondo de Nomand",
-    "nomandBackgroundSettingsDesc": "Aplica un efecto de imagen de Paper a la portada actual o a la imagen subida.",
     "nomandBackgroundSource": "Fuente de la imagen",
     "nomandBackgroundEffect": "Efecto",
     "nomandBackgroundEffectDithering": "Tramado",
@@ -2651,7 +3826,6 @@ export default {
     "nomandBackgroundOverlayDesc": "Superpone el color de fondo del tema activo sobre el efecto de imagen para que la letra se lea mejor.",
     "nomandBackgroundOverlayOpacity": "Opacidad de la capa",
     "latentBackgroundSettings": "Fondo Latent",
-    "latentBackgroundSettingsDesc": "Mezcla shaders de píxeles y de fluido con los colores de la portada, con una velocidad que responde al audio en un rango amplio.",
     "latentColorSource": "Fuente del color",
     "latentColorSourceCoverTheme": "Portada + tema",
     "latentColorSourceCoverOnly": "Solo portada",
@@ -2674,8 +3848,6 @@ export default {
     "nomandBackgroundUploadSuccess": "Imagen de fondo subida",
     "nomandBackgroundUploadFailed": "No se pudo subir la imagen de fondo",
     "monetKeywordColoring": "Coloreado de palabras clave",
-    "monetKeywordColoringOn": "Activar",
-    "monetKeywordColoringOff": "Desactivar",
     "monetBackgroundLayout": "Modo de diseño",
     "monetLayoutFullOverlay": "Superposición completa",
     "monetLayoutHalfPane": "Medio panel",
@@ -2702,16 +3874,12 @@ export default {
     "monetPortraitStyleRectangular": "Rectangular",
     "monetPortraitStyleSquare": "Cuadrada",
     "monetPortraitDragHanger": "Colgador arrastrable",
-    "monetPortraitDragHangerShow": "Mostrar",
-    "monetPortraitDragHangerHide": "Ocultar",
     "monetUploadPortrait": "Subir retrato",
     "monetClearPortrait": "Quitar retrato",
     "monetAudioStyle": "Estilo de audio",
     "monetAudioStyleBar": "Barras",
     "monetAudioStyleLine": "Línea",
     "monetShowAudioVisualization": "Visualización de audio",
-    "monetAudioVisualizationShow": "Mostrar",
-    "monetAudioVisualizationHide": "Ocultar",
     "monetFontScale": "Escala del tamaño de letra",
     "monetShowDescription": "Mostrar descripción de la canción",
     "monetGroupBackgroundSource": "Fuente del fondo",
@@ -2719,7 +3887,6 @@ export default {
     "monetGroupFiltersPostProcessing": "Filtros y posprocesado",
     "monetGroupColorTintWash": "Tinte y lavado de color",
     "importExportTitle": "Respaldo e importación",
-    "importExportDesc": "Importa o exporta temas personalizados y ajustes visuales con JSON estándar o con códigos cortos propios de Folia.",
     "importPlaceholder": "Pega aquí un código de configuración, un JSON o una URL de OBS...",
     "importBtn": "Importar configuración",
     "exportBtn": "Copiar configuración actual",
@@ -2737,7 +3904,7 @@ export default {
     "obsThemeModeAi": "Dinámico · IA",
     "obsThemeModeStaticHint": "Incluye el tema actual en el enlace; nunca cambia en OBS.",
     "obsThemeModeBuiltinHint": "La superposición elige, para cada canción, la paleta integrada que mejor se ajusta a la portada.",
-    "obsThemeModeAiHint": "Integrado más un tema regenerado con IA para cada canción; vuelve al integrado si la IA no está configurada o no responde.",
+    "obsThemeModeAiHint": "Un tema de IA por canción; vuelve al integrado si la IA no está disponible.",
     "importSuccess": "¡Configuración importada correctamente!",
     "importFailed": "No se pudo importar; revisa el formato.",
     "importConfirmTitle": "Confirmar importación",
@@ -2817,17 +3984,13 @@ export default {
     "scanProgress": "Progreso",
     "scanningFolder": "Escaneando {{folderName}}",
     "lyricFilterUpdated": "Regla de filtro de letra actualizada",
-    "queueSettings": "Cola de reproducción",
-    "scrobbleSettings": "Informe de escucha",
     "neteaseScrobble": "Informar reproducciones (solo NetEase)",
-    "neteaseScrobbleDesc": "Informa una reproducción a tu cuenta de NetEase después de que hayas escuchado de verdad al menos 30 segundos de una canción en línea de NetEase. Nunca se informan archivos locales, subidas a la nube ni otros proveedores. Esta función conlleva cierto riesgo: úsala con cuidado.",
+    "neteaseScrobbleDesc": "Informa una reproducción a NetEase después de 30 segundos de escucha. Conlleva cierto riesgo.",
     "neteaseScrobbleSignInHint": "Inicia sesión en NetEase Cloud Music para usar esta función.",
     "queueDefaultBehavior": "Posición predeterminada al agregar a la cola",
-    "queueDefaultBehaviorDesc": "Comportamiento predeterminado al agregar una canción a la cola.",
+    "settingsHeadingPlaybackBehavior": "Comportamiento de la reproducción",
     "queueAppendLabel": "Agregar al final",
-    "queueAppendDesc": "Agrega al final de la cola de reproducción.",
     "queueNextLabel": "Agregar a continuación",
-    "queueNextDesc": "Agrega después de la canción que se está reproduciendo.",
     "newVersionFound": "Nueva versión disponible: v{{version}}",
     "downloadingProgress": "Descargando ({{percent}}%)",
     "chinaDownload": "Descarga para China",
@@ -2836,25 +3999,16 @@ export default {
     "macManualUpdateNotice": "Nota: en macOS tienes que descargar el instalador completo manualmente para actualizar.",
     "linuxManualUpdateNotice": "Linux no admite actualizaciones automáticas. Descarga el paquete deb, rpm o tar.gz completo para actualizar manualmente; solo las instalaciones estables desde AUR deben actualizar folia-major-bin con el gestor de paquetes.",
     "manualUpdateNotice": "Nota: esta plataforma no admite actualizaciones automáticas. Descarga el paquete manualmente.",
-    "versionCopiedHint": "Haz clic para copiar la información de la versión",
     "unofficialBuildNotice": "Compilación no oficial: esta versión no fue compilada por la CI del repositorio de Folia ni desplegada mediante una configuración de autoalojamiento documentada (Docker, Vercel, Cloudflare), y puede estar modificada o carecer de sus servicios de backend. Contacta primero a quien te la proporcionó; las compilaciones oficiales están en GitHub Releases.",
     "selfHostedBuildNotice": "Autoalojado: compilado y alojado por quien lo desplegó, incluidos los backends de las plataformas de música. Contacta primero a quien lo desplegó, y repórtalo en GitHub cuando esté claro que es un problema de Folia.",
-    "versionCopiedToast": "Copiado",
-    "stageConnected": "Stage conectado",
-    "nowPlayingConnectedStatus": "Now Playing conectado",
-    "nowPlayingDisconnectedStatus": "Now Playing no conectado",
-    "playerCapConnectedStatus": "Nexus PlayerCap conectado",
-    "playerCapDisconnectedStatus": "Nexus PlayerCap no conectado",
-    "nowPlayingStatusLabel": "Estado de la conexión: {{status}}",
     "nowPlayingStatusHint": "Se conecta a ws://localhost:9863/api/ws/lyric. Inicia primero el servicio now-playing.",
     "globalLyricTimelineOffset": "Desfase de tiempo global",
-    "globalLyricTimelineOffsetDesc": "Desplaza la línea de tiempo de la letra de todas las canciones en este dispositivo para compensar la latencia de Bluetooth u otras salidas. Abre una vista previa en vivo para ajustarlo con precisión.",
+    "settingsHeadingLyricTiming": "Tiempos y filtros",
+    "globalLyricTimelineOffsetDesc": "Desplaza en el tiempo todas las letras para compensar el retraso del Bluetooth u otra salida.",
     "lyricFilterRegex": "Filtrado de letra",
-    "lyricFilterRegexDesc": "Reglas de filtro línea por línea y cómo se maneja el bloque de créditos al inicio de la letra.",
-    "copyStageAddress": "Copiar dirección",
-    "stageAddressCopied": "Copiado",
+    "lyricFilterRegexDesc": "Reglas de filtro línea por línea, y qué pasa con los créditos del comienzo.",
     "visualizerMode": "Modo",
-    "noDescription": "Sin descripción",
+    "noDescription": "Sin descripción"
   },
   "releaseNotes": {
     "v0_7_0": {
@@ -3043,6 +4197,87 @@ export default {
       "qqPrivatePlaylists": {
         "title": "Listas de reproducción privadas de QQ Music",
         "description": "Con la sesión iniciada, tus propias listas de reproducción privadas ahora cargan sus canciones, con paginación real. Los backends autoalojados deben usar qq-music-api 3.1.2 o posterior; los más antiguos recurren automáticamente al método anterior, y una lista que no se puede leer ahora indica que no es pública en lugar de mostrarse vacía sin aviso."
+      }
+    },
+    "v0_7_22": {
+      "intro": "Te damos la bienvenida a la 0.7.22, la actualización Destello, una versión grande. Agrega Qishui Music; trae Hanabi, un estilo de letra con fuegos artificiales japoneses; te deja elegir de qué estilos saca el estilo aleatorio por canción; da a la app de escritorio atajos globales de reproducción, y permite elegir proveedor y modelo directamente en los ajustes de IA.",
+      "qishui": {
+        "title": "Qishui Music",
+        "description": "Qishui Music llega al escritorio: inicia sesión desde la ventana de inicio de sesión escaneando con Douyin. Busca, reproduce (calidad estándar), lee letras sincronizadas por palabra y las canciones más populares de cada artista, y abre tus playlists y \"Escuchado recientemente en Qishui\"; el feed de recomendaciones y las estaciones por escena suenan como FM personal, y las tarjetas de escena del inicio empiezan a sonar con un toque. Puedes dar me gusta, agregar y quitar canciones de tus playlists y usar No me gusta en el FM personal. Las canciones sin una fuente que se pueda reproducir directamente no suenan, y todavía no se pueden explorar álbumes, crear playlists ni guardar playlists. Las canciones locales asociadas a una de Qishui también pueden traer su letra."
+      },
+      "hanabi": {
+        "title": "Hanabi",
+        "description": "Un estilo de letra nuevo con la estética de un lyric PV japonés: cada línea entra carácter por carácter sobre bloques de color, adornos como fuegos artificiales florecen junto al texto y, entre tomas, toda la escena gira y sube con los fuegos que se lanzan, con tiras de película, stickers y cinta como collage y un brillo que crece en el coro. Los fuegos, el texto, la decoración y los colores se ajustan en los ajustes del estilo, con niveles de calidad; en el modo de pulso inteligente estalla un fuego en el cielo en cada pulso y la cámara se acerca con él."
+      },
+      "randomStyles": {
+        "title": "Elige tus estilos aleatorios",
+        "description": "El selector de estilos de letra suma Aleatorio: marca algunos o todos los estilos incluidos para formar un grupo aleatorio, y cada canción cambia a uno de ellos, nunca el mismo dos veces seguidas, cada uno con sus ajustes guardados. Desde el panel del reproductor puedes sacar otro estilo para la canción actual o editar el grupo; el grupo se incluye al importar, exportar y sincronizar la configuración."
+      },
+      "globalShortcuts": {
+        "title": "Atajos globales de reproducción",
+        "description": "El escritorio suma Atajos → Atajos globales: controla la reproducción aunque Folia no esté al frente, con Ctrl+Alt+Shift (Control+Option+Shift en macOS) más una letra o un dígito. Asigna reproducir/pausar, anterior, siguiente, subir y bajar volumen, silenciar, repetir y aleatorio, además de comandos que aportan los mods; las combinaciones que ya usa otra app quedan marcadas. En Wayland nativo, un botón los registra en tu entorno de escritorio, donde asignas las teclas. La paleta de comandos también suma reproducir/pausar y subir/bajar volumen."
+      },
+      "aiProviders": {
+        "title": "Proveedores y modelos de IA",
+        "description": "Los ajustes de IA en el escritorio ahora te dejan elegir proveedor: Gemini, DeepSeek, Xiaomi MiMo, Alibaba Cloud Qwen, Tencent Cloud TokenHub, OpenAI, Anthropic, Kimi, Zhipu GLM o un endpoint compatible personalizado. Los proveedores incluidos no piden URL; escribe una clave para obtener la lista de modelos, elige en un menú y parte con un modelo recomendado ya puesto. El razonamiento, la temperatura y parámetros parecidos se manejan según el proveedor y el modelo, y los modelos retirados se marcan. Al cambiar de canción, un tema de IA a medio generar de la canción anterior ya no cae en la nueva."
+      },
+      "moreDetails": {
+        "title": "Más mejoras",
+        "description": "Las sesiones de todas las plataformas ya no se borran al reiniciar solo porque la red o el servidor estaban caídos. El modo de pulso inteligente suma la opción \"Solo lo analizado\", y su interruptor principal pasa a una nueva página Global en la ventana de estilos de letra; las canciones locales y de Navidrome ahora también tienen análisis para la transición inteligente; el escaneo local admite DSD (.dsf y .dff). Windows suma el ajuste GPU de render, y Rendimiento y movimiento agrega Ahorro en segundo plano (desactivado por defecto), que pausa la animación de la letra mientras la ventana está minimizada u oculta. La franja de información de Bravais puede ser automática, vertical u horizontal, y su muro Explorar ahora incluye lo escuchado recientemente. La API de mods sube a Folium 1.7."
+      }
+    },
+    "v0_7_21": {
+      "intro": "Te damos la bienvenida a la 0.7.21, la actualización Aquelarre, una versión grande. La app de escritorio suma Spotify y YouTube Music, y ahora todas las plataformas inician sesión desde una sola ventana; el inicio gana la pestaña Explorar; Sonnet, Diorama y Pendolo tienen el modo de pulso inteligente y se mueven con los pulsos y la batería; QQ Music puede iniciar sesión con la app de QQ Music, y la interfaz ya está disponible en chino tradicional.",
+      "newPlatforms": {
+        "title": "Spotify y YouTube Music",
+        "description": "Dos plataformas nuevas en el escritorio. Inicia sesión en Spotify con el navegador del sistema para buscar, explorar, dar me gusta, guardar y editar playlists; la reproducción necesita Spotify Premium, llega hasta 320k y aún no está disponible en Mac con Intel. YouTube Music busca y reproduce sin iniciar sesión; para iniciarla, Folia abre Chrome, Edge, Chromium o Brave en tu equipo para tu cuenta de Google, y quienes tienen Premium pueden elegir una calidad mayor. Las dos plataformas traen solo letras sincronizadas por línea, y ninguna está todavía en la versión web."
+      },
+      "loginWindow": {
+        "title": "Una sola ventana de inicio de sesión",
+        "description": "NetEase Cloud Music, QQ Music, Kugou, Bodian, Spotify y YouTube Music inician sesión desde la misma ventana: las plataformas y su estado a la izquierda, y los pasos del QR o del navegador a la derecha; si algo falla, dice por qué y cuándo puedes reintentar. Puedes tener sesión en varias plataformas a la vez, y cambiar o cerrar sesión aquí (cerrar sesión vacía la cola). Ábrela con el botón Iniciar sesión del inicio o con el indicador de plataforma de la esquina inferior derecha."
+      },
+      "explore": {
+        "title": "Explorar",
+        "description": "El inicio tiene una pestaña nueva, Explorar, con playlists recomendadas, rankings, canciones y álbumes nuevos de NetEase Cloud Music, QQ Music, Spotify y YouTube Music, además de lo que escuchaste hace poco y \"Volver a escuchar\", guardados en este equipo, con un botón para traer una tanda nueva. Bravais también gana una pestaña Explorar, y al abrir Lattice desde Explorar todo se ordena como un muro de pósteres. Puedes desactivarla en Ajustes → Inicio y playlists; el Explorar de QQ Music necesita qq-music-api 3.3.3 o posterior en el backend."
+      },
+      "smartBeat": {
+        "title": "Modo de pulso inteligente",
+        "description": "Los estilos de letra del escritorio ganan el modo de pulso inteligente: Sonnet acerca la cámara en cada pulso y la rasga con luz en el primer pulso del compás, las partículas de Diorama ondulan al pulso mientras salta la palabra que se canta, y el dial de Pendolo se infla con el bombo, la caja y los platillos separados. Cada efecto tiene su interruptor y su intensidad, y el modo completo se puede activar desde la paleta de comandos. Necesita una GPU con WebGPU; una canción se analiza un momento la primera vez que suena y después se recuerda. Los modelos ahora vienen con el instalador, así que la transición inteligente ya no necesita descargar un modelo aparte."
+      },
+      "qqMusic": {
+        "title": "QQ Music: inicio con la app y más",
+        "description": "QQ Music ahora puede iniciar sesión escaneando con la app de QQ Music (en escritorio, Docker y Node, el mismo código también sirve con QQ móvil y WeChat); en la versión web con backend Serverless, la sesión se renueva sola hasta por 30 días. La búsqueda con sesión es más estable, y cuando la plataforma rechaza una búsqueda ves un error en vez de \"sin resultados\". Nuevo: la nube musical (solo las canciones que se pueden reproducir), el nivel de suscripción, las reproducciones de las playlists y crear playlists vacías; cuando no hay una fuente completa, Folia reproduce la vista previa y lo avisa. Necesita qq-music-api 3.3.3 en el backend."
+      },
+      "moreDetails": {
+        "title": "Más mejoras",
+        "description": "La interfaz se puede cambiar a chino tradicional; los Ajustes se reagrupan en Interfaz, Música, App y Avanzado, y la sincronización pasa a Conexiones. Nuevo \"Ocultar el cursor sin movimiento\", y \"Ubicar la canción que suena\" en la paleta de comandos; la ventana de control remoto se rediseñó y puede evitar que su portada inactiva se agrande; durante una transición inteligente, Monet y la ventana de control remoto cambian de canción junto con la mezcla. Con varias pantallas puedes elegir cuál usa el modo fondo de pantalla, y arrastrar en el modo fondo de pantalla de Windows sigue mejor al mouse. Hay paquetes nuevos para Linux ARM64, y la API de mods pasa a Folium 1.6."
+      }
+    },
+    "v0_7_20": {
+      "intro": "La 0.7.20 completa QQ Music con recomendaciones, me gusta, favoritos y edición de playlists; agrega \"Saltar canciones que no se pueden reproducir\"; hace confiable la exportación de video del escritorio con archivos grandes y en Linux; trae la separación de pistas a los Mac con Intel, y deja que los mods agreguen sus propias páginas al inicio.",
+      "qqMusic": {
+        "title": "QQ Music se pone al día",
+        "description": "Con sesión en QQ Music ahora tienes recomendaciones diarias, FM personal y playlists recomendadas (las playlists recomendadas también funcionan sin sesión). Puedes dar me gusta a canciones, guardar playlists y álbumes, y agregar o quitar canciones de las playlists que creaste; quitar una canción de \"Me gusta\" le quita el me gusta. Cuando una canción que falla puede estar bloqueada por suscripción o región, Folia lo indica como causa probable. QQ todavía no admite \"no me gusta\", así que el botón de papelera del FM personal queda en gris."
+      },
+      "autoSkip": {
+        "title": "Saltar canciones que no se pueden reproducir",
+        "description": "Un nuevo interruptor, \"Saltar canciones que no se pueden reproducir\" (desactivado por defecto), está en la tarjeta de la cola de los ajustes de reproducción. Activado, las canciones que necesitan suscripción o compra, que son solo vista previa, que están bloqueadas en tu región o que fallan por un motivo desconocido hacen una cuenta regresiva y pasan a la siguiente, igual que las canciones retiradas. Las que piden iniciar sesión y los problemas de red siguen deteniéndose a esperarte. También se puede activar desde la paleta de comandos."
+      },
+      "videoExport": {
+        "title": "Exportación de video más confiable",
+        "description": "La exportación de video del escritorio ahora escribe en el disco mientras graba, así que los archivos grandes, como los 4K, ya no fallan en el último paso. Además graba directamente la página de Folia: Linux (incluido Wayland) ya no deja de encontrar una fuente de captura, las ventanas tapadas se graban bien y la grabación en 4K va a muchos más cuadros por segundo. Los MP4 exportados ahora muestran la duración correcta."
+      },
+      "automixIntelMac": {
+        "title": "Separación de pistas en Mac con Intel",
+        "description": "El modelo de separación de pistas que usa la transición inteligente ahora funciona en Mac con Intel (macOS 13 o posterior), y la separación es un poco más rápida en las demás plataformas."
+      },
+      "modHomePages": {
+        "title": "Los mods pueden agregar páginas al inicio",
+        "description": "Folium 1.5: los mods pueden agregar sus propias páginas al inicio, junto a las pestañas incluidas. Pueden leer y cambiar el volumen, el silencio y el modo de repetición, ver la cola y reproducir desde ella, y reaccionar a las fallas de reproducción. El panel de mods muestra cuánto espacio usa cada mod y puede vaciar su caché; los menús de los ajustes de mods ahora se ven como el resto de Folia. Los mods del canal Beta de la comunidad se marcan en morado y te avisan antes de activarlos."
+      },
+      "stabilityFixes": {
+        "title": "Pulido y arreglos",
+        "description": "El bloque de ajustes del inicio de Bravais ahora avisa cuando hay una versión nueva. Buscar desde el inicio de Bravais ya no muestra una página de resultados vacía, ni busca en la plataforma equivocada con KuGou o QQ. Las etiquetas verticales en chino ya no se amontonan en algunas distribuciones de Linux, y los pósteres de artista o álbum ya no muestran los colores predeterminados al voltearse. La app de escritorio refuerza los controles de seguridad de los enlaces externos y la mensajería interna, y las claves de IA solo se envían a la dirección para la que se guardaron."
       }
     },
     "v0_7_19": {
@@ -3271,7 +4506,7 @@ export default {
     "noExportCodec": "No hay un códec de exportación de video disponible en este sistema.",
     "windowResizeFailed": "No se pudo cambiar el tamaño de la ventana del reproductor a la resolución de exportación.",
     "recordingCancelled": "Grabación cancelada.",
-    "recorderUnknownError": "El grabador encontró un error desconocido.",
+    "recorderUnknownError": "El grabador encontró un error desconocido."
   },
   "player": {
     "play": "Reproducir",
@@ -3282,7 +4517,7 @@ export default {
     "loopAll": "Repetir todo",
     "loopOne": "Repetir una",
     "unknownArtist": "Artista desconocido",
-    "unknownAlbum": "Álbum desconocido",
+    "unknownAlbum": "Álbum desconocido"
   },
   "localMusic": {
     "foldersAndPlaylists": "Carpetas",
@@ -3346,7 +4581,6 @@ export default {
     "markPureMusicHint": "Una vez marcada como instrumental, ya no se buscará letra automáticamente para esta canción",
     "pureMusicMarkFailed": "No se pudo actualizar la marca de instrumental",
     "notALocalSong": "No es una canción local",
-    "fileInfo": "Información del archivo",
     "filename": "Nombre de archivo",
     "durationMatched": "Coincidencia de duración",
     "size": "Tamaño",
@@ -3487,7 +4721,7 @@ export default {
     "localInfoSkippedCount": "{{count}} con información local omitidas",
     "useLocalInfoForSelected": "Usar información local ({{count}})",
     "coverCacheFailed": "Se guardaron los metadatos, pero no se pudo guardar la portada en caché. Se seguirá usando la URL en línea cuando esté disponible.",
-    "lyricsNotAppliedOtherSaved": "No se aplicó la letra; las demás selecciones se guardaron.",
+    "lyricsNotAppliedOtherSaved": "No se aplicó la letra; las demás selecciones se guardaron."
   },
   "navidrome": {
     "title": "Navi",
@@ -3537,10 +4771,11 @@ export default {
     "restoreServerPresetFailed": "No se pudo acceder a la configuración predefinida del servidor. Inténtalo más tarde.",
     "cloudDrive": "Nube",
     "cloudDriveDesc": "Nube de NetEase Cloud Music",
+    "qqCloudDriveDesc": "Unidad de música Weiyun"
   },
   "unifiedPanel": {
     "nowPlayingStageDescription": "Reproduciendo ahora está siendo controlado por un reproductor externo. Folia solo se encarga de mostrar la letra y los efectos visuales.",
-    "stageLocalInputDescription": "El escenario está en modo de entrada local única. Los dispositivos externos pueden enviar letras o contenido multimedia, pero la reproducción y la visualización las controla el propio Folia.",
+    "stageLocalInputDescription": "El escenario está en modo de entrada local única. Los dispositivos externos pueden enviar letras o contenido multimedia, pero la reproducción y la visualización las controla el propio Folia."
   },
   "libraryBravaisArtist": {
     "playTopSongs": "Reproducir canciones principales",
@@ -3571,7 +4806,7 @@ export default {
     "addTopSongsToQueue": "Encolar canciones principales",
     "topSongsAddedToQueue_one": "Se agregó {{count}} canción principal a la cola de reproducción",
     "topSongsAddedToQueue_other": "Se agregaron {{count}} canciones principales a la cola de reproducción",
-    "noTopSongsToQueue": "No hay canciones principales para encolar",
+    "noTopSongsToQueue": "No hay canciones principales para encolar"
   },
   "obs": {
     "connecting": "Conectando con Folia",
@@ -3600,7 +4835,6 @@ export default {
     "secondaryColorDesc": "Color del texto secundario y del fondo geométrico",
     "themeDescription": "Descripción",
     "themeDescriptionPlaceholder": "Una frase corta que describa el ambiente de este tema",
-    "themeDescriptionHint": "La descripción es lo que un tema de IA escribe sobre el ambiente de la canción. Se muestra junto al nombre del tema y se guarda con él.",
     "themeNameRequired": "Tanto el tema claro como el oscuro necesitan un nombre (1-32 caracteres).",
     "tabColors": "Colores",
     "tabDetails": "Detalles",
@@ -3610,6 +4844,7 @@ export default {
     "targetCustomTheme": "Tema personalizado",
     "targetAiHint": "Editando el tema de IA de la canción actual.",
     "targetAiNewHint": "Aún no hay tema de IA; al guardar se creará uno para la canción actual.",
+    "themePark": "Theme Park",
     "targetCustomHint": "Editando tu tema personalizado guardado.",
     "targetCustomNewHint": "Aún no hay tema personalizado; al guardar se creará uno.",
     "wordColors": "Colores de palabras emotivas",
@@ -3627,7 +4862,6 @@ export default {
     "importJsonToDraft": "Cargar en el editor",
     "importJsonToDraftHint": "Pega un JSON de tema de IA para cargarlo en el editor. No se aplica nada hasta que guardes.",
     "exportDraftJson": "Exportar borrador actual",
-    "editingBadge": "Editando",
     "midnightDefault": "Medianoche predeterminado",
     "daylightDefault": "Día predeterminado"
   },
@@ -3638,7 +4872,7 @@ export default {
   "playbackEntryView": {
     "title": "¿Adónde te debería llevar Reproducir?",
     "description": "Ambas vistas reproducen y muestran la letra; solo ponen el énfasis en lugares distintos. Elige cuál debe abrir Reproducir por defecto, o quédate donde lo presionaste.",
-    "settingsHint": "Puedes cambiarlo cuando quieras en Opciones → Interfaz → Vista que abre Reproducir.",
+    "settingsHint": "Puedes cambiarlo cuando quieras en Opciones → Página del reproductor → Vista que abre Reproducir.",
     "confirm": "Usar esta",
     "next": "Siguiente",
     "back": "Atrás",
@@ -3736,40 +4970,23 @@ export default {
     "transparent": "Transparente",
     "showUI": "Mostrar interfaz",
     "hideUI": "Ocultar interfaz",
-    "uiAlwaysHidden": "Interfaz: siempre oculta",
-    "uiAlwaysVisible": "Interfaz: siempre visible",
-    "uiAutoHide": "Interfaz: ocultar automáticamente",
     "close": "Cerrar",
     "back": "Atrás",
-    "showBorder": "Mostrar borde",
-    "hideBorder": "Ocultar borde",
     "disableClickThrough": "Desactivar clic a través",
     "enableClickThrough": "Clic a través",
     "through": "A través",
-    "unpinMainWindow": "Desfijar ventana principal",
-    "pinMainWindow": "Fijar ventana principal",
     "pin": "Fijar",
-    "presetSelectorTitle": "Seleccionar ajuste predefinido de exportación",
-    "preset": "Predefinido {{index}}",
+    "pinUnavailable": "No se puede mantener encima en Wayland. Usa las reglas de ventana de tu escritorio (por ejemplo, \"Mantener encima de las demás\" en KDE)",
     "portrait": "Vertical",
     "landscape": "Horizontal",
     "square": "Cuadrado",
     "ultrawide": "Ultrapanorámico",
-    "customPreset": "Predefinido personalizado {{index}}",
     "widthPx": "Ancho (px)",
     "heightPx": "Alto (px)",
-    "aspectRatio": "Proporción:",
-    "rangeHint": "Rango {{min}}–{{max}} px",
-    "encodingHint": "Los valores pares tienen mejor compatibilidad de codificación",
     "noDescription": "No hay descripción disponible",
     "selectPlaceholder": "Seleccionar...",
-    "saveToPreset": "Guardar en predefinido {{index}}",
     "exportFullSong": "Canción completa",
     "exportFromHere": "Desde aquí",
-    "recordingCountdown": "Iniciando grabación ({{countdown}} s)...",
-    "preparingEnvironment": "Preparando el entorno de grabación...",
-    "recordingProgress": "Grabando ({{progress}}%)",
-    "savingVideo": "Guardando video...",
     "stopAndSave": "Detener y guardar",
     "cancel": "Cancelar",
     "startRecording": "Iniciar grabación",
@@ -3777,16 +4994,32 @@ export default {
     "error": "Error",
     "saving": "Guardando...",
     "preparing": "Preparando",
-    "noLyrics": "Sin letra",
     "previous": "Anterior",
     "next": "Siguiente",
     "play": "Reproducir",
     "pause": "Pausar",
-    "transparentControls": "Controles transparentes",
-    "videoExport": "Exportar video",
     "loopOff": "Bucle desactivado",
     "loopAll": "Repetir todo",
     "loopOne": "Repetir una",
+    "more": "Más",
+    "noTrack": "No hay una canción activa",
+    "unknownArtist": "Artista desconocido",
+    "tabMainWindow": "Ventana principal",
+    "tabExport": "Exportar video",
+    "tabMods": "Mods",
+    "rowMode": "Modo",
+    "rowChrome": "Interfaz",
+    "rowWindow": "Ventana",
+    "rowRange": "Rango",
+    "rowSize": "Tamaño",
+    "chromeAlwaysVisible": "Visible",
+    "chromeAutoHide": "Ocultar solo",
+    "chromeAlwaysHidden": "Oculta",
+    "border": "Borde",
+    "sizeCustom": "Personalizado",
+    "save": "Guardar",
+    "recording": "Grabando",
+    "startingSoon": "Iniciando"
   },
   "lyricSync": {
     "snap": "Ajustar al ritmo",
@@ -3830,24 +5063,19 @@ export default {
     "saved": "Letra guardada.",
     "savedSidecar": "También se escribió como {{path}}.",
     "sidecarDownloaded": "No se pudo escribir en la carpeta, así que el .lrc se descargó.",
-    "saveFailed": "No se pudo guardar la letra.",
+    "saveFailed": "No se pudo guardar la letra."
   },
   "aiHelp": {
     "openButton": "¿Necesitas ayuda?",
     "title": "¿Necesitas ayuda?",
-    "description": "Primero revisa la documentación de Folia. Si el problema sigue sin resolverse, copia el prompt de abajo y pide ayuda a un modelo de IA.",
     "docsTitle": "Lee la documentación de Folia",
-    "docsDescription": "Encuentra instrucciones de uso, detalles de configuración y guías para solucionar problemas.",
     "openDocs": "Abrir documentación",
     "discordTitle": "Pregunta en la comunidad de Discord",
-    "discordDescription": "Soluciona problemas con otros usuarios y los desarrolladores, y entérate primero de las nuevas versiones.",
     "openDiscord": "Unirse",
     "askAiTitle": "¿Aún necesitas ayuda? Pregúntale a la IA",
-    "askAiDescription": "Describe tu problema y luego pega este prompt para que la IA use la documentación y el código fuente de Folia como contexto.",
     "usageHint": "Cómo usarlo: abre el sitio oficial del modelo que usas, describe primero tu problema concreto, luego pega este prompt debajo de tu pregunta y envía ambos juntos.",
     "copyPrompt": "Copiar prompt",
     "copyPromptTitle": "1. Copiar prompt de IA",
-    "copyPromptDesc": "Copia el prompt y pégalo en cualquier modelo de IA para generar tu tema.",
     "importJsonTitle": "2. Pegar resultado JSON",
     "prompt": "Estoy usando el reproductor de música folia-major de GitHub y necesito ayuda con un problema.\n\nGuía de Folia: {{guideUrl}}\nRepositorio de Folia: {{repoUrl}}\n\nUsa estas referencias como contexto y luego ayúdame a entender y resolver el problema que describo a continuación. Si falta información, pregúntame qué debo proporcionar antes de hacer suposiciones inciertas."
   },
@@ -3856,8 +5084,10 @@ export default {
     "componentsOnPage": "Componentes con su propio Ponder",
     "navigation": {
       "title": "Ponder · Todos los tutoriales",
-      "hint": "Deja el puntero sobre una entrada y mantén G para abrirla, o simplemente haz clic. Para la versión corta, mantén Ctrl + G en esta pantalla.",
-      "touchHint": "Toca una entrada para abrirla. Para la versión corta, toca el ícono de bombilla en la esquina superior derecha.",
+      "all": "Todos los tutoriales",
+      "unseen": "Sin ver",
+      "search": "Buscar tutoriales",
+      "empty": "Ningún tutorial coincide",
       "seen": "Ya visto"
     },
     "summaries": {
@@ -3866,7 +5096,7 @@ export default {
       "audio_equalizer": "Diez bandas y una cadena de efectos — y un solo arrastre reescribe una ranura personalizada.",
       "vis_playground": "Hay tres zonas de clic invisibles sobre la vista previa.",
       "lyric_style": "Los ajustes propios de cada estilo, ocultar los extras de Monet, combinar fondos y el subtítulo compartido.",
-      "theme_park": "El editor de colores completo: qué tema, qué lado y por qué guardar aparece desactivado.",
+      "theme_park": "El editor de colores: qué tema, qué lado y por qué guardar aparece en gris.",
       "custom_shortcut_settings": "Alt más una letra, y por qué su lista de comandos es más corta que la de la paleta.",
       "pinned_commands": "Tres ranuras fijas bajo la ventana de comandos — no es lo mismo que “recientes primero”.",
       "replay_gain_settings": "El mismo valor que el selector de tres opciones de la pestaña de fuente.",
@@ -3893,27 +5123,29 @@ export default {
       "local_grid_map_directory_tree": "Selecciona subárboles de carpetas, solo canciones directas, y mantén las raíces importadas.",
       "local_metadata_match": "El lápiz detrás de tres condiciones.",
       "local_track_sorting": "Solo las carpetas locales se ordenan, y la elección se mantiene entre sesiones.",
-      "lyrics_animation_settings": "Dónde se cambia la animación de la letra, más dos interruptores que afectan la apariencia.",
-      "panel_account_tab": "Inicio de sesión, calidad de audio y sincronización para la fuente actual.",
-      "panel_controls_tab": "Tres botones grandes, volumen y dos filas de visor de modos.",
-      "panel_cover_actions": "Los cuatro botones que solo aparecen al pasar el puntero sobre la portada.",
+      "lyrics_animation_settings": "Dónde se cambia el estilo de letra en los Ajustes, y qué se abre.",
+      "panel_account_tab": "Inicio de sesión, calidad predeterminada y sincronización para la fuente actual.",
+      "panel_controls_tab": "El volumen, los bloques de repetición, Transición inteligente y Efectos de audio, y las filas de estilo de letra y fondo.",
+      "panel_cover_actions": "La fila de la pestaña Portada: me gusta, agregar a una playlist, volver a donde suena, inicio y ajustes.",
       "panel_cover_tab": "Título, artista y álbum de la canción actual, y qué pasa al hacer clic en ellos.",
       "panel_queue_tab": "La lista de la cola: acciones por fila, mezclar, disponerla como muro.",
       "queue_command_surface": "@ acota el rango, -- actúa sobre todo lo que coincidió.",
       "transition_settings": "Fundido cruzado o automix, y por qué tu elección podría no estar funcionando.",
       "local_library_watch": "Qué significa ese ícono de advertencia en la lista de vigilancia.",
-      "queue_settings": "Dónde pone realmente las cosas «agregar a la cola», en todas partes a la vez.",
+      "queue_settings": "Dónde pone realmente las cosas «Agregar a la cola», en todas partes a la vez.",
       "lyrics_settings": "La selección automática anula tu fuente manual, y los dos desfases se suman.",
       "grid_palette_hotkey": "En una página de cuadrícula, si S abre la ventana de comandos o el filtro.",
       "panel_slide": "Ese botón también se desliza a la izquierda y abre la ventana de comandos.",
-      "panel_source_tab": "La celda específica de la fuente: ganancia de audio, fuente de letra, desfase de la línea de tiempo.",
+      "panel_source_tab": "La pestaña que sigue a la fuente: fuente de letra, desfase de la línea de tiempo, ganancia de audio.",
       "lyric_export": "Empaqueta las letras en caché de este dispositivo en un solo zip de archivos .fia y LRC mejorado.",
       "player_bar": "Qué hay en la cápsula y las dos ranuras que eliges tú.",
       "player_page": "Qué hay en la página del reproductor, dónde está cada cosa y cómo mezclar.",
       "ponder_basics": "Sugerencias al pasar el puntero, mantener G, Ctrl+G para toda la página y cómo desactivar las sugerencias.",
       "settings_page": "Cómo se agrupan los ajustes y cómo saltar directo a ellos desde la ventana de comandos.",
       "side_panel": "Cómo está armado el panel y cómo cambiar de pestaña.",
-      "theme_settings": "Preajustes, de dónde sale una paleta personalizada y cuándo cambia sola."
+      "theme_settings": "Preajustes, de dónde sale una paleta personalizada y cuándo cambia sola.",
+      "sign_in": "El botón Iniciar sesión del inicio y el indicador de abajo a la derecha abren la misma ventana.",
+      "lyric_match": "Elige a mano la letra de una canción: cambia la fuente, busca, revisa y guarda."
     },
     "categories": {
       "basics": "Primeros pasos",
@@ -3930,20 +5162,15 @@ export default {
       "shortcut": "Mantén Ctrl + G",
       "required": "Prueba el Ponder de la página una vez para continuar."
     },
-    "sceneLabel": "Capítulo",
     "allChaptersDone": "Eso es todo.",
     "nextChapter": "Siguiente capítulo",
     "nextChapterAuto": "A continuación",
     "title": "Ponder",
-    "hintCapsule": "Mantén G para Ponder",
     "hintCapsulePage": "Ponder de esta página",
     "hintCapsuleHold": "Entrando a Ponder",
     "sceneCounter": "{{current}} / {{total}}",
-    "prevScene": "Escena anterior",
-    "nextScene": "Escena siguiente",
     "playPause": "Reproducir o pausar",
     "replay": "Reproducir desde el inicio",
-    "exit": "Esc para salir",
     "seekKeyframe": "Saltar al fotograma clave {{index}}",
     "prevKeyframe": "Fotograma clave anterior",
     "nextKeyframe": "Fotograma clave siguiente",
@@ -3955,11 +5182,11 @@ export default {
     },
     "actions": {
       "openAudioEqualizer": "Abrir efectos de audio",
-      "openCustomShortcut": "Abrir ajustes de atajos",
-      "openPinnedCommands": "Abrir comandos fijados",
-      "openReplayGain": "Abrir ganancia de audio",
+      "openCustomShortcut": "Abrir Atajo personalizado",
+      "openPinnedCommands": "Abrir Comandos fijados",
+      "openReplayGain": "Abrir el modo ReplayGain",
       "openImportExport": "Abrir respaldo e importación",
-      "openBottomUiSettings": "Abrir ajustes de la interfaz inferior",
+      "openBottomUiSettings": "Abrir los ajustes de la barra de controles",
       "openLyricsAnimation": "Abrir ajustes de animación de letra",
       "openLyricStyleSettings": "Abrir ajustes de estilo de letra",
       "openBackgroundSettings": "Abrir ajustes de fondo",
@@ -3972,14 +5199,14 @@ export default {
       "openTraySettings": "Abrir comportamiento de la ventana de escritorio",
       "openTransitionSettings": "Abrir ajustes de transición",
       "openLibraryWatch": "Abrir vigilancia de carpetas",
-      "openQueueSettings": "Abrir ajustes de la cola",
+      "openQueueSettings": "Abrir Comportamiento de la reproducción",
       "openLyricsSettings": "Abrir ajustes de letra",
       "openGridPaletteHotkey": "Ir a cambiar este interruptor",
       "openGridActionButton": "Ir a cambiar el destino del deslizamiento",
-      "openGrid3dCardStyle": "Abrir estilo de tarjetas de inicio",
+      "openGrid3dCardStyle": "Abrir Estilo de tarjetas de la cuadrícula 3D",
       "openGridViewCard": "Abrir ajustes de tarjetas de cuadrícula",
       "openBravaisSettings": "Abrir ajustes del muro Bravais",
-      "openLatticeSettings": "Abrir ajustes de apariencia del muro de mosaicos"
+      "openLatticeSettings": "Abrir los ajustes de vista de la página del reproductor"
     },
     "anchors": {
       "bravaisSeam": {
@@ -4005,7 +5232,6 @@ export default {
         "sections": "Secciones",
         "shortcuts": "Atajos",
         "account": "Acceso a la cuenta",
-        "accountPopup": "Lista de plataformas",
         "tools": "Cuadrícula de herramientas",
         "searchTool": "Buscar en plataformas en línea",
         "homeMore": "⋯",
@@ -4033,39 +5259,41 @@ export default {
         "noiseBadge": "Agrega ruido"
       },
       "lyricStyle": {
-        "panel": "Ajustes de animación de letra",
+        "panel": "Estilo de letra",
         "preview": "Vista previa en vivo",
         "settingsPanel": "Columna de ajustes",
-        "tabs": "Cuatro páginas",
+        "tabs": "Cinco páginas",
         "rows": "Los ajustes de este estilo",
-        "rowOne": "Primera fila",
         "rowTwo": "Segunda fila",
-        "rowThree": "Tercera fila",
-        "rowFour": "Cuarta fila",
         "rowFive": "Quinta fila",
         "subtitle": "Subtítulo compartido",
         "monetDescription": "Descripción de la canción",
         "monetHanger": "Colgador arrastrable",
-        "monetAudio": "Visualización de audio"
+        "monetAudio": "Visualización de audio",
+        "backgroundPictures": "Tipo de fondo",
+        "subtitleFont": "Fuente de subtítulos"
       },
       "visPlayground": {
-        "sectionReset": "Restablecer esta página",
+        "sectionReset": "Predeterminado",
         "rows": "Los controles de esta página",
         "rowOne": "Primera fila",
         "rowTwo": "Segunda fila",
         "rowThree": "Tercera fila",
         "rowFour": "Cuarta fila",
         "rowFive": "Quinta fila",
-        "panel": "Banco de trabajo de animación de letra",
+        "panel": "Estilo de letra",
         "header": "Barra de título",
         "preview": "Vista previa en vivo",
         "hotspotBackground": "Zona del fondo",
-        "hotspotVisualizer": "Zona de la animación",
+        "hotspotVisualizer": "Zona de la letra",
         "hotspotSubtitle": "Zona del subtítulo",
         "pause": "Pausar la vista previa",
         "settingsPanel": "Columna de ajustes",
-        "tabs": "Cuatro páginas",
-        "tabCommon": "General"
+        "tabs": "Cinco páginas",
+        "tabCommon": "Común",
+        "shelf": "Estilos",
+        "backgroundPictures": "Tipo de fondo",
+        "subtitleFont": "Fuente de subtítulos"
       },
       "themePark": {
         "panel": "Theme Park",
@@ -4102,7 +5330,7 @@ export default {
         "pinnedRow": "Los tres botones fijados"
       },
       "replayGain": {
-        "panel": "Ajustes · Ganancia de audio",
+        "panel": "Ajustes · Modo ReplayGain",
         "modeOff": "Desactivado",
         "modeTrack": "Por canción",
         "modeAlbum": "Por álbum",
@@ -4182,9 +5410,9 @@ export default {
       "transition": {
         "panel": "Ajustes · Transiciones",
         "enable": "Interruptor de transición",
-        "crossfade": "Fundido cruzado",
-        "automix": "Automix",
-        "badge": "Activo / alternativa",
+        "crossfade": "Fundido cruzado de Folia",
+        "automix": "Transición inteligente de Folia",
+        "badge": "Estado de funcionamiento",
         "detail": "Ajustes de este modo",
         "notice": "Aviso de requisito no cumplido"
       },
@@ -4192,23 +5420,23 @@ export default {
         "panel": "Ajustes · Vigilancia de carpetas locales",
         "enable": "Escaneo automático",
         "roots": "Carpetas vigiladas",
-        "recheck": "Volver a revisar"
+        "recheck": "Volver a revisar las carpetas"
       },
       "queueSettings": {
-        "panel": "Ajustes · Cola de reproducción",
+        "panel": "Ajustes · Comportamiento de la reproducción",
         "append": "Agregar al final",
-        "next": "Agregar después de la canción actual"
+        "next": "Reproducir a continuación"
       },
       "lyricsSource": {
         "panel": "Ajustes · Letras",
-        "autoBest": "Elegir la mejor automáticamente",
+        "autoBest": "Usar la mejor letra automáticamente",
         "priorityLocal": "Local primero",
         "priorityOnline": "En línea primero",
-        "globalOffset": "Desfase global de la línea de tiempo"
+        "globalOffset": "Desfase global de tiempos"
       },
       "gridHotkey": {
-        "panel": "Ajustes · S en las cuadrículas",
-        "toggle": "S abre la ventana de comandos"
+        "panel": "Ajustes · Cuadrículas",
+        "toggle": "Abrir la paleta de comandos con S en una cuadrícula"
       },
       "lyricExport": {
         "panel": "Exportar letras en caché",
@@ -4298,8 +5526,8 @@ export default {
         "menu": "Menú de orden"
       },
       "grid3dCardStyle": {
-        "panel": "Ajustes · Estilo de tarjetas de inicio",
-        "image": "Solo portada",
+        "panel": "Ajustes · Estilo de tarjetas de la cuadrícula 3D",
+        "image": "Solo la portada",
         "card": "Tarjeta polaroid"
       },
       "gridViewCard": {
@@ -4308,42 +5536,38 @@ export default {
         "square": "Tarjetas cuadradas",
         "minScale": "Tamaño mínimo de tarjeta",
         "minOpacity": "Opacidad mínima de tarjeta",
-        "reset": "Restablecer atenuación"
+        "reset": "Restablecer la atenuación predeterminada"
       },
       "latticeStyle": {
-        "panel": "Ajustes · Apariencia del muro de mosaicos",
-        "vignette": "Viñeta",
-        "tint": "Tinte del póster",
-        "customColor": "Color fijo",
+        "panel": "Ajustes · Página del reproductor · Vista",
+        "vignette": "Viñeta en los bordes",
+        "tint": "Tinte del póster enfocado",
+        "customColor": "Forzar un color personalizado",
         "picker": "Selector de color",
-        "intensity": "Intensidad del tinte"
+        "intensity": "Intensidad de la superposición"
       },
       "lyricsAnimation": {
         "panel": "Ajustes · Animación de letra",
-        "entry": "Estilo de animación de letra",
-        "card": "La tarjeta con ambos interruptores",
-        "transparent": "Fondo del reproductor transparente",
-        "autoHide": "Ocultar automáticamente la barra de control"
+        "entry": "Estilo de animación de letra"
       },
       "themeSettings": {
-        "panel": "Ajustes · Preajustes de tema",
-        "themePark": "Theme Park",
+        "panel": "Ajustes · Tema",
+        "themePark": "Abrir Theme Park",
         "presetDefault": "Preajuste integrado",
         "presetCustom": "Colores personalizados",
         "source": "Fuente de generación del tema",
-        "followSystem": "Seguir modo claro/oscuro del sistema",
+        "followSystem": "Modo claro / oscuro",
         "preferCustom": "Preferir el tema personalizado",
         "autoSwitch": "Cambiar de tema automáticamente"
       },
       "sidePanel": {
         "queueShuffle": "Mezclar cola",
-        "modeRow": "Fila de visor de modos",
-        "modeName": "El nombre del medio",
-        "modeList": "Todos los modos",
-        "modeListFooter": "Ajustes completos",
+        "modeRow": "Fila de estilo de letra",
+        "modeName": "El botón del medio",
+        "modeList": "Todos los estilos",
+        "modeListFooter": "Más ajustes",
         "fmMode": "Modo radio",
         "fmTransport": "Anterior / reproducir / siguiente",
-        "fmActions": "Descartar y me gusta",
         "panel": "Panel de control",
         "cover": "Portada actual",
         "tabs": "Pestañas",
@@ -4352,12 +5576,18 @@ export default {
         "sourceGain": "Ganancia de audio",
         "sourceLyrics": "Letra",
         "sourceOffset": "Desfase de la línea de tiempo",
-        "sourceLyricsFile": "Importar / exportar",
+        "sourceLyricsFile": "Importar / exportar letras",
         "sourceFileDialog": "Ventana de archivo de letra",
         "coverSettings": "Abrir ajustes",
-        "coverTransparent": "Fondo del reproductor transparente",
         "coverHome": "Volver al inicio",
-        "coverPlaylist": "Agregar a lista de reproducción"
+        "coverPlaylist": "Agregar a lista de reproducción",
+        "credits": "Título, artistas, álbum",
+        "header": "Esta canción",
+        "coverActions": "Fila de acciones",
+        "coverLike": "Me gusta",
+        "coverSource": "Sonando desde",
+        "fmDiscard": "Descartar",
+        "fmLike": "Me gusta"
       },
       "playerBar": {
         "play": "Reproducir / pausar",
@@ -4367,7 +5597,7 @@ export default {
         "secondarySlot": "Segunda ranura",
         "bar": "Barra de control inferior",
         "slots": "Dos ranuras",
-        "bottomUiSettings": "Ajustes · Interfaz inferior",
+        "bottomUiSettings": "Ajustes · Barra de controles",
         "picker": "Selector en ajustes",
         "queue": "Cola de reproducción",
         "volumeSurface": "Superficie de volumen"
@@ -4404,13 +5634,37 @@ export default {
         "card": "Tarjeta de canción enfocada",
         "info": "Info de la colección y acciones por lotes",
         "filter": "Filtrar esta colección"
+      },
+      "signIn": {
+        "page": "Inicio",
+        "homeButton": "Iniciar sesión",
+        "pill": "Cambiar de proveedor de música en línea",
+        "window": "Ventana de inicio de sesión",
+        "platforms": "Plataformas",
+        "tile": "Código QR",
+        "steps": "Pasos",
+        "account": "Cuenta",
+        "actions": "Cambiar y cerrar sesión",
+        "signedInRow": "Una plataforma con sesión iniciada"
+      },
+      "lyricMatch": {
+        "window": "Buscar datos",
+        "header": "La canción que se asocia",
+        "sources": "Fuentes de letras",
+        "search": "Buscar",
+        "results": "Resultados",
+        "chosen": "La fila elegida",
+        "lyrics": "Vista previa de la letra",
+        "save": "Guardar",
+        "switches": "Portada, Metadatos, Letra",
+        "noMatch": "No usar metadatos en línea"
       }
     },
     "targets": {
       "bravaisSeam": "Franja de información de Bravais",
       "queueShuffle": "Dónde está el aleatorio",
-      "audioEqualizer": "Diálogo de efectos de audio",
-      "visPlayground": "Banco de trabajo de animación de letra",
+      "audioEqualizer": "Ventana de efectos de audio",
+      "visPlayground": "Ventana de estilo de letra",
       "lyricStyle": "Estilos de letra",
       "themePark": "Theme Park",
       "customShortcutSettings": "Tu propio atajo",
@@ -4425,7 +5679,7 @@ export default {
       "commandPalette": "Ventana de comandos",
       "latticeChrome": "Controles de reproducción del póster expandido",
       "lyricsAnimationSettings": "Ajustes de animación de letra",
-      "themeSettings": "Ajustes de colores del tema",
+      "themeSettings": "Tema y temas por canción",
       "sidePanel": "Panel de control lateral",
       "gridActionButton": "El botón de acción del muro de pósteres",
       "gridViewEditMode": "Modo de edición de colección",
@@ -4436,16 +5690,16 @@ export default {
       "onlineCollectionActions": "Acciones de colección en línea",
       "localGridMapPage": "GridMap local",
       "localGridMapDirectoryTree": "Árbol de carpetas de GridMap",
-      "grid3dCardStyle": "Estilo de tarjetas de inicio",
+      "grid3dCardStyle": "Estilo de tarjetas de la cuadrícula 3D",
       "gridViewCardSettings": "Ajustes de tarjetas de cuadrícula",
       "latticeStyleSettings": "Apariencia del muro de mosaicos",
-      "panelCoverActions": "Los cuatro botones de la portada",
+      "panelCoverActions": "La fila de botones bajo la portada",
       "panelCoverTab": "Panel · Pestaña Portada",
       "panelSourceTab": "Panel · Pestaña Fuente",
       "lyricExport": "Exportar letras",
       "panelControlsTab": "Panel · Pestaña Controles",
-      "panelQueueTab": "Panel · Pestaña Cola",
-      "panelAccountTab": "Panel · Pestaña Cuenta",
+      "panelQueueTab": "Panel · Pestaña Playlist",
+      "panelAccountTab": "Panel · Pestaña Calidad",
       "latticePage": "Página de Lattice",
       "bravaisWall": "Muro de Bravais",
       "helpPage": "Conociendo Folia",
@@ -4456,10 +5710,12 @@ export default {
       "queueCommandSurface": "La ventana de la cola",
       "transitionSettings": "Transiciones y automix",
       "localLibraryWatch": "Vigilancia de carpetas locales",
-      "queueSettings": "Qué hace “agregar a la cola”",
+      "queueSettings": "Qué hace “Agregar a la cola”",
       "lyricsSettings": "Fuentes de letras y desfases",
       "gridPaletteHotkey": "La S en las cuadrículas",
-      "settingsPage": "Página de opciones"
+      "settingsPage": "Página de opciones",
+      "signIn": "Iniciar sesión en una plataforma de música",
+      "lyricMatch": "La ventana Buscar datos"
     },
     "scenes": {
       "bravaisSeamLevels": "Tres anchos: completo, lomo y plegado",
@@ -4473,21 +5729,21 @@ export default {
       "queueShuffleSlot": "Ponlo en la barra de control",
       "queueShufflePanel": "El botón del panel de la cola",
       "queueShufflePinned": "Fíjalo bajo la ventana de comandos",
-      "visPlaygroundCommon": "Las cuatro páginas y qué contiene “general”",
-      "visPlaygroundVisuals": "Animación y fondo",
+      "visPlaygroundCommon": "Las cinco páginas y qué contiene “Fuente”",
+      "visPlaygroundVisuals": "Estilo y fondo",
       "visPlaygroundSubtitle": "Subtítulos",
       "lyricStylePerStyle": "Cada estilo tiene sus propios ajustes",
       "lyricStyleMonet": "Monet: ocultar los extras",
       "lyricStyleCombine": "Fondo y estilo de letra se eligen por separado",
       "lyricStyleSubtitle": "El subtítulo inferior compartido",
-      "sidePanelControlsModeList": "La lista completa de modos está detrás del nombre",
+      "sidePanelControlsModeList": "Todos los estilos están detrás del botón del medio",
       "sidePanelQueueRadio": "Con FM personal, esta celda es la radio",
       "audioEqualizerPresets": "El interruptor, los preajustes y tus dos espacios",
       "audioEqualizerSilentWrite": "Un solo arrastre reescribe un espacio",
       "audioEqualizerEffects": "La cadena de efectos de abajo",
       "visPlaygroundLayout": "Vista previa en vivo a la izquierda",
       "visPlaygroundHotspots": "Tres zonas que no puedes ver",
-      "visPlaygroundSections": "Las cuatro páginas de la derecha",
+      "visPlaygroundSections": "Las cinco páginas de la derecha",
       "themeParkTarget": "Qué tema estás editando",
       "themeParkColors": "Claro y oscuro son dos paletas",
       "themeParkSaving": "Por qué guardar aparece desactivado",
@@ -4527,10 +5783,9 @@ export default {
       "latticeChromeBottomBar": "La barra inferior entra en acción",
       "sidePanelCoverTab": "Pestaña Portada",
       "sidePanelControlsTab": "Pestaña Controles",
-      "sidePanelQueueTab": "Pestaña Cola",
-      "sidePanelAccountTab": "Pestaña Cuenta",
+      "sidePanelQueueTab": "Pestaña Playlist",
+      "sidePanelAccountTab": "Pestaña Calidad",
       "lyricsAnimationEntry": "Dónde se elige la animación de la letra",
-      "lyricsAnimationToggles": "Dos interruptores que cambian el aspecto",
       "themeSettingsPresets": "Preajustes y personalizado",
       "themeSettingsSource": "De dónde vienen los colores",
       "themeSettingsAuto": "Cuándo cambia la paleta por sí sola",
@@ -4558,19 +5813,19 @@ export default {
       "latticeStyleTint": "Viñeta y tinte de pósteres",
       "latticeStyleCustomColor": "Fijarlo a un color fijo",
       "panelSourceTabWhere": "Cuándo aparece esta celda",
-      "panelSourceTabContents": "Ganancia, letra y línea de tiempo",
+      "panelSourceTabContents": "Letra, línea de tiempo y ganancia",
       "panelSourceTabExport": "Importar y exportar archivos de letra",
       "lyricExportScope": "Qué canciones y qué versión",
       "lyricExportFormats": "Dos formatos y nombres de archivo",
-      "panelCoverActionsReveal": "Cuatro botones que solo aparecen al pasar el puntero",
-      "panelCoverActionsRight": "Los dos de la derecha",
+      "panelCoverActionsReveal": "Tres acciones para esta canción",
+      "panelCoverActionsRight": "En el extremo derecho: inicio y ajustes",
       "sidePanelStructure": "Qué hay en el panel",
       "sidePanelTabs": "Cambiar de pestaña",
       "latticePageOverview": "Cómo está organizado Lattice",
       "latticePageStructure": "Muro de la cola, volver y herramientas",
       "latticePageNavigation": "Mover el foco por el muro infinito",
       "latticePagePoster": "Expandir un póster y controlar la reproducción",
-      "latticePageTools": "Foco, seguimiento, cola y luces",
+      "latticePageTools": "Ubicar, cola y luces",
       "latticePageKeyboard": "Control completo de Lattice con teclado",
       "bravaisWallStructure": "Un muro, una franja",
       "bravaisWallPan": "Arrastrar y la rueda",
@@ -4589,7 +5844,7 @@ export default {
       "localLibraryWatchRoots": "La lista de vigilancia y la fila que dejó de funcionar",
       "queueSettingsBehavior": "Al final, o justo después de esta",
       "lyricsSettingsSource": "De dónde viene la letra",
-      "lyricsSettingsOffset": "Dos desfases con el mismo nombre",
+      "lyricsSettingsOffset": "Dos desfases",
       "gridPaletteHotkeyOwner": "A quién pertenece la S en las cuadrículas",
       "queueCommandFacets": "@ acota la búsqueda",
       "queueCommandBatch": "-- actúa sobre todo lo que filtraste",
@@ -4608,7 +5863,13 @@ export default {
       "playerBarVolume": "El volumen está en la paleta",
       "panelSlideToPalette": "Desliza para abrir la paleta de comandos",
       "panelSlideEdgeHotspot": "Haz aparecer la manija desde el borde",
-      "panelSlideKeyboard": "Ábrela desde el teclado"
+      "panelSlideKeyboard": "Ábrela desde el teclado",
+      "signInEntries": "Dos formas de entrar",
+      "signInWindow": "Elige una plataforma e inicia sesión",
+      "signInAccount": "Con la sesión iniciada",
+      "lyricMatchSearch": "Cambia la fuente y vuelve a buscar",
+      "lyricMatchPick": "Elige una y revisa su letra primero",
+      "lyricMatchLocal": "Tres interruptores extra para una canción local"
     },
     "captions": {
       "bravaisSeam": {
@@ -4625,8 +5886,7 @@ export default {
         "homeFlip": "Al cambiar de pestaña, toda la franja da un giro y todo el muro cambia a esa pestaña. Con el teclado, F6 / Shift + F6 recorren las pestañas.",
         "homeSections": "Local y Navidrome tienen una columna extra de secciones (carpetas, álbumes, artistas, listas…). Solo la seleccionada muestra su nombre completo; las demás son íconos: pasa el puntero para ver el nombre. Cambiar de sección cambia el muro sin abrir un nivel nuevo.",
         "homeShortcuts": "Las pequeñas palabras verticales de abajo son accesos directos: Canciones que te gustan, FM personal, Todas las canciones… Hacer clic en uno equivale a hacer clic en su tarjeta del muro; FM personal empieza a reproducir de inmediato. Cuando se acaba el espacio, pasan a “⋯”.",
-        "dockAccount": "Justo encima de la cuadrícula de herramientas está el acceso a la cuenta: tu avatar y tu nombre si iniciaste sesión, o “Conectar un servicio de streaming” si no.",
-        "dockPlatforms": "Haz clic y aparece encima la lista de plataformas. Haz clic en una fila para cambiar a esa plataforma; el pequeño ícono de la fila actual cierra sesión. En las plataformas que requieren iniciar sesión, escaneas el código QR dentro de la misma franja.",
+        "dockAccount": "Justo encima de la cuadrícula de herramientas está el acceso a la cuenta: tu avatar y tu nombre si iniciaste sesión, o “Conectar un servicio de streaming” si no. Presiónalo para abrir la ventana de inicio de sesión, donde cambias de plataforma, inicias y cierras sesión.",
         "dockTools": "Los cuatro de abajo: buscar en plataformas en línea, ajustes, el collage de la cola (para entrar a Lattice) y “⋯”.",
         "dockMenu": "Todo lo demás está en “⋯”: primero los elementos de esta pestaña (filtrar esta página, directorio, gestionar ocultos, importar…) y, tras un separador, los lugares a los que ir, como “Volver al reproductor”.",
         "dockStage": "Con el modo escenario activado, aparece una fila “Escenario” de ancho completo arriba de la cuadrícula de herramientas; abre el reproductor de escenario.",
@@ -4641,64 +5901,64 @@ export default {
         "noMode": "Folia no tiene un modo aleatorio tradicional, y el botón de bucle nunca cambia a uno. Para escuchar en orden aleatorio, mezcla la cola actual.",
         "once": "Mezclar es una acción única: la cola actual se reordena en su lugar y se reproduce en el nuevo orden. Vuelve a mezclar para obtener otro orden.",
         "command": "La forma más rápida es un comando: con la ventana de comandos cerrada y sin ningún campo de texto con el foco, presiona la tecla de dos puntos para abrir el modo de ejecución y luego presiona r. También puedes buscar “Mezclar cola” en la ventana de comandos.",
-        "slot": "Si lo usas a menudo, elige “Mezclar cola” en “Botones de la barra de progreso”, en Ajustes · Ajustes generales, para tener un botón de mezclar en la barra de control.",
+        "slot": "Si lo usas a menudo, elige “Mezclar cola” en “Botones de la barra de progreso”, en Ajustes · Página del reproductor, para tener un botón de mezclar en la barra de controles.",
         "panel": "En la pestaña Cola del panel lateral derecho, el botón de más a la derecha en la parte superior también mezcla la cola.",
-        "pinSlot": "En Ajustes · Ajustes generales, pon “Mezclar cola” en cualquier espacio de “Comandos fijados”.",
+        "pinSlot": "En Ajustes · Atajos, pon “Mezclar cola” en cualquier espacio de “Comandos fijados”.",
         "pinRow": "Así queda en la parte inferior de la ventana de comandos, a un clic de distancia siempre que la ventana esté abierta."
       },
       "audioEqualizer": {
-        "enable": "El diálogo detrás del ícono de deslizadores a la derecha de la fila de volumen. El interruptor de arriba a la izquierda activa o desactiva toda la cadena; desactivado, todo lo de abajo conserva sus valores, pero no se aplica nada.",
-        "presets": "Seis preajustes integrados en la parte superior. Cada uno incluye una curva de ecualización y una cadena de efectos completa, así que elegir uno reemplaza ambas a la vez. No se pueden editar.",
-        "slots": "Los dos últimos son tuyos: Personalizado 1 y Personalizado 2, cada uno con una curva y una cadena que guardaste.",
-        "bands": "Diez deslizadores verticales, de 31 Hz a la izquierda a 16 kHz a la derecha, de ±12 dB cada uno.",
-        "silent": "Esto es lo que nada en pantalla te dice: arrastrar cualquier deslizador mientras hay un preajuste integrado seleccionado te pasa sin aviso a Personalizado 1 y escribe ahí el valor. Sin aviso ni confirmación, y lo que tenía Personalizado 1 se pierde. Si guardas una configuración en Personalizado 1, cambia a Personalizado 2 antes de empezar a retocar un preajuste integrado.",
+        "enable": "El bloque “Efectos de audio” de la pestaña Controles abre esta ventana. El interruptor de arriba a la derecha activa o desactiva toda la cadena; desactivado, todo lo de abajo conserva sus valores pero no se aplica nada.",
+        "presets": "Los seis primeros de esta fila son los preajustes incluidos. Cada uno trae una curva de ecualizador y una cadena de efectos completa, así que un clic cambia ambas. No se pueden editar.",
+        "slots": "Los dos que siguen en la misma fila son tuyos: Personalizado 1 y Personalizado 2, cada uno con una curva y una cadena.",
+        "bands": "“Ganancia por banda” son diez deslizadores verticales, de 31 Hz a la izquierda a 16 kHz a la derecha, de ±12 dB cada uno; una curva une las diez perillas.",
+        "silent": "Los preajustes incluidos no se pueden editar: arrastrar un deslizador te pasa a un espacio personalizado y escribe ahí el valor, en el espacio personalizado que tengas elegido o, si no, en Personalizado 1. Sin aviso ni confirmación. Si guardas una configuración en Personalizado 1, cambia a Personalizado 2 antes de empezar a retocar un preajuste incluido.",
         "reset": "El botón redondo del final restablece el espacio personalizado activo: curva plana y una cadena neutra. Solo afecta a ese espacio, y aparece desactivado en un preajuste integrado: no hay nada que deshacer en uno que no puedes editar.",
-        "effects": "Debajo de las bandas está el resto de la cadena: cortes de agudos y graves, saturación, bit crush, wow, ruido, amplitud estéreo, espacio y pegada. Se escriben en el mismo espacio personalizado, con la misma regla silenciosa.",
-        "noise": "La pequeña insignia junto a algunos de estos nombres indica que el efecto agrega ruido propio. Se muestra esté o no subido el deslizador, así que la pregunta “¿de dónde viene ese siseo?” tiene respuesta antes de activar uno y no después."
+        "effects": "La “Cadena de efectos” se aplica después de las bandas y tiene nueve elementos: Corte de graves, Corte de agudos, Saturación, Bit crush, Wow y flutter, Ruido de vinilo, Amplitud estéreo, Espacio y Pegada. Se escriben en el mismo espacio personalizado que los deslizadores.",
+        "noise": "Los dos elementos con la etiqueta “ruido” junto al nombre (Bit crush, Ruido de vinilo) agregan ruido propio; la etiqueta no significa que el efecto esté activado."
       },
       "lyricStyle": {
         "perStyleOwn": "Cada estilo de letra tiene su propio conjunto de ajustes, que se aplican solo a ese estilo. La página de la derecha es el conjunto del estilo actual.",
         "perStyleSwitch": "Al cambiar de estilo, la vista previa y toda esta página cambian juntas. Los estilos no comparten ajustes; lo que ajustaste para el estilo anterior se conserva y sigue ahí cuando vuelvas a él.",
-        "perStyleWhere": "En la pestaña Controles, haz clic en el nombre del estilo de letra: “Más ajustes”, al final de la lista, abre esta página directamente. El botón de abajo hace lo mismo.",
+        "perStyleWhere": "En la pestaña Controles, haz clic en el medio de la fila de estilo de letra: “Más ajustes”, bajo las imágenes que se abren, lleva directo a esta página. El botón de abajo hace lo mismo.",
         "monetIntro": "Monet: la letra a la izquierda y un retrato a la derecha. La pregunta más común es cómo desactivar lo que aparece a la derecha. Todo eso está en los ajustes propios de Monet.",
         "monetDescription": "El texto de abajo a la izquierda es la descripción de la canción. Desactiva “Mostrar descripción de la canción” para ocultarlo.",
         "monetHanger": "El botón redondo sobre el retrato es el colgador de arrastre, para mover el retrato. Cuando esté donde quieres, oculta el botón con “Colgador de arrastre”.",
         "monetAudio": "Debajo del retrato está la visualización de audio. “Visualización de audio” la oculta; “Estilo de audio” alterna entre barras y una línea.",
         "monetBare": "Con los tres desactivados, solo quedan la letra y el retrato. Estos interruptores son exclusivos de Monet y no aparecen en otros estilos.",
         "combineTwo": "El fondo y el estilo de letra son dos elecciones separadas. En la pestaña Controles son dos filas, Estilo de letra y Tipo de fondo, y cada una se cambia por su cuenta.",
-        "combineBackground": "Cambia solo el fondo: el estilo de letra se mantiene. Los ajustes propios del fondo están en la página Fondo de los ajustes de animación de la letra.",
+        "combineBackground": "Cambia solo el fondo: el estilo de letra se mantiene. Los ajustes propios del fondo están en la página Fondo de la ventana de estilo de letra.",
         "combineStyle": "Ahora cambia solo el estilo de letra: el fondo que acabas de elegir se mantiene. Cualquier fondo funciona con cualquier estilo de letra; solo el estilo Still no dibuja fondo.",
         "subtitleShared": "La mayoría de los estilos de letra comparten esta línea de subtítulo en la parte inferior. Monet, Pendolo y Still muestran las traducciones dentro de su propio diseño y no la usan.",
-        "subtitleContent": "Sus ajustes están en la página Subtítulo de los ajustes de animación de la letra y se aplican a todos los estilos que la usan. La primera fila elige traducción, romanización, ambas apiladas o nada.",
+        "subtitleContent": "Sus ajustes están en la página Subtítulo de la ventana de estilo de letra y se aplican a todos los estilos que lo usan. La segunda fila elige traducción, romanización, ambas apiladas o nada.",
         "subtitleBlur": "Desactiva “Desenfocar la letra que no es traducción” y el subtítulo deja de verse desenfocado.",
         "subtitleFont": "Desactiva “El subtítulo usa la fuente tipográfica de la letra” para darle al subtítulo su propia tipografía y grosor. “Escala del subtítulo” define su tamaño por separado y siempre está disponible."
       },
       "visPlayground": {
-        "preview": "El banco de trabajo se abre en pantalla completa: una vista previa en vivo a la izquierda y una columna angosta de ajustes a la derecha. La vista previa está funcionando de verdad: la animación, el fondo y los subtítulos son los renderizadores reales, no una imagen fija, así que cada cambio se ve de inmediato.",
-        "pause": "El botón de abajo a la derecha de la vista previa la congela en el cuadro actual. Es útil cuando ajustas algo que dura solo un instante, y además evita que la vista previa consuma recursos mientras lees.",
+        "preview": "La ventana de estilo de letra: una vista previa en vivo a la izquierda y la columna de ajustes a la derecha. La vista previa usa los renderizadores reales, así que cada cambio se ve de inmediato.",
+        "pause": "El botón de arriba a la derecha de la vista previa la congela en el cuadro actual; vuelve a hacer clic para seguir. Sirve cuando ajustas algo que dura solo un instante, y evita que la vista previa consuma recursos mientras lees.",
         "invisible": "Esta vista previa tiene algo que la mayoría nunca descubre: tres zonas de clic superpuestas. No tienen borde, ni fondo, ni etiqueta; nada las marca.",
-        "three": "Pasa el puntero por encima y se revelan: una franja en la parte superior para el fondo, una zona grande en el medio para la animación y una franja en la parte inferior para los subtítulos.",
-        "jumps": "Haz clic en una y la columna de ajustes salta a esa sección. Es la forma más rápida de moverte por esta pantalla: apunta a la parte de la imagen que quieres cambiar en vez de leer los nombres de las pestañas.",
-        "four": "La columna tiene cuatro páginas: general, fondo, animación y subtítulos. Son las mismas cuatro secciones a las que apuntan las zonas, así que las pestañas y la imagen son dos entradas a una misma lista.",
-        "common": "Con una excepción: “general” no tiene zona propia, porque no es una parte de la imagen; contiene lo que se aplica a toda la pantalla. A esa página solo se llega desde las pestañas.",
-        "fonts": "La mayor parte de “general” es la tipografía de la letra: la familia, el tamaño y el grosor. El grosor está en automático a menos que lo cambies, porque un buen valor por defecto depende de la familia que acabas de elegir.",
+        "three": "Pasa el puntero por encima y se revelan: una franja arriba para el fondo, una zona grande al medio para la letra y una franja abajo para los subtítulos.",
+        "jumps": "Haz clic en una y la columna de ajustes salta a esa página. Es la forma más rápida de moverte por esta pantalla: apunta a la parte de la imagen que quieres cambiar en vez de leer los nombres de las pestañas.",
+        "four": "La columna tiene cinco páginas: Letra, Fondo, Fuente, Subtítulo y Global. Tres de ellas son a las que apuntan las zonas, así que las pestañas y la imagen son dos entradas a una misma lista.",
+        "common": "Las excepciones son “Fuente” y “Global”: ninguna tiene zona propia, porque ninguna es una parte de la imagen. “Fuente” contiene lo que se aplica a toda la pantalla, y “Global”, interruptores como el modo de pulso inteligente que no pertenecen a un solo estilo. A esas dos páginas solo se llega desde las pestañas.",
+        "fonts": "“Fuente” define la tipografía de la letra, su tamaño y su grosor. El grosor es automático a menos que lo desactives.",
         "previewText": "La primera fila elige qué canta la vista previa. Cámbiala por una línea más larga, o por una en otro sistema de escritura, cuando quieras ver cómo se comporta la tipografía antes de que llegue una canción real.",
-        "sectionReset": "Cada página tiene su propio botón de restablecer arriba a la derecha, y solo deshace esa página. No restablece todo el banco de trabajo: lo que ajustaste en otra página se conserva.",
-        "animation": "La página de animación empieza con el modo en sí. Hay más de los que caben aquí y vale la pena explorarlos por tu cuenta, así que este capítulo se limita a explicar la página en vez de enumerarlos.",
-        "perMode": "Lo que sigue al modo son los ajustes propios de ese modo. No es un conjunto fijo de filas: si cambias el modo, cambian con él. Por eso puede faltar un deslizador que recuerdas: pertenecía al modo que dejaste.",
-        "background": "La página de fondo funciona igual: eliges el fondo y luego ajustas ese fondo. Es una capa separada de la animación, así que ambos se eligen de forma independiente y cualquier combinación es válida.",
-        "subtitleContent": "Los subtítulos son la segunda línea bajo la letra, y la primera fila decide qué va en ella: nada, la traducción, la romanización o ambas apiladas con la romanización arriba. Es una sola elección, no interruptores separados. Monet, Pendolo y Still muestran solo la traducción cuando se eligen ambas.",
-        "subtitleLegibility": "Las filas de abajo sirven para leerlos sobre una imagen en movimiento: un fondo detrás del texto, su opacidad y un desenfoque en las líneas que aún no se cantan para que destaque la actual.",
-        "subtitleFont": "La última fila es la tipografía del subtítulo, que por defecto sigue la de la letra. Desactiva eso y abajo aparecen su propia familia, tamaño y grosor; mientras esté activado simplemente no están, y por eso puede parecer que faltan los ajustes de tipografía del subtítulo."
+        "sectionReset": "“Predeterminado”, al final de la fila de pestañas, solo deshace la página en la que estás. No restablece toda la ventana: lo que ajustaste en otra página se conserva.",
+        "animation": "El estilo de letra se elige en la repisa de imágenes bajo la vista previa: haz clic en una y cambia. Hay más de los que caben en un capítulo y vale la pena revisarlos por tu cuenta, así que no se enumeran aquí.",
+        "perMode": "La página Letra tiene los ajustes del estilo que elegiste; si cambias el estilo, esta página cambia con él.",
+        "background": "La página Fondo funciona igual: elige un fondo en esta cuadrícula de imágenes y luego ajusta ese fondo. Es una capa separada del estilo de letra, así que ambos se eligen de forma independiente y cualquier combinación vale.",
+        "subtitleContent": "La segunda fila decide qué muestra el subtítulo: la traducción, la romanización, ambas apiladas con la romanización arriba, o nada. Monet, Pendolo y Still muestran solo la traducción cuando se eligen ambas.",
+        "subtitleLegibility": "Las tres filas de abajo sirven para leer el subtítulo sobre una imagen en movimiento: “Opacidad del subtítulo”, “Fondo del subtítulo” y “Desenfocar la letra que no es traducción”.",
+        "subtitleFont": "El subtítulo sigue la tipografía de la letra por defecto. Desactiva eso y aparecen su propia tipografía y su grosor; “Escala del subtítulo” siempre está."
       },
       "themePark": {
-        "which": "El par de arriba a la derecha decide qué tema edita esta sesión: el tema de IA de la canción actual o el tema personalizado que guardaste. Ambos borradores siguen vivos mientras el editor esté abierto, así que alternar entre ellos no pierde nada, pero el botón de guardar solo escribe el que está seleccionado aquí, y su etiqueta cambia en consecuencia.",
+        "which": "El par junto al título decide qué tema edita esta sesión: el tema de IA de la canción actual o el tema personalizado que guardaste. Ambos borradores siguen vivos mientras el editor esté abierto, así que alternar entre ellos no pierde nada, pero el botón de guardar solo escribe el que está elegido aquí, y su etiqueta cambia con él.",
         "reset": "Restablecer descarta lo que cambiaste en esta sesión y devuelve el borrador a su estado inicial. No toca el tema ya guardado.",
         "twoSides": "Claro y oscuro son dos paletas separadas, no una paleta con un interruptor de vista previa. Este par decide cuál de las dos estás editando ahora, y todo lo de abajo (los cuatro colores, el selector, el cuadro HEX) sigue esa elección.",
-        "fourColors": "Cuatro colores por lado: fondo, principal, acento y secundario. Haz clic en una fila para llevarla al selector de abajo; la pequeña línea bajo cada nombre indica dónde se usa realmente ese color en la app.",
-        "recommended": "Las muestras de abajo se calculan a partir de la portada actual. Al hacer clic en una, se aplica directamente a la fila de color seleccionada: es la forma más rápida de lograr una paleta que combine con el álbum.",
+        "fourColors": "Cuatro colores por lado: Fondo, Texto principal, Acento y Secundario. Haz clic en uno para llevarlo al selector de abajo; la línea de arriba del selector indica dónde se usa ese color en la app.",
+        "recommended": "En “Colores recomendados”, abajo, hay una fila de muestras redondas: algunas se calculan a partir de la portada actual y el resto son los colores propios del tema. Al hacer clic en una, se aplica directamente al color que esté elegido.",
         "blocked": "Guardar puede aparecer desactivado, y la pantalla no explica por qué en la página que estás viendo. La razón es que un tema necesita un nombre, en ambos lados, antes de poder guardarse.",
-        "nameLivesHere": "Y el cuadro del nombre no está en esta página. Está en “detalles”, junto con la descripción; así que el botón que no responde y el campo que lo arreglaría están en dos pestañas distintas. Si guardar no funciona, ve allí primero.",
+        "nameLivesHere": "Y el cuadro del nombre no está en esta página. Está en la página “Detalles”, junto con la descripción, y un punto pequeño junto a esa pestaña avisa que falta el nombre. Si guardar no funciona, ve ahí primero.",
         "applies": "Una cosa más sobre guardar: guardar en el tema personalizado también cambia la app a ese tema. No es una escritura silenciosa en un espacio que puedes elegir después: los colores que acabas de crear son los que vas a ver."
       },
       "customShortcut": {
@@ -4711,21 +5971,21 @@ export default {
       },
       "pinnedCommands": {
         "slots": "Tres espacios, cada uno con un selector. Lo que pongas en ellos aparece como un botón bajo la ventana de comandos, en este orden: el espacio 1 a la izquierda. De fábrica contienen canción anterior, canción siguiente y el panel de la cola.",
-        "unique": "Un comando solo puede ocupar un espacio: una vez elegido, los otros dos selectores dejan de ofrecerlo. Deja un espacio en “ninguno” y su lugar queda vacío; deja los tres vacíos y toda la fila desaparece de la ventana.",
+        "unique": "Un comando solo puede ocupar un espacio: una vez elegido, los otros dos selectores dejan de ofrecerlo. Deja un espacio en “Sin comando fijado” y su lugar queda vacío; deja los tres vacíos y toda la fila desaparece de la ventana.",
         "where": "Esto es lo que producen realmente esos tres selectores: una fila de tres botones fijos bajo la ventana de comandos, siempre en el mismo lugar. Un clic ejecuta el comando, sin escribir ni buscar.",
         "recent": "La lista de arriba es el otro mecanismo, y es independiente. Se reordena sola: los comandos que ejecutaste hace poco suben al principio, y los que usas a menudo reciben un pequeño empujón extra. La fila fijada no participa: se guarda aparte y nunca se mueve. “Lo fijé y aun así se mueve” es confundir ambas cosas.",
         "empty": "Así que conviene usar cada uno para algo distinto: la lista cubre lo que necesites en el momento y los tres botones, lo que quieres siempre en el mismo lugar."
       },
       "replayGain": {
         "off": "ReplayGain es una etiqueta de sonoridad escrita en el propio archivo. Con esto desactivado, Folia la ignora y reproduce cada canción al nivel con que se masterizó; por eso un álbum puede sonar mucho más fuerte que el siguiente.",
-        "trackAlbum": "“Por canción” nivela cada canción respecto de todas las demás, así una cola mezclada se mantiene pareja. “Por álbum” aplica un solo valor a todo el álbum, manteniendo suave la canción suave y fuerte la fuerte, tal como se mezcló el disco. Ninguno vuelve a codificar nada: solo afecta el volumen de reproducción.",
+        "trackAlbum": "“Por canción” nivela cada canción respecto de todas las demás, así una cola mezclada se mantiene pareja. “Por álbum” aplica un solo valor a todo el álbum, manteniendo suave la canción suave y fuerte la fuerte, tal como se mezcló el disco. Ninguno vuelve a codificar nada: solo cambia el volumen de reproducción.",
         "sameValue": "La pestaña Fuente del panel de control tiene los mismos tres botones, y no son un segundo ajuste: ambos leen y escriben un mismo valor, así que cambiarlo en uno lo cambia en todas partes. Ninguno de los dos lo indica.",
-        "summary": "Lo que la pestaña Fuente tiene además es esta línea: las etiquetas propias de la canción actual, como T y A en dB, o “no disponible” cuando el archivo no tiene ninguna. Si hay un modo seleccionado pero nada suena distinto, aquí descubres por qué: sin etiqueta, no hay nada que aplicar."
+        "summary": "La pestaña de fuente también muestra la ganancia por canción y por álbum que trae la canción; sin etiquetas dice “No se detectó ReplayGain”."
       },
       "importExport": {
         "scope": "Esta sección incluye el aspecto de Folia: el tema de colores, la animación de la letra y los ajustes de cada renderizador, los subtítulos y las tipografías, el fondo y la tarjeta de canción. Esa es la lista completa.",
         "notBackup": "Así que, a pesar del nombre, no es una copia de seguridad de Folia. Las listas, la biblioteca local, los ajustes de reproducción, los atajos y las cuentas quedan fuera; restaurar desde aquí esperando recuperar tu música es el error al que invita el nombre.",
-        "themeChoice": "Antes de exportar, elige qué tema se incluye: el de IA, el que creaste tú o ninguno. “Ninguno” igual incluye los ajustes visuales y deja fuera tus colores, que es lo que quieres cuando compartes una configuración de animación de letra y no una paleta.",
+        "themeChoice": "Antes de exportar, elige qué tema se incluye: el de IA, el que creaste tú o ninguno. “Sin tema” igual incluye los ajustes visuales y deja fuera tus colores, que es lo que quieres cuando compartes una configuración de animación de letra y no una paleta.",
         "clipboard": "Los botones copian en vez de guardar un archivo: uno entrega un código corto y el otro lo mismo como JSON legible. Pégalo donde quieras (un mensaje, una nota) y esa es toda la configuración.",
         "paste": "Importar va en sentido contrario por el mismo cuadro: pega aquí el código de alguien y se activa el botón de importar de la derecha.",
         "plan": "Importar no lo acepta todo a ciegas. Primero calcula qué cambiaría y te lo muestra, agrupado, con tu valor actual junto al entrante; y cada fila tiene su propia casilla, así que tomar un fondo sin tomar las tipografías es algo normal.",
@@ -4786,7 +6046,7 @@ export default {
         "playerLyrics": "El centro es la letra y el visualizador. No es un control: hacer clic ahí es hacer clic en el fondo, lo que solo muestra u oculta la barra de control. No pausa.",
         "playerBarWhere": "La barra de control flota abajo al centro, sin pegarse al borde. Reproducir/pausar está en su extremo izquierdo, el título y la barra de progreso en el medio, y los dos lugares de la derecha contienen lo que tú elijas.",
         "playerToggleWhere": "La manija lateral está junto al borde derecho de la pantalla, con su parte inferior alineada con la barra de control. Es un botón redondo; presiónalo y se abre el panel de control lateral.",
-        "playerPanelWhere": "El panel crece hacia arriba desde la manija, con un ancho fijo junto al borde derecho. Arriba hay una portada cuadrada y justo debajo una fila de pestañas: portada, controles, cola y cuenta. El título y el artista pertenecen a la pestaña Portada, no al panel en sí.",
+        "playerPanelWhere": "El panel se abre sobre la manija, junto al borde derecho. Se abre en la pestaña Portada de la canción, y la fila de abajo tiene las pestañas: Portada, Controles, Playlist, Calidad y más.",
         "playerPaletteSlide": "También hay un riel oculto detrás de la manija. Mantén presionada la manija, arrástrala a la izquierda más allá de la línea de activación y suéltala: eso abre la ventana de comandos, no el panel.",
         "playerPaletteOpened": "La ventana de comandos baja desde arriba, centrada horizontalmente. Todo lo relacionado con encontrar una función está aquí.",
         "playerPaletteOtherWays": "No es necesario arrastrar: {{mod}} + K abre la misma ventana desde cualquier lugar, y en la página del reproductor una S sola hace lo mismo siempre que el foco no esté en un cuadro de texto. En una pantalla táctil, tocar cerca del borde derecho hace aparecer primero la manija.",
@@ -4797,7 +6057,7 @@ export default {
         "playerShuffleNoSwitch": "Folia no tiene un interruptor de aleatorio. No lo encuentras en la barra de control porque el aleatorio no es un modo que quede activado: es una acción única que vuelve a repartir la cola actual en su lugar.",
         "playerShuffleHow": "La ruta más rápida es no abrir nada: presiona la tecla de dos puntos en la página del reproductor (la ventana se abre en modo de ejecución) y luego presiona r. El nuevo orden se mantiene; ejecútalo otra vez para obtener otro.",
         "playerShuffleSlot": "Si lo usas a menudo, pon “Mezclar cola” en uno de los dos lugares de la derecha de la barra de control y quedará a un solo toque.",
-        "lattice": "Lattice muestra la cola de reproducción como un campo de pósteres. Recorre el campo para revisar la cola y selecciona un póster para actuar sobre esa canción.",
+        "lattice": "Lattice muestra la cola de reproducción como un campo de pósteres. Recorre el campo para revisar la cola y elige un póster para actuar sobre esa canción. Si se abre desde la pestaña Explorar, muestra en cambio los álbumes, playlists, artistas y canciones de esa pestaña.",
         "latticeWall": "Lattice repite la cola de reproducción en un muro irregular de pósteres para poder desplazarse de forma continua. La canción actual lleva su número en la cola y una marca de reproduciendo ahora.",
         "latticeBack": "El botón de arriba a la izquierda vuelve. {{mod}} + B también cierra Lattice; Escape deshace una capa a la vez: primero contrae un póster expandido o quita el foco del teclado, y solo la siguiente pulsación vuelve realmente.",
         "latticePan": "Arrastra el campo o usa la rueda para mover la cámara. Los pósteres aparecen a medida que se mueve la vista, y el impulso nunca cambia el orden de la cola.",
@@ -4807,11 +6067,11 @@ export default {
         "latticeTools": "Las herramientas de abajo a la derecha son las mismas del muro de la biblioteca: la fila de íconos da el foco a la canción actual, mezcla la cola, genera un tema, muestra la cola de reproducción, va al inicio y abre el reproductor; abajo están el volumen, seguir los cambios de canción, las luces y la ayuda de teclas. Deslizar el botón a la izquierda abre los comandos.",
         "latticeLights": "Apagar luces oscurece el muro manteniendo su estructura. Es solo un ajuste de visualización: la reproducción y el orden de la cola no cambian.",
         "latticePosterKeys": "Enter o Space expanden un póster cerrado. Una vez abierto, Enter reproduce o pausa, Space muestra u oculta los controles y Escape primero lo contrae y quita el foco.",
-        "latticePageKeys": ": + C da el foco a la canción actual, {{mod}} + P abre la cola, {{mod}} + B vuelve, {{mod}} + K abre la ventana de comandos; las flechas mueven el foco entre pósteres.",
+        "latticePageKeys": ": + C ubica la canción que suena, {{mod}} + P abre la cola, {{mod}} + B vuelve, {{mod}} + K abre la ventana de comandos; las flechas mueven el foco entre pósteres.",
         "help": "Folia separa la exploración, la reproducción, los comandos y las opciones. Ctrl+G explica la página que tienes delante; las guías de componentes aparecen por separado cuando ese componente tiene un comportamiento especial.",
         "helpCommands": "{{mod}} + K busca todos los comandos y ajustes. Para opciones muy escondidas, buscar el nombre suele ser más rápido que recordar en qué nivel está.",
         "helpOperatingModel": "Elige música en una cuadrícula y la reproducción continúa por su cuenta en el reproductor o en Lattice. La barra inferior controla la reproducción en todas partes; la Ayuda y las Opciones son capas sobre la página actual.",
-        "settings": "El lado izquierdo agrupa las opciones en apariencia, interfaz, reproducción, interacción, integraciones, almacenamiento, escritorio, gráficos, mods y laboratorio. El lado derecho contiene los ajustes del grupo seleccionado.",
+        "settings": "El lado izquierdo muestra las categorías, agrupadas en Interfaz, Música, App y Avanzado. El lado derecho contiene los ajustes de la categoría elegida.",
         "settingsDirectNavigation": "Rara vez necesitas recorrer todas las categorías: busca el nombre del ajuste en la paleta de comandos y Folia abre la sección y el punto exactos."
       },
       "playerBar": {
@@ -4823,7 +6083,7 @@ export default {
         "basicsSlots": "Todo lo demás está en estos dos lugares de la derecha. Eliges dos de diez acciones para ponerlas ahí; el resto queda fuera de la barra. Por eso no hay una fila fija de botones.",
         "basicsCollapsed": "Aleja el puntero y la cápsula se repliega en una sola barra de progreso. Esa es la forma que ves normalmente; acércate y se vuelve a expandir.",
         "heightIntro": "Se puede cambiar a qué distancia del borde inferior de la pantalla está esta barra, y las tarjetas de canciones y los paneles laterales la siguen en todas las páginas.",
-        "heightSettings": "Está en Ajustes → Interfaz inferior: un deslizador define el número directamente, y “Reposicionar en la página del reproductor”, al lado, convierte la cápsula en algo que puedes arrastrar. Buscar el mismo comando en la paleta hace lo mismo. El botón de abajo te lleva directo ahí.",
+        "heightSettings": "Está en Ajustes → Página del reproductor, en Barra de controles: un deslizador define el número directamente, y “Reposicionar en la página del reproductor”, al lado, convierte la cápsula en algo que puedes arrastrar. Buscar el mismo comando en la paleta hace lo mismo. El botón de abajo te lleva directo ahí.",
         "heightDrag": "Con el reposicionamiento activado, mantén presionada la cápsula en cualquier punto y arrástrala hacia arriba o hacia abajo. Al soltarla se aplica y se recuerda.",
         "slotsIntro": "Estos dos botones a la derecha de la barra de progreso no son fijos, y cada espacio es independiente.",
         "slotsWhere": "Elige en los ajustes: bucle, aleatorio, me gusta, cola, volumen, temporizador de apagado y cuatro más; se aplica en cuanto eliges.",
@@ -4878,55 +6138,55 @@ export default {
         "lattice": "“Lattice” arriba ({{mod}} + B) convierte todo el muro en la cola de reproducción: la franja se cierra, las ventanas se cierran y las baldosas giran desde el origen hacia afuera para convertirse en los pósteres de Lattice. Al volver ocurre a la inversa, y la canción en reproducción se expande al abrirse la franja."
       },
       "sidePanel": {
-        "controlsSteppers": "Las dos filas de visor eligen la animación de la letra y el fondo. Las flechas de cada extremo pasan al modo vecino, uno a la vez; con una docena de animaciones, es un camino largo.",
-        "controlsModeList": "El nombre del medio es un botón, y nada en pantalla lo indica. Haz clic y se despliega la lista completa, para que saltes directo al que quieres en vez de pasar por todos los intermedios.",
-        "controlsModeListFooter": "La entrada al final de esa lista no es otro modo: abre los ajustes completos de esta fila, donde están los parámetros.",
+        "controlsSteppers": "Estas dos filas eligen el estilo de letra y el tipo de fondo. Las flechas de los extremos solo pasan al vecino; con una docena de estilos en fila, son muchos pasos.",
+        "controlsModeList": "Haz clic en el medio de la fila y se abre una cuadrícula de imágenes: haz clic en la que quieras.",
+        "controlsModeListFooter": "La franja bajo las imágenes no es una imagen más: “Más ajustes” abre los ajustes completos de esta fila, donde están los parámetros.",
         "queueRadio": "Mientras suena FM personal, esta celda no es la cola. La misma pestaña se convierte en el panel de radio: cambian el ícono y el nombre, y desaparece la lista de lo que viene, porque una radio no la tiene.",
-        "queueRadioMode": "La etiqueta de arriba indica el modo de radio en que estás; al tocarla se abre el selector de modo de la ventana de comandos, el mismo que ofrece la paleta.",
-        "queueRadioActions": "El par de abajo es descartar y me gusta. Descartar no es “quitar esta fila” (no hay fila): le dice al servicio que no te vuelva a poner esta canción, y la radio sigue adelante.",
-        "cover": "La portada de la canción actual está en la parte superior del panel, un bloque cuadrado que ocupa todo su ancho. No pertenece a ninguna pestaña: cambiar de pestaña la deja en su lugar. Pasa el puntero sobre ella y aparece un botón en cada una de sus cuatro esquinas.",
-        "tabs": "Justo debajo de la portada está la fila de pestañas: portada, controles, cola y cuenta. Cuando la canción actual es local, de Navidrome o en línea, se inserta una celda de fuente más después de la pestaña Portada. Son caras de un mismo lugar; cambiar no mueve el panel.",
-        "body": "Todo lo que está bajo la fila de pestañas es el contenido de la pestaña actual. Esa es toda la estructura: una portada, luego una fila de pestañas y lo que hay debajo; no hay una tercera franja permanente entre medio.",
+        "queueRadioMode": "El botón de arriba dice en qué modo de radio estás; al hacer clic se abre el selector de modo en la ventana de comandos, el mismo que ofrece la paleta.",
+        "queueRadioActions": "Los dos extremos de esta línea son descartar y me gusta. El servicio no vuelve a poner una canción descartada, y la radio pasa a la siguiente.",
+        "cover": "El panel se abre en la pestaña Portada: la portada grande de la canción, debajo el título, los artistas y el álbum, y más abajo una fila de acciones para esta canción.",
+        "tabs": "La fila de abajo son las pestañas: Portada, Controles, Playlist y Calidad; cuando la canción tiene información de fuente, aparece una pestaña de fuente justo después de Portada, la segunda celda aquí. Un mod que trae una página agrega su pestaña al final.",
+        "body": "En cualquier otra pestaña la canción se pliega en una línea arriba, y al hacer clic en ella vuelves a Portada; al medio está el contenido de esa pestaña. El panel mide lo que necesita el contenido, y la fila de pestañas queda en el borde inferior.",
         "cycle": "No necesitas hacer clic en esa fila de celdas pequeñas. Con el panel abierto, Tab avanza una pestaña.",
         "cycleReverse": "Shift + Tab retrocede una. El ciclo solo pasa por las pestañas que existen en ese momento; cada fuente trae pestañas distintas.",
-        "sourceTab": "Esta celda no siempre está. Se inserta después de la pestaña Portada solo cuando la canción actual viene de un archivo local, de Navidrome o de una fuente en línea, y su ícono sigue a esa fuente; reproduce una canción sin fuente propia y la fila vuelve a tener cuatro celdas.",
-        "sourceInfo": "Arriba está esta canción tal como la ve su fuente: un archivo local muestra el nombre de archivo, el tamaño, la tasa de bits y el estado de la letra; Navidrome muestra el ID de la canción en el servidor; una fuente en línea no tiene este bloque.",
-        "sourceGain": "“Ganancia de audio” es ReplayGain: desactivado, por canción o por álbum. El valor a la derecha del encabezado es el que trae la propia canción (T para canción, A para álbum) y aparece como no disponible cuando el archivo no tiene ninguno.",
-        "sourceLyrics": "Dos íconos pequeños a la derecha de la fila de la letra: uno importa o exporta un archivo de letra (lrc / vtt / ttml / qrc / yrc / krc / txt / fia) y el otro busca una coincidencia en línea. La franja de abajo indica cuál se está usando; después de importar, aparece una segunda celda para volver atrás.",
-        "sourceOffset": "“Desfase de la línea de tiempo”, abajo, avanza de a 250ms o acepta un número escrito; los valores positivos hacen que la letra aparezca más tarde. Es temporal, solo para esta reproducción; para un cambio duradero hay un desfase global en los ajustes, y ambos se suman.",
-        "sourceLyricsFile": "El ícono de la izquierda en la fila de la letra es importar / exportar: ambos están en una misma ventana, así que eliges una vez que se abre.",
+        "sourceTab": "Solo las canciones de una carpeta local, de Navidrome o de una fuente en línea tienen esta pestaña, y se llama Carpeta, Navidrome o Letra según el caso; sin información de fuente hay solo cuatro pestañas.",
+        "sourceInfo": "Abajo está de dónde viene la canción: el nombre de archivo, el tamaño y la tasa de bits en una canción local, el ID de la canción en Navidrome; una canción en línea no tiene este bloque.",
+        "sourceGain": "La ganancia de audio es ReplayGain: desactivada, por canción o por álbum. La línea pequeña bajo el nombre muestra la ganancia por canción y por álbum que trae la canción; sin etiquetas dice “No se detectó ReplayGain”.",
+        "sourceLyrics": "El extremo derecho de la fila Letra muestra las letras que tiene esta canción; haz clic en un segmento para cambiar. Si hay una sola, la fila solo muestra su nombre.",
+        "sourceOffset": "El “Desfase de la línea de tiempo” avanza de a 250 ms o acepta un número escrito; los valores positivos hacen que la letra aparezca más tarde. Es temporal, solo para esta reproducción; para un cambio duradero hay un desfase global en los ajustes, y ambos se suman.",
+        "sourceLyricsFile": "“Importar / exportar letras” junta las dos tareas en una ventana: ábrela y elige. “Buscar en línea”, a su izquierda, abre la ventana para asociar letras.",
         "sourceExportFormats": "La parte superior de la ventana importa: lrc, vtt, ttml, qrc, yrc, krc, txt y los archivos .fia que exporta Folia. Las canciones de Navidrome no pueden importar, así que su ventana solo exporta. Los dos mosaicos de abajo guardan esta canción: .fia conserva la sincronización por palabra, las traducciones, las voces de fondo y tu segmentación guardada, y se vuelve a importar tal cual; .lrc es LRC mejorado que leen otros reproductores, pero se pierden esos detalles exclusivos de Folia.",
-        "sourceExportBatch": "La fila de abajo es la exportación en lote: abre la página de exportación en la paleta de comandos y guarda de una vez todas las letras en caché de este dispositivo. La fila de letras en Ajustes · Almacenamiento tiene la misma entrada.",
-        "coverTab": "La pestaña Portada contiene el texto de la canción actual: título, artista y álbum, centrados en una columna. La portada grande no forma parte de esta pestaña: siempre está arriba del panel.",
+        "sourceExportBatch": "La fila de abajo es la exportación en lote: abre la página de exportación en la paleta de comandos y guarda de una vez todas las letras en caché de este dispositivo. La fila Letras de Detalles de la caché, en Ajustes · Almacenamiento y respaldo, tiene la misma entrada.",
+        "coverTab": "La pestaña Portada es la canción misma: la portada grande, debajo el título, los artistas y el álbum, y luego una fila de acciones. Esta pestaña no tiene nada más.",
         "coverTabDetail": "El artista y el álbum son enlaces a sus colecciones. Hacer clic en el título copia “título - artista - álbum” junto con el enlace de la página de la fuente; Ctrl + clic, en cambio, abre la página de esta canción en su plataforma de origen.",
-        "controlsTab": "La parte superior de la pestaña Controles son tres botones grandes: modo de bucle, me gusta y generar un tema. Son la única fila de botones táctiles grandes de todo el panel.",
-        "controlsTabDetail": "Debajo: una fila de volumen con el ecualizador y automix en su extremo derecho, dos filas “‹ modo ›” para la animación de la letra y el fondo, y luego la fuente de la paleta y una edición rápida del tema. La ganancia y el desfase de la letra están en la pestaña Fuente, no aquí.",
-        "queueTab": "La pestaña Cola es la lista completa de la cola de reproducción actual, con la cantidad de canciones en su fila de encabezado.",
+        "controlsTab": "La pestaña Controles empieza con la fila de volumen; los tres bloques de abajo son repetición, Transición inteligente y Efectos de audio: los dos primeros cambian con un clic y el tercero abre una ventana.",
+        "controlsTabDetail": "Más abajo están las filas de Estilo de letra y Tipo de fondo y el interruptor “Fondo transparente del reproductor”; las dos últimas filas son del tema: su origen, el tema actual, claro u oscuro, y generar un tema de IA. La ganancia de audio y el desfase de la letra están en la pestaña de fuente.",
+        "queueTab": "La pestaña Playlist es la cola de reproducción actual completa; la línea de arriba dice cuántas canciones tiene.",
         "queueTabDetail": "Haz clic en una fila para reproducir desde esa canción; pasa el puntero sobre una y a su derecha aparecen reproducir a continuación, mover al final y quitar. Los botones del encabezado muestran la cola como el muro de Lattice y la mezclan. Las filas no se pueden arrastrar para reordenarlas.",
-        "accountTab": "La pestaña Cuenta cubre todo lo que pertenece a la fuente de música actual.",
-        "accountTabDetail": "Arriba está el estado de sesión de esa fuente: avatar, apodo, nombre de la fuente e ID, con cerrar sesión a la derecha. Debajo, el nivel de calidad de audio (estándar, alta, sin pérdida, alta resolución) y, al final, la sincronización de tus datos con la nube. Cambia de fuente y verás otro conjunto."
+        "accountTab": "La pestaña Calidad trata del lado de la fuente de música actual.",
+        "accountTabDetail": "La pestaña Calidad muestra el estado de la sesión, la Calidad predeterminada y “Sincronizar datos”. Sin sesión, muestra en cambio el botón “Iniciar sesión en el inicio”."
       },
       "transition": {
-        "enable": "Este grupo trata de cómo una canción se une con la siguiente. El interruptor de arriba es el mismo valor que el pequeño ícono en el extremo derecho de la fila de volumen en la pestaña Controles: dos lugares, un solo ajuste.",
-        "modes": "Con él activado, importan los modos: el fundido cruzado baja la canción que sale y sube la que entra; automix analiza ambas y elige un punto de unión, lo que suena más natural pero necesita leer el audio para hacerlo.",
-        "badge": "Esto es lo más fácil de pasar por alto: la pequeña etiqueta en la esquina de la tarjeta seleccionada. “Activo” significa que de verdad está funcionando; “se volvió a fundido cruzado” significa que no se cumplieron los requisitos y volvió atrás sin avisar: esos pocos caracteres son el único aviso que recibes.",
-        "notice": "El motivo habitual es que está desactivada la caché multimedia que necesita automix. Esta franja ámbar lo dice exactamente, y el texto subrayado dentro de ella activa la caché ahí mismo, sin ir a los ajustes de almacenamiento."
+        "enable": "Este grupo trata de cómo una canción se une con la siguiente. El interruptor de arriba es el mismo valor que el bloque “Transición inteligente” de la pestaña Controles: dos lugares, un solo ajuste.",
+        "modes": "El modo de transición tiene dos segmentos: el Fundido cruzado de Folia pasa de una canción a la siguiente bajando y subiendo el volumen, y la Transición inteligente de Folia analiza el audio y elige el punto de unión.",
+        "badge": "La etiqueta pequeña a la izquierda de los dos segmentos es el estado de funcionamiento: “Completo” o “Compatible” significa que la transición inteligente está funcionando; “Usando fundido cruzado” significa que falta algún requisito y la app volvió al fundido cruzado.",
+        "notice": "La transición inteligente necesita la caché de canciones; “Activar la caché de canciones”, al final del aviso, la activa ahí mismo."
       },
       "libraryWatch": {
         "enable": "Con esto activado, Folia vigila las carpetas locales que importaste y hace un escaneo incremental cada vez que cambian sus archivos; no tienes que volver a escanear a mano cada vez que agregas música.",
         "roots": "La lista solo se despliega bajo el interruptor, con una fila por cada carpeta raíz vigilada y su ruta real en la línea pequeña de abajo.",
         "warning": "Mira el ícono a la izquierda de cada fila: un ojo significa que está vigilando; un triángulo ámbar significa que la vigilancia de esa carpeta dejó de funcionar (una ruta que desapareció, permisos que cambiaron). Después de eso los escaneos simplemente dejan de ocurrir, y este ícono es la única señal.",
-        "recheck": "Cuando veas un triángulo, presiona “volver a comprobar” a la derecha; vuelve a vincular todas las carpetas importadas. La línea pequeña al lado indica cuándo se hizo el último escaneo automático."
+        "recheck": "Cuando veas un triángulo, presiona “Volver a revisar las carpetas” a la derecha: vuelve a vincular todas las carpetas importadas. La línea pequeña al lado es la hora del último escaneo automático."
       },
       "queueSettings": {
-        "append": "Estas dos tarjetas deciden dónde pone realmente una canción “agregar a la cola”. Por defecto es al final de la cola, así que lo que ya está en fila se reproduce primero.",
-        "next": "Cambia a “después de la canción actual” y lo que agregues se coloca justo detrás de lo que está sonando, así que va a continuación. Esto cambia todos los puntos de la app para agregar a la cola: el botón de una tarjeta, el que aparece en una fila de la cola y el comando de la paleta."
+        "append": "Los dos segmentos de esta fila deciden dónde pone una canción “Agregar a la cola”. Por defecto la agrega al final, así que lo que ya está en fila suena primero.",
+        "next": "Cambia a “Agregar a continuación” y lo que agregues se coloca justo detrás de lo que está sonando, así que va después. Esto cambia todos los puntos de la app para agregar a la cola: el botón de una tarjeta, el que aparece en una fila de la cola y el comando de la paleta."
       },
       "lyricsSource": {
-        "autoBest": "Con “elegir la mejor automáticamente” activado, Folia busca esta canción en NetEase, AMLLDB, QQ y KuGou y toma una versión palabra por palabra con coincidencia perfecta cuando existe. El costo es que reemplaza la fuente que elegiste a mano en la pestaña Fuente; si una elección manual no se mantuvo, normalmente es por esto.",
-        "priority": "Las dos tarjetas de abajo deciden si gana la letra local o la en línea. Cuando un archivo local trae letra y también existe una coincidencia en línea, esto es lo que decide.",
-        "globalOffset": "“Desfase global de la línea de tiempo” abre una regla a pantalla completa que adelanta o atrasa la letra de todas las canciones, normalmente para compensar un retraso fijo de la tarjeta de sonido o del Bluetooth.",
-        "offsetSum": "Comparte nombre con el desfase de ±250ms de la pestaña Fuente, pero no es lo mismo: ese es solo para la canción actual y se pierde al cambiar de canción; este es global y permanente. Ambos se suman, así que cuando una canción esté muy desfasada, revisa los dos."
+        "autoBest": "Con “Usar la mejor letra automáticamente” activado, Folia busca esta canción en NetEase, AMLLDB, QQ y KuGou y toma una versión palabra por palabra con coincidencia perfecta cuando existe. El costo es que reemplaza la fuente que elegiste a mano en la pestaña de fuente; si una elección manual no se mantuvo, normalmente es por esto.",
+        "priority": "Los dos segmentos de “Prioridad de la letra de canciones locales” deciden si gana la letra local o la en línea. Cuando existen a la vez la letra del archivo y una encontrada en línea, esto es lo que decide.",
+        "globalOffset": "“Desfase global de tiempos” abre una regla a pantalla completa que adelanta o atrasa la letra de todas las canciones en la misma medida, normalmente para compensar el retraso fijo de una tarjeta de sonido o del Bluetooth.",
+        "offsetSum": "La pestaña de fuente tiene su propio desfase, el “Desfase de la línea de tiempo”, y no es lo mismo: ese es solo para la canción actual y se pierde al cambiar de canción; este es global y permanente. Ambos se suman, así que cuando una canción esté muy desfasada, revisa los dos."
       },
       "gridHotkey": {
         "off": "En el muro de pósteres y en las páginas de colección, cualquier letra que presiones filtra la página, sin tener que hacer clic primero en un cuadro de búsqueda. Por defecto eso incluye la S, así que presionar S en una página de cuadrícula abre el filtro, no la ventana de comandos.",
@@ -4953,14 +6213,14 @@ export default {
         "wallpaperExit": "Eso significa que no puedes salir del modo fondo de pantalla haciendo clic en la ventana. Usa “Modo fondo de pantalla” en el menú de la bandeja o busca el mismo comando en la ventana de comandos.",
         "trayIcon": "Este ícono en la esquina de la barra de tareas es el ícono de bandeja de Folia. En Ajustes · Escritorio puedes hacer que minimizar envíe la app directo a la bandeja: la ventana principal sale de la barra de tareas, pero la reproducción no se detiene y las teclas multimedia del sistema siguen funcionando.",
         "trayMenu": "Al hacer clic en el ícono de bandeja se abre esta columna: todo lo que puedes hacer sin abrir la ventana principal (mostrar/ocultar ventana, abrir la ventana remota, fondo transparente, clic a través, siempre visible, ocultar el ícono de la barra de tareas, letra de escritorio, modo fondo de pantalla, restablecer ventana, salir). En modo fondo de pantalla es la única salida.",
-        "remote": "La ventana remota es una segunda ventana pequeña; busca “ventana remota” en la ventana de comandos para abrirla, o usa el menú de la bandeja. Se mantiene encima incluso con la ventana principal minimizada o hundida en el fondo de pantalla.",
+        "remote": "La ventana remota es una segunda ventana pequeña; ejecuta “Mostrar u ocultar la ventana de control remoto” en la ventana de comandos para abrirla, o usa “Ventana remota” en el menú de la bandeja. Se mantiene encima incluso con la ventana principal minimizada o hundida en el fondo de pantalla.",
         "remoteChrome": "Tiene su propio conjunto de interruptores de ventana: siempre visible, fondo transparente, clic a través (el mouse pasa directo a lo que hay debajo), ocultar el ícono de la barra de tareas e interfaz que se oculta sola. Ser una ventana aparte y no un rincón de la principal es justamente lo que permite que esos interruptores sean independientes."
       },
       "gridActionButton": {
         "tap": "Tanto la página de colección como el muro de pósteres tienen este botón en la esquina inferior derecha. Tócalo y la lista de canciones se desliza desde la derecha: esa es su primera acción.",
         "list": "Una fila por canción; haz clic en una fila para reproducir desde ahí. Dentro de una carpeta local, la lista también tiene dos controles de orden en su encabezado.",
         "track": "También hay un riel oculto que sale hacia la izquierda: el mismo gesto que la manija del borde derecho de la página del reproductor. Mantén presionado el botón y arrástralo a la izquierda.",
-        "slideTarget": "Al soltarlo se abre el filtro de esta página: acota las canciones en el lugar sin salir de la página. El destino del deslizamiento se puede configurar: en Ajustes · Interacción, “botón de acción del muro de pósteres”, puedes hacer que abra la ventana de comandos, y el ícono al final del riel cambia en consecuencia."
+        "slideTarget": "Al soltarlo se abre el filtro de esta página: acota las canciones en el lugar sin salir de la página. El destino del deslizamiento se puede configurar: en Ajustes · Atajos, “Deslizar a la izquierda para abrir”, puedes hacer que abra la ventana de comandos, y el ícono al final del riel cambia con él."
       },
       "gridViewEdit": {
         "normalCard": "En reposo, una tarjeta lleva dos botones en su parte inferior: el redondo reproduce y el otro agrega la canción a la cola. Hacer clic en la tarjeta no la reproduce: solo la lleva al centro.",
@@ -4983,7 +6243,7 @@ export default {
         "refresh": "Actualizar vuelve a escanear las raíces importadas en busca de archivos agregados, modificados o faltantes. No crea otra copia de la biblioteca."
       },
       "onlineCollectionActions": {
-        "common": "Reproducir todo y agregar a la cola son comunes a las colecciones en línea y de servidor. Cuando esta página está filtrada, ambas acciones usan solo las canciones que coinciden y muestran cuántas se verán afectadas.",
+        "common": "“Reproducir todo” y “Agregar a la cola” son comunes a las colecciones en línea y de servidor. Cuando esta página está filtrada, ambas usan solo las canciones que coinciden y muestran cuántas son.",
         "provider": "Los demás botones dependen de la fuente actual y del tipo de colección: Navidrome puede ofrecer acciones de listas del servidor, mientras que un álbum o lista en línea puede ofrecer suscribirse, cancelar la suscripción o gestionar recomendaciones. Las herramientas locales de nuevo escaneo y etiquetas no corresponden aquí.",
         "destructive": "Un botón de eliminar o quitar aparece solo cuando esa fuente ofrece la operación y la colección se puede modificar. Su efecto es sobre la colección remota o del servidor, no sobre los archivos de audio locales."
       },
@@ -5011,44 +6271,41 @@ export default {
         "direction": "El botón de la izquierda alterna entre ascendente y descendente, de forma independiente del campo."
       },
       "gridStyle": {
-        "grid3dImage": "“Solo portada” es el estilo por defecto del muro de pósteres: toda la tarjeta es una sola imagen, con el nombre de la colección sobre el degradado de su parte inferior.",
-        "grid3dCard": "“Tarjeta polaroid” lleva la portada a la mitad superior y deja una franja blanca debajo para el nombre, como una polaroid. No se recorta nada; el costo es que caben menos tarjetas a lo ancho de la misma pantalla.",
+        "grid3dImage": "“Solo la portada” convierte toda la tarjeta en una sola imagen, con el nombre de la colección sobre el degradado de su parte inferior.",
+        "grid3dCard": "“Tarjeta polaroid” es el estilo por defecto: lleva la imagen a la mitad superior y deja una franja abajo para el nombre. No se recorta nada; el costo es que caben menos tarjetas a lo ancho de la misma pantalla.",
         "fullBleed": "“Portada a sangre completa” controla la cuadrícula de panal dentro de una colección: actívala y la portada llena toda la tarjeta, con el título y el artista sobre un degradado superpuesto, como en el collage de la cola.",
         "squareCard": "“Tarjetas cuadradas” solo aparece cuando está activada la sangre completa; si está desactivada, la fila ni siquiera aparece en pantalla. Al activarla, las tarjetas son tan altas como anchas, así que las portadas cuadradas dejan de recortarse arriba y abajo. El área de la tarjeta se mantiene, así que lo que pierde en altura lo gana en ancho, y el espaciado de la cuadrícula se ajusta.",
         "minScale": "Este deslizador no define el tamaño de las tarjetas. Define el mínimo de la atenuación: las tarjetas más alejadas del centro de la vista se achican, y esto es cuán pequeñas pueden llegar a ser. Más alto hace los bordes más legibles; más bajo acentúa la profundidad.",
         "minOpacity": "Del mismo modo, este define cuán tenues pueden llegar a ser. Entre los dos deciden si la cuadrícula se ve plana o con profundidad.",
         "falloffReset": "Presiona esto para devolver la atenuación a su valor por defecto. Solo restablece esos dos deslizadores; los dos interruptores de forma de portada no se tocan.",
-        "latticeVignette": "“Viñeta” oscurece levemente los bordes del collage de la cola y lleva la mirada a los pósteres del centro. Es solo visual y no afecta la cola.",
-        "latticeTint": "“Tinte de pósteres” aplica un color sobre los pósteres comunes para que destaquen el que suena, el que tiene el foco y el que está bajo el puntero. Es el interruptor principal de este grupo: desactivado, la intensidad y el color fijo ni siquiera aparecen en pantalla, y por eso “¿dónde ajusto la intensidad del tinte?” no tiene respuesta hasta que lo encuentras.",
-        "latticeIntensity": "“Intensidad del tinte” solo existe cuando el tinte está activado. Es un porcentaje: en 0 no hay tinte; más alto oscurece los pósteres comunes y hace destacar más el que suena.",
-        "latticeCustomColor": "Por defecto, el tinte es un degradado derivado del tema actual, así que cambia cada vez que cambia el tema. Activar “color fijo” lo fija a un color que ningún cambio de tema va a mover.",
-        "latticePicker": "El selector solo aparece cuando el color fijo está activado. El muro lo sigue en vivo mientras arrastras; el valor solo se guarda al soltar."
+        "latticeVignette": "La viñeta en los bordes oscurece levemente el contorno de la página del collage de la cola y lleva la mirada a los pósteres del centro. Es solo un efecto visual y no afecta la cola.",
+        "latticeTint": "El tinte del póster enfocado hace destacar los pósteres que suenan, tienen el foco o están bajo el puntero. Desactívalo y también se ocultan las filas de su intensidad y su color personalizado.",
+        "latticeIntensity": "“Intensidad de la superposición” solo existe cuando el tinte está activado. Es un porcentaje: en 0 no hay tinte; más alto oscurece los pósteres comunes y hace destacar más el que suena.",
+        "latticeCustomColor": "Por defecto, el tinte es un degradado calculado a partir del tema actual, así que cambia con el tema. Activar “Forzar un color personalizado” lo fija a un color que ningún cambio de tema mueve.",
+        "latticePicker": "Solo con eso activado aparece el selector de color abajo. El muro de pósteres lo sigue mientras arrastras, y el color se guarda al soltar."
       },
       "panelCoverActions": {
-        "appear": "La portada no muestra nada en reposo. Pasa el puntero sobre ella y aparece un botón en cada esquina: cuatro cosas sin relación entre sí, no un conjunto de “acciones para esta canción”.",
-        "settings": "El de arriba a la izquierda abre los ajustes. Al presionarlo, primero se pliega el panel y luego aparece la ventana de ajustes sobre la página.",
-        "home": "El de abajo a la izquierda vuelve al muro de pósteres de la página de inicio, también plegando antes el panel. La reproducción no se interrumpe.",
-        "transparent": "El de arriba a la derecha es “fondo del reproductor transparente”, el más fácil de presionar por error de los cuatro: cambia toda la ventana a modo transparente, para una fuente de navegador de OBS o una superposición con croma, y solo afecta a la página del reproductor.",
-        "addToPlaylist": "El de abajo a la derecha agrega la canción actual a una lista. Solo aparece cuando la fuente actual tiene listas; cuando la canción no se puede agregar, se ve atenuado y al pasar el puntero se explica por qué.",
-        "touch": "En una pantalla táctil no se puede pasar el puntero: toca la portada y aparecen los cuatro botones; toca fuera de ella y se repliegan."
+        "appear": "En la pestaña Portada esta fila bajo el título siempre está: las acciones para esta canción a la izquierda, y el camino al inicio y los ajustes en el extremo derecho. En las demás pestañas la fila se guarda y solo queda el botón de me gusta, arriba.",
+        "settings": "El engranaje abre los ajustes. Primero se cierra el panel y luego aparece la ventana de ajustes.",
+        "home": "La casa del extremo derecho vuelve al muro de pósteres de la página de inicio; antes se cierra el panel. La reproducción no se detiene.",
+        "addToPlaylist": "La estrella agrega esta canción a una playlist. Solo aparece cuando la fuente actual tiene playlists; cuando la canción no se puede agregar queda en gris, y al pasar el mouse dice por qué.",
+        "like": "El corazón le da me gusta a esta canción. Cuando la fuente actual no lo permite, queda en gris, y al pasar el mouse dice por qué.",
+        "playingFrom": "Cuando la cola empezó desde una playlist o un álbum, aquí aparece un botón con su nombre: haz clic para volver a esa página y encontrar ahí esta canción. Cuando la cola tiene otras canciones, desaparece."
       },
       "lyricsAnimation": {
-        "where": "La animación de la letra no se cambia en la página del reproductor. Está en Ajustes · Apariencia, en “Animación de la letra”, y esta fila superior es la entrada.",
-        "playground": "Abre el banco de trabajo de animación a pantalla completa. El bloque grande de la izquierda es una vista previa en vivo de exactamente lo que mostrará la página del reproductor; la columna angosta de la derecha son los ajustes.",
-        "playgroundSections": "Esa columna derecha se divide en General, Fondo, Animación y Subtítulo. El modo de animación de la letra se elige en la página Animación (el que selecciones es el que usa la página del reproductor), y los parámetros propios de ese modo aparecen debajo.",
-        "card": "Una tarjeta debajo de la entrada contiene ambos interruptores. Son la mitad superior e inferior de la misma tarjeta, separadas por una sola línea; no son dos tarjetas lado a lado.",
-        "transparent": "La fila superior, “fondo del reproductor transparente”, solo afecta a la página del reproductor: cambia la ventana a modo transparente, para una fuente de navegador de OBS o una superposición con croma. Es el mismo interruptor que el botón de la esquina superior derecha de la portada.",
-        "autoHide": "La fila inferior, “ocultar automáticamente la barra de control”, pliega la barra de progreso y el botón lateral de la página del reproductor mientras el puntero está quieto, dejando solo la letra. Acércate y vuelven a aparecer."
+        "where": "La primera fila de Ajustes · Apariencia, “Ajustar la animación de la letra”, es donde se cambia el estilo de letra; su extremo derecho muestra el que está en uso.",
+        "playground": "Abre la ventana de estilo de letra. El bloque grande de la izquierda es una vista previa en vivo de exactamente lo que mostrará la página del reproductor; la columna angosta de la derecha son los ajustes.",
+        "playgroundSections": "El estilo se elige en la repisa bajo la vista previa. La columna de la derecha tiene cinco páginas: Letra, Fondo, Común, Subtítulo y Global; la página Letra tiene los ajustes del estilo que elegiste."
       },
       "themeSettings": {
-        "presetDefault": "El de la izquierda es el preajuste integrado, Ink / Plain: un pequeño punto con degradado sobre una etiqueta, que alterna entre oscuro y claro según el modo claro/oscuro.",
-        "presetCustom": "El de la derecha es tu paleta personalizada. Está atenuado y no se puede presionar hasta que exista un tema personalizado; cuando exista, al seleccionarlo la página del reproductor, las tarjetas y los paneles pasan a esos colores.",
-        "source": "Una paleta personalizada no se mezcla a mano: aquí se define de dónde sale, y hay exactamente dos opciones: tomada de la portada actual o deducida por IA a partir de la letra. La opción de IA sigue desactivada hasta que se configure una clave de API de un proveedor.",
-        "themePark": "El botón redondo de paleta a la derecha del encabezado abre Theme Park. No es una biblioteca de paletas: es un editor de paletas a pantalla completa; el visualizador real muestra tu borrador en vivo a la izquierda, así que cada cambio de color se ve de inmediato.",
-        "themeParkTabs": "La columna de la derecha se divide en Colores, Detalles, Contenido e IA: la página Colores elige cada color, con un conjunto claro y otro oscuro por separado; la página IA hace que un modelo genere una paleta completa. Lo que guardas es la entrada “personalizado” de arriba.",
-        "followSystem": "La mitad inferior de este grupo son tres interruptores. “Seguir claro/oscuro del sistema” sigue el ajuste del sistema, y se desactiva solo la primera vez que cambias entre claro y oscuro a mano.",
-        "preferCustom": "Activar “preferir el tema personalizado” desactiva el cambio automático de tema: ambos son mutuamente excluyentes. Por eso los colores dejan de cambiar entre canciones cuando está activado.",
-        "autoSwitch": "“Cambiar de tema automáticamente” es lo contrario: pasa a una canción para la que alguna vez se generó un tema y esa paleta se vuelve a aplicar. Al activarlo aparece una fila más abajo, que genera una paleta en el momento para las canciones que no tienen una en caché."
+        "presetDefault": "El segmento izquierdo de “Preajustes de tema” es el par incluido, que sigue solo el modo claro u oscuro.",
+        "presetCustom": "El segmento derecho es tu tema personalizado. Mientras no exista uno queda en gris; cuando existe, al elegirlo se recolorean la página del reproductor, las tarjetas y los paneles.",
+        "source": "“Origen de la generación de temas” está en el grupo “Temas por canción”, más abajo: Inferencia con IA o Colores de la portada. Sin una clave de API, bajo esta fila aparecen un aviso y un botón para configurarla.",
+        "themePark": "La fila “Abrir Theme Park” abre el editor de colores, con una vista previa en vivo a su izquierda.",
+        "themeParkTabs": "La columna de la derecha se divide en Colores, Detalles, Contenido e IA: la página Colores elige cada color, con un conjunto claro y otro oscuro por separado; la página IA copia un prompt para un modelo e importa al borrador el JSON que este devuelve. Lo que guardas es la entrada “Personalizado” de arriba.",
+        "followSystem": "“Modo claro / oscuro” tiene tres segmentos: claro, oscuro y seguir al sistema. Con seguir al sistema, la app cambia junto con el ajuste del sistema.",
+        "preferCustom": "Activar “Preferir el tema personalizado” desactiva el cambio automático de tema: son excluyentes. Por eso los colores dejan de cambiar entre canciones cuando está activado.",
+        "autoSwitch": "“Cambiar de tema automáticamente” aplica el tema guardado de una canción cuando esa canción suena; activa la fila con sangría de abajo y las canciones sin tema guardado también tendrán uno generado."
       },
       "panelSlide": {
         "grabbed": "Mantén presionado el botón. El riel detrás de él se ilumina.",
@@ -5059,6 +6316,25 @@ export default {
         "hotspotRevealed": "Toca cerca del borde derecho y la manija sale sola.",
         "keyboardIntro": "Tampoco necesitas un puntero.",
         "keyboardOutcome": "Presiona {{mod}} + K y se abre la misma ventana."
+      },
+      "signIn": {
+        "homeButton": "Mientras nadie inicia sesión, el inicio tiene un botón “Iniciar sesión” al centro. Abre la ventana de inicio de sesión; la plataforma se elige ahí.",
+        "pill": "El indicador de abajo a la derecha siempre está. Haz clic en la imagen o la marca de plataforma de su izquierda para abrir la misma ventana en la plataforma en uso; la flecha de su derecha vuelve al reproductor.",
+        "platforms": "La columna de la izquierda muestra todas las plataformas. Una con sesión iniciada tiene su imagen al final de la fila; una fila en gris no se puede elegir, y al pasar el mouse dice por qué.",
+        "code": "Elige una plataforma y a la derecha aparece cómo inicia sesión. Casi siempre es un código QR para escanear con la app del teléfono de la plataforma; algunas piden elegir un método primero y otras abren el navegador con un clic.",
+        "steps": "Los íconos pequeños de abajo a la derecha muestran cuánto avanzó el inicio de sesión: el código, la confirmación en el teléfono, la cuenta.",
+        "account": "En una plataforma con sesión iniciada, esta es su cuenta. “Cerrar sesión” cierra solo la de esta plataforma.",
+        "switch": "Puedes tener sesión en varias plataformas a la vez. Cuando la elegida no es la que está en uso, aparece un botón para cambiar a ella; el indicador de abajo a la derecha también cambia."
+      },
+      "lyricMatch": {
+        "where": "“Buscar en línea” en la pestaña de fuente del panel abre esta ventana. Bajo el título dice para qué canción es la letra.",
+        "sources": "Esta fila son las fuentes de letras. Haz clic en otra para buscar la canción ahí.",
+        "search": "La ventana ya buscó una vez. Si los resultados no sirven, cambia las palabras aquí y vuelve a buscar.",
+        "results": "Cada fila es una canción encontrada: título, artistas y álbum. El porcentaje junto al título indica cuánto se parece a esta canción.",
+        "preview": "Haz clic en una fila y a la derecha aparecen su portada y sus nombres, con la letra abajo siguiendo la posición de la reproducción; las marcas de la esquina dicen si la letra trae tiempos por palabra, traducción o romanización.",
+        "save": "“Guardar” aplica la fila elegida a esta canción; “Cancelar” no cambia nada.",
+        "switches": "Para un archivo local hay tres interruptores bajo la portada: “Portada”, “Metadatos” y “Letra”. Uno encendido toma esa parte de la fila elegida; uno apagado deja lo que tiene el archivo.",
+        "noMatch": "“No usar metadatos en línea”, abajo a la izquierda, hace que la canción use solo lo que tiene el archivo."
       }
     }
   }
