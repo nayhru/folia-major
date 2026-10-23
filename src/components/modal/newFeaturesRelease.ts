@@ -1,4 +1,4 @@
-import { CircleAlert, Disc3, Languages, Newspaper, WifiOff, Wrench } from 'lucide-react';
+import { Bot, Flame, Keyboard, Radio, Shuffle, Sparkles } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 // src/components/modal/newFeaturesRelease.ts
@@ -6,8 +6,6 @@ import type { LucideIcon } from 'lucide-react';
 type NewFeatureCard = {
     id: string;
     icon: LucideIcon;
-    daylightIconClassName: string;
-    darkIconClassName: string;
 };
 
 type NewFeaturesRelease = {
@@ -19,13 +17,14 @@ type NewFeaturesRelease = {
 
 // Defines the current release's cards; their localized text lives under i18nKey in every locale.
 export const NEW_FEATURES_RELEASE: NewFeaturesRelease = {
-    i18nKey: 'releaseNotes.v0_7_19',
+    i18nKey: 'releaseNotes.v0_7_22',
+    majorUpdate: { codename: 'Sparkle' },
     features: [
-        { id: 'artistPoster', icon: Newspaper, daylightIconClassName: 'text-rose-600', darkIconClassName: 'text-rose-400' },
-        { id: 'albumPoster', icon: Disc3, daylightIconClassName: 'text-violet-600', darkIconClassName: 'text-violet-400' },
-        { id: 'playbackFailure', icon: CircleAlert, daylightIconClassName: 'text-amber-600', darkIconClassName: 'text-amber-400' },
-        { id: 'lyricSegmenter', icon: Languages, daylightIconClassName: 'text-sky-600', darkIconClassName: 'text-sky-400' },
-        { id: 'offlineStartup', icon: WifiOff, daylightIconClassName: 'text-emerald-600', darkIconClassName: 'text-emerald-400' },
-        { id: 'stabilityFixes', icon: Wrench, daylightIconClassName: 'text-cyan-600', darkIconClassName: 'text-cyan-400' },
+        { id: 'qishui', icon: Radio },
+        { id: 'hanabi', icon: Flame },
+        { id: 'randomStyles', icon: Shuffle },
+        { id: 'globalShortcuts', icon: Keyboard },
+        { id: 'aiProviders', icon: Bot },
+        { id: 'moreDetails', icon: Sparkles },
     ],
 };
