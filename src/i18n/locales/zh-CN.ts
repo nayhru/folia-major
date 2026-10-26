@@ -345,6 +345,8 @@ export default {
     "aiThemeGeneratedCustomPreferred": "AI 主题已生成，但当前仍优先使用自定义主题",
   },
   "status": {
+    "autoRomanizationOn": "将为没有罗马音的歌词补充罗马音",
+    "autoRomanizationOff": "不再补充罗马音",
     "playerChromeAlwaysHidden": "UI 将始终隐藏",
     "playerChromeAlwaysVisible": "UI 将始终显示",
     "playerChromeAutoHide": "UI 将自动隐藏",
@@ -599,6 +601,7 @@ export default {
       }
     },
     "commands": {
+      "lyric-auto-romanization-toggle": { "title": "补充罗马音", "description": "开启或关闭为没有罗马音的日语、韩语和中文歌词生成罗马音" },
       "settings-ponder-hints": { "title": "思索教程提示", "description": "设置长按 G 的提示什么时候出现" },
       "ponder-hints-always": { "title": "思索提示：始终显示", "description": "所有可教学的控件都提示长按 G" },
       "ponder-hints-unseen": { "title": "思索提示：仅未看过的区域", "description": "某个控件的教程看过之后就不再提示它" },
@@ -1878,6 +1881,9 @@ export default {
     "lyricMatchPriorityDesc": "在多个歌词源都存在高置信度匹配时，优先选择该歌词源的结果。"
   },
   "options": {
+    "lyricEnrichmentHeading": "罗马音与翻译",
+    "autoRomanization": "补充罗马音",
+    "autoRomanizationDesc": "歌词来源没有提供罗马音时，为日语、韩语和中文歌词在本机生成。字幕显示罗马音时可见。",
     "aiProvider_gemini": "Google Gemini",
     "aiProvider_deepseek": "DeepSeek",
     "aiProvider_mimo": "小米 MiMo",

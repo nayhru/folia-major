@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useShallow } from 'zustand/react/shallow';
 import { useLyricMatchSources } from '../../../../hooks/useLyricMatchSources';
 import { resyncAllFolders } from '../../../../services/localMusicService';
+import { useLyricEnrichmentStore } from '../../../../services/lyricEnrichment/lyricEnrichmentStore';
 import { useLyricSettingsStore } from '../../../../stores/useLyricSettingsStore';
 import { setStatusMessage } from '../../../../stores/useStatusMessageStore';
 import { DEFAULT_LOCAL_LYRIC_FORMAT_ORDER, isSameLocalLyricFormatOrder, type LocalLyricFileFormat } from '../../../../utils/lyrics/localLyricFormatOrder';
@@ -14,11 +15,12 @@ import { useSettingsPage } from './settingsPageContext';
 
 // src/components/modal/settings/pages/LyricsPage.tsx
 // The 歌词 page: where a song's lyrics come from, the two tools that shift and filter them (their
-// rows open the existing dialogs), and a folded group with the order in which lyric files beside a
-// local song are preferred.
+// rows open the existing dialogs), what Folia adds to lyrics that came without it (romanization),
+// and a folded group with the order in which lyric files beside a local song are preferred.
 
 const SOURCE: SettingsGroupDef = { id: 'lyrics', titleKey: 'options.settingsHeadingLyricSource' };
 const ADJUST: SettingsGroupDef = { id: 'lyricAdjust', titleKey: 'options.settingsHeadingLyricTiming' };
+const ENRICH: SettingsGroupDef = { id: 'lyricEnrichment', titleKey: 'options.lyricEnrichmentHeading' };
 const FORMATS: SettingsGroupDef = { id: 'localLyricFormatOrder', titleKey: 'options.localLyricFormatOrder' };
 
 const O = {
@@ -27,6 +29,7 @@ const O = {
     localPriority: option(SOURCE, 'localLyricsPriority', 'options.localLyricsPriority'),
     globalOffset: option(ADJUST, 'globalLyricTimelineOffset', 'options.globalLyricTimelineOffset'),
     filter: option(ADJUST, 'lyricFilterRegex', 'options.lyricFilterRegex'),
+    autoRomanization: option(ENRICH, 'autoRomanization', 'options.autoRomanization'),
     formatOrder: option(FORMATS, 'localLyricFormatOrderList', 'options.localLyricFormatOrderList'),
 };
 
@@ -45,6 +48,10 @@ const LyricsPage: React.FC = () => {
         setPreferredSource: state.handleSetPreferredAlternativeLyricSource,
         setLocalPriority: state.handleSetLocalLyricsPriority,
         setFormatOrder: state.handleSetLocalLyricFormatOrder,
+    })));
+    const enrichment = useLyricEnrichmentStore(useShallow(state => ({
+        autoRomanization: state.autoRomanization,
+        setAutoRomanization: state.setAutoRomanization,
     })));
     const sources = useLyricMatchSources();
     // A choice that is not on offer now is not in force either: the matcher falls back the same way.
@@ -109,6 +116,12 @@ const LyricsPage: React.FC = () => {
                     <Value>{`${lyric.globalOffsetMs > 0 ? '+' : ''}${lyric.globalOffsetMs} ms`}</Value>
                 </Row>
                 <Row option={O.filter} hint={t('options.lyricFilterRegexDesc')} onClick={onOpenLyricFilterSettings} />
+            </Group>
+
+            <Group def={ENRICH}>
+                <Row option={O.autoRomanization} note={t('options.autoRomanizationDesc')}>
+                    <Toggle checked={enrichment.autoRomanization} onChange={enrichment.setAutoRomanization} />
+                </Row>
             </Group>
 
             <FoldedGroup def={FORMATS} summary={t('options.localLyricFormatOrderFirst', { format: `.${lyric.formatOrder[0]}` })}>

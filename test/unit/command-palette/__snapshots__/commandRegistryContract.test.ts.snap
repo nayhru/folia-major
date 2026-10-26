@@ -217,6 +217,7 @@ exports[`command palette registry contract > keeps the registered command order 
   "hifi-redetect-mpv",
   "hifi-download-mpv",
   "hifi-signal-path",
+  "lyric-auto-romanization-toggle",
   "lattice-focus-current",
   "locate-playing-song",
   "navigate-home",

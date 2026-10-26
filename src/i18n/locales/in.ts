@@ -345,6 +345,8 @@ export default {
     "aiThemeGeneratedCustomPreferred": "Tema AI dibuat, tapi tema kustom tetap diutamakan"
   },
   "status": {
+    "autoRomanizationOn": "Romanisasi akan ditambahkan ke lirik yang tidak memilikinya",
+    "autoRomanizationOff": "Romanisasi tidak lagi ditambahkan",
     "playerChromeAlwaysHidden": "Antarmuka akan tetap tersembunyi",
     "playerChromeAlwaysVisible": "Antarmuka akan tetap terlihat",
     "playerChromeAutoHide": "Antarmuka akan otomatis tersembunyi",
@@ -599,6 +601,7 @@ export default {
       }
     },
     "commands": {
+      "lyric-auto-romanization-toggle": { "title": "Tambahkan romanisasi", "description": "Aktifkan atau nonaktifkan romanisasi lirik Jepang, Korea, dan Mandarin yang datang tanpa romanisasi" },
       "settings-ponder-hints": { "title": "Petunjuk tutorial Ponder", "description": "Atur kapan petunjuk tahan G muncul" },
       "ponder-hints-always": { "title": "Petunjuk Ponder: selalu tampilkan", "description": "Tampilkan petunjuk tahan G pada setiap kontrol yang bisa dipelajari" },
       "ponder-hints-unseen": { "title": "Petunjuk Ponder: hanya yang belum dilihat", "description": "Berhenti memberi petunjuk setelah tutorialnya ditonton" },
@@ -1878,6 +1881,9 @@ export default {
     "lyricMatchPriorityDesc": "Saat beberapa sumber lirik memiliki kecocokan berkualitas tinggi, utamakan sumber ini terlebih dahulu."
   },
   "options": {
+    "lyricEnrichmentHeading": "Romanisasi dan terjemahan",
+    "autoRomanization": "Tambahkan romanisasi",
+    "autoRomanizationDesc": "Untuk lirik Jepang, Korea, dan Mandarin yang sumbernya tidak menyertakan romanisasi. Dibuat di perangkat ini; tampil saat subtitel menampilkan romanisasi.",
     "aiProvider_gemini": "Google Gemini",
     "aiProvider_deepseek": "DeepSeek",
     "aiProvider_mimo": "Xiaomi MiMo",

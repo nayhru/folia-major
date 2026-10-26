@@ -368,6 +368,8 @@ export default {
     "aiThemeGeneratedCustomPreferred": "Tema de IA generado, pero el tema personalizado sigue teniendo prioridad"
   },
   "status": {
+    "autoRomanizationOn": "Se agregará romanización a las letras que no la traen",
+    "autoRomanizationOff": "Ya no se agregará romanización",
     "playerChromeAlwaysHidden": "La interfaz permanecerá oculta",
     "playerChromeAlwaysVisible": "La interfaz permanecerá visible",
     "playerChromeAutoHide": "La interfaz se ocultará automáticamente",
@@ -633,6 +635,7 @@ export default {
       }
     },
     "commands": {
+      "lyric-auto-romanization-toggle": { "title": "Agregar romanización", "description": "Activar o desactivar la romanización de letras en japonés, coreano y chino que vienen sin ella" },
       "settings-ponder-hints": {
         "title": "Sugerencias del tutorial Ponder",
         "description": "Elige cuándo aparece la sugerencia del tutorial de mantener G"
@@ -2767,6 +2770,9 @@ export default {
     "lyricMatchPriorityDesc": "Cuando varias fuentes de letras tienen coincidencias de alta confianza, se prefiere primero esta fuente."
   },
   "options": {
+    "lyricEnrichmentHeading": "Romanización y traducción",
+    "autoRomanization": "Agregar romanización",
+    "autoRomanizationDesc": "Para letras en japonés, coreano y chino cuya fuente no trae romanización. Se calcula en este equipo y se ve cuando el subtítulo muestra la romanización.",
     "aiProvider_gemini": "Google Gemini",
     "aiProvider_deepseek": "DeepSeek",
     "aiProvider_mimo": "Xiaomi MiMo",

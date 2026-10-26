@@ -935,6 +935,8 @@ declare global {
       generateTheme: (lyricsText: string, options?: { isPureMusic?: boolean; songTitle?: string }) => Promise<any>;
       /** Word-segments lyric lines with the user's configured model. Resolves to one boundary array per line. */
       segmentLyrics: (lines: string[]) => Promise<string[][]>;
+      /** Each Japanese lyric line as its words with their katakana reading (electron/lyricEnrichment/); null when it failed. */
+      getJapaneseLyricReadings: (lines: string[]) => Promise<Array<Array<{ s: string; r: string | null; p: string; d: string }>> | null>;
       /** Sends "hello" with the unsaved AI settings from the form and reports the reply. Never rejects on connection failures. */
       testAiConnection: (settings: AiConnectionTestPayload) => Promise<AiConnectionTestResult>;
       listAiModels: (settings: AiConnectionTestPayload) => Promise<AiModelListResult>;
