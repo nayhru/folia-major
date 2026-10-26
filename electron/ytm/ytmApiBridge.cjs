@@ -5,7 +5,7 @@ const { createYtmTokenMinter } = require('./poToken.cjs');
 const tiles = require('./tiles.cjs');
 const catalog = require('./catalog.cjs');
 const { YtmError, describeError, toErrorResult, ytmError } = require('./errors.cjs');
-const { createBrowserSignIn } = require('./browserSignIn.cjs');
+const { createBrowserSignIn, readWindowsDefaultBrowser } = require('./browserSignIn.cjs');
 const { createYtmWebSessionRepository, createYtmWebSignIn, desktopChromeName, guardAccountHeaders } = require('./webSignIn.cjs');
 const webPages = require('./webPages.cjs');
 const webSaves = require('./webSaves.cjs');
@@ -171,7 +171,7 @@ function createYtmApiBridge({
   wait = ms => new Promise(resolve => { setTimeout(resolve, ms); }),
   // The web sign-in: `signInFolder()` is the folder its browser window runs on, `browserSignIn`
   // that browser, `browserName()` the User-Agent the account's requests are sent under.
-  signInFolder = () => undefined, browserSignIn = createBrowserSignIn({ now, log, warn }), browserName = desktopChromeName,
+  signInFolder = () => undefined, browserSignIn = createBrowserSignIn({ now, log, warn, defaultBrowser: () => readWindowsDefaultBrowser() }), browserName = desktopChromeName,
 }) {
   const webRepo = createYtmWebSessionRepository({ store, safeStorage, now, log, warn });
   let libraries = null;

@@ -168,6 +168,25 @@ function browserCandidates(options) {
   return browserPlaces(options).map(place => place.file);
 }
 
+// The executable Windows opens https links with (the person's default browser), or null. The
+// UserChoice ProgId names the browser's class, whose open command starts with the quoted path of
+// its executable. `reg` prints the value's name in the system's language ("(Default)",
+// "(Predeterminado)"), so only the REG_SZ data is read. Anywhere but Windows, and on any failure,
+// null: the caller then looks in its own order.
+function readWindowsDefaultBrowser({ platform = process.platform, execFileSync = childProcess.execFileSync } = {}) {
+  if (platform !== 'win32') return null;
+  const query = args => {
+    try {
+      return execFileSync('reg', ['query', ...args], { encoding: 'utf8', windowsHide: true, timeout: 3000, stdio: ['ignore', 'pipe', 'ignore'] });
+    } catch {
+      return '';
+    }
+  };
+  const progId = /\bProgId\s+REG_SZ\s+(\S+)/.exec(query(['HKCU\\Software\\Microsoft\\Windows\\Shell\\Associations\\UrlAssociations\\https\\UserChoice', '/v', 'ProgId']))?.[1];
+  if (!progId || !/^[\w.-]+$/.test(progId)) return null;
+  return /REG_SZ\s+"([^"]+\.exe)"/i.exec(query([`HKCR\\${progId}\\shell\\open\\command`, '/ve']))?.[1] ?? null;
+}
+
 // Whether a command line is that of a browser started on exactly this folder: it gives the
 // folder as its `--user-data-dir`, and the folder's name ends there. In quotes (the value's own,
 // or the whole argument's, as Node writes one that holds a space on Windows) the name ends at
@@ -274,15 +293,23 @@ function createBrowserSignIn({
   mark = dir => { fs.mkdirSync(dir, { recursive: true }); fs.writeFileSync(path.join(dir, FOLDER_MARK), ''); },
   remove = removeFolderOnce, wait = ms => new Promise(resolve => { setTimeout(resolve, ms); }),
   execFile = childProcess.execFile, kill = (pid, signal) => process.kill(pid, signal),
+  // `defaultBrowser()` is the path of the person's default browser, or null (readWindowsDefaultBrowser).
+  defaultBrowser = () => null,
 } = {}) {
-  // The path of an installed browser: Chrome, then Edge, Chromium, Brave, then Chrome Beta, Dev,
-  // Canary and Helium. null when there is none. The log names the browser: on Windows Chrome's
-  // channels, Chromium and Helium are all chrome.exe.
+  // The path of an installed browser: the person's default browser when it is one of the places
+  // below, else Chrome, then Edge, Chromium, Brave, then Chrome Beta, Dev, Canary and Helium. null
+  // when there is none. The default is taken only at one of those places, so a path the registry
+  // names is never started unless it is a known browser's. The log names the browser: on Windows
+  // Chrome's channels, Chromium and Helium are all chrome.exe.
   // A file name is cut from its path by the rules of `platform`, not of the computer this runs on.
   const fileName = file => (platform === 'win32' ? path.win32 : path.posix).basename(file);
+  const samePath = (a, b) => (platform === 'win32' ? path.win32.normalize(a).toLowerCase() === path.win32.normalize(b).toLowerCase() : a === b);
   const findBrowser = () => {
-    const found = browserPlaces({ platform, env }).find(place => exists(place.file)) ?? null;
-    if (found) log(`[Ytm] Sign-in can use ${found.name} (${fileName(found.file)})`);
+    const places = browserPlaces({ platform, env });
+    const preferred = defaultBrowser();
+    const chosen = preferred ? places.find(place => samePath(place.file, preferred) && exists(place.file)) : undefined;
+    const found = chosen ?? places.find(place => exists(place.file)) ?? null;
+    if (found) log(`[Ytm] Sign-in can use ${found.name} (${fileName(found.file)})${chosen ? ', the default browser' : ''}`);
     else warn('[Ytm] No Chrome (of any channel), Edge, Chromium, Brave or Helium was found for the sign-in');
     return found?.file ?? null;
   };
@@ -556,5 +583,5 @@ function createBrowserSignIn({
 
 module.exports = {
   createBrowserSignIn, BrowserSignInError, browserCandidates, cookieHeaderOf, createPipeReader, isSignedIn, youtubeCookies, startedOn,
-  FOLDER_MARK, SIGN_IN_URL,
+  readWindowsDefaultBrowser, FOLDER_MARK, SIGN_IN_URL,
 };

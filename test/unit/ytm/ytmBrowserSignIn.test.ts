@@ -12,7 +12,7 @@ import { describe, expect, it, vi } from 'vitest';
 
 const require = createRequire(import.meta.url);
 const {
-    createBrowserSignIn, BrowserSignInError, browserCandidates, cookieHeaderOf, createPipeReader, isSignedIn, youtubeCookies, startedOn, FOLDER_MARK,
+    createBrowserSignIn, BrowserSignInError, browserCandidates, cookieHeaderOf, createPipeReader, isSignedIn, youtubeCookies, startedOn, FOLDER_MARK, readWindowsDefaultBrowser,
 } = require('../../../electron/ytm/browserSignIn.cjs');
 
 const cookie = (name: string, value: string, domain: string, cookiePath = '/') => ({ name, value, domain, path: cookiePath });
@@ -170,6 +170,23 @@ describe('where a browser is looked for', () => {
         expect(lines).toEqual(['[Ytm] Sign-in can use Helium (chrome.exe)']);
     });
 
+    it('takes the default browser before Chrome when it is one of the places, and only then', () => {
+        const chrome = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
+        const brave = 'C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe';
+        const lines: string[] = [];
+        const find = (preferred: string | null, installed: string[]) => createBrowserSignIn({
+            platform: 'win32', env: windows, exists: (candidate: string) => installed.includes(candidate),
+            defaultBrowser: () => preferred, log: (line: string) => lines.push(line), warn: () => {},
+        }).findBrowser();
+        // The registry may write the path in another case.
+        expect(find(brave.toLowerCase(), [chrome, brave])).toBe(brave);
+        expect(lines.pop()).toBe('[Ytm] Sign-in can use Brave (brave.exe), the default browser');
+        // A default that is not installed, or is no known browser's place, leaves the usual order.
+        expect(find(brave, [chrome])).toBe(chrome);
+        expect(find('C:\\Users\\某人\\Downloads\\brave.exe', [chrome, brave])).toBe(chrome);
+        expect(find(null, [chrome, brave])).toBe(chrome);
+    });
+
     it('skips a programs folder the computer does not name', () => {
         expect(browserCandidates({ platform: 'win32', env: { ProgramFiles: 'C:\\Program Files' } })).toHaveLength(7);
     });
@@ -223,6 +240,27 @@ describe('where a browser is looked for', () => {
         expect(finder('linux', env, ['/usr/bin/helium-browser', '/usr/bin/google-chrome-unstable'])).toBe('/usr/bin/google-chrome-unstable');
         expect(finder('linux', env, ['/usr/bin/helium-browser'])).toBe('/usr/bin/helium-browser');
         expect(finder('linux', env, ['/usr/bin/helium-browser', '/usr/bin/chromium'])).toBe('/usr/bin/chromium');
+    });
+});
+
+describe('readWindowsDefaultBrowser', () => {
+    const answers = (progId: string, command: string) => (_file: string, args: string[]) => {
+        if (args[1].endsWith('UserChoice')) return `\r\nHKEY_CURRENT_USER\\...\\UserChoice\r\n    ProgId    REG_SZ    ${progId}\r\n`;
+        return `\r\nHKEY_CLASSES_ROOT\\${progId}\\shell\\open\\command\r\n    (Predeterminado)    REG_SZ    ${command}\r\n`;
+    };
+
+    it('reads the executable of the class Windows opens https links with, whatever the language of reg', () => {
+        expect(readWindowsDefaultBrowser({
+            platform: 'win32',
+            execFileSync: answers('BraveHTML', '"C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe" --single-argument %1'),
+        })).toBe('C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe');
+    });
+
+    it('is null outside Windows, when reg fails, and for a class name it would not pass on', () => {
+        const never = () => { throw new Error('not to be called'); };
+        expect(readWindowsDefaultBrowser({ platform: 'darwin', execFileSync: never })).toBeNull();
+        expect(readWindowsDefaultBrowser({ platform: 'win32', execFileSync: () => { throw new Error('reg failed'); } })).toBeNull();
+        expect(readWindowsDefaultBrowser({ platform: 'win32', execFileSync: answers('Bad\\Name', '"C:\\x.exe"') })).toBeNull();
     });
 });
 
