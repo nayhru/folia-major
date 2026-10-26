@@ -53,6 +53,13 @@ describe('Japanese romaji', () => {
         expect(romajiOfWords(tokyo)).toBe('toukyou wa yoru no nanaji');
     });
 
+    it('lengthens the vowel before a long mark and keeps brackets tight around their words', async () => {
+        const [words] = await readLines(['わー【悲報】【悲報】（うそー）']);
+        expect(romajiOfWords(words)).toBe('waa 【hihou】 【hihou】 (usoo)');
+        const [wish] = await readLines(['ラーメン食べたいー']);
+        expect(romajiOfWords(wish)).toBe('raamen tabetaii');
+    });
+
     it('keeps words the dictionary does not know as written', async () => {
         const [words] = await readLines(['Hello 世界']);
         expect(romajiOfWords(words)).toBe('Hello sekai');

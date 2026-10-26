@@ -345,6 +345,10 @@ export default {
     "aiThemeGeneratedCustomPreferred": "AI 主题已生成，但当前仍优先使用自定义主题",
   },
   "status": {
+    "lyricTranslationBusy": "AI 服务暂时繁忙，下次播放这首歌时会再翻译",
+    "autoTranslationOn": "将用 AI 翻译没有翻译的歌词",
+    "autoTranslationOff": "不再用 AI 翻译歌词",
+    "lyricTranslationFailed": "歌词翻译失败：{{error}}",
     "autoRomanizationOn": "将为没有罗马音的歌词补充罗马音",
     "autoRomanizationOff": "不再补充罗马音",
     "playerChromeAlwaysHidden": "UI 将始终隐藏",
@@ -601,6 +605,7 @@ export default {
       }
     },
     "commands": {
+      "lyric-auto-translation-toggle": { "title": "用 AI 翻译歌词", "description": "开启或关闭用你的 AI 模型把没有翻译的歌词翻译成界面语言" },
       "lyric-auto-romanization-toggle": { "title": "补充罗马音", "description": "开启或关闭为没有罗马音的日语、韩语和中文歌词生成罗马音" },
       "settings-ponder-hints": { "title": "思索教程提示", "description": "设置长按 G 的提示什么时候出现" },
       "ponder-hints-always": { "title": "思索提示：始终显示", "description": "所有可教学的控件都提示长按 G" },
@@ -1881,6 +1886,8 @@ export default {
     "lyricMatchPriorityDesc": "在多个歌词源都存在高置信度匹配时，优先选择该歌词源的结果。"
   },
   "options": {
+    "autoTranslation": "用 AI 翻译",
+    "autoTranslationDesc": "歌词没有可读的翻译时，用「外观」里设置的 AI 服务翻译成界面语言。每首歌的歌词只翻译一次并保存下来；会消耗该服务的额度。",
     "lyricEnrichmentHeading": "罗马音与翻译",
     "autoRomanization": "补充罗马音",
     "autoRomanizationDesc": "歌词来源没有提供罗马音时，为日语、韩语和中文歌词在本机生成。字幕显示罗马音时可见。",

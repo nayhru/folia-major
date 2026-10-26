@@ -15,8 +15,9 @@ import { useSettingsPage } from './settingsPageContext';
 
 // src/components/modal/settings/pages/LyricsPage.tsx
 // The 歌词 page: where a song's lyrics come from, the two tools that shift and filter them (their
-// rows open the existing dialogs), what Folia adds to lyrics that came without it (romanization),
-// and a folded group with the order in which lyric files beside a local song are preferred.
+// rows open the existing dialogs), what Folia adds to lyrics that came without it (romanization, an
+// AI translation), and a folded group with the order in which lyric files beside a local song are
+// preferred.
 
 const SOURCE: SettingsGroupDef = { id: 'lyrics', titleKey: 'options.settingsHeadingLyricSource' };
 const ADJUST: SettingsGroupDef = { id: 'lyricAdjust', titleKey: 'options.settingsHeadingLyricTiming' };
@@ -30,6 +31,7 @@ const O = {
     globalOffset: option(ADJUST, 'globalLyricTimelineOffset', 'options.globalLyricTimelineOffset'),
     filter: option(ADJUST, 'lyricFilterRegex', 'options.lyricFilterRegex'),
     autoRomanization: option(ENRICH, 'autoRomanization', 'options.autoRomanization'),
+    autoTranslation: option(ENRICH, 'autoTranslation', 'options.autoTranslation'),
     formatOrder: option(FORMATS, 'localLyricFormatOrderList', 'options.localLyricFormatOrderList'),
 };
 
@@ -52,6 +54,8 @@ const LyricsPage: React.FC = () => {
     const enrichment = useLyricEnrichmentStore(useShallow(state => ({
         autoRomanization: state.autoRomanization,
         setAutoRomanization: state.setAutoRomanization,
+        autoTranslation: state.autoTranslation,
+        setAutoTranslation: state.setAutoTranslation,
     })));
     const sources = useLyricMatchSources();
     // A choice that is not on offer now is not in force either: the matcher falls back the same way.
@@ -122,6 +126,11 @@ const LyricsPage: React.FC = () => {
                 <Row option={O.autoRomanization} note={t('options.autoRomanizationDesc')}>
                     <Toggle checked={enrichment.autoRomanization} onChange={enrichment.setAutoRomanization} />
                 </Row>
+                {window.electron?.translateLyrics && (
+                    <Row option={O.autoTranslation} note={t('options.autoTranslationDesc')}>
+                        <Toggle checked={enrichment.autoTranslation} onChange={enrichment.setAutoTranslation} />
+                    </Row>
+                )}
             </Group>
 
             <FoldedGroup def={FORMATS} summary={t('options.localLyricFormatOrderFirst', { format: `.${lyric.formatOrder[0]}` })}>

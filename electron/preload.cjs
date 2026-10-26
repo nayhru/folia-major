@@ -158,6 +158,7 @@ contextBridge.exposeInMainWorld('electron', {
     generateTheme: (lyricsText, options) => ipcRenderer.invoke('generate-theme', lyricsText, options),
     segmentLyrics: (lines) => ipcRenderer.invoke('segment-lyrics', lines),
     getJapaneseLyricReadings: (lines) => ipcRenderer.invoke('lyric-japanese-readings', lines),
+    translateLyrics: (lines, language) => ipcRenderer.invoke('translate-lyrics', lines, language),
     testAiConnection: (settings) => ipcRenderer.invoke('ai-test-connection', settings),
     listAiModels: (settings) => ipcRenderer.invoke('ai-list-models', settings),
     fetchLyricProxy: (url, init) => ipcRenderer.invoke('lyric-proxy-fetch', url, init),

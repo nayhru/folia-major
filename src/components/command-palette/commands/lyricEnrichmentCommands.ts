@@ -26,4 +26,21 @@ export const lyricEnrichmentCommands: CommandPaletteCommand[] = [
         },
         { icon: Languages },
     ),
+    createToggleCommand(
+        'lyric-auto-translation-toggle',
+        'settings',
+        'Translate lyrics with AI',
+        'Turn on or off translating lyrics without a translation into the interface language with your AI model',
+        ['translate lyrics', 'lyrics translation', 'ai translation', 'translator', '翻译歌词', 'AI翻译', 'terjemahkan lirik', 'traducir letras'],
+        context => {
+            const store = useLyricEnrichmentStore.getState();
+            store.toggleAutoTranslation();
+            const enabled = useLyricEnrichmentStore.getState().autoTranslation;
+            setStatusMessage({
+                type: 'info',
+                text: context.shared.t(enabled ? 'status.autoTranslationOn' : 'status.autoTranslationOff'),
+            });
+        },
+        { platform: ['electron'], icon: Languages },
+    ),
 ];

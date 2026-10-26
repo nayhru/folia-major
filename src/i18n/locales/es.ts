@@ -368,6 +368,10 @@ export default {
     "aiThemeGeneratedCustomPreferred": "Tema de IA generado, pero el tema personalizado sigue teniendo prioridad"
   },
   "status": {
+    "lyricTranslationBusy": "El servicio de IA está saturado; la letra se traducirá la próxima vez que suene esta canción",
+    "autoTranslationOn": "Las letras sin traducción se traducirán con IA",
+    "autoTranslationOff": "Las letras ya no se traducirán con IA",
+    "lyricTranslationFailed": "No se pudo traducir la letra: {{error}}",
     "autoRomanizationOn": "Se agregará romanización a las letras que no la traen",
     "autoRomanizationOff": "Ya no se agregará romanización",
     "playerChromeAlwaysHidden": "La interfaz permanecerá oculta",
@@ -635,6 +639,7 @@ export default {
       }
     },
     "commands": {
+      "lyric-auto-translation-toggle": { "title": "Traducir letras con IA", "description": "Activar o desactivar la traducción al idioma de la interfaz de las letras sin traducción, con tu modelo de IA" },
       "lyric-auto-romanization-toggle": { "title": "Agregar romanización", "description": "Activar o desactivar la romanización de letras en japonés, coreano y chino que vienen sin ella" },
       "settings-ponder-hints": {
         "title": "Sugerencias del tutorial Ponder",
@@ -2770,6 +2775,8 @@ export default {
     "lyricMatchPriorityDesc": "Cuando varias fuentes de letras tienen coincidencias de alta confianza, se prefiere primero esta fuente."
   },
   "options": {
+    "autoTranslation": "Traducir con IA",
+    "autoTranslationDesc": "Traduce al idioma de la interfaz las letras que no traen una traducción legible, con el proveedor de IA configurado en Apariencia. La letra de cada canción se traduce una vez y se guarda; usa tu cuota de ese servicio.",
     "lyricEnrichmentHeading": "Romanización y traducción",
     "autoRomanization": "Agregar romanización",
     "autoRomanizationDesc": "Para letras en japonés, coreano y chino cuya fuente no trae romanización. Se calcula en este equipo y se ve cuando el subtítulo muestra la romanización.",

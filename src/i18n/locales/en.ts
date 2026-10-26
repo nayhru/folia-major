@@ -345,6 +345,10 @@ export default {
     "aiThemeGeneratedCustomPreferred": "AI theme generated, but custom theme is still preferred",
   },
   "status": {
+    "lyricTranslationBusy": "The AI service is busy right now; the lyrics will be translated the next time this song plays",
+    "autoTranslationOn": "Lyrics without a translation will be translated with AI",
+    "autoTranslationOff": "Lyrics will no longer be translated with AI",
+    "lyricTranslationFailed": "Could not translate the lyrics: {{error}}",
     "autoRomanizationOn": "Romanization will be added to lyrics without one",
     "autoRomanizationOff": "Romanization will no longer be added",
     "playerChromeAlwaysHidden": "UI will remain hidden",
@@ -601,6 +605,7 @@ export default {
       }
     },
     "commands": {
+      "lyric-auto-translation-toggle": { "title": "Translate lyrics with AI", "description": "Turn on or off translating lyrics without a translation into the interface language with your AI model" },
       "lyric-auto-romanization-toggle": { "title": "Add romanization", "description": "Turn on or off romanizing Japanese, Korean and Chinese lyrics that come without romanization" },
       "settings-ponder-hints": { "title": "Ponder tutorial hints", "description": "Choose when the hold-G tutorial hint appears" },
       "ponder-hints-always": { "title": "Ponder hints: always show", "description": "Show the hold-G hint on every teachable control" },
@@ -1881,6 +1886,8 @@ export default {
     "lyricMatchPriorityDesc": "When multiple lyric sources have high-confidence matches, prefer this source first."
   },
   "options": {
+    "autoTranslation": "Translate with AI",
+    "autoTranslationDesc": "Translates lyrics that come without a readable translation into the interface language, with the AI provider set up under Appearance. Each song's lyrics are translated once and kept; it uses your quota with that service.",
     "lyricEnrichmentHeading": "Romanization and translation",
     "autoRomanization": "Add romanization",
     "autoRomanizationDesc": "For Japanese, Korean and Chinese lyrics whose source gives no romanization. Worked out on this device; it shows when the subtitle shows romanization.",

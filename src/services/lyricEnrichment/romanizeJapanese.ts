@@ -30,9 +30,25 @@ const joinsPrevious = (word: JapaneseWord): boolean => (
     || word.d === '接尾'
 );
 
+// A drawn-out vowel (わー, うそー) the dictionary leaves as a word of its own.
+const LONG_MARK = /^[ーｰ〜～]+$/;
+
+/** The words with each lone long-vowel mark joined onto the word before it, so it lengthens that vowel. */
+const withLongMarksJoined = (words: readonly JapaneseWord[]): JapaneseWord[] => words.reduce<JapaneseWord[]>((joined, word) => {
+    const previous = joined.at(-1);
+    if (previous && LONG_MARK.test(word.s) && previous.p !== '記号') {
+        joined[joined.length - 1] = { ...previous, s: previous.s + word.s, r: (previous.r ?? previous.s) + word.s };
+    } else {
+        joined.push(word);
+    }
+    return joined;
+}, []);
+
 export function romajiOfWords(words: readonly JapaneseWord[]): string {
     let out = '';
-    for (const word of words) {
+    // After an opening bracket the next word follows it without a space.
+    let afterOpening = false;
+    for (const word of withLongMarksJoined(words)) {
         if (word.p === '記号' && word.d === '空白') {
             if (out && !out.endsWith(' ')) out += ' ';
             continue;
@@ -40,7 +56,10 @@ export function romajiOfWords(words: readonly JapaneseWord[]): string {
         const spoken = word.p === '助詞' ? SPOKEN_PARTICLES[word.s] : undefined;
         const romaji = spoken ?? toRomaji(word.r ?? word.s);
         if (!romaji) continue;
-        out += out && !out.endsWith(' ') && !joinsPrevious(word) ? ` ${romaji}` : romaji;
+        const opening = word.p === '記号' && word.d === '括弧開';
+        const spaced = out && !out.endsWith(' ') && !afterOpening && (opening || !joinsPrevious(word));
+        out += spaced ? ` ${romaji}` : romaji;
+        afterOpening = opening;
     }
     return out.trim();
 }

@@ -937,6 +937,8 @@ declare global {
       segmentLyrics: (lines: string[]) => Promise<string[][]>;
       /** Each Japanese lyric line as its words with their katakana reading (electron/lyricEnrichment/); null when it failed. */
       getJapaneseLyricReadings: (lines: string[]) => Promise<Array<Array<{ s: string; r: string | null; p: string; d: string }>> | null>;
+      /** Translates lyric lines into an interface language with the user's AI model (electron/lyricEnrichment/translation.cjs). */
+      translateLyrics: (lines: string[], language: string) => Promise<{ translations: string[] } | { busy: true } | { error: string }>;
       /** Sends "hello" with the unsaved AI settings from the form and reports the reply. Never rejects on connection failures. */
       testAiConnection: (settings: AiConnectionTestPayload) => Promise<AiConnectionTestResult>;
       listAiModels: (settings: AiConnectionTestPayload) => Promise<AiModelListResult>;
