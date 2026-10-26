@@ -345,6 +345,9 @@ export default {
     "aiThemeGeneratedCustomPreferred": "Tema AI dibuat, tapi tema kustom tetap diutamakan"
   },
   "status": {
+    "lyricMainText_original": "Lirik menampilkan teks asli",
+    "lyricMainText_romanization": "Lirik menampilkan romanisasi",
+    "lyricMainText_translation": "Lirik menampilkan terjemahan",
     "lyricTranslationBusy": "Layanan AI sedang sibuk; lirik akan diterjemahkan saat lagu ini diputar lagi",
     "autoTranslationOn": "Lirik tanpa terjemahan akan diterjemahkan dengan AI",
     "autoTranslationOff": "Lirik tidak lagi diterjemahkan dengan AI",
@@ -605,6 +608,7 @@ export default {
       }
     },
     "commands": {
+      "lyric-main-text-cycle": { "title": "Ganti teks lirik utama", "description": "Tampilkan lirik sebagai teks asli, romanisasi, atau terjemahan; teks asli pindah ke subtitel" },
       "lyric-auto-translation-toggle": { "title": "Terjemahkan lirik dengan AI", "description": "Aktifkan atau nonaktifkan penerjemahan lirik tanpa terjemahan ke bahasa antarmuka dengan model AI Anda" },
       "lyric-auto-romanization-toggle": { "title": "Tambahkan romanisasi", "description": "Aktifkan atau nonaktifkan romanisasi lirik Jepang, Korea, dan Mandarin yang datang tanpa romanisasi" },
       "settings-ponder-hints": { "title": "Petunjuk tutorial Ponder", "description": "Atur kapan petunjuk tahan G muncul" },
@@ -1886,6 +1890,11 @@ export default {
     "lyricMatchPriorityDesc": "Saat beberapa sumber lirik memiliki kecocokan berkualitas tinggi, utamakan sumber ini terlebih dahulu."
   },
   "options": {
+    "lyricMainText": "Teks lirik utama",
+    "lyricMainTextDesc": "Teks yang digambar gaya lirik sebagai lirik itu sendiri. Dengan romanisasi atau terjemahan, teks asli pindah ke subtitel; baris tanpa teks pilihan tetap menampilkan aslinya.",
+    "lyricMainTextOriginal": "Asli",
+    "lyricMainTextRomanization": "Romanisasi",
+    "lyricMainTextTranslation": "Terjemahan",
     "autoTranslation": "Terjemahkan dengan AI",
     "autoTranslationDesc": "Menerjemahkan lirik yang tidak memiliki terjemahan yang bisa dibaca ke bahasa antarmuka, dengan penyedia AI yang diatur di Tampilan. Lirik setiap lagu diterjemahkan sekali lalu disimpan; ini memakai kuota layanan tersebut.",
     "lyricEnrichmentHeading": "Romanisasi dan terjemahan",

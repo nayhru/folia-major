@@ -345,6 +345,9 @@ export default {
     "aiThemeGeneratedCustomPreferred": "AI 主题已生成，但当前仍优先使用自定义主题",
   },
   "status": {
+    "lyricMainText_original": "歌词显示原文",
+    "lyricMainText_romanization": "歌词显示罗马音",
+    "lyricMainText_translation": "歌词显示翻译",
     "lyricTranslationBusy": "AI 服务暂时繁忙，下次播放这首歌时会再翻译",
     "autoTranslationOn": "将用 AI 翻译没有翻译的歌词",
     "autoTranslationOff": "不再用 AI 翻译歌词",
@@ -605,6 +608,7 @@ export default {
       }
     },
     "commands": {
+      "lyric-main-text-cycle": { "title": "切换主歌词文字", "description": "把歌词本身显示为原文、罗马音或翻译；原文改在字幕中显示" },
       "lyric-auto-translation-toggle": { "title": "用 AI 翻译歌词", "description": "开启或关闭用你的 AI 模型把没有翻译的歌词翻译成界面语言" },
       "lyric-auto-romanization-toggle": { "title": "补充罗马音", "description": "开启或关闭为没有罗马音的日语、韩语和中文歌词生成罗马音" },
       "settings-ponder-hints": { "title": "思索教程提示", "description": "设置长按 G 的提示什么时候出现" },
@@ -1886,6 +1890,11 @@ export default {
     "lyricMatchPriorityDesc": "在多个歌词源都存在高置信度匹配时，优先选择该歌词源的结果。"
   },
   "options": {
+    "lyricMainText": "主歌词文字",
+    "lyricMainTextDesc": "歌词样式作为歌词本身显示的文字。选择罗马音或翻译时，原文改在字幕中显示；没有所选文字的行仍显示原文。",
+    "lyricMainTextOriginal": "原文",
+    "lyricMainTextRomanization": "罗马音",
+    "lyricMainTextTranslation": "翻译",
     "autoTranslation": "用 AI 翻译",
     "autoTranslationDesc": "歌词没有可读的翻译时，用「外观」里设置的 AI 服务翻译成界面语言。每首歌的歌词只翻译一次并保存下来；会消耗该服务的额度。",
     "lyricEnrichmentHeading": "罗马音与翻译",

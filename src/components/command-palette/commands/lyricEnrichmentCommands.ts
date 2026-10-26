@@ -43,4 +43,16 @@ export const lyricEnrichmentCommands: CommandPaletteCommand[] = [
         },
         { platform: ['electron'], icon: Languages },
     ),
+    createToggleCommand(
+        'lyric-main-text-cycle',
+        'settings',
+        'Cycle the main lyric text',
+        'Draw the lyric itself as the original, its romanization or its translation; the original moves to the subtitle',
+        ['main lyric', 'lyric text', 'show romaji', 'show translation', 'swap lyrics', '主歌词', '显示罗马音', '显示翻译', 'lirik utama', 'letra principal'],
+        context => {
+            const next = useLyricEnrichmentStore.getState().cycleMainText();
+            setStatusMessage({ type: 'info', text: context.shared.t(`status.lyricMainText_${next}`) });
+        },
+        { icon: Languages },
+    ),
 ];

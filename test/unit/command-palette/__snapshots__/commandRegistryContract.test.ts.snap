@@ -219,6 +219,7 @@ exports[`command palette registry contract > keeps the registered command order 
   "hifi-signal-path",
   "lyric-auto-romanization-toggle",
   "lyric-auto-translation-toggle",
+  "lyric-main-text-cycle",
   "lattice-focus-current",
   "locate-playing-song",
   "navigate-home",

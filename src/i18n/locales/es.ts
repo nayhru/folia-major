@@ -368,6 +368,9 @@ export default {
     "aiThemeGeneratedCustomPreferred": "Tema de IA generado, pero el tema personalizado sigue teniendo prioridad"
   },
   "status": {
+    "lyricMainText_original": "La letra muestra el texto original",
+    "lyricMainText_romanization": "La letra muestra la romanización",
+    "lyricMainText_translation": "La letra muestra la traducción",
     "lyricTranslationBusy": "El servicio de IA está saturado; la letra se traducirá la próxima vez que suene esta canción",
     "autoTranslationOn": "Las letras sin traducción se traducirán con IA",
     "autoTranslationOff": "Las letras ya no se traducirán con IA",
@@ -639,6 +642,7 @@ export default {
       }
     },
     "commands": {
+      "lyric-main-text-cycle": { "title": "Alternar la letra principal", "description": "Mostrar como letra el original, su romanización o su traducción; el original pasa al subtítulo" },
       "lyric-auto-translation-toggle": { "title": "Traducir letras con IA", "description": "Activar o desactivar la traducción al idioma de la interfaz de las letras sin traducción, con tu modelo de IA" },
       "lyric-auto-romanization-toggle": { "title": "Agregar romanización", "description": "Activar o desactivar la romanización de letras en japonés, coreano y chino que vienen sin ella" },
       "settings-ponder-hints": {
@@ -2775,6 +2779,11 @@ export default {
     "lyricMatchPriorityDesc": "Cuando varias fuentes de letras tienen coincidencias de alta confianza, se prefiere primero esta fuente."
   },
   "options": {
+    "lyricMainText": "Letra principal",
+    "lyricMainTextDesc": "Lo que los estilos de letra dibujan como la letra misma. Con romanización o traducción, el original pasa al subtítulo; una línea sin el texto elegido muestra el original.",
+    "lyricMainTextOriginal": "Original",
+    "lyricMainTextRomanization": "Romanización",
+    "lyricMainTextTranslation": "Traducción",
     "autoTranslation": "Traducir con IA",
     "autoTranslationDesc": "Traduce al idioma de la interfaz las letras que no traen una traducción legible, con el proveedor de IA configurado en Apariencia. La letra de cada canción se traduce una vez y se guarda; usa tu cuota de ese servicio.",
     "lyricEnrichmentHeading": "Romanización y traducción",

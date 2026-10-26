@@ -73,16 +73,18 @@ describe('the answer of the model', () => {
 });
 
 describe('a busy AI service', () => {
-    const handlerWith = (answers: Array<string | Error>) => {
+    const handlerWith = (answers: Array<string | Error>, provider = 'openai') => {
         const handlers: Record<string, (...args: unknown[]) => Promise<unknown>> = {};
         const calls: number[] = [];
+        const models: unknown[] = [];
         registerLyricTranslationIpc({
             ipcMain: { handle: (name: string, handler: (...args: unknown[]) => Promise<unknown>) => { handlers[name] = handler; } },
             isTrustedMainWindowContents: () => true,
-            store: { get: () => undefined },
-            aiCredentials: { settingsView: {} },
-            runAiJsonCompletion: async () => {
+            store: { get: (key: string) => (key === 'AI_PROVIDER' ? provider : undefined) },
+            aiCredentials: { settingsView: { get: () => undefined } },
+            runAiJsonCompletion: async ({ store }: { store: { get: (key: string) => unknown } }) => {
                 calls.push(1);
+                models.push(store.get('GEMINI_API_MODEL'));
                 const next = answers.shift();
                 if (next instanceof Error) throw next;
                 return next;
@@ -90,7 +92,7 @@ describe('a busy AI service', () => {
             fetchWithOptionalSystemProxy: () => undefined,
             pause: async () => {},
         });
-        return { translate: (lines: string[]) => handlers['translate-lyrics']({ sender: {} }, lines, 'es'), calls };
+        return { translate: (lines: string[]) => handlers['translate-lyrics']({ sender: {} }, lines, 'es'), calls, models };
     };
     const busy = () => new Error('Gemini API error: 503 Service Unavailable - {\n  "status": "UNAVAILABLE"');
 
@@ -103,6 +105,12 @@ describe('a busy AI service', () => {
         const { translate, calls } = handlerWith([busy(), busy(), '{"translations":["Hola"]}']);
         expect(await translate(['こんにちは'])).toEqual({ translations: ['Hola'] });
         expect(calls).toHaveLength(3);
+    });
+
+    it('on Gemini, tries the stable light models once each when the one set up stays busy', async () => {
+        const gemini = handlerWith([busy(), busy(), busy(), new Error('404 model not found'), '{"translations":["Hola"]}'], 'gemini');
+        expect(await gemini.translate(['a'])).toEqual({ translations: ['Hola'] });
+        expect(gemini.models).toEqual([undefined, undefined, undefined, 'gemini-flash-lite-latest', 'gemini-flash-latest']);
     });
 
     it('says busy when the service stays busy, and gives other failures their first line', async () => {

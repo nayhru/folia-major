@@ -345,6 +345,9 @@ export default {
     "aiThemeGeneratedCustomPreferred": "AI theme generated, but custom theme is still preferred",
   },
   "status": {
+    "lyricMainText_original": "The lyrics show the original text",
+    "lyricMainText_romanization": "The lyrics show the romanization",
+    "lyricMainText_translation": "The lyrics show the translation",
     "lyricTranslationBusy": "The AI service is busy right now; the lyrics will be translated the next time this song plays",
     "autoTranslationOn": "Lyrics without a translation will be translated with AI",
     "autoTranslationOff": "Lyrics will no longer be translated with AI",
@@ -605,6 +608,7 @@ export default {
       }
     },
     "commands": {
+      "lyric-main-text-cycle": { "title": "Cycle the main lyric text", "description": "Draw the lyric itself as the original, its romanization or its translation; the original moves to the subtitle" },
       "lyric-auto-translation-toggle": { "title": "Translate lyrics with AI", "description": "Turn on or off translating lyrics without a translation into the interface language with your AI model" },
       "lyric-auto-romanization-toggle": { "title": "Add romanization", "description": "Turn on or off romanizing Japanese, Korean and Chinese lyrics that come without romanization" },
       "settings-ponder-hints": { "title": "Ponder tutorial hints", "description": "Choose when the hold-G tutorial hint appears" },
@@ -1886,6 +1890,11 @@ export default {
     "lyricMatchPriorityDesc": "When multiple lyric sources have high-confidence matches, prefer this source first."
   },
   "options": {
+    "lyricMainText": "Main lyric text",
+    "lyricMainTextDesc": "What the lyric styles draw as the lyric itself. With romanization or translation, the original moves to the subtitle; a line without the chosen text shows the original.",
+    "lyricMainTextOriginal": "Original",
+    "lyricMainTextRomanization": "Romanization",
+    "lyricMainTextTranslation": "Translation",
     "autoTranslation": "Translate with AI",
     "autoTranslationDesc": "Translates lyrics that come without a readable translation into the interface language, with the AI provider set up under Appearance. Each song's lyrics are translated once and kept; it uses your quota with that service.",
     "lyricEnrichmentHeading": "Romanization and translation",

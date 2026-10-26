@@ -23,6 +23,8 @@ import {
 // busy is asked again the next time these lyrics are loaded.
 const translating = new Map<string, Promise<TranslationTable>>();
 const failed = new Set<string>();
+// While a busy service's lyrics stay on screen, they are asked for again after these waits.
+const LATER_RETRY_MS = [45_000, 120_000];
 
 const translationOf = (key: string, texts: string[], language: Parameters<typeof requestTranslation>[1]): Promise<TranslationTable> => {
     let pending = translating.get(key);
@@ -71,7 +73,8 @@ export function useLyricEnrichment() {
         const texts = linesToTranslate(lyrics, language);
         if (!texts.length) return;
         let cancelled = false;
-        void (async () => {
+        let retry: ReturnType<typeof setTimeout> | undefined;
+        const attempt = async (round: number) => {
             const key = await translationCacheKey(texts, language);
             if (cancelled || failed.has(key)) return;
             try {
@@ -80,7 +83,13 @@ export function useLyricEnrichment() {
                 setLyricsState(previous => reworkShownLyrics(previous, source => withTranslation(source, table, language)));
             } catch (error) {
                 if (error instanceof TranslationBusyError) {
-                    if (!cancelled) setStatusMessage({ type: 'info', text: t('status.lyricTranslationBusy') });
+                    if (cancelled) return;
+                    // Still the same lyrics on screen a while later: the service may have room by then.
+                    if (round < LATER_RETRY_MS.length) {
+                        retry = setTimeout(() => void attempt(round + 1), LATER_RETRY_MS[round]);
+                        return;
+                    }
+                    setStatusMessage({ type: 'info', text: t('status.lyricTranslationBusy') });
                     return;
                 }
                 failed.add(key);
@@ -89,9 +98,11 @@ export function useLyricEnrichment() {
                 console.warn('[LyricEnrichment] translation failed:', message);
                 setStatusMessage({ type: 'error', text: t('status.lyricTranslationFailed', { error: message }) });
             }
-        })();
+        };
+        void attempt(0);
         return () => {
             cancelled = true;
+            clearTimeout(retry);
         };
     }, [lyrics, autoTranslation, uiLanguage, t]);
 }

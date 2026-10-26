@@ -32,6 +32,7 @@ const O = {
     filter: option(ADJUST, 'lyricFilterRegex', 'options.lyricFilterRegex'),
     autoRomanization: option(ENRICH, 'autoRomanization', 'options.autoRomanization'),
     autoTranslation: option(ENRICH, 'autoTranslation', 'options.autoTranslation'),
+    mainText: option(ENRICH, 'lyricMainText', 'options.lyricMainText'),
     formatOrder: option(FORMATS, 'localLyricFormatOrderList', 'options.localLyricFormatOrderList'),
 };
 
@@ -56,6 +57,8 @@ const LyricsPage: React.FC = () => {
         setAutoRomanization: state.setAutoRomanization,
         autoTranslation: state.autoTranslation,
         setAutoTranslation: state.setAutoTranslation,
+        mainText: state.mainText,
+        setMainText: state.setMainText,
     })));
     const sources = useLyricMatchSources();
     // A choice that is not on offer now is not in force either: the matcher falls back the same way.
@@ -131,6 +134,17 @@ const LyricsPage: React.FC = () => {
                         <Toggle checked={enrichment.autoTranslation} onChange={enrichment.setAutoTranslation} />
                     </Row>
                 )}
+                <Row option={O.mainText} note={t('options.lyricMainTextDesc')}>
+                    <Segmented
+                        value={enrichment.mainText}
+                        options={[
+                            { value: 'original', label: t('options.lyricMainTextOriginal') },
+                            { value: 'romanization', label: t('options.lyricMainTextRomanization') },
+                            { value: 'translation', label: t('options.lyricMainTextTranslation') },
+                        ]}
+                        onChange={enrichment.setMainText}
+                    />
+                </Row>
             </Group>
 
             <FoldedGroup def={FORMATS} summary={t('options.localLyricFormatOrderFirst', { format: `.${lyric.formatOrder[0]}` })}>

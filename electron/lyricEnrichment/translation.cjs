@@ -61,6 +61,10 @@ const sourcePrompt = lines => lines.map((line, index) => `${index + 1}. ${line}`
 const BUSY_RETRY_MS = [2000, 6000];
 const isBusy = message => /\b(429|500|502|503|504)\b|UNAVAILABLE|RESOURCE_EXHAUSTED|overloaded|high demand/i.test(message);
 const wait = ms => new Promise(resolve => { setTimeout(resolve, ms); });
+// On Gemini, the models asked once each when the one set up is still busy: Google's stable aliases,
+// the light one first, as a preview model is the one most often out of capacity. A model that is not
+// offered to the key (an answer that is not "busy") is passed over.
+const GEMINI_FALLBACK_MODELS = ['gemini-flash-lite-latest', 'gemini-flash-latest'];
 
 /** The translations from the model's answer, one per line; throws on an answer of another shape. */
 function parseTranslations(raw, count) {
@@ -84,32 +88,55 @@ function registerLyricTranslationIpc({ ipcMain, isTrustedMainWindowContents, sto
     if (!language || !Array.isArray(lines) || lines.length === 0 || lines.length > MAX_LINES) return { error: 'Nothing to translate' };
     const texts = lines.map(line => String(line ?? '').slice(0, MAX_LINE_CHARS));
     const useSystemProxy = store.get('USE_SYSTEM_PROXY_FOR_AI') || false;
-    console.log(`[LyricEnrichment] translating ${texts.length} lines into ${languageKey} via ${store.get('AI_PROVIDER') || 'gemini'}`);
+    const provider = store.get('AI_PROVIDER') || 'gemini';
+    console.log(`[LyricEnrichment] translating ${texts.length} lines into ${languageKey} via ${provider}`);
+    const settings = aiCredentials.settingsView;
+    // The settings as the AI client reads them, with another Gemini model in place of the one set up.
+    const withModel = model => (model ? { ...settings, get: key => (key === 'GEMINI_API_MODEL' ? model : settings.get(key)) } : settings);
+    const ask = model => runAiJsonCompletion({
+      store: withModel(model),
+      task: 'segmentation',
+      systemPrompt: systemPrompt(language),
+      sourcePrompt: sourcePrompt(texts),
+      schema: JSON_SCHEMA,
+      schemaName: SCHEMA_NAME,
+      geminiSchema: GEMINI_SCHEMA,
+      customFetch: (url, options) => fetchWithOptionalSystemProxy(url, options, useSystemProxy),
+      answerTokens: MAX_OUTPUT_TOKENS,
+    });
+    const firstLine = error => (error instanceof Error ? error.message : String(error)).split('\n')[0];
+
+    let busy = false;
     for (let attempt = 0; ; attempt++) {
       try {
-        const raw = await runAiJsonCompletion({
-          store: aiCredentials.settingsView,
-          task: 'segmentation',
-          systemPrompt: systemPrompt(language),
-          sourcePrompt: sourcePrompt(texts),
-          schema: JSON_SCHEMA,
-          schemaName: SCHEMA_NAME,
-          geminiSchema: GEMINI_SCHEMA,
-          customFetch: (url, options) => fetchWithOptionalSystemProxy(url, options, useSystemProxy),
-          answerTokens: MAX_OUTPUT_TOKENS,
-        });
-        return { translations: parseTranslations(raw, texts.length) };
+        return { translations: parseTranslations(await ask(null), texts.length) };
       } catch (error) {
         const message = error instanceof Error ? error.message : String(error);
-        if (isBusy(message) && attempt < BUSY_RETRY_MS.length) {
-          console.warn(`[LyricEnrichment] the AI service is busy; asking again in ${BUSY_RETRY_MS[attempt]}ms`);
-          await pause(BUSY_RETRY_MS[attempt]);
-          continue;
+        if (!isBusy(message)) {
+          console.warn('[LyricEnrichment] translation failed:', firstLine(error));
+          return { error: firstLine(error) };
         }
-        console.warn('[LyricEnrichment] translation failed:', message.split('\n')[0]);
-        return isBusy(message) ? { busy: true } : { error: message.split('\n')[0] };
+        if (attempt >= BUSY_RETRY_MS.length) {
+          busy = true;
+          break;
+        }
+        console.warn(`[LyricEnrichment] the AI service is busy; asking again in ${BUSY_RETRY_MS[attempt]}ms`);
+        await pause(BUSY_RETRY_MS[attempt]);
       }
     }
+    if (busy && provider === 'gemini') {
+      for (const model of GEMINI_FALLBACK_MODELS) {
+        try {
+          const translations = parseTranslations(await ask(model), texts.length);
+          console.log(`[LyricEnrichment] translated with ${model}, the model set up being busy`);
+          return { translations };
+        } catch (error) {
+          console.warn(`[LyricEnrichment] ${model} did not translate: ${firstLine(error)}`);
+        }
+      }
+    }
+    console.warn('[LyricEnrichment] translation failed: the AI service stayed busy');
+    return { busy: true };
   });
 }
 

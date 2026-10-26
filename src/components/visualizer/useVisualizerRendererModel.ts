@@ -30,6 +30,8 @@ import { useVisualizerSongHandoff } from './useVisualizerSongHandoff';
 import { useShownTheme } from './useShownTheme';
 import { NO_LYRIC_LINES } from '../../utils/lyrics/noLyricLines';
 import { hideChineseTranslations, shouldHideChineseTranslations } from '../../utils/lyrics/hideChineseTranslations';
+import { withMainText } from '../../services/lyricEnrichment/mainText';
+import { useLyricEnrichmentStore } from '../../services/lyricEnrichment/lyricEnrichmentStore';
 import { useTranslation } from 'react-i18next';
 import { selectLibraryPlayerBackdrop, useLibraryPlayerOcclusionStore } from '../../stores/useLibraryPlayerOcclusionStore';
 import { resolveVisualizerShowText } from '../app/presentation/playerVisualizerBackdrop';
@@ -107,10 +109,12 @@ export const useVisualizerRendererModel = ({
     // Source translations are always Chinese; outside a Chinese interface they are hidden.
     const { i18n } = useTranslation();
     const hideChinese = shouldHideChineseTranslations(i18n.resolvedLanguage ?? i18n.language);
+    // The styles may draw the romanization or the translation as the lyric, the original moving to the subtitle.
+    const lyricMainText = useLyricEnrichmentStore(state => state.mainText);
     const displayLines = useMemo(() => {
         const lines = displayLyrics?.lines || NO_LYRIC_LINES;
-        return hideChinese ? hideChineseTranslations(lines) : lines;
-    }, [displayLyrics, hideChinese]);
+        return withMainText(hideChinese ? hideChineseTranslations(lines) : lines, lyricMainText);
+    }, [displayLyrics, hideChinese, lyricMainText]);
     const displayCoverUrl = usePlaybackStore(selectDisplayCoverUrl);
     const displayPlayerState = usePlaybackStore(selectDisplayPlayerState);
     const displayDuration = usePlaybackStore(selectDisplayDuration);
