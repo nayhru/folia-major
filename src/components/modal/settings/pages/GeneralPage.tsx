@@ -54,8 +54,13 @@ const GeneralPage: React.FC = () => {
         ? t('options.appLanguageZhTW')
         : resolvedLanguage?.startsWith('zh')
             ? t('options.appLanguageZhCN')
-            : resolvedLanguage === 'in' || resolvedLanguage?.startsWith('id') ? t('options.appLanguageInID')
-                : resolvedLanguage?.startsWith('es') ? t('options.appLanguageEs') : t('options.appLanguageEnUS');
+            : resolvedLanguage === 'in' || resolvedLanguage?.startsWith('id')
+                ? t('options.appLanguageInID')
+                : resolvedLanguage === 'vi'
+                    ? t('options.appLanguageViVN')
+                    : resolvedLanguage?.startsWith('es')
+                        ? t('options.appLanguageEs')
+                        : t('options.appLanguageEnUS');
 
     const isInternalBuild = electronSettings.UPDATE_CHANNEL === 'internal';
     const autoUpdateSupported = Boolean(updateStatus?.autoUpdateSupported);
@@ -76,6 +81,7 @@ const GeneralPage: React.FC = () => {
                             { value: 'en', label: t('options.appLanguageEnUS') },
                             { value: 'in', label: t('options.appLanguageInID') },
                             { value: 'es', label: t('options.appLanguageEs') },
+                            { value: 'vi', label: t('options.appLanguageViVN') },
                         ]}
                         onChange={preference => void setLanguagePreference(preference)}
                     />

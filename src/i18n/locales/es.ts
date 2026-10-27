@@ -337,6 +337,8 @@ export default {
     "playerBackButtonAutoHidden": "El botón de volver del reproductor aparecerá al pasar el cursor",
     "mainWindowTitlebarAlwaysShown": "Los botones de control de la ventana principal permanecerán visibles",
     "mainWindowTitlebarAutoHidden": "Los botones de control de la ventana principal aparecerán al pasar el cursor",
+    "playerHeaderBlurOn": "La barra superior del reproductor ahora tiene fondo difuminado",
+    "playerHeaderBlurOff": "Se desactivó el fondo difuminado de la barra superior del reproductor",
     "cursorAutoHideOn": "El cursor se ocultará junto con los controles del reproductor",
     "cursorAutoHideOff": "El cursor seguirá visible cuando se oculten los controles del reproductor",
     "cursorIdleHideOn": "El cursor se ocultará solo cuando no lo muevas",
@@ -642,9 +644,18 @@ export default {
       }
     },
     "commands": {
-      "lyric-main-text-cycle": { "title": "Alternar la letra principal", "description": "Mostrar como letra el original, su romanización o su traducción; el original pasa al subtítulo" },
-      "lyric-auto-translation-toggle": { "title": "Traducir letras con IA", "description": "Activar o desactivar la traducción al idioma de la interfaz de las letras sin traducción, con tu modelo de IA" },
-      "lyric-auto-romanization-toggle": { "title": "Agregar romanización", "description": "Activar o desactivar la romanización de letras en japonés, coreano y chino que vienen sin ella" },
+      "lyric-main-text-cycle": {
+        "title": "Alternar la letra principal",
+        "description": "Mostrar como letra el original, su romanización o su traducción; el original pasa al subtítulo"
+      },
+      "lyric-auto-translation-toggle": {
+        "title": "Traducir letras con IA",
+        "description": "Activar o desactivar la traducción al idioma de la interfaz de las letras sin traducción, con tu modelo de IA"
+      },
+      "lyric-auto-romanization-toggle": {
+        "title": "Agregar romanización",
+        "description": "Activar o desactivar la romanización de letras en japonés, coreano y chino que vienen sin ella"
+      },
       "settings-ponder-hints": {
         "title": "Sugerencias del tutorial Ponder",
         "description": "Elige cuándo aparece la sugerencia del tutorial de mantener G"
@@ -1124,6 +1135,10 @@ export default {
       "grid-edit-entity": {
         "title": "Editar este álbum o artista",
         "description": "Abrir el editor de entidades de la biblioteca local para esta colección"
+      },
+      "grid-set-cover": {
+        "title": "Elegir portada de la colección",
+        "description": "Elegir una portada fija para esta carpeta, álbum o playlist local"
       },
       "grid-toggle-edit-mode": {
         "title": "Activar o desactivar el modo de edición",
@@ -1705,6 +1720,10 @@ export default {
         "title": "Mostrar siempre los botones de control de la ventana",
         "description": "Activar o desactivar que los botones de control de la ventana principal sigan visibles"
       },
+      "settings-toggle-player-header-blur": {
+        "title": "Barra superior del reproductor difuminada",
+        "description": "Activar o desactivar una barra esmerilada detrás de la barra de título en la página del reproductor, para que sus botones se lean bien"
+      },
       "settings-toggle-fullscreen-titlebar-button": {
         "title": "Visibilidad del botón de pantalla completa",
         "description": "Mostrar u ocultar el botón de pantalla completa en los controles de la ventana de escritorio"
@@ -1772,6 +1791,10 @@ export default {
       "settings-language-es": {
         "title": "Cambiar el idioma a español",
         "description": "Usar español en la interfaz"
+      },
+      "settings-language-vi": {
+        "title": "Cambiar el idioma a vietnamita",
+        "description": "Usar vietnamita en la interfaz"
       }
     }
   },
@@ -2981,6 +3004,7 @@ export default {
     "appLanguageEnUS": "Inglés",
     "appLanguageInID": "Indonesio",
     "appLanguageEs": "Español",
+    "appLanguageViVN": "Tiếng Việt",
     "appLanguageSystemHint": "Actual: {{language}}",
     "playbackEntryView": "Vista que abre Reproducir",
     "playbackEntryViewDesc": "Qué vista se abre por defecto después de presionar reproducir.",
@@ -3203,6 +3227,8 @@ export default {
     "alwaysShowTrackSwitchButtonsDesc": "Mantiene visibles las flechas de anterior/siguiente a ambos lados del título de la barra de progreso, en lugar de mostrarlas al pasar el cursor.",
     "alwaysShowMainWindowTitlebar": "Mostrar siempre los botones de control de la ventana",
     "alwaysShowMainWindowTitlebarDesc": "Mantiene a la vista los botones de minimizar, maximizar y cerrar.",
+    "playerHeaderBlur": "Barra superior del reproductor difuminada",
+    "playerHeaderBlurDesc": "Pone detrás de los botones de la ventana, en la página del reproductor, la misma barra esmerilada de la página de inicio, para que se lean bien sobre una imagen oscura en el tema claro.",
     "hideFullscreenButton": "Ocultar botón de pantalla completa",
     "hideFullscreenButtonDesc": "Oculta el botón de pantalla completa en los controles de la ventana",
     "useNativeMacFullscreenButton": "Usar el botón de pantalla completa nativo de macOS",
@@ -3253,7 +3279,7 @@ export default {
     "stageTrackPillMode_always": "Mostrar siempre",
     "stageTrackPillMode_never": "No mostrar nunca",
     "stageTrackPillOnHome": "Mostrar también en la página de inicio",
-    "stageTrackPillOnHomeDesc": "Desactivado, la tarjeta se queda en el reproductor y la cola de reproducción. Activado, también se muestra en inicio, incluso después de abrir la app o de un cambio de canción ahí. Con la biblioteca Bravais siempre está en el muro.",
+    "stageTrackPillOnHomeDesc": "Desactivado, la tarjeta se queda en el reproductor y la cola de reproducción. Activado, también se muestra en inicio, incluso después de abrir la app o de un cambio de canción ahí.",
     "stageTrackPillTimeout": "Duración visible",
     "disableVisualizerVignette": "Desactivar viñeta",
     "visualizerVignette": "Viñeta",
@@ -4357,6 +4383,33 @@ export default {
         "description": "Con la sesión iniciada, tus propias listas de reproducción privadas ahora cargan sus canciones, con paginación real. Los backends autoalojados deben usar qq-music-api 3.1.2 o posterior; los más antiguos recurren automáticamente al método anterior, y una lista que no se puede leer ahora indica que no es pública en lugar de mostrarse vacía sin aviso."
       }
     },
+    "v0_7_23": {
+      "intro": "Te damos la bienvenida a la 0.7.23. La app de escritorio suma un motor de reproducción mpv que envía las canciones locales y de Navidrome al dispositivo de salida tal como son; ReplayGain suma el equilibrio inteligente, que ajusta según el volumen medido; el filtrado de letras pasa a ser una lista de reglas; Tempera tiene un nuevo efecto de batería, Profundidad Sumizome, y la interfaz ya está disponible en vietnamita.",
+      "hifi": {
+        "title": "Reproducción HiFi bit-perfect",
+        "description": "En escritorio, arriba de Ajustes → Reproducción hay una opción de motor de reproducción: los archivos locales y Navidrome pueden pasar a mpv, que envía el audio al dispositivo de salida en el formato del archivo original, con modo exclusivo en Windows y macOS y transiciones sin pausa cuando la siguiente canción también suena por mpv. En Windows y macOS, mpv se descarga con un clic (con un espejo si GitHub no responde y enlaces a una nube para descargarlo a mano); en Linux se usa el mpv instalado en el sistema. Una insignia junto a la barra de progreso y el panel de la ruta de la señal muestran si una canción es bit-perfect y qué conversiones ocurren en el camino. Con mpv, estas canciones se saltan el ecualizador, los efectos de audio, ReplayGain, los fundidos, las transiciones inteligentes, el espectro y la exportación de video de la letra; las canciones en línea siempre usan Web Audio."
+      },
+      "smartBalance": {
+        "title": "Equilibrio inteligente del volumen",
+        "description": "ReplayGain suma un modo inteligente: mide el volumen de cada canción, baja las más fuertes y sube las más suaves hasta donde se puede sin distorsionar, sin necesitar etiquetas de ganancia en los archivos. Aprende mientras suenan las canciones y ajusta como máximo una vez por reproducción; lo que mide se guarda aparte y se puede borrar en Datos del equilibrio inteligente, en la página Almacenamiento."
+      },
+      "lyricFilter": {
+        "title": "Reglas de filtrado de letras",
+        "description": "El filtrado de letras ahora es una lista de reglas: empieza con, contiene, línea completa, termina con, lista de palabras y expresión. Mientras editas puedes ver qué líneas quita cada regla en esta canción y en las que has escuchado; las expresiones escritas a mano se prueban primero en segundo plano, y una que tarda demasiado no se aplica. Los filtros anteriores se convierten solos, y si cierras la ventana con cambios sin guardar, te pregunta antes."
+      },
+      "temperaInk": {
+        "title": "Tempera: Profundidad Sumizome",
+        "description": "El modo de pulso inteligente de Tempera suma Profundidad Sumizome: en cada bombo y caja, una mancha de tinta del color del tema se extiende por la escena y deja una marca tenue en el papel entre golpe y golpe. La escena también gana profundidad: la marca de agua y las imágenes de fondo quedan detrás con un leve desenfoque, la letra eco y las imágenes de primer plano flotan delante, las capas cercanas y lejanas se mueven a distinta velocidad cuando la cámara se desplaza, y la letra toma su profundidad de su tamaño. La profundidad de campo, el paneo de cámara y la profundidad de la letra tienen cada una su control de intensidad en los ajustes del estilo."
+      },
+      "vietnamese": {
+        "title": "Interfaz en vietnamita",
+        "description": "La interfaz ya está disponible en vietnamita (Tiếng Việt), traducida por una persona de la comunidad; cámbiala en el ajuste de idioma o en la paleta de comandos. Seguir el sistema ahora toma el idioma actual del sistema cada vez que se abre Folia, así que un cambio de idioma del sistema se aplica la próxima vez que inicies Folia, y la app de macOS ya no se muestra en inglés en un sistema en chino."
+      },
+      "moreDetails": {
+        "title": "Más mejoras",
+        "description": "Con la sesión de YouTube Music iniciada, los videos musicales oficiales de las listas se muestran y reproducen como sus versiones de audio oficiales, y los videos sin equivalente se marcan como MV. La tarjeta de la canción en la página del reproductor se puede arrastrar a otra posición. Las carpetas, álbumes y playlists locales pueden tener una portada fija personalizada: un poster.png en la carpeta, una imagen subida o la portada de una de sus canciones. Las vistas previas de estilos de letra y del parque de temas pueden pasar a En vivo para mostrar la canción que suena. En escritorio hay un ajuste de Barra superior del reproductor difuminada (desactivado por defecto); la ventana de control remoto recuerda dónde la dejaste, y la sombra del texto sobre su fondo transparente ahora es opcional. Las playlists de QQ Music ya no se vuelven a sincronizar cada vez que las abres, y el paquete RPM de Linux ya no choca con otras apps de Electron."
+      }
+    },
     "v0_7_22": {
       "intro": "Te damos la bienvenida a la 0.7.22, la actualización Destello, una versión grande. Agrega Qishui Music; trae Hanabi, un estilo de letra con fuegos artificiales japoneses; te deja elegir de qué estilos saca el estilo aleatorio por canción; da a la app de escritorio atajos globales de reproducción, y permite elegir proveedor y modelo directamente en los ajustes de IA.",
       "qishui": {
@@ -4883,6 +4936,34 @@ export default {
     "coverCacheFailed": "Se guardaron los metadatos, pero no se pudo guardar la portada en caché. Se seguirá usando la URL en línea cuando esté disponible.",
     "lyricsNotAppliedOtherSaved": "No se aplicó la letra; las demás selecciones se guardaron."
   },
+  "localCollectionCover": {
+    "menuLabel": "Elegir portada",
+    "title": "Portada de «{{name}}»",
+    "description": "Esta imagen es solo la portada de {{kind}} en la biblioteca. No se escribe en ningún archivo de canción, y las canciones de dentro no la cambian. Se mantiene fija hasta que elijas otra o restablezcas la predeterminada.",
+    "kindFolder": "esta carpeta",
+    "kindAlbum": "este álbum",
+    "kindPlaylist": "esta playlist",
+    "currentCustom": "Portada personalizada",
+    "currentAutomatic": "Portada automática, tomada de las canciones de dentro",
+    "noCover": "Sin portada",
+    "usePoster": "Usar poster.png",
+    "posterChecking": "Buscando poster.png en la carpeta…",
+    "posterFound": "Se encontró {{name}} en la carpeta",
+    "posterMissing": "No hay poster.png en esta carpeta",
+    "posterNoAccess": "Permite que Folia lea esta carpeta para usar su poster.png",
+    "posterUnavailable": "No se puede leer esta carpeta",
+    "upload": "Subir imagen",
+    "restore": "Restablecer la predeterminada",
+    "pickSong": "O usa la portada de una canción",
+    "songCount_one": "{{count}} canción usa esta portada",
+    "songCount_other": "{{count}} canciones usan esta portada",
+    "noSongCovers": "Ninguna de estas canciones tiene portada",
+    "saving": "Guardando la portada…",
+    "saved": "Portada elegida",
+    "restored": "Se restableció la portada automática",
+    "failed": "No se pudo poner la portada: {{error}}",
+    "notImage": "Ese archivo no es una imagen que Folia pueda leer"
+  },
   "navidrome": {
     "title": "Navi",
     "enable": "Conectar Navidrome (experimental)",
@@ -4965,6 +5046,9 @@ export default {
       "installVerifying": "Verificando...",
       "installExtracting": "Extrayendo...",
       "installStarting": "Iniciando descarga...",
+      "driveDownload": "Descarga desde una nube",
+      "driveDownloadHint": "Si GitHub va muy lento, descarga mpv {{version}} desde una nube, descomprímelo y elige mpv.exe en Usar un mpv específico.",
+      "driveDownloadHintMac": "Si GitHub va muy lento, descarga mpv {{version}} desde una nube, descomprime el zip y el mpv.tar.gz que trae, y elige mpv.app en Usar un mpv específico.",
       "redetect": "Volver a detectar mpv",
       "mpvPath": "Usar un mpv específico",
       "mpvPathAuto": "Automático",

@@ -36,6 +36,7 @@ const PAGE_TEXT = Object.freeze({
   en: { done: 'Signed in to Spotify. You can go back to Folia.', refused: 'Not authorized. Try again in Folia.', failed: 'Sign-in not completed. Try again in Folia.' },
   in: { done: 'Sudah masuk ke Spotify. Anda bisa kembali ke Folia.', refused: 'Tidak diizinkan. Coba lagi di Folia.', failed: 'Proses masuk belum selesai. Coba lagi di Folia.' },
   es: { done: 'Iniciaste sesión en Spotify. Ya puedes volver a Folia.', refused: 'No se autorizó. Vuelve a intentarlo en Folia.', failed: 'No se completó el inicio de sesión. Vuelve a intentarlo en Folia.' },
+  vi: { done: 'Đã đăng nhập Spotify. Bạn có thể quay lại Folia.', refused: 'Chưa được ủy quyền. Vui lòng thử lại trong Folia.', failed: 'Đăng nhập chưa hoàn tất. Vui lòng thử lại trong Folia.' },
 });
 const pageOf = text => `<!doctype html><meta charset="utf-8"><title>Folia</title><body style="margin:0;display:grid;place-items:center;height:100vh;background:#121212;color:#fff;font:16px system-ui,sans-serif">${text}</body>`;
 const PAGE_HEADERS = Object.freeze({ 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store', Connection: 'close' });

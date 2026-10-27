@@ -4,6 +4,7 @@ import zhCN from '../../../i18n/locales/zh-CN';
 import zhTW from 'virtual:folia-locale-zh-TW';
 import ind from '../../../i18n/locales/in';
 import es from '../../../i18n/locales/es';
+import vi from '../../../i18n/locales/vi';
 import type { CommandPaletteCommand } from '../types';
 import { normalizeSearchText, splitWords } from './normalize';
 
@@ -26,6 +27,7 @@ const LOCALE_COMMAND_TEXT: Record<string, LocaleCommandText> = {
     'zh-TW': ((zhTW as any).commandPalette?.commands ?? {}) as LocaleCommandText,
     in: ((ind as any).commandPalette?.commands ?? {}) as LocaleCommandText,
     es: ((es as any).commandPalette?.commands ?? {}) as LocaleCommandText,
+    vi: ((vi as any).commandPalette?.commands ?? {}) as LocaleCommandText,
 };
 
 const CJK = /[一-鿿㐀-䶿]/;

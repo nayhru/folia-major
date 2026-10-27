@@ -112,6 +112,7 @@ export const useSettingsModalStore = create<SettingsModalUiState>((set, get) => 
                 case 'zh-TW': return i18n.t('options.appLanguageZhTW', { lng: 'zh-TW' });
                 case 'in': return i18n.t('options.appLanguageInID', { lng: 'in' });
                 case 'es': return i18n.t('options.appLanguageEs', { lng: 'es' });
+                case 'vi': return i18n.t('options.appLanguageViVN', { lng: 'vi' });
                 case 'en': return i18n.t('options.appLanguageEnUS', { lng: 'en' });
                 default: return '';
             }
